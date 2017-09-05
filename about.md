@@ -15,12 +15,8 @@ In my spare time, practicing martials arts
 Besides programming I love spending time with friends and family and can often be found together going out catching the latest movie, planning a trip to someplace I've never been before.
 
 ### Contact me
----
-layout: default
-title: contact
-# other options
----
-<!-- Begin MailChimp Signup Form -->
+
+update <!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
@@ -37,7 +33,7 @@ title: contact
 </label>
 	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 </div>
-	<div id="mce-responses" class="clear">
+<div id="mce-responses" class="clear">
 		<div class="response" id="mce-error-response" style="display:none"></div>
 		<div class="response" id="mce-success-response" style="display:none"></div>
 	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
@@ -50,4 +46,4 @@ title: contact
 <!--End mc_embed_signup-->
 
 
-about.me/abernal
+
