@@ -14,9 +14,7 @@ In my spare time, practicing martials arts
 
 Besides programming I love spending time with friends and family and can often be found together going out catching the latest movie, planning a trip to someplace I've never been before.
 
-### Contact me
-
-update <!-- Begin MailChimp Signup Form -->
+<!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
@@ -26,7 +24,7 @@ update <!-- Begin MailChimp Signup Form -->
 <div id="mc_embed_signup">
 <form action="//twitter.us16.list-manage.com/subscribe/post?u=7748534685f1779269b00753a&amp;id=1c27647628" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
-	<h2>Subscribe to our mailing list</h2>
+	<h2>Subscribe to  recibe the last  yummi post js</h2>
 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 <div class="mc-field-group">
 	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
