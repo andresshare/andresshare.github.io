@@ -1,4 +1,5 @@
 # Create complex multi-dimensional arrays
+
 ```
 let myNestedArray = [ //level 1
   // change code below this line
@@ -15,9 +16,11 @@ let myNestedArray = [ //level 1
   ['iterate', 1.3849, 7, '8.4876', 'arbitrary', 'depth']
   // change code above this line
 ];
+
 ```
 
 # Add Key-Value Pairs to JavaScript Objects
+
 ```
 let foods = {
   apples: 25,
@@ -32,12 +35,14 @@ foods["strawberries"] = 27
 // change code above this line
 
 console.log(foods);
+
 ```
 
 
 # Modify an Object Nested Within an Object
 
 ```
+
 let userActivity = {
   id: 23894201352,
   date: 'January 1, 2017',
@@ -72,6 +77,7 @@ function checkInventory(scannedItem) {
 # Use the delete Keyword to Remove Object Properties
 
 ```
+
 let foods = {
   apples: 25,
   oranges: 32,
@@ -92,6 +98,7 @@ console.log(foods);
 ```
 
 # Check if an Object has a Property
+
 ```
 let users = {
   Alan: {
@@ -129,6 +136,7 @@ console.log(isEveryoneHere(users));
 ```
 
 # Iterate Through the Keys of an Object with a for...in Statement
+
 ```
 llet users = {
   Alan: {
@@ -163,7 +171,8 @@ console.log(countOnline(users));
 
 ```
 
-#Generate an Array of All Object Keys with Object.keys()
+# Generate an Array of All Object Keys with Object.keys()
+
 ```
 let users = {
   Alan: {
@@ -226,24 +235,28 @@ console.log(addFriend(user, 'Pete'));
 
 ```
 
-#ALGORITHMSJS
+# ALGORITHMSJS
 
 # Celsius to Fahrenheit
 
 ```
+
 function convertToF(celsius) {
   let fahrenheit = (celsius * 1.8) + 32;
   return fahrenheit;
 }
 console.log(convertToF(-30))
+
 ```
 
 
 # Reverse a String
+
 ```
 function reverseString(str) {
   return str.split("").reverse().join();
 }
+
 ```
 ## Second option
 
@@ -263,7 +276,7 @@ console.log(reverseString('hello'))
 
 ```
 
-#Factorialize a Number
+# Factorialize a Number
 
 
 ```
@@ -279,7 +292,8 @@ console.log(factorialize(5))
 
 
 ```
-##My second option
+## My second option
+
 ```
 function factorialize(num) {
   if (num < 0)
@@ -295,6 +309,7 @@ console.log(factorialize(5))
 ```
 
 #Find the Longest Word in a String
+
 ```
 function findLongestWordLength(str) {
   var strSplit = str.split(' ');
@@ -309,9 +324,9 @@ function findLongestWordLength(str) {
 }
 
 findLongestWordLength("The quick brown fox jumped over the lazy dog");
+
 ```
 
 
  # Return Largest Numbers in Arrays
-
  
