@@ -308,7 +308,7 @@ console.log(factorialize(5))
 
 ```
 
-#Find the Longest Word in a String
+# Find the Longest Word in a String
 
 ```
 function findLongestWordLength(str) {
@@ -326,7 +326,4 @@ function findLongestWordLength(str) {
 findLongestWordLength("The quick brown fox jumped over the lazy dog");
 
 ```
-
-
- # Return Largest Numbers in Arrays
  
