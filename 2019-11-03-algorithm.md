@@ -277,11 +277,11 @@ console.log(reverseString('hello'))
 
 ```
 
-
 # Factorialize a Number
 
 
 ```
+
 function factorialize(num) {
  let total = 1
   for (i=1;i<=num; i++){
@@ -293,8 +293,11 @@ function factorialize(num) {
 console.log(factorialize(5))
 
 
+
 ```
+
 ## My second option
+
 
 ```
 function factorialize(num) {
@@ -313,6 +316,7 @@ console.log(factorialize(5))
 # Find the Longest Word in a String
 
 ```
+
 function findLongestWordLength(str) {
   var strSplit = str.split(' ');
   var longestWord = 0;
