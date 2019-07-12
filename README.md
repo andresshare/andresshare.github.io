@@ -1,3 +1,8 @@
-![N|Solid](https://gph.is/1vOCl8h)
+# fullStackDeveloper 💻
+
+Resolviendo problemas digitales con Tecnologías Web.
+
+
+
 
 
