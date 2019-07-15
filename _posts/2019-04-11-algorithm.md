@@ -1,5 +1,14 @@
+---
+layout: post
+title:  "ALGORITHMS"
+date:   2019-03-23 21:03:36 +0530
+categories: Javascript
+---
+
+![algoritmo](https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif)
+
 # Create complex multi-dimensional arrays
-```
+```javascript
 let myNestedArray = [ //level 1
   // change code below this line
   ['unshift', false, 1, 2, 3, 'complex', 'nested'], //level 2
@@ -18,7 +27,7 @@ let myNestedArray = [ //level 1
 ```
 
 # Add Key-Value Pairs to JavaScript Objects
-```
+```javascript
 let foods = {
   apples: 25,
   oranges: 32,
@@ -37,7 +46,7 @@ console.log(foods);
 
 # Modify an Object Nested Within an Object
 
-```
+```javascript
 let userActivity = {
   id: 23894201352,
   date: 'January 1, 2017',
@@ -53,7 +62,7 @@ userActivity.data.online = 45;
 
 # Access Property Names with Bracket Notation
 
-```
+```javascript
 let foods = {
   apples: 25,
   oranges: 32,
@@ -71,7 +80,7 @@ function checkInventory(scannedItem) {
 
 # Use the delete Keyword to Remove Object Properties
 
-```
+```javascript
 let foods = {
   apples: 25,
   oranges: 32,
@@ -92,7 +101,8 @@ console.log(foods);
 ```
 
 # Check if an Object has a Property
-```
+
+```javascript
 let users = {
   Alan: {
     age: 27,
@@ -129,7 +139,8 @@ console.log(isEveryoneHere(users));
 ```
 
 # Iterate Through the Keys of an Object with a for...in Statement
-```
+
+```javascript
 llet users = {
   Alan: {
     age: 27,
@@ -163,8 +174,9 @@ console.log(countOnline(users));
 
 ```
 
-#Generate an Array of All Object Keys with Object.keys()
-```
+# Generate an Array of All Object Keys with Object.keys()
+
+```javascript
 let users = {
   Alan: {
     age: 27,
@@ -194,7 +206,7 @@ console.log(getArrayOfUsers(users));
 
 # Modify an Array Stored in an Object
 
-```
+```javascript
 let user = {
   name: 'Kenneth',
   age: 28,
@@ -226,11 +238,9 @@ console.log(addFriend(user, 'Pete'));
 
 ```
 
-#ALGORITHMSJS
-
 # Celsius to Fahrenheit
 
-```
+```javascript
 function convertToF(celsius) {
   let fahrenheit = (celsius * 1.8) + 32;
   return fahrenheit;
@@ -240,14 +250,14 @@ console.log(convertToF(-30))
 
 
 # Reverse a String
-```
+```javascript
 function reverseString(str) {
   return str.split("").reverse().join();
 }
 ```
 ## Second option
 
-```
+```javascript
 function reverseString(str) {
 
     var newString = "";
@@ -263,10 +273,10 @@ console.log(reverseString('hello'))
 
 ```
 
-#Factorialize a Number
+# Factorialize a Number
 
 
-```
+```javascript
 function factorialize(num) {
  let total = 1
   for (i=1;i<=num; i++){
@@ -279,8 +289,8 @@ console.log(factorialize(5))
 
 
 ```
-##My second option
-```
+## My second option
+```javascript
 function factorialize(num) {
   if (num < 0)
         return -1;
@@ -294,8 +304,9 @@ console.log(factorialize(5))
 
 ```
 
-#Find the Longest Word in a String
-```
+# Find the Longest Word in a String
+
+```javascript
 function findLongestWordLength(str) {
   var strSplit = str.split(' ');
   var longestWord = 0;
@@ -312,6 +323,6 @@ findLongestWordLength("The quick brown fox jumped over the lazy dog");
 ```
 
 
- # Return Largest Numbers in Arrays
+
 
  
