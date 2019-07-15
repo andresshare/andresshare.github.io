@@ -5,7 +5,7 @@ date:   2019-03-23 21:03:36 +0530
 categories: Javascript
 ---
 
-![algoritmo](https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif)
+![algoritmo](https://media.giphy.com/media/z6z7V16QWDVI9tad3O/giphy.gif)
 
 # Create complex multi-dimensional arrays
 ```javascript

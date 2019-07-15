@@ -1,10 +1,8 @@
-title: Your awesome title
-author: GitHub User
+title: andresshare[andresbernal]
+author: andresshare
 email: andresshare@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Hola,🙂soy Andres Bernal cree este blog sobre temas de javascript y python
 show_excerpts: true # set to true to show excerpts on the homepage
 
 # Minima date format
@@ -25,7 +23,6 @@ plainwhite:
     # dribbble: jekyll
     # facebook: jekyll
     # flickr:   jekyll
-    instagram: jekyll
     # linkedin: jekyll
     # pinterest: jekyll
     # youtube: jekyll
