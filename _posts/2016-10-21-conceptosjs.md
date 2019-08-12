@@ -7,7 +7,7 @@ categories: javascript
 
 ![OOP](https://media.giphy.com/media/88SCuVTIoAJ8Y/source.gif)
 
-#**CONCEPTOS JS**
+##**CONCEPTOS JS**
 
 Con este post planeo mostrar variados de javascript
 para el manejo del lenguaje
@@ -25,13 +25,14 @@ foo = 2;
 console.log(foo); //2
 ```
 
-\*No asignar variables con valor numerico al inicio de la variable:
-~~1valor~~
+* No asignar variables con valor numerico al inicio de la variable:
+ ~~1valor~~
 ó
-~~%valor~~,
-o usar palabras reservadas como **function\***, **class**
+ ~~%valor~~,
+o usar palabras reservadas como
+**function\***, **class**
 
-javascript usa el ****camelCase**** las variables se debe declarar asi:
+* javascript usa el ****camelCase**** las variables se debe declarar asi:
 
 ```
  -  costoFactura
@@ -82,7 +83,7 @@ const numeros = 123
 **const**: mostrara un **SyntaxError: Missing initializer in const declaration**
 por los cual SIEMPRE se debe declarar un valor
 
-##valores primitivos en las variables
+### Valores primitivos en las variables
 
 ```javascript
 var numero = 1
@@ -111,7 +112,7 @@ console.log('is null')
 }
 ```
 
-#### OBJETOS
+### OBJETOS
 
 Un objeto es un a referencia a una coleccion que contiene un conjunto de propiedades y valores
 
@@ -229,7 +230,7 @@ for( var correo of correos) {
 console.log(mapservicios)
 
 ```
-##Convertir objeto a arrays
+### Convertir objeto a arrays
 
 ```javascript
 function sumarNumero(){
@@ -239,7 +240,7 @@ var resultado = sumarNumeros(1,2,3,34,5,6,7,7)
 
 ```
 
-#HOSTING
+### Hosting
 
 ```javascript
 //funcion llamada antes..
@@ -251,7 +252,7 @@ function mensaje(){
 ```
 
 
-#function expresion
+### Function expresion
 
 ```javascript
 //funcion llamada antes..
@@ -269,7 +270,7 @@ msj()
 
 
 
-# anonymus  function
+### Anonymus  function
 
 ```javascript
 
@@ -284,7 +285,7 @@ function (){
 
 ```
 
-# named  function expression
+#### Named  function expression
 
 ```javascript
 
