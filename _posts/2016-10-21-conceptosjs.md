@@ -7,7 +7,7 @@ categories: javascript
 
 ![OOP](https://media.giphy.com/media/88SCuVTIoAJ8Y/source.gif)
 
-##**CONCEPTOS JS**
+# **CONCEPTOS JS**
 
 Con este post planeo mostrar variados de javascript
 para el manejo del lenguaje
