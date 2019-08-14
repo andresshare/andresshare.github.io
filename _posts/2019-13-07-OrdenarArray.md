@@ -31,6 +31,6 @@ var  arr = [2,3,4,3,2,1,2,2,];
 const numeroRepetido=(arr, ent)=> arr.filter((item) => (item === ent)).length;
 
 
-console.log(numeroRepetido(arr,10))
+console.log(numeroRepetido(arr,2))
 
 ```
