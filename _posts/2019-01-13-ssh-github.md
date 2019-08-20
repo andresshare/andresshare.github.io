@@ -5,6 +5,7 @@ date:   2019-01-13 23:05:36 +0530
 categories: Projects production
 ---
 
+![ssh](https://media.giphy.com/media/65NO1TrKrJUT6/giphy.gif)
 
 ### After you've checked for existing SSH keys, you can generate a new SSH key to use for authentication, then add it to the ssh-agent.
 
@@ -16,9 +17,9 @@ Paste the text below, substituting in your GitHub email address.
 This creates a new ssh key, using the provided email as a label.
 >  Generating public/private rsa key pair.
 
-When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
+**When** you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
 
-Enter a file in which to save the key (/home/you/.ssh/id_rsa): [Press enter]
+> Enter a file in which to save the key (/home/you/.ssh/id_rsa): [Press enter]
 
 At the prompt, type a secure passphrase. For more information, see "Working with SSH key passphrases".
 
