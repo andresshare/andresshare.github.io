@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "RUBY - PODER SIN LIMITES 💎"
+title:  "RUBY -PODER SIN LIMITES 💎"
 date:   2019-08-30 19:30:20 +0530
 categories: Ruby
 ---
@@ -8,13 +8,11 @@ categories: Ruby
 ![Ruby poder sin limites](https://media.giphy.com/media/HChtj3gzcVsXK/giphy.gif)
 
 
-#RUBY - PODER SIN LIMITES  💎
+# RUBY - PODER SIN LIMITES  💎
 
 Mi intencion es empezar de 0 con el lenguaje de **RUBY** creado por **Yukihiro Matsumoto** y tocar los puntos mas importantes para su uso.
 
 **Adelante!!**
-
-
 
 
 despues de instalar ruby en nuestro sistema operativo, corremos IRB en la consola del sistema operativo
@@ -40,9 +38,9 @@ puts "HELLO RB"
 
 ⌨️ Ejecutamos en modo consola
 
-```bh
-ruby Archivo.rb
-```
+
+> ruby Archivo.rb
+
 Salida del programa
 
 > HELLO RB
@@ -68,6 +66,7 @@ Salida del programa
 `%=` | Busca el residuo en una division  y asignar el valor a una variable
 
 
+---
 SUMA `IRB`
 
 ```RUBY
@@ -135,7 +134,7 @@ DIVIDIR CON ASIGNACION `IRB`
 >> ruby
 => 4
 ```
-
+---
 ### **STRINGS**
 
 Son una cadena en serie de caracteres de texto.
@@ -295,7 +294,7 @@ puts "Buen numero, #{numero}!"
  => "Buen numero: 13" 
 ```
 
-##CONDICIONALES
+###CONDICIONALES
 
 ### **IF**
 
@@ -391,7 +390,7 @@ else
 end
 ```
 
-## LOOPS
+### LOOPS
 
 ### While
 Mientras la condicion se cumpla,contiuara ejecutandose
@@ -420,7 +419,7 @@ numero_mayor = a > b  ? "hola" : "bye"
 => "hola"
 ```
 
-#Times
+###Times
 
 `IRB`
 ```ruby
@@ -446,7 +445,7 @@ mensaje
 
 ``` 
 
-# UPTO
+### Upto
 
 Recorre e imprime los valores de manera inversa
 
