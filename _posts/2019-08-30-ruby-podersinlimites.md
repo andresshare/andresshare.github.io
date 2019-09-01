@@ -165,7 +165,7 @@ Esta prohibido y causara errores:
 
 
 
-###CONSTANTES
+### CONSTANTES
 
 Nos encontraremos problemas que tendremos que resolver con constantes lo que significa que su valor sera eterno dentro del programa ejemplo
 
@@ -177,7 +177,7 @@ Numero = 12
 en su sintaxis iniciara con mayuscula 
 
 
-###OBJETOS
+### OBJETOS
 
 Ruby es un lenguaje orientado a objetos. esto nos permite manejar las cadenas de caracteres de manera rapida Veamos
 
@@ -261,7 +261,7 @@ frase_completa
 
 
 ```
-##CAPTURAR DATOS
+### CAPTURAR DATOS
 `IRB`
 ```ruby
 print "Que dia es hoy?"
@@ -294,7 +294,7 @@ puts "Buen numero, #{numero}!"
  => "Buen numero: 13" 
 ```
 
-###CONDICIONALES
+### CONDICIONALES
 
 ### **IF**
 
@@ -419,7 +419,7 @@ numero_mayor = a > b  ? "hola" : "bye"
 => "hola"
 ```
 
-###Times
+### Times
 
 `IRB`
 ```ruby
@@ -502,3 +502,74 @@ un_array.each do |elemento|
 end
 
 ```
+
+Se puede recorrer con un for
+
+`IRB`
+
+```ruby 
+
+# Array.new crea un array vacio
+un_array = Array.new
+un_array.push("Message")
+un_array.push 123
+un_array << Time.now
+
+for elemento in un_array
+  puts elemento
+end
+
+```
+
+Funciones ejecutads al array
+
+`irb`
+```ruby
+array.length
+=> 3
+array.join(', ')
+=> "Message, 123, Mon Aug 31 20:30:41 +0530 2010"
+array.push(5)
+=> ["Message", 123, Mon Aug 31 20:30:41 +0530 2010, 5]
+array.pop
+=> 5
+array
+=> ["Message", 123, Mon Aug 31 20:30:41 +0530 2010, 5]
+```
+
+Consultemos un array anidado
+
+`irb`
+```ruby
+array = [1, 5, [7, 9, 11, ["Ruby on rails"], "Sigma"]]
+=> [1, 5, [7, 9, 11, ["Ruby on rails"], "Sigma"]]
+array.dig(2, 3, 0)
+=> "Ruby on rails"
+``` 
+
+Usemos intersecciones,uniones, saque sus conclusiones
+al revisar este script
+
+```ruby
+
+Real_madrid=["Eden hazard", "James rodriguez", "Keilor navas", "Mariano", "Marcelo"]
+
+Jugadores=["Messi","Pele","James rodriguez","Keilor navas","Ronaldinho"]
+
+
+Real_madrid & Jugadores
+
+Real_madrid | Jugadores
+
+Real_madrid + Jugadores
+
+Real_madrid - Jugadores
+
+```
+
+Link de toda las informacion de arrays
+
+[Documentacion Arrays](https://ruby-doc.org/core-2.5.1/Array.html "Arrays")
+
+
+
