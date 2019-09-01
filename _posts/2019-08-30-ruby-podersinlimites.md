@@ -244,7 +244,8 @@ numero.class
  => Integer  
 ```
 
- ### CONCATENAR STRINGS
+
+### CONCATENAR STRINGS
 
  Unir cadenas con diferentes nombres de variable o constantes
 
@@ -336,7 +337,8 @@ entonces valida `if marca =="Tesla"`  como  es verdadero muestra `Eres un campeo
 
 `else` se activa si la condicion es falsa
 
- ### Elsif
+
+### Elsif
 
 
 
