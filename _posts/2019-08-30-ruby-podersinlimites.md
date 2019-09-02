@@ -574,4 +574,219 @@ Link de toda las informacion de arrays
 [Documentacion Arrays](https://ruby-doc.org/core-2.5.1/Array.html "Arrays")
 
 
+###  Hashes y simbolos
+
+Los hashes son matrices con índice definido por el programa o  un usuario. no por el intérprete de Ruby.
+Un array asociativo contiene elementos que se pueden acceder, no a través de índices numéricos secuenciales, sino a través de claves que pueden tener cualquier tipo de valor. Estos arrays se conocen a veces como hash o diccionario.
+
+
+
+
+```ruby
+mark = Hash.new
+mark['English'] = 50
+mark['Math'] = 70
+mark['Science'] = 75
+print "Nombre de la materia:"
+sub = gets.chop
+puts "Mark en #{sub} es #{mark[sub]}"
+
+```
+
+A diferencia de una matriz, el hash puede tener un objeto como índice.
+
+¿Qué pasa si el índice no tiene un valor definido?
+
+
+```ruby
+
+mark = Hash.new 0 # Asignamos el valor de mark es cero
+mark['English'] = 50
+mark['Math'] = 70
+mark['Science'] = 75
+print "Nombre de la materia:"
+sub = gets.chop
+puts "Mark en #{sub} es #{mark[sub]}"
+
+=> Mark en Science es 0:
+```
+Mire la salida, no hemos definido un valor para la marca ['Química'], sin embargo, cuando el nombre del sujeto se especifica como Química, obtenemos 0 como resultado. 
+
+Esto es así porque hemos establecido cero como valor predeterminado. Por lo tanto, al establecer el valor predeterminado, tendremos un valor para aquellos índices que aún no hemos definido.
+
+### Recorramos hashes
+`ìrb` 
+```ruby
+mark = Hash.new 0 # Asignamos el valor de mark es cero
+mark['English'] = 50
+mark['Math'] = 70
+mark['Science'] = 75
+total = 0
+mark.each { |key,value|
+  total += value
+}
+puts "Total marks = "+total.to_s
+
+=> Total marks = 195
+``` 
+
+En el programa anterior, hemos calculado el total de todas las marcas almacenadas en la marca Hash. Tenga en cuenta cómo usamos cada bucle. Tenga en cuenta que obtenemos el par clave-valor usando | clave, valor | en el cuerpo del bucle. 
+
+La clave contiene el índice del hash y el valor contiene el valor almacenado en ese índice particular [25]. Cada vez que se ejecuta el bucle, agregamos valor al total, por lo que al final el total de la variable tiene el total de los valores almacenados en el hash. Por fin imprimimos el total.
+
+
+`ìrb`
+```ruby
+mark = Hash.new 0 # signamos el valor de mark es cero
+mark['English'] = 50
+mark['Math'] = 70
+mark['Science'] = 75
+total = 0
+puts "Key => Value"
+mark.each { |a,b|
+  puts "#{a} => #{b}"
+
+```
+
+
+### SIMBOLOS
+
+los simbolos es una instancia única de la clase Symbol que generalmente se usa para identificar un recurso específico. Un recurso puede ser:
+
+* Un metodo
+* una variable
+* un hash key
+* un stado
+* etc..
+
+Un símbolo es uniq porque solo se puede crear una instancia de la clase Symbol para un símbolo específico en un programa en ejecución
+
+```ruby
+
+:pending.object_id # => 1277788
+:pending.object_id # => 1277788
+
+```
+
+
+Aquí, podemos ver que el símbolo: :pending solo se crea una vez ya que las dos llamadas a: pending.objeto_id devuelven el mismo identificador de objeto.
+
+Los símbolos a menudo se comparan con las cadenas. Pero la principal diferencia entre ellos radica en el hecho de que se crea un nuevo objeto String para cada cadena llamada, incluso si son idénticos
+
+
+```ruby
+'pending'.object_id # => 70324176174080
+'pending'.object_id # => 70324176168090
+
+```
+Ahora que estamos más familiarizados con los símbolos, veamos la clase Symbol y la API que proporciona.
+
+
+
+
+#### EL SYMBOL DE LA CLASE
+
+
+Esta clase es parte de la Biblioteca principal de Ruby (también conocida como core-lib).
+
+
+Esta clase no es públicamente instanciable
+
+```ruby
+irb> Symbol.new
+NoMethodError (undefined method `new' for Symbol:Class)
+
+
+```
+De lo contrario, un objeto Symbol se instancia implícitamente cuando se declara un nuevo símbolo
+
+```ruby
+
+irb> :dummy_symbol.class
+ => Symbol
+```
+
+Echemos un vistazo a su cadena de antepasados
+
+```ruby
+
+irb> Symbol.ancestors
+ => [Symbol, Comparable, Object, Kernel, BasicObject]
+```
+La clase Symbol hereda de la clase padre predeterminada Object.
+
+
+Tenga en cuenta que incluye el módulo Comparable.
+
+Esta clase comparte exactamente la misma cadena de antepasados ​​que las clases String y Numeric.
+
+Esta clase también proporciona un montón de métodos de instancia interesantes para comparar, modificar y unir símbolos.
+
+La mayoría de los métodos para modificar y unir símbolos utilizan el método Symbol # to_s para trabajar con la representación de cadena del símbolo.
+
+
+
+Como los símbolos son, para cada uno de ellos, una instancia única de la clase Symbol, entonces Ruby tiene que hacer un seguimiento de cada uno de ellos para poder garantizar su singularidad.
+
+
+Para hacerlo, Ruby proporciona una tabla interna llamada global_symbols que se encarga de realizar un seguimiento de todos los símbolos de su programa en ejecución.
+
+> Tenga en cuenta que los símbolos solo se guardan en la memoria una vez. Esto los hace muy eficientes de usar. Pero permanecen en la memoria hasta que sale el programa. Esto es cierto para todas las versiones de Ruby <2.2.0. De lo contrario, los símbolos usan el garbage collector.
+
+El método Symbol.all_symbols devuelve una matriz que representa el contenido de la tabla global_symbols en el momento de la llamada al método
+
+```ruby
+Symbol.all_symbols.length                      # => 3893
+Symbol.all_symbols.grep(/Struct/)              # => [:Struct]
+
+:dummy_symbol
+Symbol.all_symbols.length                      # => 3894
+Symbol.all_symbols.grep(/dummy_symbol/)        # => [:dummy_symbol]
+
+dummy_variable = nil
+Symbol.all_symbols.length                      # => 3895
+Symbol.all_symbols.grep(/dummy_variable/)      # => [:dummy_variable]
+
+def dummy_method; end
+Symbol.all_symbols.length                      # => 3896
+Symbol.all_symbols.grep(/dummy_method/)        # => [:dummy_method]
+
+class DummyClass; end
+Symbol.all_symbols.length                      # => 3897
+Symbol.all_symbols.grep(/DummyClass/)          # => [:DummyClass]
+
+Symbol.all_symbols.grep(/Hash/)                # => [:Hash]
+class Hash; end
+Symbol.all_symbols.length                      # => 3897
+
+```
+
+Primero, podemos ver que la tabla global_symbols no está vacía.
+
+
+En efecto, en la configuración del programa, esta tabla se completa con todos los métodos, variables y clases incluidos en la Biblioteca principal de Ruby. Estos recursos se insertan en la tabla como símbolo.
+
+> Por ejemplo, la clase Struct es parte de la Biblioteca principal de Ruby.
+
+Luego, podemos ver que un símbolo que representa un recurso se agrega a la tabla global_symbols cuando definimos:
+
+
+
+un nuevo símbolo
+una nueva variable
+un nuevo método
+una nueva clase / módulo
+
+Luego, podemos ver que no se agrega ningún símbolo nuevo a la tabla cuando volvemos a abrir la clase Hash. Esto se debe a que el símbolo: Hash ya está incluido en la tabla global_symbols. Este mecanismo es el mismo para símbolos, variables y métodos.
+
+
+>Tenga en cuenta que esta tabla se usa cada vez que tiene que lidiar con símbolos
+
+>Tenga en cuenta que los operadores == y === están utilizando una comparación a nivel de objeto.
+
+>Pero para todos los demás métodos de comparación, utiliza la representación de cadena del símbolo para la comparación.
+
+
+> HASHES articulo de referencia : https://medium.com/rubycademy/symbol-in-ruby-daca5abd4ab2
+
 
