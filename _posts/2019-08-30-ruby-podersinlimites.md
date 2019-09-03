@@ -874,7 +874,7 @@ Salida
 
 ```ruby
 Ingrese una letra : R
-Digito una mayuyscula
+Digito una mayuscula
 ```
 
 Usando 3 puntos
