@@ -790,3 +790,106 @@ Luego, podemos ver que no se agrega ningún símbolo nuevo a la tabla cuando vol
 > HASHES articulo de referencia : https://medium.com/rubycademy/symbol-in-ruby-daca5abd4ab2
 
 
+# Ranges
+
+Algunas veces necesitamos tener un rango de valores, por ejemplo en un sistema de calificación. Si un estudiante obtiene una calificación de 60 a 100 puntos, su calificación es A, de 50 a 59 su calificación es B y así sucesivamente. Cuando necesitemos lidiar con un rango de valores
+
+```ruby
+
+(1..5).each {|a| print "#{a}, " }
+
+1, 2, 3, 4, 5,  => 1..5 
+
+```
+
+OK, ¿qué es eso (1..5) en la declaración anterior, esto se llama Rango. El rango es un objeto que tiene un valor superior y un valor inferior y todos los valores intermedios. Tenga en cuenta que, al igual que la matriz, todos y cada uno de los valores de un rango se pueden obtener utilizando cada método como se muestra arriba.
+
+
+```ruby
+
+ ("bad".."bag").each {|a| print "#{a}, " }
+
+=> bad, bae, baf, bag, => "bad".."bag"
+```
+
+Otro Ejemplo
+
+```ruby
+
+a = -4..10
+=> -4..10
+```
+```ruby
+a.class
+=> Range
+```
+
+Como podemos ver, pertenece a la clase Range
+
+Para obtener el valor máximo en un rango, use el método max como se muestra
+
+```range
+>> a.max
+```
+
+```
+=> 10
+```
+
+Para obtener el mínimo en un rango, use el método min como se muestra
+
+```ruby
+>> a.min
+
+```
+
+```
+=> -4
+``` 
+
+Es posible convertir el rango a una matriz usando el método to_a como se muestra
+
+
+```ruby
+a.to_a
+```
+```ruby
+=> [-4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+```
+
+Comprobemos intervalos
+
+Otro uso de Rangos es verificar si algo está ubicado en un intervalo particular.
+
+```ruby
+
+!/usr/bin/ruby
+
+
+print "Ingrese una letra "
+letter = gets.chop
+
+puts "Digito una minuscula" if  ('a'..'z') === letter
+puts "Digito una mayuscula" if  ('A'..'Z') === letter
+```
+
+Salida
+
+```ruby
+Ingreso una letra : R
+Digito una mayuyscula
+```
+
+Usando 3 puntos
+
+
+```ruby
+>> (1..5).to_a
+=> [1, 2, 3, 4, 5]
+>> (1...5).to_a
+=> [1, 2, 3, 4]
+```
+
+Consulte el fragmento de código anterior cuando escribo (1..5) .to_a obtenemos una salida de matriz como [1, 2, 3, 4, 5], pero para (1 ... 5) .to_a obtenemos una salida como [1 , 2, 3, 4]. Los puntos triples ignoran el último valor en el rango.
+
