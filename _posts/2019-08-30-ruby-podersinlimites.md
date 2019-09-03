@@ -863,21 +863,17 @@ Comprobemos intervalos
 Otro uso de Rangos es verificar si algo está ubicado en un intervalo particular.
 
 ```ruby
-
-!/usr/bin/ruby
-
-
 print "Ingrese una letra "
-letter = gets.chop
+letra = gets.chop
 
-puts "Digito una minuscula" if  ('a'..'z') === letter
-puts "Digito una mayuscula" if  ('A'..'Z') === letter
+puts "Digito una minuscula" if  ('a'..'z') === letra
+puts "Digito una mayuscula" if  ('A'..'Z') === letra
 ```
 
 Salida
 
 ```ruby
-Ingreso una letra : R
+Ingrese una letra : R
 Digito una mayuyscula
 ```
 
