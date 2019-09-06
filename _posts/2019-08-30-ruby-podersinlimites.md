@@ -1,4 +1,4 @@
-****---
+---
 layout: post
 title:  "RUBY -PODER SIN LIMITES 💎"
 date:   2019-08-30 19:30:20 +0530
@@ -1229,3 +1229,6 @@ Pero solo tenga en cuenta esta parte, hemos llamado a alguna_función como se mu
 ```
 some_function "Yoda", jedi: 100, sword: 100, seeing_future: 100
 ```
+
+
+En la función pasamos el segundo argumento como un hash pero se da como se muestra arriba, tenga en cuenta que hemos evitado convenientemente las llaves y todavía funciona. Ese es el punto
