@@ -1,4 +1,4 @@
----
+****---
 layout: post
 title:  "RUBY -PODER SIN LIMITES 💎"
 date:   2019-08-30 19:30:20 +0530
@@ -889,3 +889,343 @@ Usando 3 puntos
 
 Consulte el fragmento de código anterior cuando escribo (1..5) .to_a obtenemos una salida de matriz como [1, 2, 3, 4, 5], pero para (1 ... 5) .to_a obtenemos una salida como [1 , 2, 3, 4]. Los puntos triples ignoran el último valor en el rango.
 
+
+# Funciones
+
+
+```ruby
+| def print_line
+  puts '_'*20
+end
+
+print_line
+puts "TITULO"
+print_line
+
+``` 
+
+###Paso de argumento en las funciones
+
+```ruby
+def print_line length
+  puts '_'*length
+end
+
+10.step(50,10) do |x|
+  print_line x
+end
+
+40.step(10,-10) do |x|
+   print_line x
+ end
+
+```
+
+### Argumentos predeterminados en las funciones
+
+
+```ruby
+
+def print_line length = 20
+  puts '_'*length
+end
+
+print_line
+print_line 40
+
+```
+
+
+Puede ver en el programa, en la función print_line al dar length = 20, hemos indicado que si no se pasa ningún argumento, la función debe asumir que el valor de length es 20. Si se pasa, este valor se anulará con el valor que pase. Como puede ver en la primera llamada a la función, simplemente llamamos a la función simplemente por su nombre print_line, no nos molestamos en pasarle el valor de la longitud, pero vemos que se imprime una línea de 20 unidades de longitud en la salida.
+
+# Pasando arrays a las funciones
+
+
+
+```ruby
+def array_changer array
+  array << 6
+end
+
+some_array = [1, 2, 3, 4, 5]
+p some_array
+array_changer some_array
+p some_array
+
+
+``` 
+salida
+```
+[1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5, 6]
+
+```
+Si es un recién llegado a la programación, esto puede no ser sorprendente, pero cuando una variable se pasa a una función, no se supone que cambie su valor. Pero en el caso de la matriz, dentro de la función array_changer, le estamos agregando un elemento y cambia. Bueno, este es un comportamiento peculiar de una matriz que se pasa a una función.
+
+Para evitar tal comportamiento, pruebe el siguiente programa
+
+```ruby
+def array_changer array
+  array << 6
+end
+
+some_array = [1, 2, 3, 4, 5]
+p some_array
+array_changer Marshal.load(Marshal.dump(some_array))
+p some_array
+
+```
+Salida
+
+```
+[1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
+```
+
+Aquí la matriz no se cambia, mira la línea array_changer Marshal.load (Marshal.dump (some_array)), este código copia some_array al argumento de la función para que incluso cuando se cambia dentro de la función, no se cambie fuera de la función.
+
+#Retornar valores
+
+
+Hasta ahora hemos visto que la función toma argumentos, ahora veremos que la función puede devolver valores que pueden usarse para algún propósito. Ahora veamos el programa function_return.rb, estudiemos el código, lo escribimos y lo ejecutamos.
+
+```ruby
+def addition x, y
+  sum = x+y
+  return sum
+end
+
+a, b = 3, 5
+
+puts addition a,b
+```
+salida
+``` 
+8
+```
+
+
+El resultado que sale después de ejecutar es 8. Tenga en cuenta el método denominado adición en el programa anterior. Acepta dos argumentos **x** e **y**, dentro del método declaramos una variable llamada suma que se asigna a la suma de **x** con **y**. La siguiente declaración es el héroe aquí, vea que hemos usado una palabra clave return, esto devuelve el valor de la función. En el programa anterior, devolvemos la suma y, por lo tanto, cuando obtenemos la respuesta.
+
+No es que debamos usar la declaración return para devolver un valor. La última instrucción que se ejecuta en una función Ruby se devuelve por defecto. 
+
+Considere el programa **function_last_gets_returned.rb** que se muestra a continuación. En él tenemos un método llamado **square_it** que acepta un solo argumento llamado **x**. Tiene una sola declaración **x ** 2**, que también es la última declaración.
+
+
+```ruby
+def square_it x
+  x**2
+end
+
+puts square_it 5
+```
+Salida
+
+```
+25
+```
+
+Como puede ver, hemos llamado square_it 5 y obtenemos 25 como resultado. Es posible porque en Ruby el resultado de la última declaración ejecutada se devuelve por defecto.
+
+
+# Argumentos clasve[Keyword arguments]
+
+```ruby
+def say_hello name: "Martin", age: 33
+  puts "Hello #{name} your age is #{age}"
+end
+
+say_hello name: "Joseph", age: 7
+say_hello age: 21, name: "Vignesh"
+say_hello
+```
+
+
+Salida
+```
+Hello Joseph your age is 7
+Hello Vignesh your age is 21
+Hello Martin your age is 33
+```
+
+Entonces, para ver cómo funciona esta característica, analicemos el código. Mire la definición de la función de say_hello, es como se muestra a continuación
+
+```ruby
+def say_hello name: "Martin", age: 33
+  puts "Hello #{name} your age is #{age}"
+end
+```
+
+Mire la parte resaltada def say_hello name: "Martin", edad: 33. Aquí no especificamos argumentos como def say_hello name = "Martin", age = 33, sino que usamos un nombre especial: "Martin", hemos eliminado el signo igual y reemplazado con dos puntos. Entonces, ¿de qué sirve? Ahora observe la parte donde se llama la función
+
+
+```ruby
+say_hello name: "Joseph", age: 7
+say_hello age: 21, name: "Vignesh"
+say_hello
+```
+
+La primera línea es directa say_hello name: "Joseph", edad: 7, aquí el primer argumento es name y el segundo argumento es age. Pero mire el código say_hello age: 21, nombre: "Vignesh", aquí el primer argumento es age y el segundo es name. Pero como la palabra clave insinúa el argumento, su posición es irrelevante y el método imprime una cadena como esperamos.
+
+La tercera línea say_hello es solo para mostrar lo que sucede si se pierden los argumentos, ya que hemos especificado valores predeterminados, toma los predeterminados. ¿Es posible utilizar argumentos de palabras clave con valores predeterminados? Absolutamente sí.
+
+```ruby
+
+def say_hello name:, age:
+    puts "Hello #{name} your age is #{age}"
+  end
+
+  say_hello name: "Joseph", age: 7
+  say_hello age: 21, name: "Vignesh"
+  # say_hello # uncomment it and try it out
+  # say_hello "Karthik", 32 # uncomment it and try it out
+```
+
+# Funciones Recursivas
+
+ Todas las computadoras usan una cosa llamada álgebra booleana para hacer todas las tareas. No diría que debes ser matemático para ser programador, pero saber matemáticas ayuda.
+
+OK, ¿qué es un factorial? Tome un número, tomemos **3**, ahora lo que será **3 X 2 X 1**, ¡serán seis! ¿No es simple? **6** es factorial de **3**. Bueno, tomaremos **4** ahora, por lo que **4 X 3 X 2 X 1** será **24**, de manera similar el factorial de **2** será **2 X 1**, que es **2**. Habiendo equipado con este conocimiento, ahora construiremos un programa que nos dará factorial de un número.
+
+```Ruby
+
+# factorial
+
+def factorial num
+  fact = 1
+  1.upto(num) { |a|
+    fact = fact * a
+  }
+  fact
+end
+
+number = 17
+puts "Factorial of #{number} = #{factorial number}"
+```
+Salida 
+```
+Factorial of 17 = 355687428096000
+
+```
+
+En el ejemplo anterior (en la función factorial) hemos tomado todos los números del uno al número particular, lo hemos multiplicado y tenemos factorial. 
+
+Veamos este codigo:
+
+```ruby
+def factorial num
+  return 1 if num == 1
+  return num * factorial(num-1)
+end
+
+number = 17
+puts "Factorial of #{number} = #{factorial number}"
+```
+
+Salida
+```ruby
+Factorial of 17 = 355687428096000
+```
+
+La salida es la misma que la del programa anterior factorial.rb. Observe muy de cerca la función denominada factorial en el programa anterior. Déjame enumerarlo para que lo veas
+
+```ruby
+
+def factorial num
+        return 1 if num == 1
+        return num * factorial(num-1)
+end
+```
+
+
+Tome el número 1. El factorial es 1. Entonces, si se encuentra 1, se devuelve 1 como se muestra en el código 
+
+
+Ahora tome el número 2. Factorial de 2 X 1, que es 2 factorial multiplicado de 1. En otras palabras, podemos escribirlo como 2 multiplicado por factorial de 2-1. Entonces, si se encuentra el número dos en la función factorial, omite la primera instrucción if y la segunda instrucción return num * factorial (num-1) a continuación se ejecuta
+
+
+En esto sucede algo interesante. Aquí se llama factorial (2-1), es decir, la función factorial se llama a sí misma. Entonces, cuando se llama factorial de 2-1, es decir, factorial de 1, devuelve 1, este 1 se multiplica por 2 y se devuelve, por lo que en este caso 2 se devuelve finalmente.
+
+Ahora tome el número 3. Su factorial es 3 X 2 X 1. Esto se puede escribir como 3 multiplicado por el factorial 2. El factorial 2 se traduce como 2 multiplicado por el factorial 1. Por lo tanto, el resultado se obtiene finalmente. Para cualquier número mayor que 1, la función factorial se llama a sí misma repetidamente. El proceso de la función que se llama a sí mismo se llama **recursividad**.
+
+# Numero de argumentos Variables
+
+Digamos que no sabe cuántos argumentos se pasan a una función, digamos que está escribiendo una función para agregar N números, el valor de N no se conoce, entonces, ¿cómo podría obtener un número variable de argumentos? Bueno, escriba el programa function_variable_arguments.rb que se proporciona a continuación y ejecútelo.
+
+```ruby
+
+def some_function a, *others
+  puts a
+  puts "Others are:"
+  for x in others
+    puts x
+  end
+end
+
+some_function 1,2,3,4,5
+
+```
+
+Salida
+
+```
+1
+Others are:
+2
+3
+4
+5
+```
+
+
+Entonces la salida del programa se muestra arriba. Como ve, pasamos 1,2,3,4,5 como argumentos, entonces a es solo una variable y, por lo tanto, toma el valor 1, las otras variables son absorbidas por la variable otras (tenga en cuenta la estrella antes del nombre de la variable) que es un tipo especial de argumento, toma el resto de los argumentos que no son absorbidos por las variables de argumento anteriores y lo almacena en el nombre de la variable otros (como una matriz). 
+
+
+```ruby
+
+for x in others
+        puts x
+end
+```
+Bueno, eso es todo. Ahora intente escribir una función para encontrar el máximo de n números y escriba otra función para encontrar el mínimo de n números y escriba un programa para encontrar el máximo y mínimo de un grupo de números.
+
+# Hashes como argumentos en las funciones
+
+Otra forma de colarse en múltiples argumentos en una función es pasarlos como hashes. Mire el programa a continuación, tenemos una función llamada some_function que obtiene dos argumentos, el primero llamado first_arg y el segundo llamado others_as_hash, llamamos a esta función en la siguiente línea some_function "Yoda", {jedi: 100, espada: 100 , coming_future: 100}, ejecútelo y observe la salida
+
+
+```ruby
+def some_function first_arg, others_as_hash
+  puts "Your first argument is: #{first_arg}"
+  puts "Other arguments are:"
+  p others_as_hash
+end
+
+some_function "Yoda", {jedi: 100, sword: 100, seeing_future: 100}
+```
+
+Salida
+```
+Your first argument is: Yoda
+Other arguments are:
+{:jedi=>100, :sword=>100, :seeing_future=>100}
+```
+
+Como esperábamos, el programa imprime el primer argumento y el hash pasó a otros_como_hash, bueno, este no es una sorpresa, pero eche un vistazo al programa hashes_to_function_1.rb a continuación, ejecútelo, su salida será la misma que el programa anterior
+
+```ruby
+def some_function first_arg, others_as_hash
+  puts "Your first argument is: #{first_arg}"
+  puts "Other arguments are:"
+  p others_as_hash
+end
+
+some_function "Yoda", jedi: 100, sword: 100, seeing_future: 100
+```
+
+
+Pero solo tenga en cuenta esta parte, hemos llamado a alguna_función como se muestra
+
+```
+some_function "Yoda", jedi: 100, sword: 100, seeing_future: 100
+```
