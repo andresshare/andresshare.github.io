@@ -5,7 +5,7 @@ date:   2019-08-30 19:30:20 +0530
 categories: Ruby
 ---
 
-![Ruby poder sin limites](https://media.giphy.com/media/HChtj3gzcVsXK/giphy.gif)
+![Ruby poder sin limites](https://media.giphy.com/media/fvTcwoL2948POj6SIL/giphy.gif)
 
 
 # RUBY - PODER SIN LIMITES  💎
