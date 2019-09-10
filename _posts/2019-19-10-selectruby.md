@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Como funciona el metodo select en Ruby"
-date:   2019-19-09 22:08:10 +0530
+date:   2019-1-09 22:08:10 +0530
 categories: ruby
 ---
 
