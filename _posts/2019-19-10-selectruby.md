@@ -119,7 +119,7 @@ si se ha preguntado cual es el OPUESTO de select
 
 [1,2,3,4,5,6].select { |n| n != 4 }
 ```
-En el ejemplo anterior puede eliminar elementos que no quiere. evitado la opcion de los que si quiere
+En el ejemplo anterior puede eliminar elementos que no quiere. evitando la opcion de los que si quiere
 
 entonces con ```reject```
 
