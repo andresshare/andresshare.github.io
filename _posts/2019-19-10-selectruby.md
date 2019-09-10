@@ -2,7 +2,7 @@
 layout: post
 title:  "Como funciona el metodo select en Ruby"
 date:   2019-08-9 22:08:10 +0530
-categories: Ruby
+categories: Ruby 💎
 ---
 
 
