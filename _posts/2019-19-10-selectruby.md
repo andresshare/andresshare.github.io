@@ -104,7 +104,7 @@ Eureka!
 ``` find_all``` es un alias para ```select```
 ```find``` le permite buscar un objeto especifico.
 
-en ruby 2.6 añade otro alias para  ```select```
+en RUBY 2.6 añade otro alias para  ```select```
 
 ```ruby
 filter
