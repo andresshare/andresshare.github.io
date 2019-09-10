@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Como funciona el metodo select en Ruby"
-date:   2019-08-9 22:08:10 +0530
+date:   2019-09-9 22:08:10 +0530
 categories: Ruby 💎
 ---
 
@@ -11,7 +11,7 @@ categories: Ruby 💎
 ![.select en Ruby](https://media.giphy.com/media/xUn3CftPBajoflzROU/giphy-downsized-large.gif)
 
 
-Su usa para filtrar una matriz de objetos.
+Se usa para filtrar una matriz de objetos.
 
 revise este ejemplo
 
