@@ -1,9 +1,11 @@
 ---
 layout: post
 title:  "Como funciona el metodo select en Ruby"
-date:   2019-1-09 22:08:10 +0530
-categories: ruby
+date:   2019-08-9 22:08:10 +0530
+categories: Ruby
 ---
+
+
 
 
 ![.select en Ruby](https://media.giphy.com/media/xUn3CftPBajoflzROU/giphy-downsized-large.gif)
