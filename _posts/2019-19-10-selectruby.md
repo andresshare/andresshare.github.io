@@ -129,7 +129,7 @@ esta opcion no tiene mejora en rendimiento.lo que si ocurrira es mas legible.
 
 HABLEMOS DE **RAILS**
 
-Si ha trabajado con rails & models sabe que tambien puede usar  ```select```
+Si ha trabajado con ```rails & models``` sabe que tambien puede usar  ```select```
 
 ```ruby
 Car.select(:id, model:, :color)
