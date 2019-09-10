@@ -6,7 +6,7 @@ categories: ruby
 ---
 
 
-![select en Ruby](https://media.giphy.com/media/xUn3CftPBajoflzROU/giphy-downsized-large.gif)
+![.select en Ruby](https://media.giphy.com/media/xUn3CftPBajoflzROU/giphy-downsized-large.gif)
 
 
 Su usa para filtrar una matriz de objetos.
