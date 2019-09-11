@@ -34,6 +34,8 @@ antes de esto hago un resumen de como funciona la cosa,para  que en lo posible h
 # QUE DIABLOS ES TESTING!
 
 ![Que es testing](https://media.giphy.com/media/l49JD2nWqfZ7exBzW/giphy.gif)
+
+
 Cuando escribimos código, necesitamos ejecutarlo para asegurarnos de que está haciendo lo que esperamos. 
 
 > Las pruebas son un contrato con nuestro código: dado un valor, esperamos que se devuelva un determinado resultado.
@@ -244,10 +246,9 @@ def test_end_to_end():
 
 Cada caso de prueba se puede separar en las siguientes fases:
 
-    - configurar el sistema bajo prueba (SUT) en el entorno requerido por el caso de prueba (condiciones previas)
-    - realizando la acción que queremos probar en SUT
-    verificar si se produjo el resultado esperado (postcondiciones)
-    - derribar SUT y devolver el medio ambiente al estado en que lo encontramos
+- configurar el sistema bajo prueba (SUT) en el entorno requerido por el caso de prueba (condiciones previas)
+- realizando la acción que queremos probar en SUT verificar si se produjo el resultado esperado (postcondiciones)
+- derribar SUT y devolver el medio ambiente al estado en que lo encontramos
 
 Hay dos marcos ampliamente utilizados para estructurar pruebas: Arrange-Act-Assert y Given-When-Then.
 Organizar-Actuar-Afirmar (AAA)
