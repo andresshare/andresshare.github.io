@@ -155,4 +155,4 @@ Hasta la proxima!
 
 recuerda puedes mirar esta guia de ruby
 
-💎 [Ruby poder sin limites](https://andresshare.github.io/ruby/2019/08/30/ruby-podersinlimites.html)
+💎 [Ruby poder sin limites](https://soyandresbernal.github.io/ruby/2019/08/30/ruby-podersinlimites.html)
