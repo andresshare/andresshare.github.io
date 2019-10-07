@@ -5,7 +5,17 @@ date:   2019-08-30 19:30:20 +0530
 categories: Ruby
 ---
 
+
 ![Ruby poder sin limites](https://media.giphy.com/media/fvTcwoL2948POj6SIL/giphy.gif)
+
+###Sigueme en mis redes
+
+<a  class="fa fa-facebook" href="https://www.facebook.com/abtechnow/"> abtechnow </a>
+<a  class="fa fa-instagram" href="https://www.instagram.com/soyandresbernal//"> soyandrebernal </a>
+<a  class="fa fa-instagram" href="https://www.instagram.com/abtechnow//"> abtechnow </a>
+
+<i class=""></i>
+
 
 
 # RUBY - PODER SIN LIMITES  💎
@@ -13,27 +23,21 @@ categories: Ruby
 Mi intencion es empezar de 0 con el lenguaje de **RUBY** creado por **Yukihiro Matsumoto** y tocar los puntos mas importantes para su uso.
 
 **Adelante!!**
-
-
-Despues de instalar ruby en nuestro sistema operativo, corremos IRB en la consola del sistema operativo
-
 ---
+
 ### FLUJO DE TRABAJO
 
  Creamos nuestro: 
  
-    Archivo.rb >  💎 IRB interprete  > 💻 ejecutamos el programa
+    main.rb >  💎 Editor de codigo > 💻 ejecutamos el programa
 
 
  **Vamos al primer script**
 
-
-
-
- Despues de crear **Archivo.rb** en **IRB** escribimos
+Despues de crear **main.rb** escribimos
  
 
-<iframe height="400px" width="100%" src="https://repl.it/@soyandresbernal/puts-Hello-Ruby?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+[](https://gist.github.com/soyandresbernal/319a52400ddd461787328f4cfea9d236.js)
 
 
 ⌨️ Ejecutamos en modo consola

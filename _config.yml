@@ -17,9 +17,10 @@ plainwhite:
 
   # generate social links in footer
   social_links:
-    twitter: andresshare
-    github:  andresshare
-    instagram: soyandresbernal    
+    instagram: soyandresbernal   
+    facebook: abtechnow
+    twitter:  andrescarlsen
+   
     # dribbble: jekyll
     # facebook: jekyll
     # flickr:   jekyll
@@ -49,3 +50,10 @@ theme: plainwhite
 plugins:
   - jekyll-seo-tag
 #  - jekyll-feed
+
+
+---
+layout: default
+comments: true
+# other options
+---
