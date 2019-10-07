@@ -6,6 +6,7 @@ categories: ruby
 ---
 ![odin](https://media.giphy.com/media/QJZvfHyy0nd3a/giphy.gif)
 
+
 # Pincelada de CONCEPTOS DE RUBY
 
 ### Significado del lenguaje de programacion ruby
@@ -150,6 +151,8 @@ Algunas de las respuestas estan al leer el contenido de este blog,
  👀 Mira este enlace:
 
  💎 [Ruby poder sin limites](https://soyandresbernal.github.io/ruby/2019/08/30/ruby-podersinlimites.html) 
+
+
 
 otras le dare en un siguiente post! 
 

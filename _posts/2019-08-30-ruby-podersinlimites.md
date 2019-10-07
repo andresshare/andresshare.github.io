@@ -31,10 +31,7 @@ despues de instalar ruby en nuestro sistema operativo, corremos IRB en la consol
 
  Despues de crear **Archivo.rb** en **IRB** escribimos
  
-```rb
-
-puts "HELLO RB"
-```
+<iframe height="400px" width="100%" src="https://repl.it/@soyandresbernal/puts-Hello-Ruby?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ⌨️ Ejecutamos en modo consola
 
