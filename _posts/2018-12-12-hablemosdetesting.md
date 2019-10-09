@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Hablemos de testing -python 🐍"
+title:  " 🐍  Hablemos de testing -Python "
 date:   2018-12-12 19:05:10 +0530
 categories: python 🐍
 ---

@@ -145,7 +145,13 @@ Un patio de juegos Ruby para investigadores de IA.
 
  > Ruby no es perfecto 
 
-   ```A pesar de la alta velocidad de desarrollo,Ruby no demuestra el mejor rendimiento. Por un lado, Ruby realiza muchas operaciones para la conveniencia del desarrollador, incluida la administración de memoria para la escritura dinámica. Por otro lado, por supuesto, el volumen de las operaciones afecta la velocidad de ejecución. Este criterio no es el más problemático, pero podría ser mejor. ```
+
+```
+A pesar de la alta velocidad de desarrollo,Ruby no demuestra el mejor rendimiento. Por un lado, Ruby realiza muchas operaciones para la conveniencia del desarrollador, incluida la 
+administración de memoria para la escritura dinámica. 
+Por otro lado, por supuesto, el volumen de las operaciones afecta la velocidad de ejecución. 
+Este criterio no es el más problemático, pero podría ser mejor. 
+```
 
 
 Ruby multithreading es lento. El algoritmo multihilo de Ruby es algo impredecible: puede cambiar de un hilo a otro en cualquier momento y es difícil de predecir o controlar. Esto afecta el resultado de procesar datos y realizar cambios y, en general, la velocidad de todo el proceso. En este momento, ```la comunidad Ruby está trabajando en este tema.```

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "RUBY -PODER SIN LIMITES 💎"
+title:  "💎 RUBY - Poder sin limites "
 date:   2019-08-30 19:30:20 +0530
 categories: Ruby
 ---
@@ -8,19 +8,19 @@ categories: Ruby
 
 ![Ruby poder sin limites](https://media.giphy.com/media/fvTcwoL2948POj6SIL/giphy.gif)
 
-###Sigueme en mis redes
+### Sígueme en mis redes
 
 <a  class="fa fa-facebook" href="https://www.facebook.com/abtechnow/"> abtechnow </a>
 <a  class="fa fa-instagram" href="https://www.instagram.com/soyandresbernal//"> soyandrebernal </a>
 <a  class="fa fa-instagram" href="https://www.instagram.com/abtechnow//"> abtechnow </a>
 
-<i class=""></i>
+
 
 
 
 # RUBY - PODER SIN LIMITES  💎
 
-Mi intencion es empezar de 0 con el lenguaje de **RUBY** creado por **Yukihiro Matsumoto** y tocar los puntos mas importantes para su uso.
+Mi intención es empezar de 0 con el lenguaje de **RUBY** creado por **Yukihiro Matsumoto** y tocar los puntos mas importantes para su uso.
 
 **Adelante!!**
 ---

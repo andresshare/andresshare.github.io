@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "OOP[Programacion orientada a objetos] "
+title:  "OOP [Programacion orientada a objetos] "
 date:   2014-03-09 20:00:15 +0530
 categories: Concepto
 ---
@@ -40,7 +40,7 @@ Las matrices son objeto, la clase es objeto, los módulos son objeto, el rango t
 
 La sintaxis para escribir la clase en ruby ​​es sencilla, solo debe escribir la palabra clave **class** y **class name**. El método dentro de la clase es pequeño y la sintaxis de mayúsculas y minúsculas es más preferida. La variable de instancia de clase en ruby ​​se puede iniciar con el **símbolo @**.
 
-E **initilize** es la función especial de la clase que se llama automáticamente cuando se crea el objeto. Para crear el Objeto de la clase podemos usar la sintaxis **ClassName.new.** Uno de los ejemplos simples es el siguiente.
+E **initialize** es la función especial de la clase que se llama automáticamente cuando se crea el objeto. Para crear el Objeto de la clase podemos usar la sintaxis **ClassName.new.** Uno de los ejemplos simples es el siguiente.
 
 
 ```ruby
@@ -240,7 +240,7 @@ u.start_date = Date.today - 365
 puts u.employment_length
 ```
 
-###Constantes
+### Constantes
 
 Las constantes en rubí son muy similares a las constantes en cualquier otro idioma, violan la mutación del valor. Parece variable pero comienza con mayúscula. Es una convención que toda la letra de la constante debe estar en mayúscula.
 ```ruby

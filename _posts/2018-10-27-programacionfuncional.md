@@ -46,6 +46,7 @@ Al hablar de programación funcional pondré sobre la mesa dos conceptos importa
     sumFunc(20, function() { return 24 }); // => 44
 ```
 * un número puede ser retornado desde una función y así puede hacerlo una función: 
+
 ```javascript
 return 42;
 return function() { return 42 };

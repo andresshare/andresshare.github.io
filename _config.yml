@@ -1,59 +1,51 @@
-title: andresshare[@soyandresbernal]
-author: andresshare
-email: andresshare@gmail.com
-description: > # this means to ignore newlines until "show_exerpts:"
-  Hola,🙂soy Andres Bernal cree este blog sobre temas de javascript y python
-show_excerpts: true # set to true to show excerpts on the homepage
+title: Abtechnow
+description: Andres Bernal -abtechnow
+author: Andres Bernal
+github: https://github.com/soyandresbernal
+about: I'm Programmer for  .js/.rb/.py.
+disqus_shortname: soyandresbernal
+google_analytics: UA-XXXXXXXX-Y
 
-# Minima date format
-# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
-sass:
-  sass_dir: _sass
-plainwhite:
-  name: Andres Bernal
-  tagline: Developer.
-  date_format: "%b %-d, %Y"
-  sitemap: true # set to true to generate sitemap.xml content
+enableTags: true
+tagarray: []
 
-  # generate social links in footer
-  social_links:
-    instagram: soyandresbernal   
-    facebook: abtechnow
-    twitter:  andrescarlsen
-   
-    # dribbble: jekyll
-    # facebook: jekyll
-    # flickr:   jekyll
-    # pinterest: jekyll
-    # youtube: jekyll
-    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
-    # youtube_channel_name: CloudCannon
-    # telegram: jekyll
-    # googleplus: +jekyll
-    # microdotblog: jekyll
+collections:
+  project:
+    output: true
+    permalink: /project/:path/
 
-    # Mastodon instances
-    # mastodon:
-    # - username: jekyll
-    #   instance: example.com
-    # - username: jekyll2
-    #   instance: example.com
+social:
+    - icon: fa-facebook
+      link: "https://www.facebook.com/abtechnow"
+    - icon: fa-twitter
+      link: "https://twitter.com/AndresCarlsen"
+    - icon: fa-instagram
+      link: "https://www.instagram.com/abtechnow"
+    - icon: fa-github
+      link: "https://github.com/soyandresbernal"
 
-# If you want to link only specific pages in your header, uncomment
-# this and add the path to the pages in order as they should show up
-#header_pages:
-# - about.md
+share:
+  twitter_username: github.io
+  fb_appid: 1749788565247320
 
-# Build settings
-theme: plainwhite
+urls:
+    - text: About Me
+      url: /about/
+    
 
-plugins:
-  - jekyll-seo-tag
-#  - jekyll-feed
+url: "https://soyandresbernal.github.io"
+baseurl: ""
+paginate: 20
+per_page: 20
+paginate_path: "/page/:num/"
+markdown: kramdown
+gems:
+  - jekyll-paginate
+  - jekyll-gist
 
-
----
-layout: default
-comments: true
-# other options
----
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: ['development']

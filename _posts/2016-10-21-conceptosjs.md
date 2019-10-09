@@ -14,7 +14,7 @@ para el manejo del lenguaje
 
 Empecemos!!
 
-##Variables
+## Variables
 Son valores asignados a memoria
 
 ```javascript
