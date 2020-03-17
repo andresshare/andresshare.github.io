@@ -1,0 +1,2 @@
+I"|<p>Parsing JSON with Ruby is actually extremely easy. All you have to do is have the json gem installed (<code class="highlighter-rouge">gem install json</code>) and call the <code class="highlighter-rouge">JSON.parse</code> method on the JSON data to convert it to ruby hashes. If you look at this small program here, you can see how I have implemented parsing JSON in Ruby.</p>
+:ET

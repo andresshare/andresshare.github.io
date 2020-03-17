@@ -1,4 +1,4 @@
-I"ëC<p><img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="OOP" /></p>
+I"D<p><img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="OOP" /></p>
 
 <p><strong>REACTJS</strong>  Es una libreria de codigo abierto creada y soportada por facebook,
 El primer paso para entender reactjs es que usamos codigo javascript con una extension <em>JSX</em>  que permite escribir <em>HTML</em> directamente sobre javascript al crear proyectos  SPAâ€™s (Single Page Application), nos permitira tener un codigo mas legible y facil de mantener</p>
@@ -1108,11 +1108,12 @@ sin embargo  escribi esto <code class="highlighter-rouge">&lt;br&gt;&lt;/br&gt;<
 </span>
 </code></pre></div></div>
 
+<p>revisa esto!!</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nx">Class</span> <span class="nx">Colorful</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="nx">color</span><span class="o">&gt;</span><span class="nx">Big</span> <span class="nx">Red</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="nx">color</span><span class="o">&gt;</span><span class="nx">Big</span> <span class="nx">Red</span> <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
 </span>    <span class="p">);</span>
   <span class="p">}</span>
 <span class="p">};</span>
