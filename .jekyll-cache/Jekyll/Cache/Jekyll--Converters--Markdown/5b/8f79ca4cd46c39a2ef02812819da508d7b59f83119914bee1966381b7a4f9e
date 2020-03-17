@@ -1,4 +1,4 @@
-I"2E<p><img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="OOP" /></p>
+I"�C<p><img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="OOP" /></p>
 
 <p><strong>REACTJS</strong>  Es una libreria de codigo abierto creada y soportada por facebook,
 El primer paso para entender reactjs es que usamos codigo javascript con una extension <em>JSX</em>  que permite escribir <em>HTML</em> directamente sobre javascript al crear proyectos  SPA’s (Single Page Application), nos permitira tener un codigo mas legible y facil de mantener</p>
@@ -1098,15 +1098,15 @@ sin embargo  escribi esto <code class="highlighter-rouge">&lt;br&gt;&lt;/br&gt;<
 <p>Usted aplica estilos en línea a elementos JSX similares a cómo lo hace en HTML, pero con algunas diferencias JSX. Aquí hay un ejemplo de un estilo en línea en HTML:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"color"</span><span class="na">:</span> <span class="err">"</span><span class="na">red</span><span class="err">","</span><span class="na">font-size</span><span class="err">"</span><span class="na">:</span> <span class="err">"</span><span class="na">20px</span><span class="err">"</span><span class="nt">&gt;</span>red redow <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"color: red,font-size: 20px"</span><span class="nt">&gt;</span>red redow <span class="nt">&lt;/div&gt;</span>
 
 </code></pre></div></div>
-
 <p>Los elementos JSX usan el atributo de estilo, pero debido a la forma en que JSX se transpila, no puede establecer el valor en una cadena. En su lugar, lo establece igual a un objeto de JavaScript. Aquí hay un ejemplo:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="nx">color</span><span class="p">:</span><span class="o">&gt;</span><span class="nx">red</span> <span class="nx">redow</span> <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span></code></pre></div></div>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=&gt;</span><span class="nx">red</span> <span class="nx">redow</span> <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
+</code></pre></div></div>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nx">Class</span> <span class="nx">Colorful</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
