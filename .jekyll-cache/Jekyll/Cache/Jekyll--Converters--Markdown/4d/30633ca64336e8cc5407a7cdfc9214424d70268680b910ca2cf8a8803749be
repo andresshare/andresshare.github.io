@@ -1,0 +1,206 @@
+I"bC<p><img src="https://media.giphy.com/media/ReImZejkBnqYU/giphy.gif" alt="OOP" /></p>
+
+<p>Un closure es una función que es libre de variables, esto quiere decir que las variables de la función padre funcionan, pero el closure no tiene variables propias.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">padre</span><span class="p">()</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">closure</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">closure</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="nx">padre</span><span class="p">();</span>
+
+</code></pre></div></div>
+
+<p>Profundicemos ,un <strong>clousure</strong> es una función con estado que es devuelta por otra función. Actúa como un contenedor para recordar variables y parámetros de su ámbito principal, incluso si la función principal ha terminado de ejecutarse. Considere este simple ejemplo.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// anonymous function/nameless function</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="kd">const</span> <span class="nx">hello</span> <span class="o">=</span> <span class="nx">sayHello</span><span class="p">();</span> <span class="c1">// hello holds the returned function</span>
+<span class="nx">hello</span><span class="p">();</span> <span class="c1">// -&gt; Hello World</span>
+</code></pre></div></div>
+
+<p>¡Observe! ¡Tenemos una función que devuelve una función! La función devuelta se guarda en una variable e invoca la línea a continuación.</p>
+
+<h3 id="muchas-formas-de-escribir-el-mismo-código">¡Muchas formas de escribir el mismo código!</h3>
+
+<p>Ahora que sabe qué es un clousure en un nivel básico, aquí hay algunas formas de escribir el mismo código que el anterior</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// original</span>
+<span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// anonymous function</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="c1">// #1</span>
+<span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="kd">function</span> <span class="nx">hello</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// named function</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="c1">// #2</span>
+<span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="kd">function</span> <span class="nx">hello</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// named function</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">hello</span><span class="p">;</span> <span class="c1">// return inner function on a different line</span>
+<span class="p">}</span>
+
+
+<span class="c1">// #3</span>
+<span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">hello</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="c1">// arrow function</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">hello</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>¡Elija un estilo que más le guste y manténgalo porque todas las variaciones anteriores seguirán imprimiendo el mismo resultado!</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">hello</span> <span class="o">=</span> <span class="nx">sayHello</span><span class="p">();</span>
+<span class="nx">hello</span><span class="p">();</span> <span class="c1">// -&gt; Hello World</span>
+</code></pre></div></div>
+
+<h3 id="beneficios-de-clousure-y-cómo-puede-ser-práctico">Beneficios de clousure y cómo puede ser práctico</h3>
+
+<p><strong>Private Namespace</strong></p>
+
+<p>Es genial que la función interna recuerde el entorno en el que se creó, pero ¿qué uso tiene? Una pareja. Primero, puede mantener sus variables privadas. Aquí está el clásico ejemplo contrario.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">counter</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">count</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">count</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="kd">const</span> <span class="nx">increment</span> <span class="o">=</span> <span class="nx">counter</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">increment</span><span class="p">());</span> <span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">increment</span><span class="p">());</span> <span class="c1">// 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span> <span class="c1">// Reference error: count is not defined</span>
+</code></pre></div></div>
+
+<p>Intentar acceder a la variable de conteo nos da un error de referencia porque no está expuesto al entorno global. Lo que nos ayuda a reducir los errores porque nuestro estado está más estrictamente controlado por métodos específicos</p>
+
+<p><strong>Estados reusables</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">counter</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">count</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">count</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">incrementBananaCount</span> <span class="o">=</span> <span class="nx">counter</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">incrementAppleCount</span> <span class="o">=</span> <span class="nx">counter</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">incrementBananaCount</span><span class="p">());</span> <span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">incrementBananaCount</span><span class="p">());</span> <span class="c1">// 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">incrementAppleCount</span><span class="p">());</span> <span class="c1">// 1</span>
+
+</code></pre></div></div>
+
+<p><strong>Modulo diseño patrones</strong></p>
+
+<p>El patrón de diseño del módulo es una convención popular para diseñar sus aplicaciones JavaScript. Utiliza IIFE (Expresión de función invocada inmediatamente) para devolver objetos y expone solo las variables y métodos que desea hacer públicos.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">Dog1</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Suzy</span><span class="dl">"</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">getName</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">changeName</span> <span class="o">=</span> <span class="p">(</span><span class="nx">newName</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">name</span> <span class="o">=</span> <span class="nx">newName</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">getName</span><span class="p">:</span> <span class="nx">getName</span><span class="p">,</span>
+    <span class="na">changeName</span><span class="p">:</span> <span class="nx">changeName</span>
+  <span class="p">}</span>
+<span class="p">}())</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// undefined</span>
+<span class="nx">Dog1</span><span class="p">.</span><span class="nx">getName</span><span class="p">()</span> <span class="c1">// Suzy</span>
+<span class="nx">Dog1</span><span class="p">.</span><span class="nx">changeName</span><span class="p">(</span><span class="dl">"</span><span class="s2">Pink</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">Dog1</span><span class="p">.</span><span class="nx">getName</span><span class="p">()</span> <span class="c1">// Pink</span>
+</code></pre></div></div>
+
+<p>Tan pronto como se ejecuta este código, la función se ejecuta y devuelve un objeto que se guarda en Dog1. Este patrón vuelve a mantener nuestro espacio de nombres privado y solo revela lo que queremos como métodos y variables públicas a través de la forma de un objeto. ¡El estado está encapsulado!</p>
+
+<p><strong>La pregunta famosa en entrevistas</strong></p>
+
+<p><img src="https://media.giphy.com/media/xT0GqssRweIhlz209i/giphy.gif" alt="closure" /></p>
+
+<p>¿Cuál es el resultado de ejecutar la siguiente función?</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+  <span class="p">},</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>¿Por qué es esta una pregunta de entrevista tan popular? ¡Porque pone a prueba su conocimiento del alcance de la función / alcance del bloque, cierre, setTimeout y función anónima! La respuesta imprime cinco 5 después de 1 segundo.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
+5
+5
+5
+5
+</code></pre></div></div>
+
+<p>¿Cómo? Bueno, setTimeout se ejecuta 5 veces en el ciclo después de 1 segundo. Después del retraso de tiempo, ejecutan funciones dentro, lo que simplemente cierra la sesión i. Cuando ha pasado 1 segundo, el ciclo ya terminó y me convertí en 5. Se imprimen cinco 5s. ¿No es lo que esperabas? Probablemente quiera ver los números 1 a 5 de forma iterativa.</p>
+
+<p><strong>La respuesta</strong></p>
+
+<p>Hay algunas soluciones, ¡pero centrémonos en usar el cierre!</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">((</span><span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}(</span><span class="nx">i</span><span class="p">)),</span> <span class="mi">2000</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Tenemos nuestro closure que es devuelto por una función anónima para recibir ‘i’ actuales como argumentos y generarlos como ‘index’. Al hacerlo, captura la variable actual i para cada función. y muestra el resultado</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 (...1000ms have passed)
+1 (...1000ms have passed)
+2 (...1000ms have passed)
+3 (...1000ms have passed)
+4 (...1000ms have passed)
+5 (loop exits)
+</code></pre></div></div>
+
+<p>¡Felicidades! 🎉 ¡Ahora está más preparado para su próxima entrevista! 😉 Solo recuerde que</p>
+
+<blockquote>
+  <p>El clousure es una función que tiene acceso al alcance que encierra esa función.</p>
+</blockquote>
+
+:ET

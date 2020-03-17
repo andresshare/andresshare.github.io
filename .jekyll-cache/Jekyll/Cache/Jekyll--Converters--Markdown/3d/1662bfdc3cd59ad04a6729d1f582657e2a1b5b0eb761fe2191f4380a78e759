@@ -1,0 +1,4 @@
+I"R<p><img src="https://media.giphy.com/media/XCfBFvZcs5lsc/giphy.gif" alt="OOP" /></p>
+
+<p>El Operador doble igual (==): compara 2 valores PERO lo hace sin chequear el ​tipo ​delas variables.En cambio, el Operador triple igual (===) chequea el contenido de la variable y además,chequea que las dos variables sean del mismo ​tipo</p>
+:ET

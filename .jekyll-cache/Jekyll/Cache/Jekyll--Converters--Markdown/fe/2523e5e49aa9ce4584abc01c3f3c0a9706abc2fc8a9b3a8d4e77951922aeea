@@ -1,0 +1,462 @@
+I"��<p><img src="https://media.giphy.com/media/4H3Ii5eLChYul9p7NL/giphy-downsized-large.gif" alt="Grapql" /></p>
+
+<p>En este artículo, explicare desde mi punto de vista  GraphQL, Apollo-client y cómo implementar ambos en nuestra aplicación.</p>
+
+<h1 id="que-es-graphql">Que es GraphQL?</h1>
+
+<p>GraphQL es un poderoso lenguaje de consulta que permite comunicar datos entre el cliente y el servidor. Es un enfoque más flexible y eficiente que REST.</p>
+
+<p>Ciertamente, no necesitamos GraphQL en todas las situaciones para la comunicación de datos, pero en algunos escenarios graphql puede ser un enfoque muy optimizador. Por ejemplo, supongamos que necesitamos construir un sistema de gestión de automóviles. En esta aplicación con fines de aprendizaje tenemos los siguientes casos posibles:
+1) Un automóvil puede tener múltiples propietarios.
+2) Un propietario puede tener varios autos.</p>
+
+<p>Teniendo en cuenta los casos anteriores, en el enfoque REST podemos tener 2 API paramount en nuestra pila:</p>
+
+<p>=&gt; Punto final para obtener un solo automóvil.
+API :: ‘domainName / api / car /: id’
+Respuesta :: ‘nombre, modelo, empresa, ID de propietario</p>
+
+<p>=&gt; Punto final para obtener información del propietario.
+API :: ‘domainName / api / owner /: id’
+Respuesta :: ‘nombre, edad, género, carIds</p>
+
+<p>Imaginemos lo que sucede si necesitamos información de un solo automóvil con detalles del Propietario y otros automóviles de su propiedad. En este caso, debemos realizar muchos golpes de API según el número de automóviles que poseía. Podríamos quedar atrapados en problemas de rendimiento si nuestra aplicación tiene una gran base de clientes. Para manejar este problema en gran medida, tenemos un mejor enfoque para este tipo de escenarios. Podemos usar graphql aquí.</p>
+
+<p>Un enfoque GraphQL para este tipo de escenarios puede ser:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">{</span>
+   <span class="n">car</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="m">3</span><span class="p">){</span>
+    <span class="n">name</span>
+    <span class="k">model</span>
+    <span class="n">company</span>
+    <span class="n">Owner</span> <span class="p">{</span>
+      <span class="n">name</span>
+      <span class="n">age</span>
+      <span class="n">cars</span><span class="p">{</span>
+        <span class="n">name</span>
+        <span class="n">company</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+   <span class="p">}</span>
+
+   <span class="p">//</span><span class="k">or</span>
+   <span class="n">car</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="m">3</span><span class="p">){</span>
+     <span class="n">name</span>
+     <span class="n">Owner</span><span class="p">{</span>
+       <span class="n">name</span>
+       <span class="n">gender</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Toda esta información se recopilará presionando una sola API solo una vez. Ese es el poder de graphql. Entonces empecemos.</p>
+
+<p><img src="https://media.giphy.com/media/TJgC63xIXGtRvs3Jix/giphy.gif" alt="project" /></p>
+
+<p><strong>IMPLEMENTACION DEL LADO DEL SERVIDOR</strong></p>
+
+<p>En primer lugar, debe descargar la última versión de NODE en su sistema. Después de instalarlo. Puede usar el editor VSCode ATOM para el desarrollo. Es gratis.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Anbra</span><span class="w"> </span><span class="err">la</span><span class="w"> </span><span class="err">terminal</span><span class="w"> </span><span class="err">en</span><span class="w"> </span><span class="err">VScode</span><span class="w"> 
+  </span><span class="mi">1</span><span class="err">)</span><span class="w"> </span><span class="err">crear</span><span class="w"> </span><span class="err">carpeta</span><span class="w"> </span><span class="err">MERNAPP</span><span class="w">
+  </span><span class="mi">2</span><span class="err">)</span><span class="w"> </span><span class="err">cd</span><span class="w"> </span><span class="err">MERNAPP</span><span class="w">
+  </span><span class="mi">3</span><span class="err">)</span><span class="w"> </span><span class="err">crear</span><span class="w"> </span><span class="err">folder</span><span class="w"> </span><span class="err">server</span><span class="w">
+  </span><span class="mi">4</span><span class="err">)</span><span class="w"> </span><span class="err">Hit</span><span class="w"> </span><span class="s2">"npm init"</span><span class="w"> </span><span class="err">en</span><span class="w"> </span><span class="err">la</span><span class="w"> </span><span class="err">terminal</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">comandos.</span><span class="w">
+  </span><span class="mi">5</span><span class="err">)</span><span class="w"> </span><span class="err">Presione</span><span class="w"> </span><span class="s2">"Enter"</span><span class="w"> </span><span class="err">hasta</span><span class="w"> </span><span class="err">que</span><span class="w"> </span><span class="err">termine</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">preguntar</span><span class="w">
+
+  </span><span class="err">//despues</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">crear</span><span class="w"> </span><span class="err">package.json,</span><span class="w"> </span><span class="err">Instale</span><span class="w"> </span><span class="err">los</span><span class="w"> </span><span class="err">siguientes</span><span class="w"> </span><span class="err">package.</span><span class="w">
+
+  </span><span class="mi">6</span><span class="err">)</span><span class="w"> </span><span class="err">npm</span><span class="w"> </span><span class="err">install</span><span class="w"> </span><span class="err">express</span><span class="w"> </span><span class="err">express-graphql</span><span class="w"> </span><span class="err">graphql</span><span class="w"> </span><span class="err">lodash</span><span class="w"> </span><span class="err">mongoose</span><span class="w"> </span><span class="err">cors</span><span class="w"> </span><span class="err">--save</span><span class="w">
+
+  </span><span class="err">//el</span><span class="w"> </span><span class="err">package.json</span><span class="w"> </span><span class="err">se</span><span class="w"> </span><span class="err">mostrara</span><span class="w"> </span><span class="err">asi:</span><span class="w">
+
+  </span><span class="err">//package.json</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"server"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server with Graphql &amp; mongodb"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo </span><span class="se">\"</span><span class="s2">Error: no test specified</span><span class="se">\"</span><span class="s2"> &amp;&amp; exit 1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vinod Chauhan"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cors"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^2.8.5"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"express"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.17.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"express-graphql"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.9.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"graphql"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^14.5.4"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lodash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.17.15"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mongoose"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^5.6.13"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Mas adelante explicare el uso de cada paquete</p>
+
+<p>Configuremos Express</p>
+
+<p>En VS Editor en  la carpeta ‘server’ , crear un nuevo archivo ‘app.js’.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 
+<span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">express</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Server is listening on port 4000</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<p>Para ejecutar esta app.js, primero descargue ‘nodemon’ en su sistema de manera global para que no necesite iniciar / detener la aplicación una y otra vez para ver los cambios.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">//Instale nodemon package</span>
+   <span class="nx">npm</span> <span class="nx">install</span> <span class="nx">nodemon</span> <span class="o">-</span><span class="nx">g</span>
+
+   <span class="c1">//Corra su app.js con nodemon</span>
+   <span class="nx">nodemon</span> <span class="nx">app</span><span class="p">.</span><span class="nx">js</span>
+   <span class="p">[</span><span class="nx">nodemon</span><span class="p">]</span> <span class="mf">1.19</span><span class="p">.</span><span class="mi">1</span>
+   <span class="p">[</span><span class="nx">nodemon</span><span class="p">]</span> <span class="nx">to</span> <span class="nx">restart</span> <span class="nx">at</span> <span class="nx">any</span> <span class="nx">time</span><span class="p">,</span> <span class="nx">enter</span> <span class="s2">`rs`</span>
+   <span class="p">[</span><span class="nx">nodemon</span><span class="p">]</span> <span class="nx">watching</span><span class="p">:</span> <span class="o">*</span><span class="p">.</span><span class="o">*</span>
+   <span class="p">[</span><span class="nx">nodemon</span><span class="p">]</span> <span class="nx">starting</span> <span class="s2">`node app.js`</span>
+   <span class="nx">Server</span> <span class="nx">is</span> <span class="nx">listening</span> <span class="nx">on</span> <span class="nx">port</span> <span class="mi">4000</span>
+</code></pre></div></div>
+
+<p>Abre tu favorito. navegador y entrada localhost: 4000, mostrará una página en blanco a partir de ahora.</p>
+
+<p>Si ha completado hasta este punto, configuraremos graphql en express en nuestro siguiente paso</p>
+
+<h3 id="setup-graphql-en-express-app">Setup GraphQL en Express app</h3>
+
+<p>Nuestro servidor ‘express-graphql’ ayudará al servidor express a comprender sobre graphql y nos permitirá hacer nuestro trabajo.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Obtenga la biblioteca express de node_modules que acabamos de descargar.</span>
+   <span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">express</span><span class="dl">"</span><span class="p">);</span>
+
+   <span class="kd">const</span> <span class="nx">graphqlHTTP</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">express-graphql</span><span class="dl">"</span><span class="p">);</span>
+
+   <span class="c1">//Hacer const de express () en una variable (función JS objeto de primera clase).</span>
+   <span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+
+   <span class="cm">/*Podemos usar graphql en el servidor express con middlewares, para que siempre necesitamos una consulta graphql de la interfaz, nuestro servidor express puede manejarla
+   suavemente.
+    
+   El método graphqlHTTP nos permite hacer lo que queremos hacer si hemos capturado
+    Middleware '/ graphql'.
+   */</span>
+   <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="dl">"</span><span class="s2">/graphql</span><span class="dl">"</span><span class="p">,</span> <span class="nx">graphqlHTTP</span><span class="p">({}));</span>
+
+   <span class="c1">//Cuando se inicie nuestra aplicación, escuchará en el puerto 4000</span>
+   <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Server is listening on port 4000</span><span class="dl">"</span><span class="p">);</span>
+   <span class="p">});</span>
+</code></pre></div></div>
+
+<p>En el tipo de navegador: localhost: 4000 / graphql
+Al ejecutar app.js, actualmente nos dará un error que dice:</p>
+<blockquote>
+  <p>{“errors”:[{“message”:”GraphQL middleware options must contain a schema.”}]}</p>
+</blockquote>
+
+<p>No se preocupe, nuestro próximo paso es solo configurar el esquema Graphql.</p>
+
+<h3 id="configurando-graphql-schema">Configurando GraphQL Schema</h3>
+
+<p>En la carpeta del servidor, cree la carpeta ‘scheme’ y cree ‘schema.js’ en ella.
+El archivo de esquema tiene principalmente 3 responsabilidades principales que hacer.</p>
+
+<p>1) Crear tipos a partir del objeto ‘GraphQLObjectType’.
+2) Definir relación entre tipos.
+3) Defina ‘RootQueries’ para permitir que el usuario ingrese al gráfico y use datos.</p>
+
+<p>Como el archivo schema.js tiene el rol principal al final del servidor, así lo completaremos gradualmente paso a paso.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// schema.js</span>
+
+<span class="kd">const</span> <span class="nx">graphql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">graphql</span><span class="dl">"</span><span class="p">);</span> <span class="c1">//use el paquete graphql</span>
+
+<span class="cm">/*
+Obteniendo la función GraphQLObjectType de 'graphql' para definir el (dataType)
+estructura de nuestras consultas y su tipo de modelo.
+*/</span>
+<span class="kd">const</span> <span class="p">{</span>
+  <span class="nx">GraphQLObjectType</span><span class="p">,</span>
+  <span class="nx">GraphQLID</span><span class="p">,</span>
+  <span class="nx">GraphQLString</span><span class="p">,</span>
+  <span class="nx">GraphQLInt</span><span class="p">,</span>
+  <span class="nx">GraphQLSchema</span>
+<span class="p">}</span> <span class="o">=</span> <span class="nx">graphql</span><span class="p">;</span>
+
+<span class="c1">//Definiendo CarType con sus campos.</span>
+<span class="kd">const</span> <span class="nx">CarType</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GraphQLObjectType</span><span class="p">({</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Car</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">fields</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">({</span>
+    <span class="na">id</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLID</span> <span class="p">},</span>
+    <span class="na">name</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLString</span> <span class="p">},</span>
+    <span class="na">model</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLInt</span> <span class="p">},</span>
+    <span class="na">company</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLString</span> <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+
+<span class="c1">//Definiendo RootQuery</span>
+<span class="kd">const</span> <span class="nx">RootQuery</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GraphQLObjectType</span><span class="p">({</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">RootQueryType</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">fields</span><span class="p">:</span> <span class="p">{</span>
+    <span class="c1">// Los campos aquí serán la consulta de las interfaces.</span>
+    <span class="c1">//Estamos definiendo una consulta 'auto' que puede tomar (ID de auto) para buscar en DB.</span>
+    <span class="na">car</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">type</span><span class="p">:</span> <span class="nx">CarType</span><span class="p">,</span> <span class="c1">//Definir modelo para consulta de coche</span>
+      <span class="na">args</span><span class="p">:</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLID</span> <span class="p">}</span> <span class="p">},</span>  <span class="c1">//el campo args para extraer el argumento vino con la consulta del automóvil, por ejemplo: Id del objeto del automóvil para extraer sus detalles.</span>
+      <span class="nx">resolve</span><span class="p">(</span><span class="nx">parent</span><span class="p">,</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//código para obtener valor de DB</span>
+      <span class="p">}</span> <span class="c1">//resuelve la funcion</span>
+    <span class="p">}</span> <span class="c1">//la consulta del auto termina aquí</span>
+  <span class="p">}</span> <span class="c1">//campos terminan aqui</span>
+<span class="p">});</span>
+
+<span class="c1">//exportando 'GraphQLSchema con RootQuery' para el middleware GraphqlHTTP.</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GraphQLSchema</span><span class="p">({</span>
+  <span class="na">query</span><span class="p">:</span> <span class="nx">RootQuery</span>
+<span class="p">});</span>
+
+
+</code></pre></div></div>
+
+<p>En el archivo anterior schema.js, hemos realizado los siguientes pasos:</p>
+
+<p>1) Se importó ‘graphql’ para usar graphql en el servidor express.</p>
+
+<p>2) Tome diferentes objetos, tipos de datos de la biblioteca graphql.</p>
+
+<p>3) Crear un tipo ‘CarType’ constante con sus campos () desde GraphQLObjectType ().</p>
+
+<p>4) Crear rootQuery ‘RootQuery’ con la consulta de punto final ‘car’ para la función GraphQLSchema.</p>
+
+<p>5) Exportar todo lo anterior como GraphQLSchema con ‘RootQuery’ como argumento en él.</p>
+
+<p>Cambios en App.js</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 
+<span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">express</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">graphqlHTTP</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">express-graphql</span><span class="dl">"</span><span class="p">);</span>
+
+
+<span class="kd">const</span> <span class="nx">schema</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./schema/schema</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+
+<span class="cm">/*Podemos usar graphql en el servidor express con middlewares, para que siempre
+    necesitamos una consulta graphql de la interfaz, nuestro servidor express puede manejarla
+    facil.
+*/</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">/graphql</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">graphqlHTTP</span><span class="p">({</span>
+    <span class="na">schema</span><span class="p">:</span> <span class="nx">schema</span>
+  <span class="p">})</span>
+<span class="p">);</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Server is listening on port 4000</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<p>Hasta ahora, nuestra salida en el navegador ha cambiado pero a algún otro error.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {"errors":[{"message":"Must provide query string."}]}
+
+//Dont worry guys we will remove this error too.
+</code></pre></div></div>
+
+<p><strong>Resolver Funciones</strong></p>
+
+<p>En primer lugar, obtengamos datos ficticios para que nuestra consulta funcione por ahora.</p>
+
+<p>Poner el siguiente código en el archivo schema.js</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">graphql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">graphql</span><span class="dl">"</span><span class="p">);</span> 
+
+<span class="kd">const</span> <span class="nx">_</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">lodash</span><span class="dl">"</span><span class="p">);</span>
+
+
+<span class="kd">const</span> <span class="p">{</span>
+  <span class="nx">GraphQLObjectType</span><span class="p">,</span>
+  <span class="nx">GraphQLID</span><span class="p">,</span>
+  <span class="nx">GraphQLString</span><span class="p">,</span>
+  <span class="nx">GraphQLInt</span><span class="p">,</span>
+  <span class="nx">GraphQLSchema</span>
+<span class="p">}</span> <span class="o">=</span> <span class="nx">graphql</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">CarsArray</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">S-Class</span><span class="dl">"</span><span class="p">,</span> <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2019</span><span class="dl">"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Mercedes</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Continental GT</span><span class="dl">"</span><span class="p">,</span> <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2019</span><span class="dl">"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Bentley</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">3</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Phantom</span><span class="dl">"</span><span class="p">,</span> <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2019</span><span class="dl">"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Rolls-Royce</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">4</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Panamera</span><span class="dl">"</span><span class="p">,</span> <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2019</span><span class="dl">"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Porsche</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">5</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">A8</span><span class="dl">"</span><span class="p">,</span> <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2019</span><span class="dl">"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Audi</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">I-Pace</span><span class="dl">"</span><span class="p">,</span> <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2019</span><span class="dl">"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Jaguar</span><span class="dl">"</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="c1">//Definiendo CarType con sus campos.</span>
+<span class="kd">const</span> <span class="nx">CarType</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GraphQLObjectType</span><span class="p">({</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Car</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">fields</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">({</span>
+    <span class="na">id</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLID</span> <span class="p">},</span>
+    <span class="na">name</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLString</span> <span class="p">},</span>
+    <span class="na">model</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLInt</span> <span class="p">},</span>
+    <span class="na">company</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLString</span> <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+
+<span class="c1">//Definiendo RootQuery</span>
+<span class="kd">const</span> <span class="nx">RootQuery</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GraphQLObjectType</span><span class="p">({</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">RootQueryType</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">fields</span><span class="p">:</span> <span class="p">{</span>
+    <span class="c1">// Los campos aquí serán la consulta de las interfaces.</span>
+    <span class="c1">//Estamos definiendo una consulta 'auto' que puede tomar (ID de auto) para buscar en DB.</span>
+    <span class="na">car</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">type</span><span class="p">:</span> <span class="nx">CarType</span><span class="p">,</span> <span class="c1">//Definir modelo para consulta de coche</span>
+      <span class="na">args</span><span class="p">:</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLID</span> <span class="p">}</span> <span class="p">},</span>
+<span class="c1">//el campo args para extraer el argumento vino con la consulta del automóvil, por ejemplo: Id del objeto del automóvil para extraer sus detalles.</span>
+      <span class="nx">resolve</span><span class="p">(</span><span class="nx">parent</span><span class="p">,</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//código para obtener valor de DB</span>
+        <span class="cm">/**
+         * Con la ayuda de la biblioteca lodash (_), estamos tratando de encontrar un automóvil con identificación de 'CarsArray'
+         * y devolver sus datos requeridos a la herramienta de llamada.
+         */</span>
+        <span class="k">return</span> <span class="nx">_</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">CarsArray</span><span class="p">,</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="nx">args</span><span class="p">.</span><span class="nx">id</span> <span class="p">});</span>
+      <span class="p">}</span> <span class="c1">//resolvemos function</span>
+    <span class="p">}</span> <span class="c1">//car query termina aqui</span>
+  <span class="p">}</span> <span class="c1">//campos termina aqui</span>
+<span class="p">});</span>
+
+<span class="c1">//exportando 'GraphQLSchema con RootQuery' para el middleware GraphqlHTTP.</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GraphQLSchema</span><span class="p">({</span>
+  <span class="na">query</span><span class="p">:</span> <span class="nx">RootQuery</span>
+<span class="p">});</span>
+
+
+</code></pre></div></div>
+
+<p>Debajo de los pasos que hemos hecho en schema.js:
+1) Importar biblioteca ‘lodash’ para facilitar nuestra vida.
+2) Dummy ‘CarsArray’ con los detalles necesarios.
+3) Definición de la función ‘resolver’ de la consulta ‘auto’.</p>
+
+<h3 id="testeando-nuestra-consultas">Testeando nuestra consultas</h3>
+
+<p>Para probar nuestra consulta primero, necesitamos hacer un pequeño cambio en nuestro archivo app.js.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span>
+  <span class="dl">"</span><span class="s2">/graphql</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">graphqlHTTP</span><span class="p">({</span>
+    <span class="na">schema</span><span class="p">:</span> <span class="nx">schema</span><span class="p">,</span>
+    <span class="na">graphiql</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">})</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>Al agregar ‘graphiql: true’, habilitamos una herramienta increíble incorporada para probar nuestras consultas. Ahora abierto: localhost: 4000 / graphql</p>
+
+<p><img src="https://media.giphy.com/media/gEwIzCZJGo2slLRzQo/giphy.gif" alt="graphql" /></p>
+
+<p>En el lado izquierdo de la ventana, como se puede ver en la imagen de arriba, escriba una consulta con los detalles que desee dando la identificación del objeto del automóvil.</p>
+
+<h3 id="defininendo-ownertype-">Defininendo OwnerType :</h3>
+
+<p>En schema.js, escriba el siguiente código.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">graphql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">graphql</span><span class="dl">"</span><span class="p">);</span> 
+<span class="kd">const</span> <span class="nx">_</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">lodash</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="p">{</span>
+  <span class="nx">GraphQLObjectType</span><span class="p">,</span>
+  <span class="nx">GraphQLID</span><span class="p">,</span>
+  <span class="nx">GraphQLString</span><span class="p">,</span>
+  <span class="nx">GraphQLInt</span><span class="p">,</span>
+  <span class="nx">GraphQLSchema</span>
+<span class="p">}</span> <span class="o">=</span> <span class="nx">graphql</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">CarsArray</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">S-Class</span><span class="dl">"</span><span class="p">,</span> <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2019</span><span class="dl">"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Mercedes</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Continental GT</span><span class="dl">"</span><span class="p">,</span> <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2019</span><span class="dl">"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Bentley</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">3</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Phantom</span><span class="dl">"</span><span class="p">,</span> <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2019</span><span class="dl">"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Rolls-Royce</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">4</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Panamera</span><span class="dl">"</span><span class="p">,</span> <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2019</span><span class="dl">"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Porsche</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">5</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">A8</span><span class="dl">"</span><span class="p">,</span> <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2019</span><span class="dl">"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Audi</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">I-Pace</span><span class="dl">"</span><span class="p">,</span> <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2019</span><span class="dl">"</span><span class="p">,</span> <span class="na">company</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Jaguar</span><span class="dl">"</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kd">var</span> <span class="nx">OwnersArray</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Vinod Chauhan</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span> <span class="na">gender</span><span class="p">:</span> <span class="dl">"</span><span class="s2">male</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">John Dow</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">46</span><span class="p">,</span> <span class="na">gender</span><span class="p">:</span> <span class="dl">"</span><span class="s2">male</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">3</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Kristen</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="na">gender</span><span class="p">:</span> <span class="dl">"</span><span class="s2">female</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">4</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Paris</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span> <span class="na">gender</span><span class="p">:</span> <span class="dl">"</span><span class="s2">female</span><span class="dl">"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">5</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Sylvestor</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="na">gender</span><span class="p">:</span> <span class="dl">"</span><span class="s2">male</span><span class="dl">"</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="c1">//Definiendo CarType con sus campos.</span>
+<span class="kd">const</span> <span class="nx">CarType</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GraphQLObjectType</span><span class="p">({</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Car</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">fields</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">({</span>
+    <span class="na">id</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLID</span> <span class="p">},</span>
+    <span class="na">name</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLString</span> <span class="p">},</span>
+    <span class="na">model</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLInt</span> <span class="p">},</span>
+    <span class="na">company</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLString</span> <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+
+<span class="c1">//Definiendo CarType con sus campos.</span>
+<span class="kd">const</span> <span class="nx">OwnerType</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GraphQLObjectType</span><span class="p">({</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Owner</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">fields</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">({</span>
+    <span class="na">id</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLID</span> <span class="p">},</span>
+    <span class="na">name</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLString</span> <span class="p">},</span>
+    <span class="na">age</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLInt</span> <span class="p">},</span>
+    <span class="na">gender</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLString</span> <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+
+<span class="c1">//Definiendo RootQuery</span>
+<span class="kd">const</span> <span class="nx">RootQuery</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GraphQLObjectType</span><span class="p">({</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">RootQueryType</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">fields</span><span class="p">:</span> <span class="p">{</span>
+    <span class="c1">// Los campos aquí serán la consulta de las interfaces.</span>
+    <span class="c1">//Estamos definiendo una consulta 'auto' que puede tomar(car ID ) to search in DB.</span>
+    <span class="na">car</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">type</span><span class="p">:</span> <span class="nx">CarType</span><span class="p">,</span> <span class="c1">//Definir modelo para consulta de coche</span>
+      <span class="na">args</span><span class="p">:</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLID</span> <span class="p">}</span> <span class="p">},</span> <span class="c1">//campo de args para extraer</span>
+      <span class="c1">// El argumento vino con la consulta del automóvil, por ejemplo: Id del objeto del automóvil para extraer sus detalles.</span>
+      <span class="nx">resolve</span><span class="p">(</span><span class="nx">parent</span><span class="p">,</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//código para obtener valor de DB</span>
+        <span class="cm">/**
+         * Con la ayuda de la biblioteca lodash (_), estamos tratando de encontrar un automóvil con identificación de 'CarsArray'
+         * y devolver sus datos requeridos a la herramienta de llamada.
+         */</span>
+        <span class="k">return</span> <span class="nx">_</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">CarsArray</span><span class="p">,</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="nx">args</span><span class="p">.</span><span class="nx">id</span> <span class="p">});</span>
+      <span class="p">}</span> <span class="c1">//resolver function</span>
+    <span class="p">},</span> <span class="c1">//car query termina aqui</span>
+    <span class="na">owner</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">type</span><span class="p">:</span> <span class="nx">OwnerType</span><span class="p">,</span>
+      <span class="na">args</span><span class="p">:</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="nx">GraphQLID</span> <span class="p">}</span> <span class="p">},</span>
+      <span class="nx">resolve</span><span class="p">(</span><span class="nx">parent</span><span class="p">,</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">_</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">OwnersArray</span><span class="p">,</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="nx">args</span><span class="p">.</span><span class="nx">id</span> <span class="p">});</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="c1">//fields termina aqui</span>
+<span class="p">});</span>
+
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GraphQLSchema</span><span class="p">({</span>
+  <span class="na">query</span><span class="p">:</span> <span class="nx">RootQuery</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<p>En Actualizar navegador o escribir localhost: 4000 / graphql, busque la consulta del propietario.</p>
+
+<p><img src="https://media.giphy.com/media/LStu5bRjbP5oLgnYLu/giphy.gif" alt="graphql2" /></p>
+:ET

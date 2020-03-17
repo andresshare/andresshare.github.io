@@ -1,0 +1,411 @@
+I"��<p><img src="https://media.giphy.com/media/RX7N03MEUafW8/giphy.gif" alt="OOP" /></p>
+
+<p>Con API REST enviamo y recibimos datos de forma sencilla y rápida, aunque una tecnología que está en crecimiento es el GraphQL que busca reemplazar a las API REST para hacerlas aún más sencillas y a la vez más robustas.Escribire mas adelante sobre esto.</p>
+
+<p>Las API REST usa los métodos HTTP, desde un simple POST o GET hasta métodos personalizados, los mas usados son  POST, GET, PUT y DELETE en su forma más sencilla y las Headers que son para autenticación, decirle qué tipo de dato va, etc. Pero esto no lo veremos aquí.</p>
+
+<p>Usare a Express para ser nuestro servidor HTTP, una recomendación es que, las API REST siempre estén detrás de Nginx ya que en caso de falla, Nginx puede seguir respondiendo, además que, permite una mejor manipulación de datos, protección de enlaces y demás.</p>
+
+<p>Bueno, si ya tenemos NodeJS y NPM instalados, entonces manos a la obra y si no, https://nodejs.org/es/download/ aquí pueden descargar el paquete, el proceso de instalación</p>
+
+<h1 id="️-crear-app">♠️ Crear app</h1>
+
+<p>Para inicializar nuestra primer API REST hay 3 modos, creando el package.json a mano (no recomendado), haciendo uso del comando npm init (de cierta forma el más recomendado) o usando la dependencia de express-generator pero en esta ocasión haremos uso del npm init para ello, nos ponemos en la consola de comandos (Linux, Windows o Mac, en mi caso Windows) y navegamos al directorio donde queremos que esté nuestra API REST, en mi caso, mi carpeta de Documentos en una carpeta llamada, api . Dentro de esta carpeta corremos el comando previamente mencionado y nos irán apareciendo una serie de preguntas:</p>
+
+<p>Primero nos pedirá el nombre del paquete (en si, es el nombre de nuestro proyecto), aquí ponemos api-rest
+Después nos pedirá la versión del proyecto, pondremos 1.0.0</p>
+
+<p>En descripción pondremos “API REST ejemplo”.</p>
+
+<p>Luego en la parte de entry point nos pide cómo se llamará nuestro archivo de entrada, el principal digamos. Dejaremos index.js tal cual.</p>
+
+<p>Después nos pide un comando de prueba, un repositorio de git, palabras clave que dejaremos vacías, solo damos enter. La parte de autor, ponemos nuestro nombre si somos lo autores del paquete.</p>
+
+<p>Por último nos pedira una licencia, pondremos MIT (aunque también se puede dejar la que está o poner Private), no es relevante a menos que vayan a liberar su API REST por alguna razón.</p>
+
+<p>Una vez que tenemos esto, nos dice, ¿Está todo correcto? y le decimos que si dando enter.</p>
+
+<p>Si funciona correctamente, se generará en nuestra carpeta nuestro archivo package.json y si es así, entonces sigue instalar Express, para ello corremos el siguiente comando:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install express --save
+</code></pre></div></div>
+
+<p>Con esto, la dependencia de express se instala y se guarda en nuestro package y estamos listos para empezar.</p>
+
+<h1 id="️--primeros-pasos-api">♠️  Primeros pasos API</h1>
+
+<p>Como había escrito previamente a la hora de inicializar nuestro proyecto, decidimos que nuestro archivo de entrada se llamara <code class="highlighter-rouge">index.js</code><code class="highlighter-rouge">y es por ello que entonces crearemos este archivo en la carpeta raíz </code><code class="highlighter-rouge">.../Documents/api/index.js</code>` y dentro le pondremos el siguiente código:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">express</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">El servidor está inicializado en el puerto 3000</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>La primera línea llama a express y la asigna, la segunda línea reasigna a app y así, tenemos el objeto de express para llamar listen en nuestra cuarta línea y aqui, le pasamos los parámetros para que inicie el servidor.</p>
+
+<p>Vamos a ejecutar el comando <code class="highlighter-rouge">node index.js</code> y LISTO!!!, tenemos nuestro primer servidor, el cual, ya es accesible desde localhost:3000 pero, al abrir esto en nuestro navegador nos muestra un error, ¿qué pasó?.</p>
+
+<p>Bueno, en este caso hemos iniciado un servidor pero Express no tiene ninguna declaración, es decir, ninguna ruta por lo que no sabe a dónde ir. Vamos a agregar la siguiente línea arriba de <code class="highlighter-rouge">app.listen(...)</code> :</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">Mensaje desde express</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Detenemos nuestro servidor con CTRL+C y después lo volvemos a iniciar con <code class="highlighter-rouge">node index.js</code> , actualizamos la página en el navegador y, Listo!!!, tenemos una página de inicio que nos muestra Mensaje desde express.</p>
+
+<p>¿Qué pasó aquí?, bueno, con ```.get()`` le dimos que la ruta raíz / será la que reciba de entrada nuestras peticiones por el método GET.</p>
+
+<p>Veamos rápido los métodos:</p>
+
+<p><strong>GET</strong> es el método que permite obtener un recurso desde la URL. Es decir, si yo tengo <strong>http://localhost:3000/hola</strong> el recurso solicitado es <strong>/hola</strong> si en express modificamos el primer parámetro por <strong>/hola</strong> y vamos a la dirección previamente mencionada veremos el saludo, pero si vamos a la raíz de nuevo, veremos el mismo error de hace un momento.</p>
+
+<p><strong>POST</strong> es un método que permite el envío de información del cliente hacia nuestro servidor, y puede combinarse (por así decirlo) con una parte de GET ya que, POST también puede saber la URL en la cual estará recibiendo este método. Si nosotros cambiamos <strong>.get(…)</strong> por <strong>.post(…)</strong> y vamos a la misma URL de <strong>/hola</strong> veremos un error, pero, si hacemos uso de una herramienta tercera y le mandamos un <strong>POST (como ARC)</strong> veremos “Mensaje desde express”:</p>
+
+<blockquote>
+  <p>curl http//localhost:3000/hola</p>
+</blockquote>
+
+<p>Ahora, si duplicamos el código y lo ponemos en ambos casos, con GET y POST y visitamos el link, podemos ver que funcionan ambos casos, pero modifiquemos un poco el código quedando algo como esto:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">express</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/hola</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">[POST]Saludos desde express</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/hola</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">[GET]Saludos desde express</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">El servidor está desde en el puerto 3000</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<p>Y como sabemos, necesitamos reiniciar nuestro servidor cada vez que hagamos cambios, esto se puede evitar con <strong>Nodemon</strong></p>
+
+<p>Si visitamos <strong>http://localhost:3000/hola</strong> veremos <strong>[GET]Saludos</strong> desde express y si le mandamos un POST a la misma dirección veremos <strong>[POST]Saludos</strong> desde <code class="highlighter-rouge">express</code></p>
+
+<p>Así es como manejamos, GET y POST. A su vez como mencioné previamente está PUT, este método es idéntico a POST y DELETE es idéntico a GET.</p>
+
+<p>¿Pero en qué se diferencian?, vamos a hacerlo de la siguiente forma:</p>
+
+<ul>
+  <li>GET = Obtener</li>
+  <li>POST = Crear</li>
+  <li>PUT = Actualizar</li>
+  <li>DELETE = Eliminar</li>
+</ul>
+
+<p>Entonces, entendiendo esto, podemos reutilizar la misma URL con distintos métodos, por ejemplo pensando que tenemos una libreta de direcciones podemos usar la <strong>URL /usuario</strong> para obtener un usuario en <em>GET</em>, <em>POST</em> para crearlo, <em>PUT</em> para actualizarlo y <em>DELETE</em> Para eliminarlo.</p>
+
+<p>Vamos a crear un objeto global entonces aprovechando esta idea, con la siguiente información:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let usuario = {
+ nombre:'',
+ apellido: ''
+};
+
+</code></pre></div></div>
+<p>Y modificaremos el código base para tener las 4 opciones disponibles, GET, POST, PUT, DELETE con su respectiva dirección en /usuario plus, dos direcciones, una para el error 404 de una ruta no encontrada y, una para la raíz / .</p>
+
+<p>Por último agregaremos una variable de datos que nos permitirá enviar la respuesta del servidor al cliente que nos consulta esa información.</p>
+
+<p>Voy a poner primero todo el código y seguiremos  por partes, se necesita una dependencia adicional para el manejo de datos en la recepción <strong>“es decir, manejar más fácil los datos de POST a nuestro servidor”</strong>, para ello instalamos con:</p>
+
+<p><code class="highlighter-rouge">npm install body-parser --save</code></p>
+
+<p>Una vez hecho esto ahora sí, al código:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">express</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">body-parser</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">urlencoded</span><span class="p">({</span> <span class="na">extended</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span><span class="kd">let</span> <span class="nx">usuario</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="na">nombre</span><span class="p">:</span><span class="dl">''</span><span class="p">,</span>
+ <span class="na">apellido</span><span class="p">:</span> <span class="dl">''</span>
+<span class="p">};</span><span class="kd">let</span> <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+ <span class="na">codigo</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+ <span class="na">mensaje</span><span class="p">:</span> <span class="dl">''</span>
+<span class="p">};</span><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">codigo</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+  <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Punto de inicio</span><span class="dl">'</span>
+ <span class="p">};</span>
+ <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">respuesta</span><span class="p">);</span>
+<span class="p">});</span><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/usuario</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">codigo</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+  <span class="na">mensaje</span><span class="p">:</span> <span class="dl">''</span>
+ <span class="p">};</span>
+ <span class="k">if</span><span class="p">(</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">===</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">usuario</span><span class="p">.</span><span class="nx">apellido</span> <span class="o">===</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="na">codigo</span><span class="p">:</span> <span class="mi">501</span><span class="p">,</span>
+   <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">El usuario no ha sido creado</span><span class="dl">'</span>
+  <span class="p">};</span>
+ <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="na">codigo</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+   <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">respuesta del usuario</span><span class="dl">'</span><span class="p">,</span>
+   <span class="na">respuesta</span><span class="p">:</span> <span class="nx">usuario</span>
+  <span class="p">};</span>
+ <span class="p">}</span>
+ <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">respuesta</span><span class="p">);</span>
+<span class="p">});</span><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/usuario</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+ <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">||</span> <span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">apellido</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="na">codigo</span><span class="p">:</span> <span class="mi">502</span><span class="p">,</span>
+   <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">El campo nombre y apellido son requeridos</span><span class="dl">'</span>
+  <span class="p">};</span>
+ <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">!==</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">usuario</span><span class="p">.</span><span class="nx">apellido</span> <span class="o">!==</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">codigo</span><span class="p">:</span> <span class="mi">503</span><span class="p">,</span>
+    <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">El usuario ya fue creado previamente</span><span class="dl">'</span>
+   <span class="p">};</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+   <span class="nx">usuario</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">nombre</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">nombre</span><span class="p">,</span>
+    <span class="na">apellido</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">apellido</span>
+   <span class="p">};</span>
+   <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">codigo</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Usuario creado</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">respuesta</span><span class="p">:</span> <span class="nx">usuario</span>
+   <span class="p">};</span>
+  <span class="p">}</span>
+ <span class="p">}</span>
+ 
+ <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">respuesta</span><span class="p">);</span>
+<span class="p">});</span><span class="nx">app</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="dl">'</span><span class="s1">/usuario</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+ <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">||</span> <span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">apellido</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="na">codigo</span><span class="p">:</span> <span class="mi">502</span><span class="p">,</span>
+   <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">El campo nombre y apellido son requeridos</span><span class="dl">'</span>
+  <span class="p">};</span>
+ <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">===</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">usuario</span><span class="p">.</span><span class="nx">apellido</span> <span class="o">===</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">codigo</span><span class="p">:</span> <span class="mi">501</span><span class="p">,</span>
+    <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">El usuario no ha sido creado</span><span class="dl">'</span>
+   <span class="p">};</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+   <span class="nx">usuario</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">nombre</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">nombre</span><span class="p">,</span>
+    <span class="na">apellido</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">apellido</span>
+   <span class="p">};</span>
+   <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">codigo</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Usuario actualizado</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">respuesta</span><span class="p">:</span> <span class="nx">usuario</span>
+   <span class="p">};</span>
+  <span class="p">}</span>
+ <span class="p">}</span>
+ 
+ <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">respuesta</span><span class="p">);</span>
+<span class="p">});</span><span class="nx">app</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">'</span><span class="s1">/usuario</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+ <span class="k">if</span><span class="p">(</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">===</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">usuario</span><span class="p">.</span><span class="nx">apellido</span> <span class="o">===</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="na">codigo</span><span class="p">:</span> <span class="mi">501</span><span class="p">,</span>
+   <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">El usuario no ha sido creado</span><span class="dl">'</span>
+  <span class="p">};</span>
+ <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="na">codigo</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+   <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Usuario eliminado</span><span class="dl">'</span>
+  <span class="p">};</span>
+  <span class="nx">usuario</span> <span class="o">=</span> <span class="p">{</span> 
+   <span class="na">nombre</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> 
+   <span class="na">apellido</span><span class="p">:</span> <span class="dl">''</span> 
+  <span class="p">};</span>
+ <span class="p">}</span>
+ <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">respuesta</span><span class="p">);</span>
+<span class="p">});</span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
+  <span class="na">codigo</span><span class="p">:</span> <span class="mi">404</span><span class="p">,</span> 
+  <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">URL no encontrada</span><span class="dl">'</span>
+ <span class="p">};</span>
+ <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">404</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="nx">respuesta</span><span class="p">);</span>
+<span class="p">});</span><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">El servidor está inicializado en el puerto 3000</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<p>Lo primero, nuevamente, es cargar express, pero ahora tambièn se carga el body-parser e inicializar express en nuestra constante app . Posterior, gracias a <em>body-parser</em> podremos manejar los datos en formato JSON de la recepción en <em>POST/PUT</em> desde el cliente, es decir, que, cuando el cliente haga una petición, indicará la cabecera <em>Content-Type: application/json</em> y nuestra <em>API</em> va a servir esta petición ejecutando lo que el cliente necesita.</p>
+
+<p>Después, creamos la variable usuario para tener sus propiedades previamente asignadas de forma global, así como una variable llamada respuestaque nos permitirá enviar una respuesta hacia el cliente.</p>
+
+<p>Posterior creamos una ruta raíz <em>/</em> que nos permitirá poder mostrar una base de nuestra API.</p>
+
+<p>Por último el caso del error 404 que previamente comentaba.</p>
+
+<p>Y ahora sí, nuestro primer método, en <em>GET</em> vamos a revisar, ¿el cliente ya se creó?, si no se ha creado, entonces asignamos el error a nuestra variable de respuesta, en otro caso, mandamos el usuario en la respuesta y le indicamos al cliente que todo bien.</p>
+
+<blockquote>
+  <p>curl http//localhost:3000/usuario</p>
+</blockquote>
+
+<p>Después en  <strong>POST</strong>  revisamos si,  el cuerpo del <strong>POST</strong>  incluye el nombre y el apellido, si no lo incluye, mostraremos un error, si lo incluye pero el usuario no está vacío, mostramos un error pero si está vacío e incluye los parámetros solicitados, entonces lo creamos y le respondemos al cliente con la información.</p>
+
+<p>Siguiente en <strong>PUT</strong> vamos a recibir la solicitud, seguimos la misma lógica que en <strong>POST</strong>  pero, si en este caso, está vacío el nombre o el apellido significa que no ha sido creado el usuario, por lo tanto no hay nada que actualizar, sin embargo, si no está vacío y recibimos ambos parámetros, entonces, actualizamos al usuario.</p>
+
+<p>Por último tenemos el <strong>DELETE</strong> que eliminará al usuario.</p>
+
+<p>Ahora, vamos a modificar y simplificar un poco nuestro código usando app.route() de express, que nos permite agrupar la misma URL que responderá a distintos métodos ya que los vimos por separado y dejaremos este post hasta aquí.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">express</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">bodyParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">body-parser</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">urlencoded</span><span class="p">({</span> <span class="na">extended</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}));</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span><span class="kd">let</span> <span class="nx">usuario</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="na">nombre</span><span class="p">:</span><span class="dl">''</span><span class="p">,</span>
+ <span class="na">apellido</span><span class="p">:</span> <span class="dl">''</span>
+<span class="p">};</span><span class="kd">let</span> <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+ <span class="na">codigo</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+ <span class="na">mensaje</span><span class="p">:</span> <span class="dl">''</span>
+<span class="p">};</span><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">codigo</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+  <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Punto de inicio</span><span class="dl">'</span>
+ <span class="p">};</span>
+ <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">respuesta</span><span class="p">);</span>
+<span class="p">});</span><span class="nx">app</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="dl">'</span><span class="s1">/usuario</span><span class="dl">'</span><span class="p">)</span>
+ <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="na">codigo</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+   <span class="na">mensaje</span><span class="p">:</span> <span class="dl">''</span>
+  <span class="p">};</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">===</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">usuario</span><span class="p">.</span><span class="nx">apellido</span> <span class="o">===</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">codigo</span><span class="p">:</span> <span class="mi">501</span><span class="p">,</span>
+    <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">El usuario no ha sido creado</span><span class="dl">'</span>
+   <span class="p">};</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+   <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">codigo</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">respuesta del usuario</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">respuesta</span><span class="p">:</span> <span class="nx">usuario</span>
+   <span class="p">};</span>
+  <span class="p">}</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">respuesta</span><span class="p">);</span>
+ <span class="p">})</span>
+ <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">||</span> <span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">apellido</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">codigo</span><span class="p">:</span> <span class="mi">502</span><span class="p">,</span>
+    <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">El campo nombre y apellido son requeridos</span><span class="dl">'</span>
+   <span class="p">};</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+   <span class="k">if</span><span class="p">(</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">!==</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">usuario</span><span class="p">.</span><span class="nx">apellido</span> <span class="o">!==</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+     <span class="na">codigo</span><span class="p">:</span> <span class="mi">503</span><span class="p">,</span>
+     <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">El usuario ya fue creado previamente</span><span class="dl">'</span>
+    <span class="p">};</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">usuario</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="na">nombre</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">nombre</span><span class="p">,</span>
+     <span class="na">apellido</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">apellido</span>
+    <span class="p">};</span>
+    <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="na">codigo</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+     <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Usuario creado</span><span class="dl">'</span><span class="p">,</span>
+     <span class="na">respuesta</span><span class="p">:</span> <span class="nx">usuario</span>
+    <span class="p">};</span>
+   <span class="p">}</span>
+  <span class="p">}</span>
+  
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">respuesta</span><span class="p">);</span>
+ <span class="p">})</span>
+ <span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">||</span> <span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">apellido</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">codigo</span><span class="p">:</span> <span class="mi">502</span><span class="p">,</span>
+    <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">El campo nombre y apellido son requeridos</span><span class="dl">'</span>
+   <span class="p">};</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+   <span class="k">if</span><span class="p">(</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">===</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">usuario</span><span class="p">.</span><span class="nx">apellido</span> <span class="o">===</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+     <span class="na">codigo</span><span class="p">:</span> <span class="mi">501</span><span class="p">,</span>
+     <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">El usuario no ha sido creado</span><span class="dl">'</span>
+    <span class="p">};</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">usuario</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="na">nombre</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">nombre</span><span class="p">,</span>
+     <span class="na">apellido</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">apellido</span>
+    <span class="p">};</span>
+    <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+     <span class="na">codigo</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+     <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Usuario actualizado</span><span class="dl">'</span><span class="p">,</span>
+     <span class="na">respuesta</span><span class="p">:</span> <span class="nx">usuario</span>
+    <span class="p">};</span>
+   <span class="p">}</span>
+  <span class="p">}</span>
+  
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">respuesta</span><span class="p">);</span>
+ <span class="p">})</span>
+ <span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">===</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">usuario</span><span class="p">.</span><span class="nx">apellido</span> <span class="o">===</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">codigo</span><span class="p">:</span> <span class="mi">501</span><span class="p">,</span>
+    <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">El usuario no ha sido creado</span><span class="dl">'</span>
+   <span class="p">};</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+   <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">error</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">codigo</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Usuario eliminado</span><span class="dl">'</span>
+   <span class="p">};</span>
+   <span class="nx">usuario</span> <span class="o">=</span> <span class="p">{</span> 
+    <span class="na">nombre</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> 
+    <span class="na">apellido</span><span class="p">:</span> <span class="dl">''</span> 
+   <span class="p">};</span>
+  <span class="p">}</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">respuesta</span><span class="p">);</span>
+ <span class="p">});</span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nx">respuesta</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">error</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> 
+  <span class="na">codigo</span><span class="p">:</span> <span class="mi">404</span><span class="p">,</span> 
+  <span class="na">mensaje</span><span class="p">:</span> <span class="dl">'</span><span class="s1">URL no encontrada</span><span class="dl">'</span>
+ <span class="p">};</span>
+ <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">404</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="nx">respuesta</span><span class="p">);</span>
+<span class="p">});</span><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">El servidor está inicializado en el puerto 3000</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<p>De esta forma agrupamos la <strong>URL /usuario</strong> y ya podemos utilizar sus métodos ya que por ejemplo, pensemos que la <strong>_URL /usuario</strong> no debería poder eliminar usuarios, borramos el <strong>.delete()</strong> de estos y su contenido y listo, el <strong>DELETE</strong> queda desactivado de esta <strong>URL</strong> y así, si hacemos un módulo por ejemplo, podemos exportar estas rutas y hacer nuestro código más sencillo.</p>
+
+<p>¿Qué se puede mejorar en este código?, que detecte si el tipo de contenido no sea <strong><em>application/json</em></strong> nos rechace, una forma más sencilla de setear la respuesta con una función, meter un servicio de autorización, y mas soluciones adicionales</p>
+
+<p>En conclusión un <strong>API REST</strong> es una interfaz donde se conectan las aplicaciones para obtener, crear, actualizar o eliminar datos de forma sencilla, teniendo la opcion como clientes, o como proveedores del servicio permitir a otros realizar estas acciones gracias a los distintos métodos básicos o principales de <strong>HTTP (POST, GET, PUT, DELETE)</strong>.</p>
+
+<p>Se puede reutilizar la misma dirección para hacer distintas acciones.</p>
+
+<p>GET sirve para obtener, POST para crear, PUT para actualizar y DELETE para eliminar.</p>
+
+<p>Listo hasta el proximo post!!</p>
+:ET

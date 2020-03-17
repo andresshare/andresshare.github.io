@@ -1,0 +1,300 @@
+I"br<p><img src="https://media.giphy.com/media/z6z7V16QWDVI9tad3O/giphy.gif" alt="algoritmo" /></p>
+
+<h1 id="create-complex-multi-dimensional-arrays">Create complex multi-dimensional arrays</h1>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">myNestedArray</span> <span class="o">=</span> <span class="p">[</span> <span class="c1">//level 1</span>
+  <span class="c1">// change code below this line</span>
+  <span class="p">[</span><span class="dl">'</span><span class="s1">unshift</span><span class="dl">'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="dl">'</span><span class="s1">complex</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">nested</span><span class="dl">'</span><span class="p">],</span> <span class="c1">//level 2</span>
+  <span class="p">[</span>
+    <span class="p">[</span><span class="dl">'</span><span class="s1">loop</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">shift</span><span class="dl">'</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="dl">'</span><span class="s1">method</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">deep</span><span class="dl">'</span><span class="p">],</span> <span class="c1">//level 3</span>
+    <span class="p">[</span>
+      <span class="p">[</span><span class="dl">'</span><span class="s1">concat</span><span class="dl">'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="dl">'</span><span class="s1">deeper</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">spread</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">array</span><span class="dl">'</span><span class="p">],</span> <span class="c1">//level 4</span>
+      <span class="p">[</span>
+        <span class="p">[</span><span class="dl">'</span><span class="s1">deepest</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">mutate</span><span class="dl">'</span><span class="p">,</span> <span class="mf">1327.98</span><span class="p">,</span> <span class="dl">'</span><span class="s1">splice</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">slice</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">push</span><span class="dl">'</span><span class="p">]</span> <span class="c1">//level 5</span>
+      <span class="p">]</span>
+    <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="p">[</span><span class="dl">'</span><span class="s1">iterate</span><span class="dl">'</span><span class="p">,</span> <span class="mf">1.3849</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="dl">'</span><span class="s1">8.4876</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">arbitrary</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">depth</span><span class="dl">'</span><span class="p">]</span>
+  <span class="c1">// change code above this line</span>
+<span class="p">];</span>
+</code></pre></div></div>
+
+<h1 id="add-key-value-pairs-to-javascript-objects">Add Key-Value Pairs to JavaScript Objects</h1>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">foods</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">apples</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+  <span class="na">oranges</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+  <span class="na">plums</span><span class="p">:</span> <span class="mi">28</span>
+<span class="p">};</span>
+
+<span class="c1">// change code below this line</span>
+<span class="nx">foods</span><span class="p">[</span><span class="dl">"</span><span class="s2">bananas</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="nx">foods</span><span class="p">[</span><span class="dl">"</span><span class="s2">grapes</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="nx">foods</span><span class="p">[</span><span class="dl">"</span><span class="s2">strawberries</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">27</span>
+<span class="c1">// change code above this line</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foods</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h1 id="modify-an-object-nested-within-an-object">Modify an Object Nested Within an Object</h1>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">userActivity</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">id</span><span class="p">:</span> <span class="mi">23894201352</span><span class="p">,</span>
+  <span class="na">date</span><span class="p">:</span> <span class="dl">'</span><span class="s1">January 1, 2017</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">totalUsers</span><span class="p">:</span> <span class="mi">51</span><span class="p">,</span>
+    <span class="na">online</span><span class="p">:</span> <span class="mi">42</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">userActivity</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">online</span> <span class="o">=</span> <span class="mi">45</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<h1 id="access-property-names-with-bracket-notation">Access Property Names with Bracket Notation</h1>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">foods</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">apples</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+  <span class="na">oranges</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+  <span class="na">plums</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+  <span class="na">bananas</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+  <span class="na">grapes</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span>
+  <span class="na">strawberries</span><span class="p">:</span> <span class="mi">27</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">checkInventory</span><span class="p">(</span><span class="nx">scannedItem</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">foods</span><span class="p">[</span><span class="nx">scannedItem</span><span class="p">];</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h1 id="use-the-delete-keyword-to-remove-object-properties">Use the delete Keyword to Remove Object Properties</h1>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">foods</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">apples</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+  <span class="na">oranges</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+  <span class="na">plums</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+  <span class="na">bananas</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+  <span class="na">grapes</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span>
+  <span class="na">strawberries</span><span class="p">:</span> <span class="mi">27</span>
+<span class="p">};</span>
+
+<span class="c1">// change code below this line</span>
+<span class="k">delete</span> <span class="nx">foods</span><span class="p">.</span><span class="nx">oranges</span>
+<span class="k">delete</span> <span class="nx">foods</span><span class="p">.</span><span class="nx">plums</span>
+<span class="k">delete</span> <span class="nx">foods</span><span class="p">.</span><span class="nx">strawberries</span>
+<span class="c1">// change code above this line</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foods</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<h1 id="check-if-an-object-has-a-property">Check if an Object has a Property</h1>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">Alan</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+    <span class="na">online</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="na">Jeff</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+    <span class="na">online</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="na">Sarah</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">48</span><span class="p">,</span>
+    <span class="na">online</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="na">Ryan</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+    <span class="na">online</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">isEveryoneHere</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// change code below this line</span>
+   <span class="k">if</span><span class="p">(</span><span class="nx">users</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="dl">'</span><span class="s1">Alan</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Jeff</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Sarah</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">Ryan</span><span class="dl">'</span><span class="p">))</span>
+   <span class="p">{</span>
+     <span class="k">return</span> <span class="kc">true</span>
+   <span class="p">}</span> <span class="k">else</span>
+   <span class="p">{</span>
+     <span class="k">return</span> <span class="kc">false</span>
+   <span class="p">}</span>
+  <span class="c1">// change code above this line</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isEveryoneHere</span><span class="p">(</span><span class="nx">users</span><span class="p">));</span>
+
+</code></pre></div></div>
+
+<h1 id="iterate-through-the-keys-of-an-object-with-a-forin-statement">Iterate Through the Keys of an Object with a for…in Statement</h1>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">llet</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">Alan</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+    <span class="na">online</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">},</span>
+  <span class="na">Jeff</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+    <span class="na">online</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="na">Sarah</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">48</span><span class="p">,</span>
+    <span class="na">online</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">},</span>
+  <span class="na">Ryan</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+    <span class="na">online</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">countOnline</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">online</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">user</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">obj</span><span class="p">[</span><span class="nx">user</span><span class="p">].</span><span class="nx">online</span> <span class="o">==</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">online</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">online</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">countOnline</span><span class="p">(</span><span class="nx">users</span><span class="p">));</span>
+
+</code></pre></div></div>
+
+<h1 id="generate-an-array-of-all-object-keys-with-objectkeys">Generate an Array of All Object Keys with Object.keys()</h1>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">Alan</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span>
+    <span class="na">online</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">},</span>
+  <span class="na">Jeff</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+    <span class="na">online</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="na">Sarah</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">48</span><span class="p">,</span>
+    <span class="na">online</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">},</span>
+  <span class="na">Ryan</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+    <span class="na">online</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">getArrayOfUsers</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">users</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getArrayOfUsers</span><span class="p">(</span><span class="nx">users</span><span class="p">));</span>
+
+</code></pre></div></div>
+
+<h1 id="modify-an-array-stored-in-an-object">Modify an Array Stored in an Object</h1>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Kenneth</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">kennethCodesAllDay</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">joinDate</span><span class="p">:</span> <span class="dl">'</span><span class="s1">March 26, 2016</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">organization</span><span class="p">:</span> <span class="dl">'</span><span class="s1">freeCodeCamp</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">friends</span><span class="p">:</span> <span class="p">[</span>
+      <span class="dl">'</span><span class="s1">Sam</span><span class="dl">'</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">Kira</span><span class="dl">'</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">Tomo</span><span class="dl">'</span>
+    <span class="p">],</span>
+    <span class="na">location</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">city</span><span class="p">:</span> <span class="dl">'</span><span class="s1">San Francisco</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">state</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CA</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">country</span><span class="p">:</span> <span class="dl">'</span><span class="s1">USA</span><span class="dl">'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">addFriend</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">friend</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// change code below this line  </span>
+  <span class="nx">userObj</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">friends</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">friend</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">userObj</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">friends</span>
+  <span class="c1">// change code above this line</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">addFriend</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Pete</span><span class="dl">'</span><span class="p">));</span>
+
+</code></pre></div></div>
+
+<h1 id="celsius-to-fahrenheit">Celsius to Fahrenheit</h1>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">convertToF</span><span class="p">(</span><span class="nx">celsius</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">fahrenheit</span> <span class="o">=</span> <span class="p">(</span><span class="nx">celsius</span> <span class="o">*</span> <span class="mf">1.8</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">fahrenheit</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">convertToF</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h1 id="reverse-a-string">Reverse a String</h1>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">reverseString</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="second-option">Second option</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">reverseString</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">newString</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="nx">newString</span> <span class="o">+=</span> <span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span> <span class="c1">// or newString = newString + str[i];</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">newString</span><span class="p">;</span> <span class="c1">// "olleh"</span>
+<span class="p">}</span>
+
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reverseString</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">))</span>
+
+</code></pre></div></div>
+
+<h1 id="factorialize-a-number">Factorialize a Number</h1>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">factorialize</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+ <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;=</span><span class="nx">num</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="nx">total</span> <span class="o">=</span> <span class="nx">total</span> <span class="o">*</span> <span class="nx">i</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">total</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">factorialize</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+
+</code></pre></div></div>
+<h2 id="my-second-option">My second option</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">factorialize</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span><span class="nx">num</span> <span class="o">*</span> <span class="nx">factorialize</span><span class="p">(</span><span class="nx">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">factorialize</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+</code></pre></div></div>
+
+<h1 id="find-the-longest-word-in-a-string">Find the Longest Word in a String</h1>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">findLongestWordLength</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">strSplit</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">longestWord</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">strSplit</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">strSplit</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="nx">longestWord</span><span class="p">){</span>
+  <span class="nx">longestWord</span> <span class="o">=</span> <span class="nx">strSplit</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+  
+  <span class="k">return</span> <span class="nx">longestWord</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">findLongestWordLength</span><span class="p">(</span><span class="dl">"</span><span class="s2">The quick brown fox jumped over the lazy dog</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+:ET

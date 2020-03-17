@@ -1,0 +1,87 @@
+I"4)<p><img src="https://media.giphy.com/media/l0ExhcMymdL6TrZ84/giphy-downsized-large.gif" alt="OOP" /></p>
+
+<p>Un concepto donde una clase comparte la estructura y el comportamiento definido en otra clase.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">SuperClass</span> <span class="p">{</span>
+<span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">logger</span> <span class="o">=</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">log</span><span class="p">()</span> <span class="p">{</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">(</span><span class="s2">`Hello </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nx">SubClass</span> <span class="kd">extends</span> <span class="nx">SuperClass</span> <span class="p">{</span>
+<span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+<span class="k">super</span><span class="p">();</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">subclass</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">subClass</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SubClass</span><span class="p">();</span>
+<span class="nx">subClass</span><span class="p">.</span><span class="nx">log</span><span class="p">();</span> <span class="c1">// logs: "Hello subclass"</span>
+</code></pre></div></div>
+
+<p>Revisemos esto con mas profundidad aplicado para js</p>
+
+<hr />
+<p>JavaScript utiliza la herencia prototípica para la creación de objetos. ¿Qué significa esto? Una forma de pensar en los objetos en JavaScript es que son como una colección de pares de valores clave.</p>
+
+<p>En JavaScript, un objeto es simplemente una instanciación de una función que produce una variable usando estas claves y valores (más sobre constructores de objetos).</p>
+
+<p>Esa función usualmente usa el método constructor que es parte del prototipo <strong>JavaScript Object.prototype</strong> (clase base para todos los objetos JavaScript) y para ser más explícitos, las propiedades y métodos se definen en la propiedad prototipo en la función constructora Object, no en las instancias del objeto en sí. .</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*for example creating an Automobile 
+object with properties
+*/</span>
+<span class="kd">function</span> <span class="nx">Automobile</span><span class="p">(</span><span class="nx">make</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">year</span><span class="p">,</span> <span class="nx">fuelType</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">make</span> <span class="o">=</span> <span class="nx">make</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">model</span><span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">year</span> <span class="o">=</span> <span class="nx">year</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">fuel</span> <span class="o">=</span> <span class="nx">fuelType</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//and instantiating a new Auto object looks like this. </span>
+<span class="kd">var</span> <span class="nx">familyVan</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Automobile</span><span class="p">(</span><span class="dl">'</span><span class="s1">Honda</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Odyssey</span><span class="dl">'</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Gas</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Lo que sucede es que estamos llamando a la función constructora heredada de la clase de objeto base cuando usamos la nueva palabra clave mientras llamamos a la función Automóvil.</p>
+
+<p>Hay algunas diferencias entre las especificaciones ES5 y ES6, que no estoy dispuesto a abordar en este momento, pero ES6 puede ayudar a eliminar parte de la repetición de asignar valores a las propiedades de objeto de su creación. Pero la mayor parte de esto es solo sugar sintax y no cambia la forma en que JavaScript crea nuevos objetos. Tenga en cuenta que tampoco vamos a tocar la palabra clave de clase ES6.</p>
+
+<h3 id="modificando-el-objeto">Modificando el objeto</h3>
+
+<p>Es posible que haya declarado un objeto utilizando este método siguiente creando un objeto anónimo como variable y luego utilizando corchetes o notación de puntos para modificar aún más el objeto.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">yota</span><span class="o">=</span> <span class="p">{</span><span class="na">make</span><span class="p">:</span><span class="dl">"</span><span class="s2">Toyota</span><span class="dl">"</span><span class="p">,</span> <span class="na">model</span><span class="p">:</span><span class="dl">"</span><span class="s2">4Runner</span><span class="dl">"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1992</span><span class="p">,</span> <span class="na">color</span><span class="p">:</span><span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">};</span>
+
+<span class="c1">//and then to modify it say adding a new function to it done something like </span>
+<span class="nx">yota</span><span class="p">.</span><span class="nx">goOffRoad</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">4 wheelin!</span><span class="dl">'</span><span class="p">);</span> 
+<span class="p">};</span>
+<span class="c1">//then you could call this new function on our yota variable </span>
+<span class="nx">yota</span><span class="p">.</span><span class="nx">goOffRoad</span><span class="p">();</span> <span class="c1">//'4 wheelin!'  </span>
+</code></pre></div></div>
+
+<p>Esto funciona, en un objeto anónimo o también en un objeto creado como nuestro anterior familyVan. Pero esto no funcionaría si intentáramos crear la función siguiendo la definición de nuestra función Automóvil, así:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">function</span> <span class="nx">Automobile</span><span class="p">(</span><span class="nx">make</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">year</span><span class="p">,</span> <span class="nx">fuelType</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">make</span> <span class="o">=</span> <span class="nx">make</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">model</span><span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">year</span> <span class="o">=</span> <span class="nx">year</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">fuel</span> <span class="o">=</span> <span class="nx">fuelType</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Automobile</span><span class="p">.</span><span class="nx">driveTrain</span><span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">driveType</span><span class="p">){</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">driveType</span> <span class="o">=</span> <span class="nx">driveType</span><span class="p">;</span> 
+<span class="p">};</span>
+
+<span class="c1">//create our familyVan again</span>
+<span class="kd">var</span> <span class="nx">familyVan</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Automobile</span><span class="p">(</span><span class="dl">'</span><span class="s1">Honda</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Odyssey</span><span class="dl">'</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Gas</span><span class="dl">'</span><span class="p">);</span>
+<span class="c1">//but if we attempt to call the driveType function to set the property..</span>
+<span class="nx">familyVan</span><span class="p">.</span><span class="nx">driveTrain</span><span class="p">(</span><span class="dl">'</span><span class="s1">Front Wheel Drive</span><span class="dl">'</span><span class="p">);</span> <span class="c1">//Throws an Unexpected TypeError, that familyVan.driveType is not a function</span>
+</code></pre></div></div>
+
+<p>Si observa el objeto real a través de <strong>console.log (familyVan)</strong> verá que no hay una función definida para nuestro familyVan.driveTrain. Aquí es donde es necesario acceder al prototipo de nuestro objeto para modificar nuestro constructor de automóviles es su creación inicial. Debemos asignar nuevas propiedades o métodos de esta manera usando el siguiente método accediendo al <strong>Object.prototype.</strong></p>
+
+<p><img src="https://media.giphy.com/media/S9KONwQSMU2tQ5ey0X/giphy.gif" alt="herencia -javascript" /></p>
+:ET

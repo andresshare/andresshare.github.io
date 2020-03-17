@@ -1,0 +1,14 @@
+I"d<p><img src="https://media.giphy.com/media/J6ikkcRDDSL4I/giphy.gif" alt="OOP" /></p>
+
+<p>Es un único subproceso que realiza todas las operaciones de entrada y salida (I/O) de forma asíncrona. El Event loop es una cola de funciones. Cuando se ejecuta una función asíncrona, la función devuelve el código interno de la función, lo envuelve y se inserta en una cola. El motor de JavaScript manda las operaciones a la cola y hace que se procesen en segundo plano para no bloquear las demás operaciones. Por ejemplo si corremos el siguiente código:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hola!</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="nx">timeout</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Soy el código interno de una función asíncrona !</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">5000</span><span class="p">);</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="nx">timeout</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Yo también soy el código interno de una función asíncrona !</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">5000</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2"> Bienvenido </span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+:ET

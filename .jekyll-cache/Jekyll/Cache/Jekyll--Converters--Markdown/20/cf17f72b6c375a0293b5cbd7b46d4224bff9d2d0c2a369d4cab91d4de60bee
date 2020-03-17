@@ -1,0 +1,305 @@
+I"=[<p><img src="https://media.giphy.com/media/88SCuVTIoAJ8Y/source.gif" alt="OOP" /></p>
+
+<p>Con este post planeo mostrar variados de javascript
+para el manejo del lenguaje</p>
+
+<p>Empecemos!!</p>
+
+<h2 id="variables">Variables</h2>
+<p>Son valores asignados a memoria</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">);</span> <span class="c1">//1</span>
+<span class="c1">//reasignar valor</span>
+<span class="nx">foo</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">);</span> <span class="c1">//2</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>No asignar variables con valor numerico al inicio de la variable:
+ <del>1valor</del>
+ó
+ <del>%valor</del>,
+o usar palabras reservadas como
+<strong>function*</strong>, <strong>class</strong></p>
+  </li>
+  <li>
+    <p>javascript usa el <strong>**camelCase</strong>** las variables se debe declarar asi:</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> -  costoFactura
+ -  imprimirPorcentaje
+ -  costoTotal
+</code></pre></div></div>
+
+<p>Continuemos con las asignacion de variables</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span><span class="p">,</span>
+  <span class="nx">y</span><span class="p">,</span>
+  <span class="nx">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//Solo se asigna el valor a x</span>
+<span class="c1">//comprobando</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">//1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span> <span class="c1">//</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">z</span><span class="p">);</span> <span class="c1">//</span>
+
+<span class="c1">//Asignando lo valores de manera independiente</span>
+
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nx">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="nx">z</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">//1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span> <span class="c1">//2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">z</span><span class="p">);</span> <span class="c1">//3</span>
+
+<span class="c1">//Asignacion entre variables</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="nx">z</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">//1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span> <span class="c1">//3</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">z</span><span class="p">);</span> <span class="c1">//6</span>
+</code></pre></div></div>
+
+<h3 id="let-var-const">LET VAR CONST</h3>
+
+<p>var n = 12
+let numero = 1
+const numeros = 123</p>
+
+<p><strong>var</strong> : si no declaramos valor con n,mostrara en consola un <strong>undefined</strong></p>
+
+<p><strong>let</strong> : tambien se mostrara como <strong>undefined</strong>,si no declaramos un valor</p>
+
+<p><strong>const</strong>: mostrara un <strong>SyntaxError: Missing initializer in const declaration</strong>
+por los cual SIEMPRE se debe declarar un valor</p>
+
+<h3 id="valores-primitivos-en-las-variables">Valores primitivos en las variables</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">numero</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="kd">var</span> <span class="nx">booleano</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="kd">var</span> <span class="nx">string</span> <span class="dl">'</span><span class="s1">cadenas de caracteres</span><span class="dl">'</span>
+<span class="kd">var</span> <span class="nx">nulo</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">null</span><span class="dl">'</span> <span class="c1">// un solo valor y es nulll</span>
+<span class="kd">var</span> <span class="nx">indefinido</span> <span class="o">=</span> <span class="nx">undefinded</span><span class="p">;</span>
+
+<span class="c1">//las variables si no se les asigna</span>
+<span class="c1">//un valor viene por defecto como indefinido</span>
+</code></pre></div></div>
+
+<p>Para conocer el tipo de valor de la varible con un <strong>typeof</strong></p>
+
+<p>Ejemplo</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">numero</span><span class="p">);</span> <span class="c1">//number</span>
+</code></pre></div></div>
+
+<p>Atención JS desde su creacion tomas los null como un <strong>object</strong> para corergir esto entre “” dejo este pequeño hack</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nx">nulo</span> <span class="o">====</span> <span class="kc">null</span><span class="p">){</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">is null</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="objetos">OBJETOS</h3>
+
+<p>Un objeto es un a referencia a una coleccion que contiene un conjunto de propiedades y valores</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">objecto</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span> <span class="p">:</span> <span class="nx">andres</span><span class="p">,</span>
+    <span class="na">lastName</span><span class="p">:</span> <span class="nx">share</span>
+<span class="p">};</span>
+
+<span class="c1">//copia del objeto</span>
+
+<span class="kd">var</span> <span class="nx">objectoDos</span> <span class="o">=</span> <span class="nx">objecto</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">objectoDos</span><span class="p">)</span> <span class="o">|</span>
+
+<span class="c1">//A tener en cuenta los objetos son unicos</span>
+<span class="c1">// con sus propiedades y metodos ...</span>
+
+</code></pre></div></div>
+
+<h3 id="arrays">Arrays</h3>
+
+<p>son colecciones de valores con indices numericos</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">//a</span>
+</code></pre></div></div>
+
+<h3 id="computed-property-names">Computed property names</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">generarId</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="dl">"</span><span class="s2">id_</span><span class="dl">"</span> <span class="o">+</span> <span class="o">++</span><span class="nx">id</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">generarId</span><span class="p">()]:</span> <span class="dl">"</span><span class="s2">valor1</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">[</span><span class="nx">generarId</span><span class="p">()]:</span> <span class="dl">"</span><span class="s2">valor2</span><span class="dl">"</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>}</p>
+
+<h3 id="for---in">For - in</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">automovil</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">model</span><span class="p">:</span> <span class="dl">"</span><span class="s2">golf</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">make</span><span class="p">:</span> <span class="dl">"</span><span class="s2">volskwagen</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">year</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2010</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">color</span><span class="p">:</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">doors</span><span class="p">:</span> <span class="mi">4</span>
+<span class="p">};</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">automovil</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">automovil</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="c1">//model:golf</span>
+<span class="c1">//make:volskwagen</span>
+<span class="c1">//year:2010</span>
+<span class="c1">//color:red</span>
+<span class="c1">//doors:4</span>
+</code></pre></div></div>
+
+<h3 id="convertir-objeto-a-array">Convertir objeto a array</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">location</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">location</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">location</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">array</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span> <span class="na">key</span><span class="p">:</span> <span class="nx">key</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">location</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="for-of--recorre-stringsarray-objetos-mapas"><strong>FOR OF</strong>  recorre strings,array objetos mapas</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// filtrar solo numeros</span>
+<span class="kd">var</span> <span class="nx">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="mi">123213</span><span class="p">,,,,</span><span class="nx">sdkljfhksjdfh</span><span class="p">,</span><span class="mi">345</span><span class="p">,</span><span class="nx">rhfdk</span><span class="p">,</span><span class="nx">ujy</span><span class="p">,,,,,</span><span class="dl">'</span><span class="s1">
+var array = []
+for(var value of string){
+var number = parseInt(value)
+if(!isNaN(number)){
+    console.log(value + </span><span class="dl">'</span><span class="nx">tipo</span><span class="dl">'</span><span class="s1"> + typeof number)
+    array.push(number)
+}
+console.log(array)
+
+////123213345
+</span></code></pre></div></div>
+
+<h3 id="filtrar-emails">Filtrar emails</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">mapservicios</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span><span class="p">(</span> <span class="kd">var</span> <span class="nx">correo</span> <span class="k">of</span> <span class="nx">correos</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">dominio</span> <span class="o">=</span> <span class="nx">correo</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">@</span><span class="dl">'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span><span class="p">(</span> <span class="nx">dominio</span>  <span class="k">in</span> <span class="nx">mapservicios</span><span class="p">){</span>
+        <span class="nx">mapservicios</span><span class="p">[</span><span class="nx">dominio</span><span class="p">]</span><span class="o">++</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nx">mapservicios</span><span class="p">[</span><span class="nx">dominio</span><span class="p">]</span><span class="o">=</span> <span class="mi">1</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mapservicios</span><span class="p">)</span>
+
+</code></pre></div></div>
+<h3 id="convertir-objeto-a-arrays">Convertir objeto a arrays</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sumarNumero</span><span class="p">(){</span>
+    <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">arguments</span><span class="p">),</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">)</span> <span class="k">return</span> <span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">))</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">resultado</span> <span class="o">=</span> <span class="nx">sumarNumeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h3 id="hosting">Hosting</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//funcion llamada antes..</span>
+<span class="nx">mensaje</span><span class="p">()</span>
+<span class="kd">function</span> <span class="nx">mensaje</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">mensaje)
+}
+
+</span></code></pre></div></div>
+
+<h3 id="function-expresion">Function expresion</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//funcion llamada antes..</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">nuevo mensaje</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">//js siempre manda a llamar la ultima</span>
+<span class="c1">//function declarad</span>
+<span class="kd">var</span> <span class="nx">msj</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">mensaje)
+}
+msj()
+</span></code></pre></div></div>
+
+<h3 id="anonymus--function">Anonymus  function</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">function</span> <span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">funcion anonima</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">///funcion anonima que reconre varios arreglos</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">elemento</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">elemento</span><span class="p">)</span>
+<span class="p">})</span>
+
+
+</code></pre></div></div>
+
+<h4 id="named--function-expression">Named  function expression</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">almaceda</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">fool</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">mensaje function expre</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">almacena</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="iife">IIFE</h2>
+<p>Aisla piezas de codigo del global scope
+y se ejecuta inmediatamente</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">IIFE</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}());</span>
+</code></pre></div></div>
+
+<h3 id="clousure">Clousure</h3>
+
+<p>la funcion va a guardar la variable en el external scope
+funcion que contine un estaod interno si su
+variable esta en local</p>
+
+<p>siempre tiene un vinculo con sus variables
+declaradas por eso se llama CLOUSURE</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">let</span> <span class="nx">numero</span> <span class="o">=</span><span class="mi">1</span>
+
+<span class="kd">function</span> <span class="nx">fn</span><span class="p">(){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numero</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">ejecutafn</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="nx">callback</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="nx">ejecutafn</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+:ET

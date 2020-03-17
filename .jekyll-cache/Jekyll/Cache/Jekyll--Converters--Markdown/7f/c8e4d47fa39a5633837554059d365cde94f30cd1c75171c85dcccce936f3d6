@@ -1,0 +1,165 @@
+I"�@<p><img src="https://media.giphy.com/media/3ohze3pdoPu1xXSmmQ/giphy.gif" alt="OOP" /></p>
+
+<p>Encapsula el código y previene que pueda ser alterado desde el exterior.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hola MENSAJE/a</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">})()</span>
+</code></pre></div></div>
+
+<hr />
+<p>Según wikpedia, un IFFE es «un lenguaje de lenguaje de programación JavaScript que produce un alcance léxico utilizando el alcance de la función de JavaScript».</p>
+
+<p>Pero supongamos que el alcance léxico, la elevación variable y el alcance de la función no son términos con los que no este claro el conceptoa, no se preocupe, veamos qué hace realmente un IFFE, con ejemplos, un paso a la vez</p>
+
+<p>Básicamente y IIFE es:</p>
+
+<ul>
+  <li>Una función</li>
+  <li>evaluado inmediatamente</li>
+  <li>devolviendo un objeto</li>
+  <li>con atributos públicos (métodos y valores)</li>
+  <li>que puede referirse a los no públicos</li>
+  <li>y no exponiendo a los privados</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">f1</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="kd">let</span> <span class="nx">secret_a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">function</span> <span class="nx">secret_b</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">{</span> <span class="na">public_a</span><span class="p">:</span> <span class="nx">secret_a</span><span class="p">,</span> <span class="na">public_b</span><span class="p">:</span> <span class="nx">secret_b</span> <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="nx">f1</span><span class="p">()</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">obj1.public_a: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">obj1</span><span class="p">.</span><span class="nx">public_a</span><span class="p">);</span>         <span class="c1">// obj1.public_a: 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">obj1.public_b: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">obj1</span><span class="p">.</span><span class="nx">public_b</span><span class="p">());</span>       <span class="c1">// obj1.public_b() 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">obj1.secret_a: </span><span class="dl">'</span> <span class="o">+</span> <span class="k">typeof</span><span class="p">(</span><span class="nx">obj1</span><span class="p">.</span><span class="nx">secret_a</span><span class="p">));</span> <span class="c1">// obj1.secret_a: undefined</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">obj1.secret_b: </span><span class="dl">'</span> <span class="o">+</span> <span class="k">typeof</span><span class="p">(</span><span class="nx">obj1</span><span class="p">.</span><span class="nx">secret_b</span><span class="p">));</span> <span class="c1">// obj1.secret_b: undefined</span>
+</code></pre></div></div>
+<p>Ahora imagine que reemplazamos f1 con todo lo que estaba a la derecha de f1 =</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="c1">// here starts f1</span>
+  <span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">let</span> <span class="nx">secret_a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">function</span> <span class="nx">secret_b</span><span class="p">(){</span>
+      <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span> <span class="na">public_a</span><span class="p">:</span> <span class="nx">secret_a</span><span class="p">,</span> <span class="na">public_b</span><span class="p">:</span> <span class="nx">secret_b</span> <span class="p">};</span>
+  <span class="p">}</span> 
+  <span class="c1">// here ends f1</span>
+<span class="p">)()</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">obj2.public_a: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">obj2</span><span class="p">.</span><span class="nx">public_a</span><span class="p">);</span>         <span class="c1">// obj2.public_a: 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">obj2.public_b: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">obj2</span><span class="p">.</span><span class="nx">public_b</span><span class="p">());</span>       <span class="c1">// obj2.public_b() 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">obj2.secret_a: </span><span class="dl">'</span> <span class="o">+</span> <span class="k">typeof</span><span class="p">(</span><span class="nx">obj2</span><span class="p">.</span><span class="nx">secret_a</span><span class="p">));</span> <span class="c1">// obj2.secret_a: undefined</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">obj2.secret_b: </span><span class="dl">'</span> <span class="o">+</span> <span class="k">typeof</span><span class="p">(</span><span class="nx">obj2</span><span class="p">.</span><span class="nx">secret_b</span><span class="p">));</span> <span class="c1">// obj2.secret_b: undefined</span>
+</code></pre></div></div>
+
+<p>Esto tiene el mismo efecto, y ya reconocemos la famosa forma IIFE.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">(){</span> <span class="p">...</span> <span class="p">})()</span>
+</code></pre></div></div>
+
+<p>Pero un IIFE no solo puede devolver un nuevo objeto, también puede agregar cosas a uno:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">obj3</span> <span class="o">=</span> <span class="p">{</span> <span class="na">prop1</span><span class="p">:</span> <span class="mi">3</span> <span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">obj4</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">expose</span><span class="p">){</span> <span class="c1">// we call expose what comes from outside</span>
+  <span class="kd">function</span> <span class="nx">secret_b</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">expose</span><span class="p">.</span><span class="nx">public_b</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span> <span class="c1">// we add properties to expose</span>
+    <span class="k">return</span> <span class="nx">secret_b</span><span class="p">()</span> <span class="o">+</span> <span class="nx">expose</span><span class="p">.</span><span class="nx">prop1</span><span class="p">;</span> <span class="c1">// and read from it</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">expose</span><span class="p">;</span> <span class="c1">// we return the received object with extra stuff</span>
+<span class="p">})(</span><span class="nx">obj3</span><span class="p">);</span> <span class="c1">// we call the IIFE with some object</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">obj4.prop1: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">obj4</span><span class="p">.</span><span class="nx">prop1</span><span class="p">);</span>         <span class="c1">// obj4.prop1: 3</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">obj4.public_b: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">obj4</span><span class="p">.</span><span class="nx">public_b</span><span class="p">());</span> <span class="c1">// obj4.public_b() 5</span>
+</code></pre></div></div>
+
+<p>Observe que hubo cuatro cambios aquí:</p>
+
+<ul>
+  <li>let obj4 = (función (exponer) {nombramos el argumento que esperamos</li>
+  <li>expose.public_b = function () {agregamos cosas al objeto recibido</li>
+  <li>return expose; devolvemos el objeto enriquecido</li>
+  <li>}) (obj3); llamamos al IIFE con una discusión desde afuera</li>
+</ul>
+
+<p>Pero hoy en día, todo el mundo está cargando varios archivos que tienen pipelines complejas, y aquí IIFES puede ayudarlo a enriquecerse:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// file 1</span>
+<span class="nx">MyObj</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">expose</span><span class="p">){</span>
+  <span class="kd">let</span> <span class="nx">secret_b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+  <span class="nx">expose</span><span class="p">.</span><span class="nx">public_b</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="nx">secret_b</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">expose</span><span class="p">;</span>
+<span class="p">})(</span><span class="nb">window</span><span class="p">.</span><span class="nx">MyObj</span> <span class="o">||</span> <span class="p">{});</span>
+
+<span class="c1">// file 2</span>
+<span class="nx">MyObj</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">expose</span><span class="p">){</span>
+  <span class="nx">expose</span><span class="p">.</span><span class="nx">public_c</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="nx">expose</span><span class="p">.</span><span class="nx">public_b</span><span class="p">()</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">expose</span><span class="p">;</span>
+<span class="p">})(</span><span class="nb">window</span><span class="p">.</span><span class="nx">MyObj</span> <span class="o">||</span> <span class="p">{});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">myObj.secret_b: </span><span class="dl">'</span> <span class="o">+</span> <span class="k">typeof</span><span class="p">(</span><span class="nx">MyObj</span><span class="p">.</span><span class="nx">secret_b</span><span class="p">));</span> <span class="c1">// myObj.secret_b(): undefined</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">myObj.public_b: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">MyObj</span><span class="p">.</span><span class="nx">public_c</span><span class="p">());</span>       <span class="c1">// myObj.public_b() 9</span>
+
+</code></pre></div></div>
+
+<p>Esto funciona para cualquier archivo de pedido 1 y el archivo 2 se carga, por lo que puede tener algunas cosas básicas / compartidas en su objeto y aumentarlas según sea necesario en ciertas páginas, pero solo si el usuario las carga.</p>
+
+<p>Esto puede volverse bastante loco pronto, por lo que es mejor imponerle algunas convenciones, para que sepa qué esperar y dónde colocar las cosas:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Use you company or app name here to keep or your stuff namespaced</span>
+<span class="c1">// separatedly from 3rd party libraries</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">Namespace</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">Namespace</span> <span class="o">||</span> <span class="p">{};</span>
+
+<span class="c1">// Componen documentation</span>
+<span class="c1">// What it does: functional description</span>
+<span class="c1">// Example usage:</span>
+<span class="c1">//   Namespace.Component.init({ selector: '#some_id', some_param: 30 });</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">Namespace</span><span class="p">.</span><span class="nx">Component</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">expose</span><span class="p">){</span>
+  <span class="kd">let</span> <span class="nx">private_some</span><span class="p">;</span>
+
+  <span class="kd">function</span> <span class="nx">private_helper</span><span class="p">(){</span>
+    <span class="c1">// stuff</span>
+  <span class="p">}</span>
+
+  <span class="nx">expose</span><span class="p">.</span><span class="nx">public_method</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">// stuff</span>
+  <span class="p">}</span>
+
+  <span class="nx">expose</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">options</span><span class="p">){</span>
+    <span class="nx">private_some</span> <span class="o">=</span> <span class="nx">option</span><span class="p">.</span><span class="nx">some</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">expose</span><span class="p">;</span>
+<span class="p">})(</span><span class="nb">window</span><span class="p">.</span><span class="nx">Namespace</span><span class="p">.</span><span class="nx">Component</span> <span class="o">||</span> <span class="p">{});</span>
+</code></pre></div></div>
+
+<p>se puede usar</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Namespace</span><span class="p">.</span><span class="nx">Component</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#some_id</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">some_param</span><span class="p">:</span> <span class="mi">30</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>En sus archivos html para que tenga la definición del selector y la referencia en el mismo lugar, fácil de modificar si el html necesita cambiar.</p>
+
+<p>Además, recomendaría usar siempre clases de estilo ‘js-xxxx’ e identificadores (o atributos de datos) para que no interfieran con las tareas de diseño / diseño.</p>
+
+:ET

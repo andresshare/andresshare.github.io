@@ -1,0 +1,28 @@
+I"}<p><img src="https://media.giphy.com/media/pX4qCZekYXTYQ/giphy.gif" alt="recursivad" /></p>
+
+<ul>
+  <li>La recursividad consiste en funciones que se llaman a sí mismas, evitando el uso de bucles y otros iteradores.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">factorial</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">n</span><span class="o">*</span> <span class="nx">factorial</span><span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//other way</span>
+<span class="kd">const</span> <span class="nx">U</span> <span class="o">=</span> <span class="nx">f</span> <span class="o">=&gt;</span> <span class="nx">f</span> <span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">Y</span> <span class="o">=</span> <span class="nx">U</span> <span class="p">(</span><span class="nx">h</span> <span class="o">=&gt;</span> <span class="nx">f</span> <span class="o">=&gt;</span> <span class="nx">f</span> <span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">U</span> <span class="p">(</span><span class="nx">h</span><span class="p">)</span> <span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="p">(</span><span class="nx">x</span><span class="p">)))</span>
+
+<span class="kd">const</span> <span class="nx">factorial</span> <span class="o">=</span> <span class="nx">Y</span> <span class="p">(</span><span class="nx">f</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">=&gt;</span>
+  <span class="nx">x</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span>  <span class="nx">x</span> <span class="o">*</span> <span class="nx">f</span> <span class="p">(</span><span class="nx">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="p">(</span><span class="nx">factorial</span> <span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1">// 120</span>
+
+</code></pre></div></div>
+<p><strong>APLICACION</strong></p>
+
+<blockquote>
+  <p>El ejemplo típico sería el recorrer un árbol de elementos para hacer algo con todos ellos. Imagínate un sistema de archivos con carpetas y subcarpetas y archivos dentro de estas carpetas, o el árbol de elementos (DOM) de una página web donde unos elementos incluyen a su vez otros y no sabes cuántos hay en cada uno. En este tipo de situaciones la manera más eficiente de hacer una función que recorra todos los elementos es mediante recursión. Es decir, creas una función que recorra todos los elementos hijo del nodo que le pases y que se llame a sí misma para hacer lo mismo con los sub-nodos que haya. En el caso del sistema de archivos le pasarías una carpeta y se llamaría a sí misma por cada subcarpeta que hubiese, y así sucesivamente con todas las demás. Con una sola llamada inicial recorrerá automáticamente toda la estructura del sistema de archivos.</p>
+</blockquote>
+:ET

@@ -1,0 +1,13 @@
+I"<p><img src="https://media.giphy.com/media/Qz6AIuFvBGzNS/giphy-downsized-large.gif" alt="OOP" /></p>
+
+<p>Un objeto es una instancia de una clase,el objeto tiene su propio estado comportamiento he identidad.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">let</span> <span class="nx">miObject</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">elemento</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">frase</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">numero</span><span class="dl">'</span><span class="p">:</span><span class="mi">2</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">miObject</span><span class="p">.</span><span class="nx">numero</span><span class="p">)</span>
+
+</code></pre></div></div>
+:ET

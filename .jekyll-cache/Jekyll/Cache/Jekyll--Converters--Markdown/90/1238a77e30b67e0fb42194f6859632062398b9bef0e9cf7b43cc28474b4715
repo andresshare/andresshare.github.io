@@ -1,0 +1,28 @@
+I"<p><img src="https://media.giphy.com/media/cg5FwpvDmhIcM/giphy.gif" alt="factorial" /></p>
+
+<p>Lo primero es definir que un factorial es la multiplicación de todos los numeros  <strong>[ENTEROS]</strong> positivos. Que inician desde <strong>1</strong>.</p>
+
+<p>Como lo podemos ver en el siguiente ejemplo creado con javascript</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">function</span> <span class="nx">factorialize</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> 
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> 
+
+      <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+  
+  <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span><span class="nx">num</span> <span class="o">*</span> <span class="nx">factorialize</span><span class="p">(</span><span class="nx">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
+  
+  <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nx">factorialize</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>La <strong>Recursión</strong> es una función que se llama así misma para resolver una instancia de un problema. se aplica cuando al llamar la misma función repetidamente con diferentes parámetros desde un bucle. da solución a diferentes problemas, el más común es iterar sobre una estructura de datos hasta encontrar, calcular o ordenar y obtener el resultado.</p>
+:ET

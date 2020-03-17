@@ -1,0 +1,116 @@
+I"7'<p><img src="https://media.giphy.com/media/xUn3CftPBajoflzROU/giphy-downsized-large.gif" alt=".select en Ruby" /></p>
+
+<p>Se usa para filtrar una matriz de objetos.</p>
+
+<p>revise este ejemplo</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numeros_pares</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span>
+  <span class="k">if</span> <span class="n">n</span><span class="p">.</span><span class="nf">even?</span>
+    <span class="n">numeros_pares</span> <span class="o">&lt;&lt;</span> <span class="n">n</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+
+<p>En el codigo anterior, muestro una de las formas de obtener los numeros pares ahora 
+usando <strong>.select</strong> se hace mas facil</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">].</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="n">n</span><span class="p">.</span><span class="nf">even?</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>si queremos mas simplicidad</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">].</span><span class="nf">select</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:even?</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>si no le es familiar esta expresion <code class="highlighter-rouge">&amp;:even?</code>
+significa que se llama al metodo directamente</p>
+
+<p>Por otra parte es comun usar .select en <code class="highlighter-rouge">HASHES</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">carrros</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">volskwagen: </span><span class="mi">10</span><span class="p">,</span>
+  <span class="ss">fiat: </span><span class="mi">5</span><span class="p">,</span>
+  <span class="ss">mazda: </span><span class="mi">1</span>
+<span class="p">}</span>
+<span class="n">carros</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">|</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>En el ejemplo anterior buscamos
+carros &gt; 1 , las letras <code class="highlighter-rouge">K</code> viene de key y <code class="highlighter-rouge">v</code> valor</p>
+
+<p>Si queremos tener un poco mas de poder con <code class="highlighter-rouge">enumerable</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">carros</span> <span class="o">=</span><span class="sx">%w(volskwagen,fiat,mazda)</span>
+<span class="n">carros</span><span class="p">.</span><span class="nf">select</span><span class="p">.</span><span class="nf">with_index</span> <span class="p">{</span> <span class="o">|</span><span class="n">palabra</span><span class="p">,</span> <span class="n">idx</span><span class="o">|</span> <span class="n">idx</span><span class="p">.</span><span class="nf">even?</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>Esto le permite filtrar usando el índice, en lugar del objeto para este caso, una cadena en sí</p>
+
+<h1 id="creando-un-nuevo-array">Creando un nuevo array</h1>
+
+<p>Al usar  <code class="highlighter-rouge">select</code> se crea una nueva matriz</p>
+
+<p>si va a cambiar la matriz use
+<code class="highlighter-rouge">select!</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">carros</span> <span class="o">=</span> <span class="sx">%w(volskwagen fiatmazda)</span>
+<span class="n">carros</span><span class="p">.</span><span class="nf">select!</span> <span class="p">{</span> <span class="o">|</span><span class="n">carros</span><span class="o">|</span> <span class="n">carros</span><span class="p">.</span><span class="nf">start_with?</span> <span class="s2">"v"</span> <span class="p">}</span>
+</code></pre></div></div>
+<p>Recuerde que en Ruby trabajamos convencion sobre configuracion</p>
+
+<p>En el camino se preguntara si escojer entre <strong>FIND</strong> o <strong>SELECT</strong></p>
+
+<p>Select funciona muy bien si ud quiere filtrar una lista y devolver un array con los resultados</p>
+
+<p>Pero si usted solo quiere enconrar un objeto</p>
+
+<p>use <strong>FIND</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">palabras</span><span class="o">=</span> <span class="sx">%w(o one ones juanes)</span>
+<span class="n">palabras</span><span class="p">.</span><span class="nf">find</span> <span class="p">{</span> <span class="o">|</span><span class="n">l</span><span class="o">|</span> <span class="n">l</span><span class="p">.</span><span class="nf">size</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">}</span>
+<span class="n">palabras</span><span class="p">.</span><span class="nf">find</span> <span class="p">{</span> <span class="o">|</span><span class="n">l</span><span class="o">|</span> <span class="n">l</span><span class="p">.</span><span class="nf">size</span> <span class="o">==</span> <span class="mi">8</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>si encuentra en el resultado la palabra <code class="highlighter-rouge">nil</code> significa que el resultado no fue encontrado</p>
+
+<p>ahora,veamos el metodo <code class="highlighter-rouge">find_all</code> como lo relacionamos con <code class="highlighter-rouge">FIND</code> y <code class="highlighter-rouge">SELECT</code></p>
+
+<p>Eureka!</p>
+
+<p><code class="highlighter-rouge">find_all</code> es un alias para <code class="highlighter-rouge">select</code>
+<code class="highlighter-rouge">find</code> le permite buscar un objeto especifico.</p>
+
+<p>en RUBY 2.6 añade otro alias para  <code class="highlighter-rouge">select</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">filter</span>
+</code></pre></div></div>
+
+<p>si se ha preguntado cual es el OPUESTO de select</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">].</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">4</span> <span class="p">}</span>
+</code></pre></div></div>
+<p>En el ejemplo anterior puede eliminar elementos que no quiere. evitando la opcion de los que si quiere</p>
+
+<p>entonces con <code class="highlighter-rouge">reject</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">].</span><span class="nf">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">4</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>esta opcion no tiene mejora en rendimiento.lo que si ocurrira es mas legible.</p>
+
+<p>HABLEMOS DE <strong>RAILS</strong></p>
+
+<p>Si ha trabajado con <code class="highlighter-rouge">rails &amp; models</code> sabe que tambien puede usar  <code class="highlighter-rouge">select</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Car</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="ss">:id</span><span class="p">,</span> <span class="n">model</span><span class="p">:,</span> <span class="ss">:color</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Al usar <code class="highlighter-rouge">ActiveRecord</code> con <code class="highlighter-rouge">select</code> se hace asi por cuestiones de rendimiento</p>
+
+<p>Me despido hasta la proxima !
+les dejo una guia de ruby</p>
+
+<p>💎 <a href="https://andresshare.github.io/ruby/2019/08/30/ruby-podersinlimites.html">Ruby poder sin limites</a></p>
+:ET

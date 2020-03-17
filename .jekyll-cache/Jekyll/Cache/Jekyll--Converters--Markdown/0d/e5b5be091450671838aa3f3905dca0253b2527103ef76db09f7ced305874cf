@@ -1,0 +1,581 @@
+I"$�<p><img src="https://media.giphy.com/media/3o6vY6L5NNr67HQW7S/giphy.gif" alt="Python" /></p>
+
+<p>Python test 🐍</p>
+
+<p><strong>Hello</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+	<span class="k">return</span> <span class="s">"hello!!"</span>
+</code></pre></div></div>
+
+<p><strong>Return the Next Number from the Integer Passed</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">addition</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p><strong>Area of a Triangle</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tri_area</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">b</span><span class="p">,</span><span class="n">h</span><span class="p">:</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><strong>Hours and Minutes to Seconds</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">h</span><span class="o">*</span><span class="mi">3600</span><span class="o">+</span><span class="n">m</span><span class="o">*</span><span class="mi">60</span>
+</code></pre></div></div>
+<p><strong>Return the Sum of Two Numbers</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">addition</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</code></pre></div></div>
+<p><strong>Return the Remainder from Two Numbers</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">remainder</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="n">y</span>
+</code></pre></div></div>
+
+<p><strong>Maximum Edge of a Triangle</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">next_edge</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">-</span><span class="mi">1</span>
+</code></pre></div></div>
+<p>**To the Power of _____
+**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">calculate_exponent</span> <span class="o">=</span> <span class="nb">pow</span>
+</code></pre></div></div>
+<p><strong>Minutes to Seconds</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">m</span><span class="o">*</span><span class="mi">60</span>
+
+</code></pre></div></div>
+
+<p><strong>Profitable Gamble</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">profitable_gamble</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span>
+</code></pre></div></div>
+<p><strong>Is the Number Less than or Equal to Zero?</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">less_than_or_equal_to_zero</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">&lt;=</span><span class="mi">0</span>
+</code></pre></div></div>
+
+<p><strong>Find the Smallest Number in a List</strong></p>
+
+<p>findSmallestNum = min</p>
+
+<p><strong>Return the First Element in a List</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">get_first_value</span><span class="o">=</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><strong>Name Greeting!</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hello_name</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">'Hello '</span> <span class="o">+</span> <span class="nb">str</span> <span class="o">+</span><span class="s">'!'</span>
+</code></pre></div></div>
+
+<p><strong>Multiple of 100</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">divisible</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">n</span><span class="o">%</span><span class="mi">100</span><span class="o">==</span><span class="mi">0</span>
+</code></pre></div></div>
+
+<p><strong>String to Integer and Vice Versa</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">to_int</span><span class="o">=</span><span class="nb">int</span>
+
+<span class="n">to_str</span><span class="o">=</span><span class="nb">str</span>
+</code></pre></div></div>
+<p><strong>Maximum Difference</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">difference</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>Find the Largest Number in a List</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">findLargestNum</span> <span class="o">=</span> <span class="nb">max</span>
+</code></pre></div></div>
+<p><strong>Difference of Max and Min Numbers in List</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">difference_max_min</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>difference_max_min = lambda l: max(l) - min(l)</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">comp</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Concatenate First and Last Name into One String</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">concat_name</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">l</span><span class="o">+</span><span class="s">", "</span><span class="o">+</span><span class="n">f</span>
+</code></pre></div></div>
+<p><strong>Testing K^K == N?</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">k_to_k</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="o">**</span><span class="n">b</span> <span class="o">==</span> <span class="n">a</span>
+</code></pre></div></div>
+
+<p>**Concatenating Two Integer Lists
+**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">concat</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+
+</code></pre></div></div>
+<p><strong>Check if an Integer is Divisible By Five</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">divisible_by_five</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">n</span><span class="o">%</span><span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span>
+
+</code></pre></div></div>
+
+<p><strong>The 3 Programmers Problem</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">programmers</span><span class="o">=</span><span class="k">lambda</span><span class="o">*</span><span class="n">a</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>**
+Is the Word Singular or Plural?**</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">is_plural</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">'s'</span>
+</code></pre></div></div>
+
+<p><strong>Check String for Spaces</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">has_spaces</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="s">' '</span> <span class="ow">in</span> <span class="n">s</span>
+</code></pre></div></div>
+
+<p><strong>Check if a List Contains a Given Number</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">check</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">lst</span><span class="p">,</span> <span class="n">el</span><span class="p">:</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">lst</span>
+</code></pre></div></div>
+
+<p>**Is the String Empty?
+**</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_empty</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="ow">not</span> <span class="n">s</span>
+
+<span class="c1"># or
+</span>
+<span class="n">is_empty</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span> <span class="o">==</span> <span class="s">''</span>
+
+</code></pre></div></div>
+<p><strong>Case Insensitive Comparison</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">match</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">s1</span> <span class="o">==</span> <span class="n">s2</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+<p><strong>Convert Number to String of Dashes</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num_to_dashes</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s">'-'</span><span class="o">*</span><span class="n">x</span>
+</code></pre></div></div>
+<p><strong>Is the Number Even or Odd?</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">isEvenOrOdd</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span> <span class="p">:</span> <span class="s">"odd"</span> <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="k">else</span> <span class="s">"even"</span>
+</code></pre></div></div>
+<p><strong>Slice of Pie</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">equal_slices</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span> <span class="k">return</span> <span class="n">p</span><span class="o">*</span><span class="n">e</span><span class="o">&lt;=</span><span class="n">t</span>
+</code></pre></div></div>
+
+<p><strong>Char-to-ASCII</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ctoa</span> <span class="o">=</span> <span class="nb">ord</span>
+</code></pre></div></div>
+<p><strong>Return the First and Last Elements in a List</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">first_last</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">first_last</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">lst</span><span class="p">:</span> <span class="p">[</span><span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+</code></pre></div></div>
+<p><strong>Return the Last Element in a List</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">get_last_item</span> <span class="o">=</span> <span class="nb">list</span><span class="o">.</span><span class="n">pop</span>
+</code></pre></div></div>
+<p>**Is the Dictionary Empty?
+**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+	<span class="k">return</span> <span class="ow">not</span> <span class="n">d</span>
+</code></pre></div></div>
+<p>**
+Find the Smallest and Biggest Numbers**</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">min_max</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:[</span><span class="nb">min</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+</code></pre></div></div>
+
+<p><strong>Re-Form The Word</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">get_word</span><span class="o">=</span><span class="k">lambda</span> <span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">:</span><span class="n">l</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="o">+</span><span class="n">r</span>
+<span class="n">get_word</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="n">l</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="o">+</span><span class="n">r</span>
+
+</code></pre></div></div>
+<p><strong>No Conditionals?</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">flip</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span><span class="ow">not</span> <span class="n">a</span>
+<span class="c1">#or
+</span><span class="k">def</span> <span class="nf">flip</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">y</span> <span class="o">^</span> <span class="mi">1</span>
+
+</code></pre></div></div>
+
+<p><strong>Stack the Boxes</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">stack_boxes</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span>
+</code></pre></div></div>
+
+<p><strong>Sort Numbers in Ascending Order</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sort_nums_ascending</span> <span class="o">=</span> <span class="nb">sorted</span>
+</code></pre></div></div>
+<p>**
+Check if the Same Case**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">same_case</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span> <span class="ow">or</span> <span class="n">s</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><strong>Find the Index</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">find_index</span> <span class="o">=</span> <span class="nb">list</span><span class="o">.</span><span class="n">index</span>
+</code></pre></div></div>
+<p><strong>Reverse the Case</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">reverse_case</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">swapcase</span>
+</code></pre></div></div>
+<p><strong>Truthy or Falsy?</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_truthy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="k">else</span> <span class="mi">0</span>
+</code></pre></div></div>
+<p><strong>Hashes and Pluses</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">hash_plus_count</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="s">'#+'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><strong>Limit a Number’s Value</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">limit_number</span><span class="o">=</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">:</span><span class="nb">sorted</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">])[</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1">#or
+</span><span class="k">def</span> <span class="nf">limit_number</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">y</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="k">else</span> <span class="n">z</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">z</span> <span class="k">else</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<p><strong>Next Element in Arithmetic Sequence</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">next_element</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>#50</p>
+
+<p><strong>Find the Total Number of Digits the Given Number Has</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">find_digit_amount</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>**Missing Third Angle
+**</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">missing_angle</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="s">'acute'</span> <span class="k">if</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="o">&gt;</span> <span class="mi">90</span> <span class="k">else</span> <span class="s">'obtuse'</span> <span class="k">if</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="o">&lt;</span> <span class="mi">90</span> <span class="k">else</span> <span class="s">'right'</span>
+</code></pre></div></div>
+
+<p>**
+Find the Index (Part 1)**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">search</span><span class="o">=</span><span class="k">lambda</span> <span class="n">l</span><span class="p">,</span><span class="n">i</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">l</span> <span class="k">else</span> <span class="n">l</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Count Instances of a Character in a String</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">char_count</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">y</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Add, Subtract, Multiply or Divide?</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">operation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+	<span class="k">return</span> <span class="p">{</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">:</span> <span class="s">"added"</span><span class="p">,</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">:</span> <span class="s">"subtracted"</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">:</span> <span class="s">"multiplied"</span><span class="p">,</span> <span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">:</span> <span class="s">"divided"</span><span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+
+</code></pre></div></div>
+<p><strong>Find the Index (Part 2)</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">search</span><span class="o">=</span><span class="k">lambda</span> <span class="n">l</span><span class="p">,</span><span class="n">i</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">l</span> <span class="k">else</span> <span class="n">l</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Count Syllables</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">number_syllables</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
+	<span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">w</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">'-'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Scoring System</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">calculate_scores</span><span class="p">(</span><span class="n">txt</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">txt</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s">"ABC"</span><span class="p">]</span>
+
+</code></pre></div></div>
+
+<p>**Volume of a Box
+**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">animals</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">c</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="n">c</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">m</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">p</span> <span class="o">*</span> <span class="mi">4</span>
+
+</code></pre></div></div>
+<p><strong>Volume of a Box</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">volume_of_box</span><span class="p">(</span><span class="n">sizes</span><span class="p">):</span>
+	<span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="o">=</span><span class="n">sizes</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+	<span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">z</span>
+</code></pre></div></div>
+
+<p><strong>String or Integer?</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">int_or_string</span><span class="p">(</span><span class="n">var</span><span class="p">):</span>
+	<span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="n">var</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span>
+
+</code></pre></div></div>
+
+<p><strong>Reverse a List</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">reverse</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">l</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>**Word Endings
+**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add_ending</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span><span class="o">+</span><span class="n">e</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">l</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>**Same Number of Unique Elements
+**</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">same</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a1</span><span class="p">))</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><strong>Check if Number is within a Given Range</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_in_range</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="p">[</span><span class="s">"min"</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">[</span><span class="s">"max"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><strong>Basic Statistics: Mean</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mean</span><span class="o">=</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span><span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><strong>Unlucky 13</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">unlucky_13</span><span class="o">=</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">l</span> <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="mi">13</span><span class="p">]</span>
+</code></pre></div></div>
+<p><strong>Total Number of Unique Characters</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">count_unique</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">))</span>
+<span class="n">count_unique</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span><span class="p">))</span>
+</code></pre></div></div>
+<p><strong>Calculate Determinant of a 2x2 Matrix</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">calc_determinant</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">calc_determinant</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+	<span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],[</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span>
+	<span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">d</span> <span class="o">-</span> <span class="n">b</span><span class="o">*</span><span class="n">c</span>
+</code></pre></div></div>
+
+<p><strong>Additive Inverse</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">additive_inverse</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="p">[</span><span class="n">a</span><span class="o">*-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">l</span><span class="p">]</span>
+<span class="n">additive_inverse</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">lst</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">]</span>
+</code></pre></div></div>
+<p><strong>Sum of Cubes</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sum_of_cubes</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span><span class="nb">sum</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">n</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>Recursion: Array Sum</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sum_recursively</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>Get Word Count</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">count_words</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">" "</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+
+</code></pre></div></div>
+<p><strong>Extract City Facts</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">`city_facts(</span><span class="p">{</span><span class="w">
+  </span><span class="err">name:</span><span class="w"> </span><span class="s2">"Paris"</span><span class="p">,</span><span class="w">
+  </span><span class="err">population:</span><span class="w"> </span><span class="s2">"2,140,526"</span><span class="p">,</span><span class="w">
+  </span><span class="err">continent:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="w">
+</span><span class="p">}</span><span class="err">)</span><span class="w"> </span><span class="err">➞</span><span class="w"> </span><span class="s2">"Paris has a population of 2,140,526 and is situated in Europe"</span><span class="w">
+
+</span><span class="err">city_facts(</span><span class="p">{</span><span class="w">
+  </span><span class="err">name:</span><span class="w"> </span><span class="s2">"Tokyo"</span><span class="p">,</span><span class="w">
+  </span><span class="err">population:</span><span class="w"> </span><span class="s2">"13,929,286"</span><span class="p">,</span><span class="w">
+  </span><span class="err">continent:</span><span class="w"> </span><span class="s2">"Asia"</span><span class="w">
+</span><span class="p">}</span><span class="err">)</span><span class="w"> </span><span class="err">➞</span><span class="w"> </span><span class="s2">"Tokyo has a population of 13,929,286 and is situated in Asia"</span><span class="err">`</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">city_facts</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span> <span class="o">+</span> <span class="s">" has a population of "</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="s">'population'</span><span class="p">]</span> <span class="o">+</span> <span class="s">" and is situated in "</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="s">'continent'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">city_facts</span><span class="p">(</span><span class="n">city</span><span class="p">):</span>
+	<span class="k">return</span> <span class="s">'{name} has a population of {population} and is situated in {continent}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="o">**</span><span class="n">city</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Say “Hello” Say “Bye”</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">say_hello_bye</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="s">'Hello '</span><span class="o">+</span><span class="n">n</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="k">if</span> <span class="n">b</span> <span class="k">else</span> <span class="s">'Bye '</span><span class="o">+</span><span class="n">n</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>**Valid Zip Code
+**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">is_valid</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">z</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+
+</code></pre></div></div>
+<p>**
+Hitting the Jackpot**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">test_jackpot</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span>
+</code></pre></div></div>
+<p>**
+Same ASCII?**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">same_ascii</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+	<span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">ord</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span> <span class="o">==</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">ord</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>**Palindrome?
+**</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">txt</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">txt</span> <span class="o">==</span> <span class="n">txt</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>**
+Reverse Coding Challenge #3
+**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">mystery_func</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="n">n</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">]</span>
+
+</code></pre></div></div>
+
+<p>**Remove the First and Last Characters
+**</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">remove_first_last</span><span class="p">(</span><span class="n">txt</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">txt</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">txt</span>
+</code></pre></div></div>
+
+<p><strong>Check if One List is Subset of Another</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">subset</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">):</span>
+	<span class="k">return</span> <span class="nb">all</span><span class="p">([</span><span class="n">n</span> <span class="ow">in</span> <span class="n">l2</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">l1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">subset</span><span class="p">(</span><span class="n">lst1</span><span class="p">,</span> <span class="n">lst2</span><span class="p">):</span>
+	<span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="n">lst1</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">set</span><span class="p">(</span><span class="n">lst2</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><strong>Capture the Rook</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">can_capture</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+</code></pre></div></div>
+
+<p><strong>Semantic Versioning</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">retrieve_major</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'.'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">retrieve_minor</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'.'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">retrieve_patch</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'.'</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>**Convenience Store
+**</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">change_enough</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">a</span><span class="o">&lt;=</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">.25</span><span class="o">+</span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">.1</span><span class="o">+</span><span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mf">.05</span><span class="o">+</span><span class="n">c</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mf">.01</span>
+</code></pre></div></div>
+<p><strong>Hurdle Jump</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hurdle_jump</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[]</span> <span class="ow">or</span> <span class="n">p</span> <span class="o">&gt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><strong>Between Words</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">is_between</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+	<span class="k">return</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">f</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">w</span><span class="p">])[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">w</span>
+</code></pre></div></div>
+
+<p><strong>Odd Up, Even Down</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">transform</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="k">else</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">l</span><span class="p">]</span>
+</code></pre></div></div>
+<p><strong>Check if a String Contains only Identical Characters</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">is_identical</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">is_identical</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span><span class="n">s</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">*</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><strong>Online Shopping</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">free_shipping</span><span class="p">(</span><span class="n">o</span><span class="p">):</span><span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">values</span><span class="p">())</span><span class="o">&gt;</span><span class="mi">50</span>
+</code></pre></div></div>
+
+<p><strong>Exists a Number Higher?</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">exists_higher</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+	<span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">lst</span> <span class="ow">or</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="n">n</span>
+</code></pre></div></div>
+<p><strong>Increment to Top</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">increment_to_top</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+	<span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">-</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Even Odd Partition</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">even_odd_partition</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">:[[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="p">],[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span> <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="p">]]</span>
+</code></pre></div></div>
+<p>**
+Find the Bug: Checking Even Numbers**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">check_all_even</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+  <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">x</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">)</span>
+</code></pre></div></div>
+<p>**
+Smaller String Number**</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">smaller_num</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">):</span>
+	<span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">)</span>
+</code></pre></div></div>
+<p>**
+Remove None from a List**</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">remove_none</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">]</span>
+</code></pre></div></div>
+<p><strong>Repeat the Same Item Multiple Times</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">repeat</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+	<span class="k">return</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">t</span>
+</code></pre></div></div>
+
+<p><strong>Omnipresent Value</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">is_omnipresent</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+	<span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">val</span> <span class="ow">in</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">)</span>
+</code></pre></div></div>
+<p>**
+Spelling it Out**</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">spelling</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+	<span class="k">return</span> <span class="p">[</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</code></pre></div></div>
+<p><strong>List from Comma-Delimited String</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">to_array</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">t</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">", "</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="p">[]</span>
+</code></pre></div></div>
+<p><strong>Repeating Letters N Times</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">repeat</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+	<span class="k">return</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">c</span><span class="o">*</span><span class="n">n</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">t</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><strong>Generate a Countdown of Numbers in a List</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+	<span class="k">return</span> <span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<p><strong>Filter Repeating Character Strings</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">identical_filter</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+	<span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span> <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">==</span><span class="n">i</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+
+</code></pre></div></div>
+:ET

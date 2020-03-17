@@ -1,0 +1,378 @@
+I"��<p><img src="https://media.giphy.com/media/f9SgNsok0zsxI3vS56/giphy.gif" alt="Que es testing" /></p>
+
+<p>Programar es escribir código para resolver problemas😎. La ingeniería de software es la práctica de utilizar un proceso estructurado para resolver problemas.</p>
+
+<p>Tener una base de código que podamos cambiar, ampliar y refactorizar según sea necesario.</p>
+
+<p>Las pruebas aseguran que nuestro programa funciona según lo previsto y que los cambios en la base de código no rompen la funcionalidad existente.</p>
+
+<p><img src="https://media.giphy.com/media/DUrdT2xEmJWbS/giphy.gif" alt="Que es testing" /></p>
+
+<p>Se trata de ser pragmático en lo que probamos, 😌 <strong>cómo lo hacemos y cuándo lo hacemos</strong> debemos aprovechar las herramientas y técnicas que nos permiten probar nuestro código de la manera más eficiente posible. Las pruebas deben ser fáciles y sin barreras</p>
+
+<p>Tenemos que entrar en el código porque no hay pruebas o las pruebas que existen son tan debiles que nos vemos obligados a reescribir las pruebas a medida que escribimos el código. De esto no se trata la Ingeniería del Software.</p>
+
+<p>Las pruebas deberían permitir la refactorización, no obstaculizar nuestra capacidad de realizar cambios en la base de código. Deberíamos pasar nuestro tiempo escribiendo  💻 <strong>lógica de negocios</strong>, no luchando con pruebas.</p>
+
+<p>En mi experiencia parece que hay muchos consejos contradictorios, y eso es porque los hay. Las pruebas son dificiles, más que cualquier otra disciplina de ingeniería de software. con mis colegas siempre estamos discutiendo sobre 📝 <strong>Qué evaluamos</strong>, <strong>cómo evaluamos</strong> y <strong>cuándo evaluamos</strong>.</p>
+
+<p><code class="highlighter-rouge">Aqui escribo mi proceso de pensamiento sobre cómo hago para agregar pruebas a una base de código.</code></p>
+
+<p>antes de esto hago un resumen de como funciona la cosa,para  que en lo posible hablemos el mismo lenguaje</p>
+
+<h1 id="que-diablos-es-testing">QUE DIABLOS ES TESTING!</h1>
+
+<p><img src="https://media.giphy.com/media/l49JD2nWqfZ7exBzW/giphy.gif" alt="Que es testing" /></p>
+
+<p>Cuando escribimos código, necesitamos ejecutarlo para asegurarnos de que está haciendo lo que esperamos.</p>
+
+<blockquote>
+  <p>Las pruebas son un contrato con nuestro código: dado un valor, esperamos que se devuelva un determinado resultado.</p>
+</blockquote>
+
+<p>Las pruebas en ejecución pueden considerarse como un mecanismo de retroalimentación que nos informa si nuestro programa funciona según lo previsto</p>
+
+<p>no he escuchado a nadie decir</p>
+
+<blockquote>
+  <p>Escribí muchas pruebas, pero no valió la pena, así que las eliminé,el programa funciona como pense.</p>
+</blockquote>
+
+<p>Si bien pasar las pruebas no puede probar los errores de ausencia, nos informan que nuestro código funciona de la manera definida por la prueba. En contraste, una prueba fallida indica que algo no está bien. Necesitamos entender por qué nuestra prueba falló para poder modificar el código y / o las pruebas, según sea necesario.</p>
+
+<blockquote>
+  <p>👨 =&gt; <strong>Corro Test</strong> =&gt; ☑️ ok, ✖️falla
+entonces <strong>resultado del proceso</strong> =&gt; 👨 y de nuevo…</p>
+</blockquote>
+
+<p>Si bien pasar las pruebas no puede probar los errores de ausencia, nos informan que nuestro código funciona de la manera definida por la prueba. En contraste, una prueba fallida indica que algo no está bien. Necesitamos entender por qué nuestra prueba falló para poder modificar el código y / o las pruebas, según sea necesario.</p>
+
+<h3 id="propiedades-de-los-test">Propiedades de los test</h3>
+
+<ul>
+  <li>
+    <p><strong>Rapido</strong>: Las pruebas nos dan la confianza de que nuestro código funciona según lo previsto. Un ciclo de retroalimentación más lento dificulta el desarrollo ya que nos lleva más tiempo descubrir si nuestro cambio fue correcto. Si nuestro flujo de trabajo está plagado de pruebas lentas, no las ejecutaremos con tanta frecuencia. Esto conducirá a problemas en el futuro.</p>
+  </li>
+  <li>
+    <p><strong>Determinista:</strong> Las pruebas deben ser deterministas, es decir, la misma entrada siempre dará como resultado la misma salida. Si las pruebas no son deterministas, tenemos que encontrar una manera de explicar el comportamiento aleatorio dentro de nuestras pruebas. Si bien definitivamente hay un código no determinista en producción (es decir, Machine learning o IA), debemos tratar de hacer que todo nuestro código no probabilístico sea lo más determinista posible. No tiene sentido hacer trabajo adicional a menos que nuestro programa lo requiera.</p>
+  </li>
+  <li>
+    <p><strong>Automatizado</strong> Podemos confirmar que nuestro programa funciona ejecutándolo. Esto podría ejecutarse manualmente un comando en REPL o actualizar una página web; en ambos casos, estamos buscando ver si nuestro programa hace lo que se supone que debe hacer.</p>
+
+    <p>Si bien las pruebas manuales están bien para proyectos pequeños, se vuelven inmanejables a medida que nuestro proyecto crece en complejidad. Al automatizar nuestro conjunto de pruebas, podemos verificar rápidamente que nuestro programa funciona a pedido.</p>
+  </li>
+</ul>
+
+<h3 id="vocabulario-en-comun">Vocabulario en comun</h3>
+
+<blockquote>
+  <p>input &gt; System under Test <strong>(sut)</strong> &gt;  Output &gt; <strong>Salidas validas</strong> &gt;  ☑️ test ok, ✖️ test falla</p>
+</blockquote>
+
+<p>Un sistema bajo prueba (SUT) es la entidad que se está probando actualmente. Esto podría ser una línea de código, un método o un programa completo.</p>
+
+<p><strong>Los criterios de aceptación</strong> se refieren a la verificación que realizamos que nos permite aceptar la salida del sistema. La especificidad y el rango de los criterios de aceptación dependen de lo que estamos probando: los dispositivos médicos y el sector aeroespacial requieren que las pruebas sean específicas, ya que hay mucho menos margen de error.</p>
+
+<p>Si Amazon hace una mala recomendación, no es el fin del mundo. Si Watson de IBM sugiere una cirugía incorrecta, puede ser mortal.</p>
+
+<p><strong>Las pruebas</strong> se refieren al proceso de ingresar entradas en nuestro sistema bajo prueba y validar las salidas según nuestros criterios de aceptación:</p>
+
+<ul>
+  <li>Si la salida está bien, nuestra prueba pasa.</li>
+  <li>Si la salida no está bien, nuestra prueba falla y tenemos que depurar.</li>
+</ul>
+
+<blockquote>
+  <p>Idenficar fallos temprano: 
+<strong>Los errores cuestan dinero</strong>. <strong>💰</strong> <code class="highlighter-rouge">Cuánto</code> depende de cuándo los encuentres.</p>
+</blockquote>
+
+<p>La corrección de errores se vuelve más costosa cuanto más se encuentre en el Ciclo de vida del desarrollo de software (SDLC). El verdadero costo de un error de software profundiza en este problema.</p>
+
+<p>Mejorar el diseño del sistema</p>
+
+<p>Este es un poco controvertido, pero creo que escribir código teniendo en cuenta las pruebas mejora el diseño del sistema.</p>
+
+<p>Un completo conjunto de pruebas muestra que el desarrollador realmente ha pensado en el problema con cierta profundidad. Escribir pruebas te obliga a usar tu propia API; Con suerte, esto da como resultado una mejor interfaz.</p>
+
+<p>Todos los proyectos tienen limitaciones de tiempo y es bastante fácil acostumbrarse a tomar atajos que aumentan el acoplamiento entre módulos que conducen a interdependencias complejas. Tenemos que ser conscientes de resolver problemas con el código de espagueti.</p>
+
+<p>Saber que tenemos que probar nuestro código nos obliga a escribir código modular. Si algo es torpe para probar, podría haber una mejor interfaz que podamos implementar. Tomarse el tiempo para escribir exámenes nos obliga a estar atentos; respiramos profundamente antes de ver el problema desde la perspectiva de un usuario.</p>
+
+<p>Una vez que escriba código comprobable utilizando patrones como la inyección de dependencias, verá cómo agregar una estructura que hace más fácil verificar que nuestro código está haciendo lo que esperamos.</p>
+
+<h3 id="black-box-contra-white-box">Black Box contra White Box</h3>
+
+<p><img src="https://media.giphy.com/media/l2JegI3GShJoyHEwo/giphy.gif" alt="pyramid test" /></p>
+
+<p>Las pruebas se pueden clasificar ampliamente en dos grandes categorías: pruebas de Black Box y pruebas de White Box.</p>
+
+<p><strong>Black Box Testing</strong>: se refiere a técnicas de prueba en las que el tester no puede ver el funcionamiento interno del elemento que se está probando.</p>
+
+<blockquote>
+  <p>entrada &gt; 📦 &gt; salida</p>
+</blockquote>
+
+<p><strong>White Box Testing</strong>: es la técnica en la que el tester puede ver el funcionamiento interno del elemento que se está probando.</p>
+
+<blockquote>
+  <p>entrada &gt; 📤 &gt; salida</p>
+</blockquote>
+
+<p>Como desarrolladores, realizamos pruebas de White Box. Escribimos el código dentro de la caja y sabemos cómo probarlo a fondo. Esto no quiere decir que no sea necesario realizar pruebas de caja negra, aún deberíamos hacer que alguien realice las pruebas a un nivel superior; <code class="highlighter-rouge">La proximidad al código puede conducir a puntos ciegos en nuestras pruebas.</code></p>
+
+<h3 id="piramide-de-prueba">Piramide de prueba</h3>
+
+<p>La Pirámide de prueba no es una regla difícil y rápida, pero proporciona un buen lugar para comenzar a pensar en una estrategia de prueba. Una buena regla general es escribir tantas pruebas en cada nivel como sea necesario para tener confianza en su sistema. Deberíamos escribir pruebas a medida que escribimos código, iterando hacia una estrategia de prueba que funcione para el proyecto en el que estamos trabajando</p>
+
+<p><img src="https://media.giphy.com/media/J341kHWTGLqflpLcGb/giphy.gif" alt="pyramid test" /></p>
+
+<p>La Pirámide de prueba no es una regla difícil y rápida, pero proporciona un buen lugar para comenzar a pensar en una estrategia de prueba.</p>
+
+<p>Una buena regla general es escribir tantas pruebas en cada nivel como sea necesario para tener confianza en su sistema. Deberíamos escribir pruebas a medida que escribimos código, iterando hacia una estrategia de prueba que funcione para el proyecto en el que estamos trabajando</p>
+
+<h3 id="unit-test">UNIT test</h3>
+
+<p>Las pruebas unitarias son pruebas de bajo nivel que se centran en probar una parte específica de nuestro sistema. Son baratos de escribir y rápidos de ejecutar. Las fallas en las pruebas deben proporcionar suficiente información contextual para identificar la fuente del error. Los desarrolladores suelen escribir estas pruebas durante la fase de implementación del Ciclo de vida del desarrollo de software (SDLC).</p>
+
+<p>Las pruebas unitarias deben ser independientes y aisladas; interactuar con componentes externos aumenta tanto el alcance de nuestras pruebas como el tiempo que tardan en ejecutarse.  reemplazar las dependencias con dobles de prueba da como resultado pruebas deterministas que se ejecutan rápidamente.</p>
+
+<p><strong>¿Qué tan grande debe ser nuestra prueba de unidad?</strong> Como todo lo demás en programación, <code class="highlighter-rouge">depende</code> de lo que estamos tratando de hacer. Pensar en términos de una unidad de comportamiento nos permite escribir pruebas alrededor de bloques lógicos de código.</p>
+
+<p><strong>Test Pyramid</strong> recomienda realizar muchas pruebas unitarias en nuestro conjunto de pruebas. Estas pruebas nos dan la confianza de que nuestro programa funciona como se esperaba. Escribir un código nuevo o modificar el código existente puede requerir que reescribamos algunas de nuestras pruebas. Esta es una práctica estándar, nuestro conjunto de pruebas crece con nuestra base de código.</p>
+
+<p>Intente ser consciente de que nuestro conjunto de pruebas crece en complejidad. Recuerde, el código que prueba nuestro código de producción también <strong>es código de producción.</strong> Tómese el tiempo para refactorizar sus pruebas para asegurarse de que sean <strong>eficientes y efectivas.</strong></p>
+
+<p>vamos al codigo!</p>
+
+<p>Supongamos que tenemos la siguiente función que toma una lista de palabras y devuelve la palabra más común y el número de apariciones de esa palabra:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">buscar_palabra_principal</span><span class="p">(</span><span class="n">palabras</span><span class="p">)</span>
+    <span class="c1"># Devuelve las palabras y ocurrencias más comunes
+</span>    <span class="n">contador_palabras</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">palabras</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">contador_palabras</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Podemos probar esta función creando una lista, ejecutando la función <code class="highlighter-rouge">buscar_palabra_principal</code> sobre esa lista y comparando los resultados de la función con el valor que esperamos:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">buscar_palabra_principal</span><span class="p">():</span>
+    <span class="n">palabras</span> <span class="o">=</span> <span class="p">[</span><span class="s">"foo"</span><span class="p">,</span> <span class="s">"bar"</span><span class="p">,</span> <span class="s">"bat"</span><span class="p">,</span> <span class="s">"baz"</span><span class="p">,</span> <span class="s">"foo"</span><span class="p">,</span> <span class="s">"baz"</span><span class="p">,</span> <span class="s">"foo"</span><span class="p">]</span>
+    <span class="n">resultado</span> <span class="o">=</span> <span class="n">buscar_palabra_principal</span><span class="p">(</span><span class="n">palabras</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">resultado</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">"foo"</span>
+    <span class="k">assert</span> <span class="n">resultado</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span> 
+</code></pre></div></div>
+<p>Si alguna vez quisimos cambiar la implementación de <code class="highlighter-rouge">buscar_palabra_principal</code>, podemos hacerlo sin temor. Nuestra prueba asegura que la funcionalidad de <code class="highlighter-rouge">buscar_palabra_principal</code> no puede cambiar sin causar una falla en la prueba.</p>
+
+<h3 id="test-de-integracion">Test de integracion</h3>
+
+<p><img src="https://media.giphy.com/media/i5RWkVZzVScmY/giphy.gif" alt="pyramid test" /></p>
+
+<p>Cada aplicación compleja tiene componentes internos y externos que trabajan juntos para hacer algo interesante. A diferencia de las pruebas de unidades que se centran en componentes individuales, las pruebas de integración combinan varias partes del sistema y las prueban juntas como un grupo. Las pruebas de integración también pueden referirse a las pruebas en los límites de servicio de nuestra aplicación, es decir, cuando salen a la base de datos, sistema de archivos o API externa.</p>
+
+<p>Estas pruebas suelen ser escritas por desarrolladores, pero no tienen que ser así. Por definición, las pruebas de integración tienen un alcance mayor y tardan más en ejecutarse que las pruebas unitarias. Esto significa que las fallas de la prueba requieren cierta investigación: sabemos que uno de los componentes de nuestra prueba no funciona, pero es necesario encontrar la ubicación exacta de la falla. Esto contrasta con las pruebas unitarias que son de menor alcance e indican exactamente dónde fallaron las cosas.</p>
+
+<p>Deberíamos intentar ejecutar pruebas de integración en un entorno similar a la producción; Esto minimiza la posibilidad de que las pruebas fallen debido a diferencias en la configuración.
+Ejemplo de prueba de integración</p>
+
+<p>Supongamos que tenemos la siguiente función que toma una URL y una tupla de (palabra, ocurrencias). Nuestra función crea un registro y lo guarda en la base de datos:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">save_to_db</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">top_word</span><span class="p">):</span>
+    <span class="n">record</span> <span class="o">=</span> <span class="n">TopWord</span><span class="p">()</span>
+    <span class="n">record</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span>
+    <span class="n">record</span><span class="o">.</span><span class="n">word</span> <span class="o">=</span> <span class="n">top_word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">record</span><span class="o">.</span><span class="n">num_occurrences</span> <span class="o">=</span> <span class="n">top_word</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">record</span>
+</code></pre></div></div>
+
+<p>Probamos esta función pasando información conocida; la función debe guardar la información que ingresamos en la base de datos. Nuestro código de prueba extrae el registro recién guardado de la base de datos y confirma que sus campos coinciden con la entrada que ingresamos.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">test_save_to_db</span><span class="p">():</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s">"http://test_url.com"</span>
+    <span class="n">most_common_word_details</span> <span class="o">=</span> <span class="p">(</span><span class="s">"Python"</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
+
+    <span class="n">word</span> <span class="o">=</span> <span class="n">save_to_db</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">most_common_word_details</span><span class="p">)</span>
+
+    <span class="n">inserted_record</span> <span class="o">=</span> <span class="n">TopWord</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="nb">id</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">inserted_record</span><span class="o">.</span><span class="n">url</span> <span class="o">==</span> <span class="s">"http://test_url.com"</span>
+    <span class="k">assert</span> <span class="n">inserted_record</span><span class="o">.</span><span class="n">word</span> <span class="o">==</span> <span class="s">"Python"</span>
+    <span class="k">assert</span> <span class="n">inserted_record</span><span class="o">.</span><span class="n">num_occurrences</span> <span class="o">==</span> <span class="mi">42</span>
+
+</code></pre></div></div>
+
+<p>Observe cómo este es el tipo de prueba que hacemos manualmente para confirmar que las cosas funcionan como se esperaba. Automatizar esta prueba nos evita tener que verificar repetidamente esta funcionalidad cada vez que hacemos un cambio en el código.</p>
+
+<h3 id="end-to-end">End-to-End</h3>
+
+<p><img src="https://media.giphy.com/media/49zC0Bm1kbu36/giphy.gif" alt="pyramid test" /></p>
+
+<p>Las pruebas de End to End verifican si el sistema cumple con nuestros requisitos comerciales definidos. Una prueba común es trazar una ruta a través del sistema de la misma manera que un usuario lo experimentaría. Por ejemplo, podemos probar un nuevo flujo de trabajo del usuario: simular la creación de una cuenta, “hacer clic” en el enlace en el correo electrónico de activación, iniciar sesión por primera vez e interactuar con la ventana emergente modal de nuestra aplicación web.</p>
+
+<p>Podemos realizar pruebas de extremo a extremo a través de nuestra interfaz de usuario (UI) aprovechando una herramienta de automatización del navegador como Selenium. Esto crea una dependencia entre nuestra interfaz de usuario y nuestras pruebas, lo que hace que nuestras pruebas sean frágiles: un cambio en el front-end requiere que cambiemos las pruebas. Esto no es sostenible ya que nuestro front-end se volverá estático o nuestras pruebas no se ejecutarán.</p>
+
+<p>Una mejor solución es probar la capa subcutánea, es decir, la capa justo debajo de nuestra interfaz de usuario. Para una aplicación web, esto sería probar la <strong>API REST</strong>, tanto enviando JSON como sacando <strong>JSON.</strong></p>
+
+<p>Nuestras pruebas subcutáneas son nuestros contratos con nuestro front-end; pueden ser utilizados por nuestros desarrolladores front-end como una especificación de la <strong>API REST</strong>. Las herramientas, como <strong>swagger-meqa</strong>, que se basan en la especificación <strong>OpenAPI</strong> pueden ayudarnos a automatizar este proceso. También podríamos contar con herramientas completas como <strong>Postman</strong> para probar, depurar y validar nuestra API.</p>
+
+<p>Las pruebas de extremo a extremo se consideran recuadro negro, ya que no necesitamos saber nada sobre la implementación para realizar las pruebas. Esto también significa que las fallas en las pruebas no proporcionan una indicación de lo que salió mal; necesitaríamos usar registros para ayudarnos a rastrear el error y diagnosticar la falla del sistema.</p>
+
+<p>vamos al codigo!</p>
+
+<p>Aquí estamos utilizando el cliente <strong>Flask Test</strong> para ejecutar pruebas subcutáneas en nuestra <strong>API REST</strong>. Hay muchas cosas que suceden detrás de escena y el resultado que recibimos <strong>(código de estado HTTP)</strong> nos permite saber que la prueba pasó o falló.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">test_end_to_end</span><span class="p">():</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">test_client</span><span class="p">()</span>
+
+    <span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s">"url"</span><span class="p">:</span> <span class="s">"https://www.python.org"</span><span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/top-word"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="n">HTTPStatus</span><span class="o">.</span><span class="n">OK</span>
+
+</code></pre></div></div>
+
+<h3 id="structuring-tests">Structuring Tests</h3>
+
+<p>Cada caso de prueba se puede separar en las siguientes fases:</p>
+
+<ul>
+  <li>configurar el sistema bajo prueba (SUT) en el entorno requerido por el caso de prueba (condiciones previas)</li>
+  <li>realizando la acción que queremos probar en SUT verificar si se produjo el resultado esperado (postcondiciones)</li>
+  <li>derribar SUT y devolver el medio ambiente al estado en que lo encontramos</li>
+</ul>
+
+<p>Hay dos marcos ampliamente utilizados para estructurar pruebas: Arrange-Act-Assert y Given-When-Then.
+Organizar-Actuar-Afirmar (AAA)</p>
+
+<p>El patrón AAA es una abstracción para separar las diferentes partes de nuestras pruebas:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Organizar todas las condiciones previas necesarias
+- Actuar sobre el SUT
+- Afirmar que se cumplen nuestras condiciones posteriores
+</code></pre></div></div>
+
+<p>Vamos la codigo!</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">test_find_top_word</span><span class="p">():</span>
+    <span class="c1"># Arrange
+</span>    <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s">"foo"</span><span class="p">,</span> <span class="s">"bar"</span><span class="p">,</span> <span class="s">"bat"</span><span class="p">,</span> <span class="s">"baz"</span><span class="p">,</span> <span class="s">"foo"</span><span class="p">,</span> <span class="s">"baz"</span><span class="p">,</span> <span class="s">"foo"</span><span class="p">]</span>
+
+    <span class="c1"># Act
+</span>    <span class="n">result</span> <span class="o">=</span> <span class="n">find_top_word</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+
+    <span class="c1"># Assert
+</span>    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">"foo"</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span>
+
+</code></pre></div></div>
+
+<h3 id="gwt">GWT</h3>
+
+<p>GWT proporciona una abstracción útil para separar las diferentes fases de nuestra prueba:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Dado un conjunto de condiciones previas
+- Cuando realizamos una acción en el SUT
+- Entonces nuestras condiciones posteriores deben ser las siguientes
+</code></pre></div></div>
+
+<p>GWT es ampliamente utilizado en Behavior Driven Development (BDD).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">test_find_top_word</span><span class="p">():</span>
+    <span class="c1"># Given a list of word
+</span>    <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s">"foo"</span><span class="p">,</span> <span class="s">"bar"</span><span class="p">,</span> <span class="s">"bat"</span><span class="p">,</span> <span class="s">"baz"</span><span class="p">,</span> <span class="s">"foo"</span><span class="p">,</span> <span class="s">"baz"</span><span class="p">,</span> <span class="s">"foo"</span><span class="p">]</span>
+
+    <span class="c1"># When we run the function over the list
+</span>    <span class="n">result</span> <span class="o">=</span> <span class="n">find_top_word</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+
+    <span class="c1"># Then we should see `foo` occurring 3 times
+</span>    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">"foo"</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span>
+
+</code></pre></div></div>
+
+<h3 id="que-testear">Que testear!</h3>
+
+<p><img src="https://media.giphy.com/media/7MZ0v9KynmiSA/giphy.gif" alt="pyramid test" /></p>
+
+<p>Para probar que nuestro programa es correcto, tenemos que probarlo contra cada combinación concebible de valores de entrada. Este tipo de prueba exhaustiva no es práctica, por lo que debemos emplear estrategias de prueba que nos permitan seleccionar casos de prueba en los que es más probable que se produzcan errores.</p>
+
+<p>Los desarrolladores experimentados pueden equilibrar la escritura de código para resolver problemas comerciales con pruebas de escritura para garantizar la corrección y evitar la regresión. Encontrar este equilibrio y saber qué probar puede sentirse más como un arte que como una ciencia. Afortunadamente, hay algunas reglas generales que podemos seguir para asegurarnos de que nuestras pruebas sean exhaustivas.
+Requerimientos funcionales</p>
+
+<p>Queremos asegurarnos de que se hayan implementado todos los requisitos relevantes. Nuestros casos de prueba deben ser lo suficientemente detallados para verificar los requisitos comerciales. No tiene sentido construir algo si no cumple con los criterios establecidos.
+Prueba de ruta de base</p>
+
+<p>Tenemos que probar cada declaración al menos una vez. Si la declaración tiene un condicional (si o mientras), tenemos que variar nuestras pruebas para asegurarnos de probar todas las ramas del condicional. Por ejemplo, si tenemos el siguiente código:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="c1"># statement1
+</span><span class="k">elif</span> <span class="mi">18</span> <span class="o">&gt;=</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">35</span><span class="p">:</span>
+    <span class="c1"># statement2
+</span><span class="k">else</span><span class="p">:</span>
+    <span class="c1"># statement3
+</span></code></pre></div></div>
+
+<p>Para asegurarnos de alcanzar todas las ramas del condicional anterior, necesitamos escribir las siguientes pruebas:</p>
+
+<ol>
+  <li>x &lt; 18</li>
+  <li>18 &lt;= x &lt;= 35</li>
+  <li>x &gt; 35</li>
+</ol>
+
+<h3 id="partición-de-equivalencia">Partición de equivalencia</h3>
+
+<p>Se dice que dos casos de prueba que resultan en la misma salida son equivalentes. Solo requerimos uno de los casos de prueba para cubrir esa clase de errores.
+Análisis de límites</p>
+
+<ul>
+  <li>“Hay 2 problemas difíciles en Ciencias de la Computación: invalidación de caché, nombres de cosas y errores fuera de 1”.</li>
+</ul>
+
+<p>Este es uno de los chistes más antiguos de la programación, pero hay mucha verdad detrás, a menudo confundimos si necesitamos un <strong>&lt; o un &lt;=</strong>. Es por eso que siempre debemos probar las condiciones de emtorno.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="c1"># statement1
+</span><span class="k">else</span><span class="p">:</span>
+    <span class="c1"># statement2
+</span></code></pre></div></div>
+
+<p>Para asegurarnos de probar a fondo las condiciones de entorno del fragmento de código anterior, deberíamos tener casos de prueba para <strong>x = 17, x = 18 yx = 19.</strong> Tenga en cuenta que escribir casos de prueba se vuelve más complicado si nuestro límite tiene condicionales compuestos.</p>
+
+<h3 id="clases-de-datos-incorrectos">Clases de datos incorrectos</h3>
+
+<p>Esto se refiere a cualquiera de los siguientes casos:</p>
+
+<ul>
+  <li>Muy pocos datos (o sin datos)
+    - Demasiados datos
+    - Datos inválidos
+    - Tamaño incorrecto de datos
+    - Datos no inicializados</li>
+</ul>
+
+<h3 id="prueba-de-flujo-de-datos">Prueba de flujo de datos</h3>
+
+<p>Se enfoca en rastrear el flujo de control del programa con un enfoque en explorar la secuencia de eventos relacionados con el estado de los objetos de datos. Por ejemplo, recibimos un error si intentamos acceder a una variable que ha sido eliminada. Podemos utilizar las pruebas de flujo de datos para obtener casos de prueba adicionales para variables que no han sido probadas por otras pruebas.</p>
+
+<h3 id="error-adivinando">Error Adivinando</h3>
+
+<p>La experiencia pasada proporciona información sobre partes de nuestra base de código que puede conducir a errores. Mantener un registro de los errores anteriores puede mejorar la probabilidad de que no vuelva a cometer el mismo error en el futuro.
+Resumen</p>
+
+<p>Averiguar qué probar y hacerlo de manera eficiente es a lo que me refiero cuando digo <strong>Art of Developer Testing</strong>. La única manera de mejorar en las pruebas es escribiendo pruebas, presentando mejores estrategias de prueba y aprendiendo sobre diferentes técnicas de prueba. Al igual que en el desarrollo de software, cuanto más sepa sobre algo, mejor se convertirá en eso.</p>
+
+<p><strong>Cuando escribir pruebas</strong>
+Si bien hay mucha discusión interesante sobre cuándo escribir pruebas, creo que se lleva lejos del punto de prueba. No importa cuando escribes pruebas, solo importa que escribas pruebas.</p>
+
+<p><strong>Tip</strong></p>
+
+<p>El problema con las pruebas unitarias a menudo es que se realizan demasiadas pruebas triviales, que es solo un código adicional que debe mantenerse … si se hace mal, es más un obstáculo que un beneficio … es por eso que decidir qué probar es tan importante … pensar antes de actuar.</p>
+
+<p>y esta en es una breve introduccion
+nos vemos en el siguiente post</p>
+
+<p>Hasta pronto!</p>
+
+:ET

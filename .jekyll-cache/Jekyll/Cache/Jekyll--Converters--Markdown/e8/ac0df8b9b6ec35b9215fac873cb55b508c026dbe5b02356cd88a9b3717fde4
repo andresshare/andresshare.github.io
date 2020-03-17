@@ -1,0 +1,81 @@
+I"s<p><img src="https://media.giphy.com/media/dXICCcws9oxxK/giphy.gif" alt="OOP" /></p>
+
+<p>Todos los objetos en JavaScript provienen de Object; todos los objetos heredan métodos y propiedades de Object.prototype, aunque pueden ser sobrecargados.</p>
+
+<p>Sin embargo, un Object puede ser deliberadamente creado para que esto no sea cierto (por ejemplo usando Object.create(null)),</p>
+
+<p>o bien alterado para que no cumpla esta propiedad (por ejemplo usando Object.setPrototypeOf).</p>
+
+<hr />
+
+<h3 id="aclaremos-un-poco-a-prototype">Aclaremos un poco a Prototype</h3>
+<p>Cada vez que creamos una función en javascript, el motor de javascript crea dos objetos para nosotros.</p>
+
+<p>Los dos objetos que se crean cuando el motor Js procesa la función son,</p>
+
+<ul>
+  <li>
+    <p>Function object  que incorpora la función misma</p>
+  </li>
+  <li>
+    <p>Prototype Objects</p>
+  </li>
+</ul>
+
+<p>Prototype en Js se usa principalmente para la herencia, agrega métodos y propiedades en la propiedad prototipo de una función para que esos métodos y propiedades estén disponibles para las instancias de esa función.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello!!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// foo.prototype</span>
+</code></pre></div></div>
+
+<p>Cada vez que el motor Js crea el objeto Prototype, también crea una propiedad en función llamada Prototype. Con la ayuda de esta propiedad prototipo en función, podemos acceder al objeto Prototype creado para esa función.</p>
+
+<p>Por ejemplo, hemos visto la función foo que tiene una propiedad llamada Prototype que apunta al objeto Prototype. Para hacer uso del objeto Prototype, creamos un objeto utilizando la nueva palabra clave.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">foo</span><span class="p">();</span>
+<span class="c1">// myObj</span>
+</code></pre></div></div>
+<p>Cuando creamos un objeto, el motor myObj Js crea un objeto para nosotros que por defecto tiene un objeto llamado “proto”. Que a su vez apunta al objeto  inicial creado por la función.</p>
+
+<p><strong>A Mover codigo</strong></p>
+
+<p>Ahora que sabemos que hay un Prototype creado por el motor Js cada vez que creamos un objeto para ver cómo funciona, creemos una propiedad “decir” en el objeto “myObj” con el valor “Hi from myObj itself”.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(){}</span>
+<span class="kd">var</span> <span class="nx">myObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">foo</span><span class="p">();</span>
+<span class="nx">myObj</span><span class="p">.</span><span class="nx">say</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hi from myObj itself</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Cuando accedemos a “myObj.say” sabemos que devolverá el valor “Hi from myObj itself”. Creamos otro objeto para el Prototype con la misma propiedad pero con un valor diferente “Hi from proto object”</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(){}</span>
+<span class="kd">var</span> <span class="nx">myObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">foo</span><span class="p">();</span>
+<span class="nx">myObj</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">.</span><span class="nx">say</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hi from proto object</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Accediendo al “myObj.proto.say” devolverá “Hi from proto object”.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(){}</span>
+<span class="kd">var</span> <span class="nx">myObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">foo</span><span class="p">();</span>
+<span class="nx">myObj</span><span class="p">.</span><span class="nx">say</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hi from myObj itself</span><span class="dl">"</span><span class="p">;</span>
+<span class="c1">// Hi from myObj itself</span>
+<span class="nx">myObj</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">.</span><span class="nx">say</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hi from proto object</span><span class="dl">"</span><span class="p">;</span>
+<span class="c1">// Hi from proto object</span>
+<span class="k">delete</span> <span class="nx">myObj</span><span class="p">.</span><span class="nx">say</span><span class="p">;</span>
+<span class="c1">// true</span>
+<span class="nx">myObj</span><span class="p">.</span><span class="nx">say</span>
+<span class="c1">// Hi from proto object</span>
+</code></pre></div></div>
+
+<p>Pero cuando eliminamos el “myObj.say” y accedemos al mismo, el motor Js mira el objeto “proto” para ver, si hay alguna propiedad “decir”. Que encontrará la propiedad “myObj.proto.say”, con el valor “Hola del objeto proto” y se devolverá al acceder a “myObj.say”.</p>
+
+<p>Ahora que sabemos cada vez que creamos un objeto, el motor Js crea otro objeto para nosotros llamado prototipo. Podemos acceder al prototipo usando “.prototype” desde la función. Pero cuando creamos un objeto usando una nueva palabra clave, Js crea “proto”, que apunta al objeto prototipo.</p>
+
+<p>Cada vez que buscamos una propiedad en un objeto, el motor Js la devolverá, si la encuentra en el objeto mismo. Si no existe tal propiedad, el motor Js buscará el objeto prototipo</p>
+
+:ET

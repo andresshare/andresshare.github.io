@@ -1,0 +1,6 @@
+I"N<p><img src="https://media.giphy.com/media/l0HlBaC5Kp9cXZDTa/giphy-downsized-large.gif" alt="OOP" /></p>
+
+<p>Es una <strong>clase</strong> la cual no debe ser instanciada La creación de un objeto no es posible en una clase abstracta.</p>
+
+<p>Pero esta puede ser heredada: Una clase abstracta solo puede tener métodos abstractos</p>
+:ET

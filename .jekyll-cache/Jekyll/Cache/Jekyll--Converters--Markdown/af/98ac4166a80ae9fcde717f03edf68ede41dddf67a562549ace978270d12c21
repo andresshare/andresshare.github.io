@@ -1,0 +1,25 @@
+I"N<p><img src="https://media.giphy.com/media/Zc8c0DRlusDWU/giphy.gif" alt="algoritmo" /></p>
+
+<p>Al tener un array</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var  arr = [2,3,4,3,2,1,2,2,];
+</code></pre></div></div>
+<p>y como argumento numero</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>numero = 2
+</code></pre></div></div>
+<p>el resultado</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>el resultado sera :4
+
+</code></pre></div></div>
+
+<p><strong>Mi solucion</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span>  <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,];</span>
+
+<span class="kd">const</span> <span class="nx">numeroRepetido</span><span class="o">=</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">ent</span><span class="p">)</span><span class="o">=&gt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">item</span> <span class="o">===</span> <span class="nx">ent</span><span class="p">)).</span><span class="nx">length</span><span class="p">;</span>
+
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numeroRepetido</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+</code></pre></div></div>
+:ET

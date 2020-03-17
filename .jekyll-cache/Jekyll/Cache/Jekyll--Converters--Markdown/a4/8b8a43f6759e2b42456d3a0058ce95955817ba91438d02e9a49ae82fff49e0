@@ -1,0 +1,88 @@
+I"<p><img src="https://media.giphy.com/media/ltJ7tmWDawr5u/giphy.gif" alt="algoritmo" /></p>
+
+<h1 id="-configuraciones-ruby-on-rails--">💎 CONFIGURACIONES RUBY ON RAILS  💎</h1>
+
+<hr />
+
+<p><strong>CONVECIÓN sobre CONFIGURACION</strong> [ROR]</p>
+
+<hr />
+
+<p><strong>BASIC DEMO</strong></p>
+
+<p><strong>Crear ruta</strong></p>
+
+<p><code class="highlighter-rouge">Config/routes.rb</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">get</span> <span class="s1">'hola'</span> <span class="o">=&gt;</span> <span class="s1">'pagescontrolador#holacciones'</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">Crear controlador</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rails generate controller pagescontrolador holacciones
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">Controlers/pages_controller</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">holaacciones</span>
+  <span class="n">render</span>  <span class="ss">text: </span><span class="s2">"texto creado para ruby on rails
+end
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>rails s</p>
+</blockquote>
+
+<blockquote>
+  <p>localhost:3000/hola</p>
+</blockquote>
+
+<p><strong>Listo!!</strong></p>
+
+<p><strong>FLOW</strong>  Rails[<strong>ROR</strong>]</p>
+
+<p><code class="highlighter-rouge">router/controlador/funcion Holaaciones/ </code></p>
+
+<p><strong>por convencion</strong></p>
+
+<p><code class="highlighter-rouge">views/pagescontrolador/holacciones.rb </code></p>
+
+<p>Instanciar informacion</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">holaacciones</span>
+ <span class="vi">@mensaje</span> <span class="o">=</span><span class="s2">"nuevo mensaje para ROR
+end
+</span></code></pre></div></div>
+<p>lo recibe el holacciones.rb</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;&lt;</span><span class="sx">%= @mensaje=</span><span class="o">&gt;&lt;</span><span class="sr">/h1&gt;
+</span></code></pre></div></div>
+
+<h2 id="crear-un-model">Crear un model</h2>
+
+<blockquote>
+  <p>rails  generate model User name:string
+ rake:db migrate</p>
+</blockquote>
+
+<h3 id="fill-data">Fill Data</h3>
+
+<p>rails c</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User.create("ROR")
+</code></pre></div></div>
+<p>router/controlador/</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">holaacciones</span>
+ <span class="vi">@mensaje</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+<p>Cambiar las rutas con ID</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">get</span> <span class="s1">'hola/:id'</span> <span class="o">=&gt;</span> <span class="s1">'pagescontrolador#holacciones'</span>
+</code></pre></div></div>
+<p>views/pagescontrolador/holacciones.rb</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;&lt;</span><span class="sx">%= @user.name=</span><span class="o">&gt;&lt;</span><span class="sr">/h1&gt;
+</span></code></pre></div></div>
+:ET

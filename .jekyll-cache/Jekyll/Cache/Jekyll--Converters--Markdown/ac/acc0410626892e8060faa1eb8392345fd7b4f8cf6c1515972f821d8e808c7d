@@ -1,0 +1,168 @@
+I"40<p><img src="https://media.giphy.com/media/AEAFLn3fOUImY/giphy.gif" alt=".select en Ruby" /></p>
+
+<ul>
+  <li>
+    <p>Aumento del rendimiento del 5-10%, en  camino a los grandes aumentos de rendimiento prometidos para 3.0</p>
+  </li>
+  <li>
+    <p>ahora <code class="highlighter-rouge">rescue/else/ensure</code> in do blocks</p>
+  </li>
+  <li>
+    <p>Nuevas capacidades de cobertura de prueba para métodos y ramas</p>
+  </li>
+</ul>
+
+<h1 id="cosas-que-no-sabias-de-ruby">COSAS QUE NO SABIAS DE RUBY</h1>
+
+<p>En 2018, Ruby obtuvo el quinto lugar entre los 23 lenguajes de programación más buscados para aprender a continuación por los desarrolladores.</p>
+<ul>
+  <li>
+    <p><strong>Ruby</strong>  permite escribir un código limpio con un mínimo ‘ruido’ sintáctico y semántico, ofrece muchas bibliotecas para implementar una variedad de funcionalidades y admite aspectos como la programación orientada a objetos (OOP), la tipificación dinámica y la metaprogramación. ¿Porque es esto importante?</p>
+  </li>
+  <li>
+    <p><strong>OOP</strong> La mayoría de las entidades en Ruby, incluidos los literales lógicos, numéricos y de cadena, y algunas entidades elementales se pueden recrear como objetos y métodos. Este enfoque facilita el diseño de sistemas complejos y escalarlos sin duplicación de código.</p>
+  </li>
+  <li>
+    <p><strong>Tipificación dinámica</strong> En la tipificación dinámica, la validación de tipo se realiza durante la ejecución del programa y no durante la compilación. Esto permite a los desarrolladores de Ruby simplificar la escritura de pequeños scripts y macros. Pueden reutilizar variables, desarrollar marcos más flexibles y fáciles y crear aplicaciones de una manera más conveniente.</p>
+  </li>
+  <li>
+    <p><strong>Metaprogramming</strong> 
+permite crear código de software y bibliotecas que otros desarrolladores pueden reutilizar y personalizar fácilmente de acuerdo con las necesidades y tareas a resolver. Al entrar en la metaprogramación, los desarrolladores pueden crear DSL - Lenguajes específicos de dominio para resolver tareas complejas dentro de industrias específicas. DSL permite a los profesionales de alto nivel, como administradores de sistemas, trabajar y realizar cambios en el software.</p>
+  </li>
+  <li>
+    <p>En el ecosistema de Ruby, los estándares de escritura y código de estructuración son aprobados por la comunidad global de desarrolladores y registrados en la guía de estilo de Ruby. (La guía de estilo de rieles también está aprobada).</p>
+  </li>
+</ul>
+
+<p>Un gran ejemplo de estandarización efectiva en Ruby: el mecanismo de creación de bibliotecas y herramientas llamado Gems (más de 140K de ellas disponibles).</p>
+
+<p>Todas las bibliotecas de Ruby tienen la misma estructura y se almacenan en un único repositorio: Ruby Gems.</p>
+
+<p>Esto determina la velocidad de obtención de las bibliotecas necesarias y la capacidad de navegar fácilmente por las nuevas herramientas.</p>
+
+<p>El ecosistema de Ruby ofrece un juego de herramientas completo para las pruebas (<strong>RSpec, Capybara y Cucumber)</strong>. Además, Ruby presta mucha atención a verificar cómo el código se ajusta a las normas y estándares <strong>(RuboCop, SimpleCov, RubyCritic, Rails_best_practices)</strong>.</p>
+
+<p><strong>Ruby on Rails (RoR)</strong> no es el único framework de Ruby, pero es el más popular y, por lo tanto, merece una atención especial. Rails ayudó a la gran cantidad de proyectos agradables a cobrar vida.</p>
+
+<p>Ruby on Rails se basa en la convención para escribir menos código y evitar la repetición. Este es el marco de código abierto, abierto y de uso gratuito, incluso con fines comerciales. La comunidad de Ruby ha creado soluciones útiles de código abierto, mediante las cuales los desarrolladores pueden crear fácilmente desde cero aplicaciones completamente funcionales que cumplan con los requisitos de seguridad y sean efectivas desde el punto de vista de los gastos, así como desde el punto de vista del desarrollo.</p>
+
+<ul>
+  <li>
+    <p><strong>RAILS para startups.</strong> Con Ruby on Rails, las startups pueden encontrar muchas respuestas a un problema que solo creen que podrían enfrentar. Es probable que encuentre cientos de elementos sobre un tema determinado. Todos los patrones o estructuras que puede desear ya existen, solo tiene que configurar algo, ¡y listo! Esto es genial para la creación rápida de prototipos. Un equipo pequeño puede obtener un producto viable mínimo en beta muy rápidamente utilizando herramientas con las que es divertido trabajar. En los EE. UU., Rails es el marco más buscado para las startups.</p>
+  </li>
+  <li>
+    <p><strong>RAILS para empresas.</strong> Cuando administra un gran negocio, la flexibilidad es una de las primeras prioridades. El truco está en la disponibilidad de los desarrolladores de Rails. El desarrollador que necesita está aquí antes que usted. Debido a que Ruby es elegante y fácil de comenzar, tiene un gran ecosistema y complementos para cada necesidad posible. A la nueva generación de programadores le encanta. Los desarrolladores pueden participar y comenzar a codificar de inmediato.</p>
+  </li>
+</ul>
+
+<p>Usted puede usar</p>
+
+<ul>
+  <li><a href="https://github.com/bonsaiERP/bonsaiERP">BonsaiERP</a> sistema ERP</li>
+  <li><a href="http://www.fatfreecrm.com">Fat Free CRM</a> sistema CRM</li>
+  <li><a href="https://github.com/discourse/discourse">Discourse**</a> sistema de discucion</li>
+  <li><a href="https://github.com/vteams/open-source-billing">Open Source Billing</a> sistema de facturacion</li>
+  <li><a href="https://www.spinacms.com/">Spina CMS</a> administracion de contenido</li>
+</ul>
+
+<h3 id="ruby-frameworks">Ruby frameworks</h3>
+<ul>
+  <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+  <li><a href="http://sinatrarb.com/">Sinatra</a> es orientado a servicios</li>
+  <li><a href="https://hanamirb.org/">Hanami</a> una alternativa web app</li>
+</ul>
+
+<h3 id="herramientas-ruby">HERRAMIENTAS RUBY</h3>
+
+<h3 id="testing">Testing</h3>
+
+<p><a href="https://rspec.info/">RSpec</a>:BDD-framework;
+<a href="https://github.com/teamcapybara/capybara">Capybara</a> test de aceptacion para web aplications;
+<a href="https://github.com/cucumber/cucumber-ruby">Cucumber</a> BDD;
+<a href="https://github.com/seattlerb/minitest">Minitest</a> una libreria unit-tests, un analogo de RSpec
+<a href="https://github.com/thoughtbot/shoulda-matchers">Shoulda-matchers</a> mas metodos para  RSpec.
+<a href="https://github.com/thoughtbot/factory_bot">Factory_bot</a> — configurar objetos Ruby;
+<a href="https://github.com/faker-ruby/faker">Faker</a>  Crear test de datos;
+<a href="https://github.com/bblimke/webmock">WebMock</a> — establecer HTTP requests;
+<a href="https://rubygems.org/gems/selenium-webdriver/versions/2.53.4?locale=es">Selenium WebDriver</a> — Ruby bindings para WebDriver.</p>
+
+<h3 id="analisis-de-codigo">Analisis de codigo</h3>
+
+<p><a href="https://github.com/rubocop-hq/rubocop">RuboCop</a> analizador de codigo Ruby;
+<a href="https://github.com/colszowka/simplecov">Simplecov</a> Analizador de codigo Ruby 1.9+;
+<a href="https://github.com/whitesmith/rubycritic">RubyCritic</a> un reportero de calidad de codigo;
+<a href="https://github.com/flyerhzm/rails_best_practices">Rails_best_practices</a> —una herramienta para verificar la calidad de codigo ruby</p>
+
+<h3 id="autorizacion">Autorizacion</h3>
+
+<p><a href="https://github.com/wardencommunity/warden">Warden</a>  General Rack marco de  Autenticacion 
+<a href="https://makeitrealcamp.gitbook.io/ruby-on-rails-5/devise">Devise</a> Una  authentication  flexible para Rails;
+<a href="https://github.com/jwt/ruby-jwt">JWT</a> — JSON Web Token standard implemntado para Ruby;
+<a href="https://github.com/doorkeeper-gem/doorkeeper">Doorkeeper</a> Un OAuth2 para Rails;
+<a href="https://github.com/oauth-xx/oauth2">OAuth2</a> a Ruby wrapper para OAuth 2.0;
+<a href="https://github.com/CanCanCommunity/cancancan">CanCanCan</a> — Una continuacion de CanCan, para Ruby on Rails.;
+<a href="https://github.com/varvet/pundit">Pundit</a>  un CanCanCan ligera version de alternativa.</p>
+
+<h3 id="api">Api</h3>
+
+<p><a href="https://github.com/rails-api/active_model_serializers">ActiveModel::Serializers</a> — JSON generation tool, para el Rails app;
+<a href="https://github.com/rmosolgo/graphql-ruby">GraphQL-Ruby</a> implementacion de Ruby para GraphQL
+<a href="https://github.com/ruby-grape/grape">Grape</a> un Micro-framework
+<a href="https://code.tutsplus.com/es/articles/crafting-apis-with-rails--cms-27695">REST</a>-Como APIs en Ruby;
+<a href="https://github.com/Apipie/apipie-rails">Apipie</a>  un administrador de documentacion API
+<a href="https://swagger.io/tools/open-source/open-source-integrations/">Swagger</a>  Un automatizado para crear Documentacion para Grape API.</p>
+
+<h3 id="abstraccion">Abstraccion</h3>
+
+<p><a href="https://dry-rb.org/">Dry-rb</a> — Una variada libreria para tareas comunes, esto permite usar la programacion funcional ;
+<a href="http://trailblazer.to/">Trailblazer</a> — un marco que impone la encapsulación, una estructura de código intuitiva y le brinda una arquitectura orientada a objetos
+<a href="https://github.com/collectiveidea/interactor">Interactor</a> — permite la estructuración de la lógica de negocios.</p>
+
+<h3 id="assets">Assets</h3>
+
+<p><a href="https://github.com/AssetSync/asset_sync">Asset_sync</a> Sincroniza Assets entre Rails y S3</p>
+
+<p><a href="https://github.com/ai/autoprefixer-rails">Autoprefixer</a> herramienta para analizar Css y añadir vendor Prefixes</p>
+
+<p><a href="https://w3c.github.io/i18n-drafts/articles/ruby/styling.en.html">CSS-props</a> - para una mejor experiencia entre navegadores.</p>
+
+<h3 id="cliente-http">Cliente HTTP</h3>
+
+<p><a href="https://github.com/jnunemaker/httparty">HTTParty</a>
+forma conveniente de trabajar con solicitudes HTTP;
+<a href="https://github.com/lostisland/faraday">Faraday</a> — una biblioteca de cliente HTTP que proporciona una interfaz común a través de muchos adaptadores y adopta el concepto de middleware Rack al procesar el ciclo de solicitud / respuesta;
+<a href="https://github.com/github/graphql-client">GraphQL-client</a> — una libreria para trabajar con solicitudes GraphQL.</p>
+
+<h3 id="desarrollo-movil">Desarrollo Movil</h3>
+
+<p><a href="http://www.rubymotion.com/">RubyMotion</a> — Le permite desarrollar y probar rápidamente aplicaciones nativas de iOS y OS X para iPhone, iPad, Mac y Android;
+<a href="http://ruboto.org/">Ruboto</a> — Una plataforma para desarrollar aplicaciones independientes completas para Android;</p>
+
+<p><a href="https://github.com/rpush/rpush">Ruby Push Notifications</a> — iOS, Android y Windows Phone de notificaciones Push.</p>
+
+<h3 id="machine-learning">Machine Learning</h3>
+
+<p><a href="https://github.com/arbox/machine-learning-with-ruby">Machine-learning-with-ruby</a> — Recursos en ruby.</p>
+
+<h3 id="inteligencia-artificial">Inteligencia artificial</h3>
+<p><a href="https://github.com/SergioFierens/ai4r">ai4r</a>
+Un patio de juegos Ruby para investigadores de IA.</p>
+
+<blockquote>
+  <p>Ruby no es perfecto</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A pesar de la alta velocidad de desarrollo,Ruby no demuestra el mejor rendimiento. Por un lado, Ruby realiza muchas operaciones para la conveniencia del desarrollador, incluida la 
+administración de memoria para la escritura dinámica. 
+Por otro lado, por supuesto, el volumen de las operaciones afecta la velocidad de ejecución. 
+Este criterio no es el más problemático, pero podría ser mejor. 
+</code></pre></div></div>
+
+<p>Ruby multithreading es lento. El algoritmo multihilo de Ruby es algo impredecible: puede cambiar de un hilo a otro en cualquier momento y es difícil de predecir o controlar. Esto afecta el resultado de procesar datos y realizar cambios y, en general, la velocidad de todo el proceso. En este momento, <code class="highlighter-rouge">la comunidad Ruby está trabajando en este tema.</code></p>
+
+<p>Hasta la proxima!</p>
+
+<p>recuerda puedes mirar esta guia de ruby</p>
+
+<p>💎 <a href="https://soyandresbernal.github.io/ruby/2019/08/30/ruby-podersinlimites.html">Ruby poder sin limites</a></p>
+:ET

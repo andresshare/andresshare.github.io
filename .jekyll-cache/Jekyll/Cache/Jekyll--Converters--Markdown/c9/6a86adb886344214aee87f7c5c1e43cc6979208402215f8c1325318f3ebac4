@@ -1,0 +1,1392 @@
+I"�"<p><img src="https://media.giphy.com/media/12vJgj7zMN3jPy/giphy.gif" alt="js code" /></p>
+
+<h1 id="paleta-de-colores">Paleta de colores</h1>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">color</span><span class="o">:</span> <span class="nf">#000000</span> <span class="o">//</span><span class="nt">black</span>
+<span class="nt">color</span><span class="o">:</span> <span class="nf">#9F111B</span> <span class="o">//</span><span class="nt">red</span>
+<span class="nt">color</span><span class="o">:</span> <span class="nf">#B11623</span> <span class="o">//</span><span class="nt">redstate</span>
+<span class="nt">color</span><span class="o">:</span> <span class="nf">#292C37</span> <span class="o">//</span><span class="nt">blue</span>
+<span class="nt">color</span><span class="o">:</span> <span class="nf">#CCCCCC</span> <span class="o">//</span><span class="nt">silver</span>
+</code></pre></div></div>
+
+<h1 id="javascript">JAVASCRIPT</h1>
+
+<ul>
+  <li><strong>Message</strong></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">hello</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">Hello!!</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hello</span><span class="p">());</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Find the Index (Part 1)</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">search</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span>
+</code></pre></div></div>
+<ul>
+  <li><strong>Find the Index (Part 2)</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">search</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">indes</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Maximum Edge of a Triangle</strong></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">nextEdge</span> <span class="o">=</span> <span class="p">(</span><span class="nx">side1</span><span class="p">,</span><span class="nx">side2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">side1</span><span class="o">+</span><span class="nx">side2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Return the Next Number from the Integer Passed</strong></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">addition</span><span class="o">=</span><span class="nx">n</span><span class="o">=&gt;</span><span class="nx">n</span><span class="o">+</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Return the First Element in an Array</strong></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">getFirstValue</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>The Farm Problem</strong></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">animals</span> <span class="o">=</span> <span class="p">(</span><span class="nx">chickens</span><span class="p">,</span> <span class="nx">caws</span><span class="p">,</span> <span class="nx">pigs</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">chickens</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="nx">caws</span> <span class="o">+</span> <span class="nx">pigs</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Return the Sum of Two Numbers</strong></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">addition</span><span class="o">=</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Profitable Gamble</strong></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">let</span> <span class="nx">profitableGamble</span><span class="o">=</span><span class="p">(</span><span class="nx">prob</span><span class="p">,</span><span class="nx">prize</span><span class="p">,</span><span class="nx">Pay</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">prob</span><span class="o">*</span><span class="nx">prize</span><span class="o">-</span><span class="nx">Pay</span><span class="o">&gt;</span><span class="mi">0</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Is the Number Less than or Equal to Zero?</strong></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 
+ <span class="kd">let</span> <span class="nx">lessThanOrEqualToZero</span><span class="o">=</span><span class="nx">a</span><span class="o">=&gt;!</span><span class="p">(</span><span class="nx">a</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+
+ <span class="nx">or</span> 
+ 
+ <span class="nx">lessThanOrEqualToZero</span><span class="o">=</span><span class="nx">num</span><span class="o">=&gt;</span> <span class="nx">num</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Is the Number Less than or Equal to Zero?</strong></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 
+ <span class="kd">let</span> <span class="nx">lessThanOrEqualToZero</span><span class="o">=</span><span class="nx">a</span><span class="o">=&gt;!</span><span class="p">(</span><span class="nx">a</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+
+ <span class="nx">or</span> 
+ 
+ <span class="nx">lessThanOrEqualToZero</span><span class="o">=</span><span class="nx">num</span><span class="o">=&gt;</span> <span class="nx">num</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Check if an Integer is Divisible By Five</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">divisibleByFive</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">=&gt;</span> <span class="nx">n</span><span class="o">%</span><span class="mi">5</span><span class="o">===</span><span class="mi">0</span>
+<span class="c1">//or</span>
+<span class="nx">divisibleByFive</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="p">(</span><span class="nx">n</span><span class="o">%</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Check if an Integer is Divisible By Five</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">triArea</span><span class="o">=</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span><span class="nx">h</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">b</span><span class="o">*</span><span class="nx">h</span><span class="o">/</span><span class="mi">2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Concatenate First and Last Name into One String</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">let</span> <span class="nx">concatName</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">, </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">a</span>
+ <span class="c1">//or</span>
+  <span class="kd">let</span> <span class="nx">concatName</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`</span><span class="p">${</span><span class="nx">b</span><span class="p">}</span><span class="s2">, </span><span class="p">${</span><span class="nx">a</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Return the Remainder from Two Numbers</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">let</span> <span class="nx">remainder</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">%</span> <span class="nx">y</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Recursion: Length of a String</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">let</span> <span class="nx">length</span><span class="o">=</span><span class="nx">s</span><span class="o">=&gt;</span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Compare Strings by Count of Characters</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">comp</span> <span class="o">=</span> <span class="p">(</span><span class="nx">str1</span><span class="p">,</span> <span class="nx">str2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">str1</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="nx">str2</span><span class="p">.</span><span class="nx">length</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Is the String Empty?</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">let</span> <span class="nx">isEmpty</span><span class="o">=</span><span class="nx">s</span><span class="o">=&gt;!</span><span class="nx">s</span>
+  <span class="c1">//or</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Concatenating Two Integer Arrays</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">concat</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+<span class="c1">//or</span>
+<span class="kd">const</span> <span class="nx">concat</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[...</span><span class="nx">x</span><span class="p">,</span> <span class="p">...</span><span class="nx">y</span><span class="p">];</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Volume of a Box</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">volumeOfBox</span> <span class="o">=</span> <span class="nx">sizes</span> <span class="o">=&gt;</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">width</span> <span class="o">*</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">height</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Multiple of 100</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">divisible</span><span class="o">=</span><span class="nx">n</span><span class="o">=&gt;</span><span class="nx">n</span><span class="o">%</span><span class="mi">100</span><span class="o">==</span><span class="mi">0</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Check if an Array Contains a Given Number</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">check</span><span class="o">=</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span><span class="nx">ele</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">arr</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">ele</span><span class="p">)</span>
+ <span class="c1">//or </span>
+<span class="kd">let</span> <span class="nx">check</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">ele</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">ele</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div></div>
+<ul>
+  <li><strong>String or Integer?</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">intOrString</span><span class="o">=</span><span class="nx">param</span><span class="o">=&gt;</span>
+	<span class="o">+</span><span class="nx">param</span><span class="p">?</span><span class="dl">"</span><span class="s2">int</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">str</span><span class="dl">"</span>
+<span class="c1">//or</span>
+<span class="kd">const</span> <span class="nx">intOrString</span> <span class="o">=</span> <span class="nx">p</span> <span class="o">=&gt;</span> <span class="k">typeof</span> <span class="nx">p</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">string</span><span class="dl">'</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">str</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">int</span><span class="dl">'</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Check String for Spaces</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">hasSpaces</span> <span class="o">=</span> <span class="nx">string</span> <span class="o">=&gt;</span> <span class="sr">/ /</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span>
+<span class="c1">//or</span>
+<span class="kd">const</span> <span class="nx">hasSpaces</span> <span class="o">=</span> <span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="dl">"</span><span class="s2"> </span><span class="dl">"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Extract City Facts</strong></li>
+</ul>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="err">cityFacts(</span><span class="p">{</span><span class="w">
+  </span><span class="err">name:</span><span class="w"> </span><span class="s2">"Paris"</span><span class="p">,</span><span class="w">
+  </span><span class="err">population:</span><span class="w"> </span><span class="s2">"2,140,526"</span><span class="p">,</span><span class="w">
+  </span><span class="err">continent:</span><span class="w"> </span><span class="s2">"Europe"</span><span class="w">
+</span><span class="p">}</span><span class="err">)</span><span class="w"> </span><span class="err">➞</span><span class="w"> </span><span class="s2">"Paris has a population of 2,140,526 and is situated in Europe"</span><span class="w">
+
+</span><span class="err">cityFacts(</span><span class="p">{</span><span class="w">
+  </span><span class="err">name:</span><span class="w"> </span><span class="s2">"Tokyo"</span><span class="p">,</span><span class="w">
+  </span><span class="err">population:</span><span class="w"> </span><span class="s2">"13,929,286"</span><span class="p">,</span><span class="w">
+  </span><span class="err">continent:</span><span class="w"> </span><span class="s2">"Asia"</span><span class="w">
+</span><span class="p">}</span><span class="err">)</span><span class="w"> </span><span class="err">➞</span><span class="w"> </span><span class="s2">"Tokyo has a population of 13,929,286 and is situated in Asia"</span><span class="w">
+
+</span></code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  
+<span class="kd">let</span> <span class="nx">cityFacts</span><span class="o">=</span><span class="nx">city</span><span class="o">=&gt;</span><span class="nx">city</span><span class="p">.</span><span class="nx">name</span><span class="o">+</span><span class="dl">"</span><span class="s2"> has a population of </span><span class="dl">"</span><span class="o">+</span><span class="nx">city</span><span class="p">.</span><span class="nx">population</span><span class="o">+</span><span class="dl">"</span><span class="s2"> and is situated in </span><span class="dl">"</span><span class="o">+</span><span class="nx">city</span><span class="p">.</span><span class="nx">continent</span>
+  
+<span class="c1">//or</span>
+
+<span class="kd">let</span> <span class="nx">cityFacts</span> <span class="o">=</span> <span class="nx">city</span> <span class="o">=&gt;</span> <span class="s2">`</span><span class="p">${</span><span class="nx">city</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2"> has a population of </span><span class="p">${</span><span class="nx">city</span><span class="p">.</span><span class="nx">population</span><span class="p">}</span><span class="s2"> and is situated in </span><span class="p">${</span><span class="nx">city</span><span class="p">.</span><span class="nx">continent</span><span class="p">}</span><span class="s2">`</span>
+
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Name Greeting!</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">helloName</span><span class="o">=</span><span class="nx">n</span><span class="o">=&gt;</span><span class="s2">`Hello </span><span class="p">${</span><span class="nx">n</span><span class="p">}</span><span class="s2">!`</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Reverse an Array</strong></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">reverse</span><span class="o">=</span><span class="nx">a</span><span class="o">=&gt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">reverse</span><span class="p">()</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Stack the Boxes</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">stackBoxes</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">=&gt;</span> <span class="nx">n</span> <span class="o">*</span> <span class="nx">n</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Find the Index</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">let</span> <span class="nx">find_index</span><span class="o">=</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">string</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">arr</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Is the Word Singular or Plural?</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">let</span> <span class="nx">isPlural</span><span class="o">=</span><span class="nx">word</span><span class="o">=&gt;</span><span class="nx">word</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="dl">'</span><span class="s1">s</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Case Insensitive Comparison</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">match</span> <span class="o">=</span> <span class="p">(</span><span class="nx">s1</span><span class="p">,</span> <span class="nx">s2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">s1</span> <span class="o">===</span> <span class="nx">s2</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>-<strong>Is the Number Even or Odd?</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">isEvenOrOdd</span><span class="o">=</span><span class="nx">n</span><span class="o">=&gt;</span><span class="nx">n</span><span class="o">%</span><span class="mi">2</span><span class="p">?</span><span class="dl">'</span><span class="s1">odd</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">even</span><span class="dl">'</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>To the Power of _____</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">let</span> <span class="nx">calculateExponent</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Char-to-ASCII</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">ctoa</span> <span class="o">=</span> <span class="nx">c</span> <span class="o">=&gt;</span> <span class="nx">c</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">()</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>The 3 Programmers Problem</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">programmers</span> <span class="o">=</span> <span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">)</span> <span class="o">-</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Return the Last Element in an Array</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">getLastItem</span><span class="o">=</span><span class="nx">arr</span><span class="o">=&gt;</span><span class="nx">arr</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span>
+</code></pre></div></div>
+<ul>
+  <li><strong>Limit a Number’s Value</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">limitNumber</span> <span class="o">=</span> <span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="nx">low</span><span class="p">,</span> <span class="nx">h</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">num</span> <span class="o">&lt;</span> <span class="nx">low</span> <span class="p">?</span> <span class="nx">low</span> <span class="p">:</span> <span class="nx">num</span> <span class="o">&gt;</span> <span class="nx">higth</span> <span class="p">?</span> <span class="nx">higth</span> <span class="p">:</span> <span class="nx">num</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Testing K^K == N?</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">kToK</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span><span class="o">==</span><span class="nx">n</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Count the Arguments</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">numArgs</span> <span class="o">=</span> <span class="p">(...</span><span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">i</span><span class="p">.</span><span class="nx">length</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Count Syllables</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">numberSyllables</span> <span class="o">=</span> <span class="nx">w</span> <span class="o">=&gt;</span> <span class="nx">w</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">-</span><span class="dl">'</span><span class="p">).</span><span class="nx">length</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Slice of Pie</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">equalSlices</span> <span class="o">=</span> <span class="p">(</span><span class="nx">total</span><span class="p">,</span> <span class="nx">people</span><span class="p">,</span> <span class="nx">each</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">total</span> <span class="o">&gt;=</span> <span class="nx">people</span><span class="o">*</span><span class="nx">each</span>
+</code></pre></div></div>
+<ul>
+  <li><strong>Return the Total Number of Parameters</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">numberArgs</span><span class="o">=</span><span class="p">(...</span><span class="nx">a</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">length</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Truthy or Falsy?</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">let</span> <span class="nx">isTruthy</span><span class="o">=</span><span class="nx">input</span><span class="o">=&gt;</span><span class="nx">input</span><span class="p">?</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Return the First and Last Elements in an Array</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">firstLast</span> <span class="o">=</span> <span class="nx">arr</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">arr</span><span class="p">.</span><span class="nx">shift</span><span class="p">(),</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">pop</span><span class="p">()]</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>String to Integer and Vice Versa</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">toInt</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="o">+</span><span class="nx">s</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">toStr</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">=&gt;</span> <span class="dl">''</span><span class="o">+</span><span class="nx">i</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Between Words</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">isBetween</span> <span class="o">=</span> <span class="p">(</span><span class="nx">first</span><span class="p">,</span><span class="nx">last</span><span class="p">,</span><span class="nx">word</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">word</span> <span class="o">&gt;</span> <span class="nx">first</span> <span class="o">&amp;&amp;</span> <span class="nx">word</span> <span class="o">&lt;</span> <span class="nx">last</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Find the Total Number of Digits the Given Number Has</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">findDigitAmount</span><span class="o">=</span><span class="nx">n</span><span class="o">=&gt;</span><span class="p">(</span><span class="dl">''</span><span class="o">+</span><span class="nx">n</span><span class="p">).</span><span class="nx">length</span>
+<span class="c1">//or</span>
+<span class="kd">let</span> <span class="nx">findDigitAmount</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">=&gt;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">length</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Both Zero, Negative or Positive</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">both</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="o">===</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+<span class="c1">//or</span>
+<span class="kd">const</span> <span class="nx">both</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n1</span><span class="p">,</span> <span class="nx">n2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">n1</span><span class="p">)</span> <span class="o">===</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">n2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Get Word Count</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">countWords</span> <span class="o">=</span> <span class="nx">str</span> <span class="o">=&gt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Check if Number is within a Given Range</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">isInRange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="nx">range</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">num</span> <span class="o">&gt;=</span> <span class="nx">range</span><span class="p">.</span><span class="nx">min</span> <span class="o">&amp;&amp;</span> <span class="nx">num</span> <span class="o">&lt;=</span> <span class="nx">range</span><span class="p">.</span><span class="nx">max</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Add, Subtract, Multiply or Divide?</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">function</span> <span class="nx">operation</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span> <span class="o">==</span> <span class="mi">24</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="dl">"</span><span class="s2">added</span><span class="dl">"</span><span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">num1</span> <span class="o">-</span> <span class="nx">num2</span> <span class="o">==</span> <span class="mi">24</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="dl">"</span><span class="s2">subtracted</span><span class="dl">"</span><span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">num1</span> <span class="o">*</span> <span class="nx">num2</span> <span class="o">==</span> <span class="mi">24</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="dl">"</span><span class="s2">multiplied</span><span class="dl">"</span><span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">num1</span> <span class="o">/</span> <span class="nx">num2</span> <span class="o">==</span> <span class="mi">24</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="dl">"</span><span class="s2">divided</span><span class="dl">"</span><span class="p">}</span>
+	<span class="k">return</span> <span class="kc">null</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Convert Number to Corresponding Month Name</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">month_name</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kd">const</span> <span class="nx">mapping</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="mi">1</span><span class="p">:</span> <span class="dl">'</span><span class="s1">January</span><span class="dl">'</span><span class="p">,</span>
+		<span class="mi">2</span><span class="p">:</span> <span class="dl">'</span><span class="s1">February</span><span class="dl">'</span><span class="p">,</span>
+		<span class="mi">3</span><span class="p">:</span> <span class="dl">'</span><span class="s1">March</span><span class="dl">'</span><span class="p">,</span>
+		<span class="mi">4</span><span class="p">:</span> <span class="dl">'</span><span class="s1">April</span><span class="dl">'</span><span class="p">,</span>
+		<span class="mi">5</span><span class="p">:</span> <span class="dl">'</span><span class="s1">May</span><span class="dl">'</span><span class="p">,</span>
+		<span class="mi">6</span><span class="p">:</span> <span class="dl">'</span><span class="s1">June</span><span class="dl">'</span><span class="p">,</span>
+		<span class="mi">7</span><span class="p">:</span> <span class="dl">'</span><span class="s1">July</span><span class="dl">'</span><span class="p">,</span>
+		<span class="mi">8</span><span class="p">:</span> <span class="dl">'</span><span class="s1">August</span><span class="dl">'</span><span class="p">,</span> 
+		<span class="mi">9</span><span class="p">:</span> <span class="dl">'</span><span class="s1">September</span><span class="dl">'</span><span class="p">,</span> 
+		<span class="mi">10</span><span class="p">:</span>	<span class="dl">'</span><span class="s1">October</span><span class="dl">'</span><span class="p">,</span> 
+		<span class="mi">11</span><span class="p">:</span>	<span class="dl">'</span><span class="s1">November</span><span class="dl">'</span><span class="p">,</span> 
+		<span class="mi">12</span><span class="p">:</span>	<span class="dl">'</span><span class="s1">December</span><span class="dl">'</span>
+	<span class="p">};</span>
+	<span class="k">return</span> <span class="nx">mapping</span><span class="p">[</span><span class="nx">num</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Array from Comma-Delimited String</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>toArray("watermelon, raspberry, orange")
+➞ ["watermelon", "raspberry", "orange"]
+
+toArray("x1, x2, x3, x4, x5")
+➞ ["x1", "x2", "x3", "x4", "x5"]
+
+toArray("a, b, c, d")
+➞ ["a", "b", "c", "d"]
+
+toArray("")
+➞ []
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">function</span> <span class="nx">toArray</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">, </span><span class="dl">'</span><span class="p">):</span> <span class="p">[];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Return First and Last Parameter</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">firstArg</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">lastArg</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Message</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">howManyTimes</span> <span class="o">=</span> <span class="nx">num</span> <span class="o">=&gt;</span> <span class="s2">`Ed</span><span class="p">${</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="nx">num</span><span class="p">)}</span><span class="s2">bit`</span><span class="p">;</span>
+
+<span class="c1">//or</span>
+
+<span class="kd">function</span> <span class="nx">howManyTimes</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="dl">'</span><span class="s1">Ed</span><span class="dl">'</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span><span class="o">+</span><span class="dl">'</span><span class="s1">bit</span><span class="dl">'</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Capture the Rook</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//yourRook, opponentsRook</span>
+<span class="kd">let</span> <span class="nx">canCapture</span> <span class="o">=</span> <span class="p">([</span><span class="nx">y</span><span class="p">,</span> <span class="nx">o</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="nx">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nx">o</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">?</span> <span class="o">!</span><span class="mi">0</span> <span class="p">:</span> <span class="nx">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="nx">o</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Find the Bug: Checking Even Numbers</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">checkAllEven</span><span class="o">=</span><span class="nx">a</span><span class="o">=&gt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">x</span><span class="o">=&gt;</span><span class="nx">x</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Check if the Same Case</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sameCase</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="sr">/^</span><span class="se">([</span><span class="sr">A-Z</span><span class="se">]</span><span class="sr">+|</span><span class="se">[</span><span class="sr">a-z</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Maximum Difference</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">difference</span> <span class="o">=</span> <span class="nx">nums</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">nums</span><span class="p">)</span> <span class="o">-</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(...</span><span class="nx">nums</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Unlucky 13</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">unlucky13</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">%</span> <span class="mi">13</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Semantic Versioning</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">retrieveMajor</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">.</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nx">retrieveMinor</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">.</span><span class="dl">'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nx">retrievePatch</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">.</span><span class="dl">'</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div></div>
+<ul>
+  <li><strong>Exists a Number Higher?</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">existsHigher</span><span class="o">=</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">n</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">b</span><span class="o">=&gt;</span><span class="nx">b</span><span class="o">&gt;=</span><span class="nx">n</span><span class="p">)</span>
+<span class="c1">//or</span>
+<span class="kd">let</span> <span class="nx">existsHigher</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">a</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="nx">b</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Remove Null from an Array</strong></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">removeNull</span><span class="o">=</span><span class="nx">a</span><span class="o">=&gt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">b</span><span class="o">=&gt;</span><span class="nx">b</span><span class="p">)</span>
+<span class="c1">//or</span>
+<span class="kd">let</span> <span class="nx">letremoveNull</span><span class="o">=</span><span class="nx">a</span><span class="o">=&gt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">b</span><span class="o">=&gt;</span><span class="nx">b</span><span class="o">!=</span><span class="kc">null</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Word Endings</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">addEnding</span> <span class="o">=</span>  <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span><span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="o">+</span><span class="nx">e</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Next Element in Arithmetic Sequence</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">nextElement</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span><span class="o">+</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="nx">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Filter out Strings from an Array</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Create a function which filters out strings from an array and returns a new array containing only integers.
+
+filterList([1, 2, 3, "x", "y", 10]) ➞ [1, 2, 3, 10]
+
+filterList([1, "a", 2, "b", 3, "c"]) ➞ [1, 2, 3]
+
+filterList([0, -32, "&amp;@A", 64, "99", -128]) ➞ [0, -32, 64,
+
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">filterList</span> <span class="o">=</span> <span class="nx">l</span> <span class="o">=&gt;</span> <span class="nx">l</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">===</span> <span class="o">+</span><span class="nx">x</span><span class="p">);</span>
+
+<span class="c1">//or</span>
+<span class="kd">const</span> <span class="nx">filterList</span><span class="o">=</span><span class="nx">l</span><span class="o">=&gt;</span><span class="nx">l</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">e</span><span class="o">=&gt;</span><span class="nb">Number</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Smaller String Number</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>smallerNum("21", "44") ➞ "21"
+
+smallerNum("1500", "1") ➞ "1"
+
+smallerNum("5", "5") ➞ "5"
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">smallerNum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n1</span><span class="p">,</span><span class="nx">n2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">n1</span><span class="p">,</span><span class="nx">n2</span><span class="p">)</span><span class="o">+</span><span class="dl">''</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Strange Pair</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">isStrangePair</span><span class="o">=</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="o">=&gt;!</span><span class="nx">a</span><span class="o">&amp;&amp;!</span><span class="nx">b</span><span class="o">||</span><span class="nx">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="nx">b</span><span class="p">[</span><span class="nx">b</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Fix the Error / Comparing Arrays (Part #2)</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">checkEquals</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a1</span><span class="p">,</span><span class="nx">a2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a1</span><span class="p">.</span><span class="nx">join</span><span class="p">()</span><span class="o">==</span><span class="nx">a2</span><span class="p">.</span><span class="nx">join</span><span class="p">()</span>
+
+<span class="c1">//or</span>
+<span class="kd">const</span> <span class="nx">checkEquals</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="o">===</span> <span class="nb">String</span><span class="p">(</span><span class="nx">y</span><span class="p">))</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Odd Up, Even Down</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">transform</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">?</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:</span> <span class="nx">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nx">transform</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">a</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span><span class="o">%</span><span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">?</span> <span class="nx">a</span><span class="o">-</span><span class="mi">1</span> <span class="p">:</span> <span class="nx">a</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Generate a Countdown of Numbers in an Array</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">countdown</span> <span class="o">=</span> <span class="nx">start</span> <span class="o">=&gt;</span> <span class="p">[...</span><span class="nb">Array</span><span class="p">(</span><span class="nx">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nx">keys</span><span class="p">()].</span><span class="nx">reverse</span><span class="p">();</span>
+
+<span class="c1">//or</span>
+
+<span class="kd">const</span> <span class="nx">countdown</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">fill</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">c</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
+
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Fix the Error: Vowel Edition</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">removeVowels</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">aeiou</span><span class="se">]</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">''</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Additive Inverse</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">let</span> <span class="nx">additiveInverse</span><span class="o">=</span><span class="nx">a</span><span class="o">=&gt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span><span class="o">=&gt;-</span><span class="nx">x</span><span class="p">)</span>
+
+  <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span><span class="p">[];</span>
+	<span class="k">return</span>  <span class="nx">x</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+
+</code></pre></div></div>
+<p><strong>Calculate Determinant of a 2x2 Matrix</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">calcDeterminant</span> <span class="o">=</span> <span class="p">([[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">],</span> <span class="p">[</span><span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">]])</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">d</span> <span class="o">-</span> <span class="nx">b</span> <span class="o">*</span> <span class="nx">c</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">calcDeterminant</span> <span class="o">=</span> <span class="p">([[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">],</span> <span class="p">[</span><span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">]])</span> <span class="o">=&gt;</span><span class="nx">a</span><span class="o">*</span><span class="nx">d</span><span class="o">-</span><span class="nx">b</span><span class="o">*</span><span class="nx">c</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Reverse Coding Challenge #3</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">mysteryFunc</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">n</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">e</span><span class="o">=&gt;</span><span class="nx">e</span><span class="o">%</span><span class="nx">n</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Check Factors</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">checkFactors</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">f</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="p">(</span><span class="nx">n</span><span class="o">%</span><span class="nx">f</span><span class="p">))</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Palindrome</strong>?</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">checkPalindrome</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">''</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span> <span class="o">==</span> <span class="nx">s</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Recursion: Sum</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">n</span> <span class="o">*</span> <span class="p">(</span><span class="nx">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> 
+</code></pre></div></div>
+
+<p><strong>Hurdle Jump</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">hurdleJump</span><span class="o">=</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">n</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">b</span><span class="o">=&gt;</span><span class="nx">n</span><span class="o">&gt;=</span><span class="nx">b</span><span class="p">)</span>
+
+<span class="nx">hurdleJump</span> <span class="o">=</span> <span class="p">(</span><span class="nx">h</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">h</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nx">j</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Regex Series: String Contains at Least One Digit</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="sr">/</span><span class="se">\d</span><span class="sr">/</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Get Student Names</strong></li>
+</ul>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="err">getStudentNames(</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w"> </span><span class="err">name:</span><span class="w"> </span><span class="s2">"Steve"</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w"> </span><span class="err">name:</span><span class="w"> </span><span class="s2">"Mike"</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w"> </span><span class="err">name:</span><span class="w"> </span><span class="s2">"John"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="err">)</span><span class="w"> </span><span class="err">➞</span><span class="w"> </span><span class="p">[</span><span class="s2">"Steve"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Mike"</span><span class="p">,</span><span class="w"> </span><span class="s2">"John"</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">getStudentNames</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">b</span> <span class="o">=&gt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Fix the Error: Mutating Arrays</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">minusOne</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">=&gt;</span> <span class="nx">y</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1">//or</span>
+<span class="nx">minusOne</span> <span class="o">=</span> <span class="nx">arr</span> <span class="o">=&gt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Recursion: Reverse a String</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">reverse</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Retrieve the Subreddit</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">subReddit</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">)[</span><span class="mi">4</span><span class="p">];</span>
+
+<span class="kd">const</span> <span class="nx">subReddit</span> <span class="o">=</span> <span class="nx">link</span> <span class="o">=&gt;</span> <span class="nx">link</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Remove the First and Last Characters</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">removeFirstLast</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">||</span><span class="nx">s</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Missing Third Angle</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">missingAngle</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">==</span> <span class="mi">90</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">right</span><span class="dl">"</span> <span class="p">:</span> <span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">90</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">obtuse</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">acute</span><span class="dl">"</span><span class="p">)</span>
+
+</code></pre></div></div>
+<ul>
+  <li><strong>Typing Game</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">correctStream</span> <span class="o">=</span> <span class="p">(</span><span class="nx">u</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">u</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">x</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">c</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">x</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">//or</span>
+
+<span class="nx">correctStream</span> <span class="o">=</span> <span class="p">(</span><span class="nx">u</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">u</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">==</span> <span class="nx">c</span><span class="p">[</span><span class="nx">c</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">x</span><span class="p">)]</span> <span class="p">?</span> <span class="mi">1</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Even Number Generator</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">findEvenNums</span><span class="o">=</span><span class="nx">n</span><span class="o">=&gt;</span><span class="p">(</span><span class="nx">h</span><span class="o">=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">n</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="nb">Array</span><span class="p">(</span><span class="nx">h</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">x</span><span class="p">,</span><span class="nx">i</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">i</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="p">));</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Little Dictionary</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">let</span> <span class="nx">dictionary</span> <span class="o">=</span> <span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">W</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">W</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">w</span> <span class="o">=&gt;</span> <span class="nx">w</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Re-Form The Word</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getWord</span> <span class="o">=</span> <span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">l</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="nx">l</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">r</span><span class="p">;</span>
+
+<span class="c1">//or</span>
+
+<span class="nx">getWord</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="nx">a</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">b</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Find the Largest Number in an Array</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">findLargestNum</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">a</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Multi-division</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">abcmath</span><span class="o">=</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">a</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="o">%</span><span class="nx">c</span><span class="o">===</span><span class="mi">0</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Find the Smallest Number in an Array</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">findSmallestNum</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(...</span><span class="nx">arr</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Fix the Error: Filtering out Empty Arrays</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">removeEmptyArrays</span><span class="o">=</span><span class="nx">a</span><span class="o">=&gt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">x</span><span class="o">=&gt;</span><span class="nx">x</span><span class="o">!=</span><span class="kc">false</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Convert Number to String of Dashes</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Go</span><span class="o">=</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span><span class="o">=&gt;</span><span class="dl">"</span><span class="s2">-</span><span class="dl">"</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Hot Pics of Danny Devito!</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">preventDistractions</span><span class="o">=</span><span class="nx">str</span><span class="o">=&gt;</span><span class="sr">/anime|vine|roasts|Danny</span><span class="se">\s</span><span class="sr">Devito/g</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">)?</span><span class="dl">'</span><span class="s1">NO!</span><span class="dl">'</span>
+<span class="p">:</span><span class="dl">'</span><span class="s1">Safe watching!</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">//or</span>
+
+<span class="kd">const</span> <span class="nx">preventDistractions</span> <span class="o">=</span> <span class="nx">str</span> <span class="o">=&gt;</span> <span class="sr">/anime|meme|vine|roasts|Danny Devito/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">NO!</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">Safe watching!</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Even Odd Partition</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">evenOddPartition</span><span class="o">=</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">[</span><span class="nx">a</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">x</span><span class="o">=&gt;</span><span class="nx">x</span> <span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">),</span><span class="nx">a</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">x</span><span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">%</span><span class="mi">2</span> <span class="o">!==</span><span class="mi">0</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Recursion: Array Sum</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sum</span><span class="o">=</span><span class="nx">r</span><span class="o">=&gt;</span><span class="nx">r</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">s</span><span class="p">,</span><span class="nx">n</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">s</span><span class="o">+</span><span class="nx">n</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Vowel Replacer</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>replaceVowels=(s,ch)=&gt;s.replace(/[aeiou]/g,ch)
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Is the Object Empty?</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">isEmpty</span> <span class="o">=</span> <span class="nx">o</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">o</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Multiply by Length</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">MultiplyByLength</span><span class="o">=</span><span class="nx">a</span><span class="o">=&gt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span><span class="o">=&gt;</span><span class="nx">x</span><span class="o">*</span><span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+</code></pre></div></div>
+<ul>
+  <li><strong>Get the File Extension</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">getExtension</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">w</span> <span class="o">=&gt;</span> <span class="nx">w</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">.</span><span class="dl">'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>X and Y Coordinates</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">convertCartesian</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">[</span><span class="nx">c</span><span class="p">]])</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>State Names and Abbreviations</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">filterStateNames</span><span class="o">=</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">t</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">t</span><span class="o">===</span><span class="dl">'</span><span class="s1">abb</span><span class="dl">'</span><span class="p">?</span><span class="nx">a</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">b</span><span class="o">=&gt;</span><span class="nx">b</span><span class="p">.</span><span class="nx">length</span><span class="o">===</span><span class="mi">2</span><span class="p">):</span><span class="nx">a</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">b</span><span class="o">=&gt;</span><span class="nx">b</span><span class="p">.</span><span class="nx">length</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Repeating Letters N Times</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">repeat</span> <span class="o">=</span> <span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[...</span><span class="nx">s</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="nx">n</span><span class="p">)).</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Filter by Digit Length</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span>  <span class="nx">filterDigitLength</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="dl">''</span><span class="o">+</span><span class="nx">x</span><span class="p">).</span><span class="nx">length</span> <span class="o">==</span> <span class="nx">n</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Most Left Digit</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">leftDigit</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">=&gt;</span> <span class="o">+</span><span class="nx">n</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/</span><span class="se">\d</span><span class="sr">/gm</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p><strong>Say Hello to Guests</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">greetPeople</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">=&gt;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">v</span><span class="o">=&gt;</span><span class="s2">`Hello </span><span class="p">${</span><span class="nx">v</span><span class="p">}</span><span class="s2">`</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="dl">"</span><span class="s2">, </span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Flip the Boolean</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">reverse</span><span class="o">=</span><span class="nx">b</span><span class="o">=&gt;</span><span class="k">typeof</span> <span class="nx">b</span><span class="o">!==</span><span class="dl">"</span><span class="s2">boolean</span><span class="dl">"</span><span class="p">?</span><span class="dl">"</span><span class="s2">boolean expected</span><span class="dl">"</span><span class="p">:</span><span class="o">!</span><span class="nx">b</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Calculate the Profit</strong></li>
+</ul>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">profit(</span><span class="p">{</span><span class="w">
+  </span><span class="err">costPrice:</span><span class="w"> </span><span class="mf">32.67</span><span class="p">,</span><span class="w">
+  </span><span class="err">sellPrice:</span><span class="w"> </span><span class="mf">45.00</span><span class="p">,</span><span class="w">
+  </span><span class="err">inventory:</span><span class="w"> </span><span class="mi">1200</span><span class="w">
+</span><span class="p">}</span><span class="err">)</span><span class="w"> </span><span class="err">➞</span><span class="w"> </span><span class="mi">14796</span><span class="w">
+
+</span><span class="err">profit(</span><span class="p">{</span><span class="w">
+  </span><span class="err">costPrice:</span><span class="w"> </span><span class="mf">225.89</span><span class="p">,</span><span class="w">
+  </span><span class="err">sellPrice:</span><span class="w"> </span><span class="mf">550.00</span><span class="p">,</span><span class="w">
+  </span><span class="err">inventory:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+</span><span class="p">}</span><span class="err">)</span><span class="w"> </span><span class="err">➞</span><span class="w"> </span><span class="mi">32411</span><span class="w">
+
+</span><span class="err">profit(</span><span class="p">{</span><span class="w">
+  </span><span class="err">costPrice:</span><span class="w"> </span><span class="mf">2.77</span><span class="p">,</span><span class="w">
+  </span><span class="err">sellPrice:</span><span class="w"> </span><span class="mf">7.95</span><span class="p">,</span><span class="w">
+  </span><span class="err">inventory:</span><span class="w"> </span><span class="mi">8500</span><span class="w">
+</span><span class="p">}</span><span class="err">)</span><span class="w"> </span><span class="err">➞</span><span class="w"> </span><span class="mi">44030</span><span class="w">
+
+</span></code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">profit</span><span class="o">=</span><span class="nx">i</span><span class="o">=&gt;</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">((</span><span class="nx">i</span><span class="p">.</span><span class="nx">sellPrice</span><span class="o">-</span><span class="nx">i</span><span class="p">.</span><span class="nx">costPrice</span><span class="p">)</span><span class="o">*</span><span class="nx">i</span><span class="p">.</span><span class="nx">inventory</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Check if a String Contains only Identical Characters</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">isIdentical</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nb">Set</span><span class="p">(</span><span class="nx">s</span><span class="p">).</span><span class="nx">size</span> <span class="o">==</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p><strong>Hamming Distance</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String1: "abcbba"
+String2: "abcbda"
+
+Hamming Distance: 1 - "b" vs. "d" is the only difference.
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">hammingDistance</span><span class="o">=</span><span class="p">([...</span><span class="nx">str1</span><span class="p">],</span> <span class="p">[...</span><span class="nx">str2</span><span class="p">])</span><span class="o">=&gt;</span><span class="nx">str1</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">a</span><span class="o">!=</span><span class="nx">str2</span><span class="p">[</span><span class="nx">b</span><span class="p">]).</span><span class="nx">length</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Nth Smallest Element</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">const</span> <span class="nx">nthSmallest</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">sort</span><span class="p">()[</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">||</span> <span class="kc">null</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Shuffle the Name</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">let</span> <span class="nx">nameShuffle</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">split</span><span class="s2">` `</span><span class="p">.</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="s2">` `</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Check if a Number is a Palindrome</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">isPalindrome</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="dl">""</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span> <span class="o">==</span> <span class="nx">a</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Product of All Odd Integers</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">oddProduct</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">t</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">t</span> <span class="o">*</span> <span class="p">(</span><span class="nx">c</span><span class="o">%</span><span class="mi">2</span> <span class="p">?</span> <span class="nx">c</span> <span class="p">:</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Product Divisible by Sum?</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">divisible</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="o">*</span><span class="nx">b</span><span class="p">)</span> <span class="o">%</span> <span class="nx">a</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><strong>Minimum Removals to Make Sum Even</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">minimumRemovals</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">t</span><span class="p">,</span><span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">t</span><span class="o">+</span><span class="nx">c</span><span class="p">)</span><span class="o">%</span><span class="mi">2</span>
+</code></pre></div></div>
+
+<p><strong>Return the Four Letter Strings</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">isFourLetters</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">w</span> <span class="o">=&gt;</span> <span class="nx">w</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Check if String Ending Matches Second String</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">checkEnding</span><span class="o">=</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Eliminate Odd Numbers within an Array</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">noOdds</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="o">~</span><span class="nx">v</span><span class="o">%</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">//or</span>
+
+<span class="nx">noOdds</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="o">-</span><span class="nx">x</span><span class="o">%</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Lexicographically First and Last</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">firstAndLast</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="p">[[...</span><span class="nx">s</span><span class="p">].</span><span class="nx">sort</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">),[...</span><span class="nx">s</span><span class="p">].</span><span class="nx">sort</span><span class="p">().</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">)]</span>
+<span class="c1">//or</span>
+
+<span class="kd">const</span> <span class="nx">firstAndLast</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="p">[</span>
+  <span class="p">[...</span><span class="nx">s</span><span class="p">].</span><span class="nx">sort</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">),</span>
+  <span class="p">[...</span><span class="nx">s</span><span class="p">]</span>
+    <span class="p">.</span><span class="nx">sort</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">reverse</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
+<span class="p">];</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Same Number of Unique Elements</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">same</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nb">Set</span><span class="p">(</span><span class="nx">a</span><span class="p">).</span><span class="nx">size</span> <span class="o">==</span> <span class="k">new</span> <span class="nb">Set</span><span class="p">(</span><span class="nx">b</span><span class="p">).</span><span class="nx">size</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Letters Only</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">lettersOnly</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[^</span><span class="sr">a-z</span><span class="se">]</span><span class="sr">/gi</span><span class="p">,</span> <span class="dl">""</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Repeat the Same Item Multiple Times</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">repeat</span> <span class="o">=</span> <span class="p">(</span><span class="nx">s</span><span class="p">,</span><span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">n</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Alphabet Soup</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">AlphabetSoup</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="p">[...</span><span class="nx">s</span><span class="p">].</span><span class="nx">sort</span><span class="p">().</span><span class="nx">join</span><span class="s2">``</span>
+
+<span class="c1">//or</span>
+<span class="nx">AlphabetSoup</span><span class="o">=</span><span class="nx">s</span><span class="o">=&gt;</span><span class="nx">s</span><span class="p">.</span><span class="nx">split</span><span class="s2">``</span><span class="p">.</span><span class="nx">sort</span><span class="p">().</span><span class="nx">join</span><span class="s2">``</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Total Number of Unique Characters</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">countUnique</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nb">Set</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">).</span><span class="nx">size</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Add up the Numbers from a Single Number</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">addUp</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">=&gt;</span> <span class="nx">n</span> <span class="o">*</span> <span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Reverse the Order of a String</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">reverse</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="p">[...</span><span class="nx">s</span><span class="p">].</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Regex Series: Even Number?</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="sr">/</span><span class="se">[</span><span class="sr">02468</span><span class="se">]</span><span class="sr">$/</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Retrieve the Last N Elements</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">last</span><span class="o">=</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">n</span><span class="o">==</span><span class="mi">0</span><span class="p">?[]:</span><span class="nx">n</span><span class="o">&gt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">?</span><span class="dl">'</span><span class="s1">invalid</span><span class="dl">'</span><span class="p">:</span><span class="nx">a</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="nx">n</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Hashes and Pluses</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">hashPlusCount</span> <span class="o">=</span> <span class="nx">str</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">#</span><span class="dl">'</span><span class="p">).</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">+</span><span class="dl">'</span><span class="p">).</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+
+<span class="c1">//or</span>
+
+<span class="kd">let</span> <span class="nx">hashPlusCount</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span>
+<span class="p">[(</span><span class="nx">s</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/#/g</span><span class="p">)</span><span class="o">||</span><span class="p">[]).</span><span class="nx">length</span><span class="p">,(</span><span class="nx">s</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/</span><span class="se">\+</span><span class="sr">/g</span><span class="p">)</span><span class="o">||</span><span class="p">[]).</span><span class="nx">length</span><span class="p">];</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Mirror Array</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mirror</span> <span class="o">=</span> <span class="nx">arr</span> <span class="o">=&gt;</span> <span class="p">[...</span><span class="nx">arr</span><span class="p">,</span> <span class="p">...</span><span class="nx">arr</span><span class="p">.</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)];</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Find the Smallest and Biggest Numbers</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">minMax</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(...</span><span class="nx">a</span><span class="p">),</span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">a</span><span class="p">)]</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Amplify the Multiples of 4</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">amplify</span> <span class="o">=</span> <span class="nx">num</span> <span class="o">=&gt;</span> <span class="p">[...</span><span class="nb">Array</span><span class="p">(</span><span class="nx">num</span><span class="p">).</span><span class="nx">keys</span><span class="p">()].</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">?</span> <span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span> <span class="p">:</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Return the Index of the First Vowel</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">firstVowel</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">aeiou</span><span class="se">]</span><span class="sr">/i</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Prefixes vs. Suffixes</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">let</span> <span class="nx">isPrefix</span> <span class="o">=</span> <span class="p">(</span><span class="nx">word</span><span class="p">,</span> <span class="nx">prefix</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">word</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(...</span><span class="nx">prefix</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">isSuffix</span> <span class="o">=</span> <span class="p">(</span><span class="nx">word</span><span class="p">,</span> <span class="nx">suffix</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">word</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="nx">suffix</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Factorial of a Positive Integer</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">factorial</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="p">?</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">factorial</span><span class="p">(</span><span class="o">--</span><span class="nx">a</span><span class="p">)</span> <span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Largest Swap</strong></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">largestSwap</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="dl">''</span><span class="o">+</span><span class="nx">n</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;=</span><span class="p">(</span><span class="dl">''</span><span class="o">+</span><span class="nx">n</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><strong>Omnipresent Value</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">isOmnipresent</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">v</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><strong>Convert to Decimal Notation</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">convertToDecimal</span><span class="o">=</span><span class="nx">a</span><span class="o">=&gt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">b</span><span class="o">=&gt;</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>Secret Society</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">let</span> <span class="nx">societyName</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span><span class="o">=&gt;</span><span class="p">[...</span><span class="nx">x</span><span class="p">][</span><span class="mi">0</span><span class="p">]).</span><span class="nx">sort</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+
+<span class="c1">//or</span>
+<span class="kd">const</span> <span class="nx">societyName</span><span class="o">=</span><span class="nx">arr</span><span class="o">=&gt;</span><span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span><span class="o">=&gt;</span><span class="nx">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">sort</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Count Instances of a Character in a String</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">charCount</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">--</span><span class="nx">b</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="nx">a</span><span class="p">).</span><span class="nx">length</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Matchstick Houses</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">matchHouses</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">*</span><span class="mi">5</span><span class="o">+</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Bitwise Operations</strong></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">bitwiseAND</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="o">&amp;</span><span class="nx">b</span>
+<span class="nx">bitwiseOR</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="o">|</span><span class="nx">b</span>
+<span class="nx">bitwiseXOR</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="o">^</span><span class="nx">b</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Say “Hello” Say “Bye”</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sayHelloBye</span><span class="o">=</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">num</span><span class="p">)</span><span class="o">=&gt;</span> 
+<span class="p">(</span><span class="nx">num</span><span class="p">?</span><span class="dl">"</span><span class="s2">Hello </span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Bye </span><span class="dl">"</span><span class="p">)</span><span class="o">+</span><span class="nx">name</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="o">+</span><span class="nx">name</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Basic Statistics: Mean</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mean</span><span class="o">=</span><span class="nx">x</span><span class="o">=&gt;</span><span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">t</span><span class="p">,</span><span class="nx">n</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">t</span><span class="o">+</span><span class="nx">n</span><span class="p">)</span><span class="o">/</span><span class="nx">x</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Transforming Words into Binary Strings</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">convertBinary</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">a-m</span><span class="se">]</span><span class="sr">/gi</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\D</span><span class="sr">/g</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Transform into an Array with No Duplicates</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">set</span><span class="o">=</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[...</span><span class="k">new</span> <span class="nb">Set</span><span class="p">(</span><span class="nx">arr</span><span class="p">)]</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>First and Last Index</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">charIndex</span> <span class="o">=</span> <span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">w</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="p">?</span> <span class="p">[</span><span class="nx">w</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span><span class="nx">w</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="nx">c</span><span class="p">)]</span> <span class="p">:</span> <span class="kc">undefined</span><span class="p">;}</span>
+
+<span class="nx">or</span> <span class="kd">const</span> <span class="nx">charIndex</span> <span class="o">=</span> <span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="p">?</span> <span class="p">[</span><span class="nx">str</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span> <span class="nx">str</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="nx">c</span><span class="p">)]</span> <span class="p">:</span> <span class="kc">undefined</span><span class="p">;</span>
+
+<span class="c1">//or</span>
+<span class="nx">charIndex</span><span class="o">=</span><span class="p">(</span><span class="nx">word</span><span class="p">,</span> <span class="nx">char</span><span class="p">)</span><span class="o">=&gt;</span>
+	<span class="nx">word</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">char</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span> 
+	<span class="p">?</span> <span class="kc">undefined</span> 
+	<span class="p">:</span> <span class="p">[</span><span class="nx">word</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">char</span><span class="p">),</span> <span class="nx">word</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="nx">char</span><span class="p">)]</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Filter out Strings from an Array</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">filterArray</span> <span class="o">=</span> <span class="nx">arr</span> <span class="o">=&gt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Which Function Returns the Larger Number?</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">whichIsLarger</span><span class="o">=</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="nx">g</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">f</span><span class="p">()</span><span class="o">==</span><span class="nx">g</span><span class="p">()?</span><span class="dl">'</span><span class="s1">neither</span><span class="dl">'</span><span class="p">:</span><span class="nx">f</span><span class="p">()</span><span class="o">&gt;</span><span class="nx">g</span><span class="p">()?</span><span class="dl">'</span><span class="s1">f</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">g</span><span class="dl">'</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Spelling it Out</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">spelling</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">''</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">++</span><span class="nx">c</span><span class="p">));</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Reverse the Case</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">reverseCase</span><span class="o">=</span><span class="nx">s</span><span class="o">=&gt;</span><span class="nx">s</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">``</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">a</span><span class="o">=&gt;</span><span class="nx">a</span><span class="o">!==</span><span class="nx">a</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()?</span><span class="nx">a</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">():</span><span class="nx">a</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()).</span><span class="nx">join</span><span class="p">(</span><span class="s2">``</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Sum of Cubes</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sumOfCubes</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">=&gt;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="o">+</span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">sumOfCubes</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span> <span class="o">+</span> <span class="p">(</span><span class="nx">c</span> <span class="o">*</span> <span class="nx">c</span> <span class="o">*</span> <span class="nx">c</span><span class="p">),</span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Recursion: Factorials</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">factorial</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">=&gt;</span> <span class="nx">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">?</span> <span class="mi">1</span><span class="p">:</span> <span class="nx">n</span><span class="o">*</span><span class="nx">factorial</span><span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Chat Room Status</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">chatroomStatus</span><span class="p">(</span><span class="nx">users</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">users</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> 
+		<span class="dl">'</span><span class="s1">no one online</span><span class="dl">'</span> <span class="p">:</span>
+		<span class="nx">users</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="p">?</span> 
+		<span class="nx">users</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1"> and </span><span class="dl">'</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> online</span><span class="dl">'</span><span class="p">:</span> 
+		<span class="nx">users</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1">, </span><span class="dl">'</span><span class="p">)</span> <span class="o">+</span> 
+		<span class="dl">'</span><span class="s1"> and </span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">users</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> more online</span><span class="dl">'</span> 
+<span class="p">}</span>
+
+<span class="c1">//or</span>
+<span class="kd">function</span> <span class="nx">chatroomStatus</span><span class="p">(</span><span class="nx">users</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">users</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="p">?</span> <span class="s2">`</span><span class="p">${</span><span class="nx">users</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span><span class="s2">, </span><span class="p">${</span><span class="nx">users</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span><span class="s2"> and </span><span class="p">${</span><span class="nx">users</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">2</span><span class="p">}</span><span class="s2"> more online`</span>
+		<span class="p">:</span> <span class="nx">users</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">?</span> <span class="s2">`</span><span class="p">${</span><span class="nx">users</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span><span class="s2"> and </span><span class="p">${</span><span class="nx">users</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span><span class="s2"> online`</span> 
+		<span class="p">:</span> <span class="nx">users</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">?</span> <span class="s2">`</span><span class="p">${</span><span class="nx">users</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span><span class="s2"> online`</span>
+		<span class="p">:</span> <span class="dl">'</span><span class="s1">No one online</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Special Arrays</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">isSpecialArray</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">every</span><span class="p">((</span><span class="nx">v</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">v</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="nx">i</span><span class="o">%</span><span class="mi">2</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Repeating Letters</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">doubleChar</span> <span class="o">=</span> <span class="nx">s</span> <span class="o">=&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/./g</span><span class="p">,</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="o">+</span><span class="nx">x</span><span class="p">)</span>
+</code></pre></div></div>
+:ET

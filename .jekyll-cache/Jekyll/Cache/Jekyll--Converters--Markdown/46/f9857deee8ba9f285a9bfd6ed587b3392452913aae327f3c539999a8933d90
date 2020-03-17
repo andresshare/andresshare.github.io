@@ -1,0 +1,161 @@
+I"<p><img src="https://media.giphy.com/media/QJZvfHyy0nd3a/giphy.gif" alt="odin" /></p>
+
+<h1 id="pincelada-de-conceptos-de-ruby">Pincelada de CONCEPTOS DE RUBY</h1>
+
+<h3 id="significado-del-lenguaje-de-programacion-ruby">Significado del lenguaje de programacion ruby</h3>
+
+<p>Ruby es un lenguaje de programación dinámico, reflexivo, de propósito general y de código abierto que se centra en la simplicidad y la productividad. Ruby tiene características mixtas de Perl,small talk, Eiffel, Ada y Lisp. <strong>Ruby fue diseñado para crear un nuevo lenguaje que equilibra la funcionalidad de los lenguajes imperativos</strong></p>
+
+<h3 id="quien-es-el-creador-de-ruby">QUIEN ES EL CREADOR DE RUBY</h3>
+
+<p>Ruby está diseñado y desarrollado por <strong>Yukihiro “matz” Matsumoto</strong> a mediados de 1990 en Japón.</p>
+
+<h3 id="porque-ruby-tiene-fama-de-flexible">Porque ruby tiene fama de flexible</h3>
+
+<p>Ruby es conocido como un lenguaje flexible porque facilita al desarrollador alterar los elementos de programación. Algunas partes específicas del Ruby pueden eliminarse o redefinirse.</p>
+
+<p>Ruby no restringe al developer. Por ejemplo, para agregar dos números, Ruby permite usar el signo + o la palabra ‘plus’. Esta alteración se puede hacer con la clase  <strong>Numeric</strong> de Ruby</p>
+
+<h3 id="caracteristicas-de-ruby">Caracteristicas de Ruby</h3>
+
+<ul>
+  <li>Orientado a objetos</li>
+  <li>Flexible</li>
+  <li>Escritura dinámica y Duck typing</li>
+  <li>Garbage Collector</li>
+  <li>Argumentos de palabras clave</li>
+</ul>
+
+<p><img src="https://media.giphy.com/media/5tf0OxYC9Cv6IQar40/giphy.gif" alt="ruby" /></p>
+
+<h3 id="como-saber-la-version-de-ruby-desde-la-linea-de-comandos">Como saber la version de Ruby desde la linea de comandos</h3>
+
+<blockquote>
+  <p>ruby -v</p>
+</blockquote>
+
+<h3 id="cuales-son-las-principales-bibliotecas-de-clases-en-ruby">Cuales son las principales bibliotecas de clases en ruby</h3>
+
+<p>Son variadas un pequeño listado de las principales</p>
+
+<ul>
+  <li>Procesamiento de texto</li>
+  <li>Programación CGI</li>
+  <li>Programación de red</li>
+  <li>Programación GUI</li>
+  <li>Programación XML</li>
+</ul>
+
+<h3 id="cuales-son-lo-operadores-en-ruby">Cuales son lo operadores en ruby</h3>
+
+<ul>
+  <li>Unary operator</li>
+  <li>Airthmetic operator</li>
+  <li>Bitwise operator</li>
+  <li>Logical operator</li>
+  <li>Ternary operator</li>
+</ul>
+
+<h3 id="cuales-son-los-tipos-de-variables-en-ruby">Cuales son los tipos de variables en ruby</h3>
+
+<p>Las variables de Ruby contienen datos que pueden usarse más adelante en un programa. Cada variable actúa como memoria y tiene un nombre diferente.</p>
+
+<p>Hay cuatro tipos de variables en Ruby:</p>
+
+<ul>
+  <li>Variable local</li>
+  <li>Variable de clase</li>
+  <li>Instancia variable</li>
+  <li>Variable global</li>
+</ul>
+
+<h3 id="cuales-son-los-typos-de-datos-en-ruby">Cuales son los typos de datos en ruby</h3>
+
+<ul>
+  <li>Numbers</li>
+  <li>Strings</li>
+  <li>Symbols</li>
+  <li>Hashes</li>
+  <li>Arrays</li>
+  <li>Booleans</li>
+</ul>
+
+<h3 id="que-es-un-objeto-ruby">Que es un objeto Ruby</h3>
+
+<p>Los objetos Ruby heredan de <strong>BasicObject</strong>, lo que permite crear jerarquías de objetos alternativas.</p>
+
+<h3 id="como-crear-un-objeto-ruby">Como crear un Objeto Ruby</h3>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="no">NombredelObjeto</span><span class="o">=</span><span class="no">NombreClase</span><span class="p">.</span><span class="nf">new</span>  
+</code></pre></div></div>
+
+<h3 id="test">Test</h3>
+
+<p><strong><em>AQUI</em></strong> dejo un listado de preguntas para probar nuestro nivel en Ruby and rails</p>
+
+<hr />
+
+<p>de 0 a 20 &gt; Ruby de Bronce
+de 20 a 30 &gt; Ruby de Plata
+de 30 a 45 &gt; Ruby de Oro</p>
+
+<hr />
+
+<ul>
+  <li>¿Qué es request.xhr?</li>
+  <li>¿Cuál es la diferencia entre un Scaffolding dinámico y estático?</li>
+  <li>¿Cuál es la diferencia entre Symbol y String? - ¿Qué es una sesión y una cookie?</li>
+  <li>¿Por qué Ruby on Rails?</li>
+  <li>¿Qué es MVC y cómo funciona?</li>
+  <li>¿Qué cosas puedes definir en el modelo?</li>
+  <li>¿Qué es ORM en Rails?</li>
+  <li>¿Cuántos tipos de relaciones tiene un modelo?</li>
+  <li>¿Cuál es la diferencia entre has_and_belongs_to_many y has_many :through?</li>
+  <li>¿Qué diferencias tiene rails version 2.2.2 con las anteriores?</li>
+  <li>¿Cuál es la diferencia entre render y redirect?</li>
+  <li>¿Cómo podemos utilizar una base de datos sql o mysql sin definirla en el database.yml?</li>
+  <li>¿Qué son los helpers y cómo se utilizan en Rails?</li>
+  <li>¿Qué es Active Record?</li>
+  <li>¿Ruby soporta herencia simple, herencia múltiple o las dos?</li>
+  <li>¿Cuántos tipos de callbacks están disponibles en Rails?</li>
+  <li>Supongamos que en mi método estoy actualizando atributos de una tabla, en mi modelo tengo definido after_create hacer X, y after_save hacer Y. ¿Cuál metodo será ejecutado?</li>
+  <li>¿Cómo utilizas dos bases de datos en una sola aplicación?</li>
+  <li>Escriba, ¿Cuáles son las diferencias entre la version 5 y 6 de Rails?</li>
+  <li>¿Qué es un bundler?</li>
+  <li>¿Cuál es la nueva forma de encontrar (:all) en Rails 3?</li>
+  <li>¿Qué es un Gemfile y Gemfile.lock?</li>
+  <li>¿Cuál es la notación utilizada para denotar las variables de clase en Ruby?</li>
+  <li>¿Cuál es el uso de un método destructivo?</li>
+  <li>¿Cuál es el uso de load y require en Ruby?</li>
+  <li>¿Cuál es el uso de variables globales en Ruby?</li>
+  <li>¿Cuál es la diferencia entre nil y false?</li>
+  <li>¿Cómo cambias el alcance de los métodos en Ruby?</li>
+  <li>¿Qué es una variable de instancia de clase?</li>
+  <li>¿Cuáles son las reglas y convenciones que se deben seguir en Ruby para nombrar a un método?</li>
+  <li>¿Cuál es el uso de Super?</li>
+  <li>¿Cuáles son los operadores disponibles en Ruby?</li>
+  <li>¿Cuál es la estructura de bucle disponible en Ruby?</li>
+  <li>¿Cuál es el alcance de la variable local?</li>
+  <li>¿Qué elementos de Programación Orientada a Objetos soporta Ruby?</li>
+  <li>Ruby sobre PHP, ¿por qué?</li>
+  <li>¿Cómo funciona Garbage collection en Ruby?</li>
+  <li>¿Cuáles son las variables de entorno en Ruby?</li>
+  <li>¿Qué es Float, Dig y Max?</li>
+  <li>¿Qué tipo de condiciones soporta Ruby?</li>
+  <li>¿Cuál es la diferencia entre puts y print?</li>
+  <li>¿Qué es la metodología ágil? ¿Cuáles son sus procesos?</li>
+  <li>¿Hay alguna tecnología, aparte de ágil que podemos utilizar?</li>
+  <li>¿Qué es la Meta-programación? ¿Cómo la utilizas dentro de tu aplicación Rails?</li>
+  <li>¿Qué es has_many?</li>
+  <li>¿Qué es TDD y BDD?</li>
+  <li>¿Qué es rspec, cucumber y Watir?, y ¿Qué tienen que ver con TDD y BDD?</li>
+</ul>
+
+<p>Algunas de las respuestas estan al leer el contenido de este blog,
+ 👀 Mira este enlace:</p>
+
+<p>💎 <a href="https://soyandresbernal.github.io/ruby/2019/08/30/ruby-podersinlimites.html">Ruby poder sin limites</a></p>
+
+<p>otras le dare en un siguiente post!</p>
+
+<p><strong>Hasta la proxima</strong></p>
+:ET

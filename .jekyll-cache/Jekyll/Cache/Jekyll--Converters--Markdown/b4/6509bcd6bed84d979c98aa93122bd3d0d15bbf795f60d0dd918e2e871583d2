@@ -1,0 +1,1134 @@
+I"]A<p><img src="https://media.giphy.com/media/fvTcwoL2948POj6SIL/giphy.gif" alt="Ruby poder sin limites" /></p>
+
+<h3 id="sígueme-en-mis-redes">Sígueme en mis redes</h3>
+
+<p><a class="fa fa-facebook" href="https://www.facebook.com/abtechnow/"> abtechnow </a>
+<a class="fa fa-instagram" href="https://www.instagram.com/soyandresbernal//"> soyandrebernal </a>
+<a class="fa fa-instagram" href="https://www.instagram.com/abtechnow//"> abtechnow </a></p>
+
+<h1 id="ruby---poder-sin-limites--">RUBY - PODER SIN LIMITES  💎</h1>
+
+<p>Mi intención es empezar de 0 con el lenguaje de <strong>RUBY</strong> creado por <strong>Yukihiro Matsumoto</strong> y tocar los puntos mas importantes para su uso.</p>
+
+<h2 id="adelante"><strong>Adelante!!</strong></h2>
+
+<h3 id="flujo-de-trabajo">FLUJO DE TRABAJO</h3>
+
+<p>Creamos nuestro:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main.rb &gt;  💎 Editor de codigo &gt; 💻 ejecutamos el programa
+</code></pre></div></div>
+
+<p><strong>Vamos al primer script</strong></p>
+
+<p>Despues de crear <strong>main.rb</strong> escribimos</p>
+
+<p><a href="https://gist.github.com/soyandresbernal/319a52400ddd461787328f4cfea9d236.js"></a></p>
+
+<p>⌨️ Ejecutamos en modo consola</p>
+
+<blockquote>
+  <p>ruby Archivo.rb</p>
+</blockquote>
+
+<p>Salida del programa</p>
+
+<blockquote>
+  <p>HELLO RB</p>
+</blockquote>
+
+<p><strong>🐵</strong> Clave: <strong>IRB</strong> [for Interactive Ruby)]</p>
+
+<hr />
+
+<p><strong>OPERADORES MATEMATICOS</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>OPERADOR</th>
+      <th>USO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">+</code></td>
+      <td>Suma</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-</code></td>
+      <td>Resta</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">/</code></td>
+      <td>Division</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">*</code></td>
+      <td>Multiplicacion</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">**</code></td>
+      <td>Potencia</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">%</code></td>
+      <td>Residuo de la division</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">+=</code></td>
+      <td>Sumar y asignar el valor a una variable</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-=</code></td>
+      <td>restar y asignar el valor a una variable</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">*=</code></td>
+      <td>multiplicar y asignar el valor a una variable</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">/=</code></td>
+      <td>Dividir y asignar el valor a una variable</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">%=</code></td>
+      <td>Busca el residuo en una division  y asignar el valor a una variable</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<p>SUMA <code class="highlighter-rouge">IRB</code></p>
+
+<pre><code class="language-RUBY">&gt;&gt; 100 + 13
+=&gt; 113
+</code></pre>
+<p>RESTA <code class="highlighter-rouge">IRB</code></p>
+
+<pre><code class="language-RUBY">&gt;&gt; 100 - 13
+=&gt; 87
+</code></pre>
+<p>DIVISION <code class="highlighter-rouge">IRB</code></p>
+
+<pre><code class="language-RUBY">&gt;&gt; 13 / 13
+=&gt; 1
+</code></pre>
+<p>MULTIPLICACION <code class="highlighter-rouge">IRB</code></p>
+
+<pre><code class="language-RUBY">&gt;&gt; 100 + 13
+=&gt; 1300
+</code></pre>
+<p>POTENCIA <code class="highlighter-rouge">IRB</code></p>
+
+<pre><code class="language-RUBY">&gt;&gt; 100 ** 13
+=&gt; 100000000000000000000000000 
+
+</code></pre>
+<p>RESIDUO DE LA DIVISION <code class="highlighter-rouge">IRB</code></p>
+
+<pre><code class="language-RUBY">&gt;&gt; 100 % 13
+=&gt; 9
+</code></pre>
+<p>SUMA CON ASIGNACION <code class="highlighter-rouge">IRB</code></p>
+
+<pre><code class="language-RUBY">&gt;&gt; ruby = 100
+=&gt; 100
+&gt;&gt; ruby += 24
+=&gt; 124
+&gt;&gt; ruby
+=&gt; 124
+</code></pre>
+<p>RESTA CON ASIGNACION <code class="highlighter-rouge">IRB</code></p>
+
+<pre><code class="language-RUBY">&gt;&gt; ruby = 100
+=&gt; 100
+&gt;&gt; ruby -= 24
+=&gt; 76
+&gt;&gt; ruby
+=&gt; 76
+</code></pre>
+<p>DIVIDIR CON ASIGNACION <code class="highlighter-rouge">IRB</code></p>
+
+<pre><code class="language-RUBY">&gt;&gt; ruby = 100
+=&gt; 100
+&gt;&gt; ruby /= 24
+=&gt; 4
+&gt;&gt; ruby
+=&gt; 4
+</code></pre>
+<hr />
+<h3 id="strings"><strong>STRINGS</strong></h3>
+
+<p>Son una cadena en serie de caracteres de texto.</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="s2">"ruby"</span>
+<span class="o">=&gt;</span> <span class="s2">"ruby"</span> 
+</code></pre></div></div>
+<h3 id="variables">VARIABLES</h3>
+
+<p>Son nombres que hacen referencia a valores,si en un cajon
+guardamos relojes, obtendremos relojes</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="n">cajon</span> <span class="o">=</span> <span class="s2">"relojes"</span>
+<span class="o">=&gt;</span> <span class="s2">"relojes"</span> 
+</code></pre></div></div>
+<p>Al  declarar variables se permite letra minuscula, numeros, guiones _  y una buena practica es escribir las variables modo SNAKE CASE asi : <strong>ganancia_total</strong></p>
+
+<p>Esta prohibido y causara errores:</p>
+
+<ul>
+  <li>Crear variables con espacio:  <strong>ganancia total</strong></li>
+  <li>Usar caracteres especiales:  <strong>$ganancia_total</strong></li>
+  <li>Iniciar con un numero: <strong>1ganancia_total</strong></li>
+  <li>Iniciar con mayusculas: <strong>Ganancia_total</strong></li>
+</ul>
+
+<h3 id="constantes">CONSTANTES</h3>
+
+<p>Nos encontraremos problemas que tendremos que resolver con constantes lo que significa que su valor sera eterno dentro del programa ejemplo</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Numero</span> <span class="o">=</span> <span class="mi">12</span> 
+<span class="o">=&gt;</span> <span class="mi">12</span> 
+</code></pre></div></div>
+<p>en su sintaxis iniciara con mayuscula</p>
+
+<h3 id="objetos">OBJETOS</h3>
+
+<p>Ruby es un lenguaje orientado a objetos. esto nos permite manejar las cadenas de caracteres de manera rapida Veamos</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Contamos la logitud de la cadena</span>
+<span class="s2">"Hi developer!!"</span><span class="p">.</span><span class="nf">length</span>
+<span class="o">=&gt;</span> <span class="mi">14</span> 
+</code></pre></div></div>
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Invertimos la cadena</span>
+<span class="s2">"Hi developer!!"</span><span class="p">.</span><span class="nf">reverse</span>
+ <span class="o">=&gt;</span> <span class="s2">"!!repoleved iH"</span> 
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Asigna la Mayuscula al primer caracter</span>
+ <span class="s2">"hi developer!!"</span><span class="p">.</span><span class="nf">capitalize</span> 
+ <span class="o">=&gt;</span> <span class="s2">"Hi developer!!"</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Convierte la cadena a mayusculas</span>
+ <span class="s2">"hi developer!!"</span><span class="p">.</span><span class="nf">upcase</span> 
+  <span class="o">=&gt;</span> <span class="s2">"HI DEVELOPER!!"</span> 
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Convierte la cadena a minusculas</span>
+ <span class="s2">"HI DEVELOPER!!"</span><span class="p">.</span><span class="nf">downcase</span>
+ <span class="o">=&gt;</span> <span class="s2">"hi developer!!"</span> 
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Imprime la siguiente cadena logica</span>
+ <span class="s2">"Hi developer!!"</span><span class="p">.</span><span class="nf">next</span>
+ <span class="o">=&gt;</span>   <span class="s2">"Hi developes!!"</span> 
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># devuelve TRUE si la cadena esta vacia</span>
+<span class="c1"># al contrario su valor sera FALSE</span>
+ <span class="s2">"Hi developer!!"</span><span class="p">.</span><span class="nf">empty</span>
+ <span class="o">=&gt;</span>   <span class="s2">"Hi developes!!"</span> 
+</code></pre></div></div>
+
+<p><strong>🐵</strong> Clave: si queremos saber que valor tiene la variable</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#Esto aplica para STR,BOOLEAN,FLOAT</span>
+<span class="n">numero</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">numero</span><span class="p">.</span><span class="nf">class</span>
+ <span class="o">=&gt;</span> <span class="no">Integer</span>  
+</code></pre></div></div>
+
+<h3 id="concatenar-strings">CONCATENAR STRINGS</h3>
+
+<p>Unir cadenas con diferentes nombres de variable o constantes</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">frase_uno</span> <span class="o">=</span> <span class="s2">"¿Internet? ¿Todavía anda eso por ahí?"</span>
+<span class="n">autor</span> <span class="o">=</span> <span class="s2">" --Homero Simpson "</span> 
+
+<span class="n">frase_completa</span> <span class="o">=</span> <span class="n">frase_uno</span> <span class="o">+</span> <span class="n">autor</span>
+
+<span class="n">frase_completa</span>
+<span class="o">=&gt;</span> <span class="s2">"¿Internet? ¿Todavía anda eso por ahí? --Homero Simpson "</span> 
+
+
+</code></pre></div></div>
+<h3 id="capturar-datos">CAPTURAR DATOS</h3>
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">print</span> <span class="s2">"Que dia es hoy?"</span>
+<span class="c1">#gets en un metodo para leer la entrada de caracteres en la ventana</span>
+<span class="n">dia</span> <span class="o">=</span> <span class="nb">gets</span><span class="p">()</span>
+ <span class="o">=&gt;</span> <span class="s2">"Viernes</span><span class="se">\n</span><span class="s2">"</span> 
+<span class="c1"># #{dia} nos permite sustituir el valor en el nombre variable de la cadena</span>
+<span class="nb">puts</span> <span class="s2">"hoy es: </span><span class="si">#{</span><span class="n">dia</span><span class="si">}</span><span class="s2">"</span>
+ <span class="o">=&gt;</span> <span class="n">hoy</span> <span class="ss">es: </span><span class="no">Lunes</span>
+
+</code></pre></div></div>
+<p><strong>🐵</strong> Clave: <strong>[</strong> <code class="highlighter-rouge">puts</code> and  <code class="highlighter-rouge">print</code> <strong>]</strong> la diferencia esta en que <code class="highlighter-rouge">puts</code> al escribir muestra los datos en la linea. Mientras <code class="highlighter-rouge">print</code> da un espacio en blanco para poder escribir el dato que nos solicita. Recuerda que son metodos.</p>
+
+<p>###CHOMP</p>
+
+<p>Ahora veamos el metodo <code class="highlighter-rouge">CHOMP</code>, su funcion es si el último carácter de una cadena es una nueva línea, el método <code class="highlighter-rouge">chomp</code>  la elimina. con esto limpiamos cadenas devueltas por <code class="highlighter-rouge">gets</code>.</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">print</span> <span class="s2">"Numero favorito? "</span>
+<span class="n">input</span> <span class="o">=</span> <span class="nb">gets</span>
+ <span class="o">=&gt;</span> <span class="s2">"13</span><span class="se">\n</span><span class="s2">"</span> 
+<span class="c1">#se recibe la cadena con el metodo chomp</span>
+<span class="n">numero</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="nf">chomp</span>
+<span class="c1">#Sustuimos el valor en el nombre de la variable</span>
+<span class="nb">puts</span> <span class="s2">"Buen numero, </span><span class="si">#{</span><span class="n">numero</span><span class="si">}</span><span class="s2">!"</span>
+ <span class="o">=&gt;</span> <span class="s2">"Buen numero: 13"</span> 
+</code></pre></div></div>
+
+<h3 id="condicionales">CONDICIONALES</h3>
+
+<h3 id="if"><strong>IF</strong></h3>
+
+<p>Al crear una sentencia y queremos comprobar si se 
+cumple la condicion</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nb">puts</span> <span class="s2">"Adivina la marca de auto,entre Mazda,Fiat,Tesla. Escoje!  "</span>
+<span class="n">marca</span> <span class="o">=</span> <span class="nb">gets</span><span class="p">.</span><span class="nf">chop</span>
+<span class="c1">#la condicion es verdadera</span>
+<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">marca</span><span class="si">}</span><span class="s2"> Eres un campeon!!"</span> <span class="k">if</span> <span class="n">marca</span> <span class="o">==</span> <span class="s2">"Tesla"</span>
+<span class="c1">#la condicion es falsa</span>
+<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">marca</span><span class="si">}</span><span class="s2"> Escribe una marca de nuevo"</span> <span class="k">if</span> <span class="nb">name</span> <span class="o">!=</span> <span class="s2">"Tesla"</span>
+
+</code></pre></div></div>
+
+<p>Un programa  puede tener variadas soluciones</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nb">print</span> <span class="s2">"Adivina la marca de auto,entre Mazda,Fiat,Tesla. Escoje!  "</span>
+<span class="n">marca</span> <span class="o">=</span> <span class="nb">gets</span><span class="p">.</span><span class="nf">chop</span>
+<span class="k">if</span> <span class="n">marca</span> <span class="o">==</span> <span class="s2">"Tesla"</span>
+  <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">marca</span><span class="si">}</span><span class="s2"> Eres un campeon!!"</span>
+<span class="k">else</span>
+  <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">marca</span><span class="si">}</span><span class="s2"> Escribe una marca de nuevo"</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+
+<p>La diferencia es cómo se representa la lógica dentro del programa.</p>
+
+<p>Comienza como se declara el <code class="highlighter-rouge">if</code> con su cierre <code class="highlighter-rouge">end</code> 
+entonces valida <code class="highlighter-rouge">if marca =="Tesla"</code>  como  es verdadero muestra <code class="highlighter-rouge">Eres un campeon!!"</code></p>
+
+<p><code class="highlighter-rouge">else</code> se activa si la condicion es falsa</p>
+
+<h3 id="elsif">Elsif</h3>
+
+<p>Cuando usamos <code class="highlighter-rouge">if</code> y <code class="highlighter-rouge">else</code>, el código  <code class="highlighter-rouge">if</code> se ejecuta si se cumple la condición, de lo contrario, el código baja a la sección  de <code class="highlighter-rouge">else</code> y se ejecuta.</p>
+
+<p>Creemos  un nuevo escenario donde el código no se cumple, entonces el programa salta a <code class="highlighter-rouge">else</code>, ahora la condicion nos indica que verifiquemos otra condicion en la linea del <code class="highlighter-rouge">else</code></p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">primer_numero</span><span class="p">,</span><span class="n">segundo_numero</span><span class="p">,</span><span class="n">tercer_numero</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">7</span>
+<span class="c1"># &gt;= mayor igual</span>
+<span class="k">if</span> <span class="n">primer_numero</span> <span class="o">&gt;=</span> <span class="n">segundo_numero</span> <span class="n">and</span> <span class="n">primer_numero</span> <span class="o">&gt;=</span> <span class="n">tercer_numero</span>
+  <span class="nb">puts</span> <span class="s2">"primer_numero = </span><span class="si">#{</span><span class="n">primer_numero</span><span class="si">}</span><span class="s2"> Es el numero MAYOR"</span>
+<span class="k">elsif</span> <span class="n">segundo_numero</span> <span class="o">&gt;=</span> <span class="n">tercer_numero</span> <span class="n">and</span> <span class="n">segundo_numero</span> <span class="o">&gt;=</span> <span class="n">primer_numero</span>
+  <span class="nb">puts</span> <span class="s2">"segundo_numero = </span><span class="si">#{</span><span class="n">segundo_numero</span><span class="si">}</span><span class="s2"> Es el numero MAYOR"</span>
+<span class="k">else</span> <span class="nb">puts</span> <span class="s2">"Tercer_numero = </span><span class="si">#{</span><span class="n">tercer</span> <span class="n">numero</span><span class="si">}</span><span class="s2"> Es el numero MAYOR"</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+
+<h2 id="if-then-else">IF THEN ELSE</h2>
+<p>En mi experiencia no es muy usado, sin embargo es bueno saber que existe</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#Saber si un numero es par</span>
+<span class="n">number</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+  <span class="k">then</span>
+  <span class="nb">puts</span> <span class="s2">"Par"</span>
+  <span class="k">else</span>
+    <span class="nb">puts</span> <span class="s2">"Impar"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h3 id="unless"><strong>UNLESS</strong></h3>
+
+<p>Una manera diferente de evaluar condiciones.el opuesto de if es <code class="highlighter-rouge">unless</code>
+la condicion solo se ejecutara si es falsa,claro que se puede usar el <code class="highlighter-rouge">else</code> para continuar el programa</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">unless</span> <span class="kp">true</span>
+    <span class="nb">puts</span> <span class="s2">"Este mensaje no se vera en pantalla!"</span>
+<span class="k">else</span> 
+    <span class="nb">puts</span> <span class="mi">13</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h3 id="loops">LOOPS</h3>
+
+<h3 id="while">While</h3>
+<p>Mientras la condicion se cumpla,contiuara ejecutandose</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#Contar hasta 10</span>
+<span class="n">numero</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">numero</span> <span class="o">&lt;=</span> <span class="mi">10</span>
+<span class="nb">puts</span> <span class="n">numero</span>
+<span class="c1">#incremeta el valor de numero</span>
+<span class="n">numero</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h3 id="operardor-ternario">OPERARDOR TERNARIO</h3>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">5</span>
+<span class="c1">#evalua la condicion y muestra el mensaje</span>
+<span class="c1">#forma abreviada de if/else</span>
+<span class="n">numero_mayor</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span>  <span class="p">?</span> <span class="s2">"hola"</span> <span class="p">:</span> <span class="s2">"bye"</span>
+<span class="o">=&gt;</span> <span class="s2">"hola"</span>
+</code></pre></div></div>
+
+<h3 id="times">Times</h3>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">13</span><span class="p">.</span><span class="nf">times</span><span class="p">{</span>
+  <span class="c1">#se mostrara 13 veces en pantalla</span>
+  <span class="nb">puts</span> <span class="s2">"mensaje"</span>
+<span class="p">}</span>
+<span class="n">mensaje</span>
+<span class="n">mensaje</span>
+<span class="n">mensaje</span>
+<span class="n">mensaje</span>
+<span class="n">mensaje</span>
+<span class="n">mensaje</span>
+<span class="n">mensaje</span>
+<span class="n">mensaje</span>
+<span class="n">mensaje</span>
+<span class="n">mensaje</span>
+<span class="n">mensaje</span>
+<span class="n">mensaje</span>
+<span class="n">mensaje</span>
+ <span class="o">=&gt;</span> <span class="mi">13</span> 
+
+
+</code></pre></div></div>
+
+<h3 id="upto">Upto</h3>
+
+<p>Recorre e imprime los valores de manera inversa</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">13</span><span class="p">.</span><span class="nf">upto</span> <span class="mi">20</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+  <span class="nb">print</span> <span class="s2">"</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">, "</span>
+<span class="k">end</span>
+
+<span class="o">=&gt;</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span>  
+<span class="o">=&gt;</span> <span class="mi">13</span> 
+
+</code></pre></div></div>
+
+<h3 id="until">UNTIL</h3>
+<p>Mientras el <code class="highlighter-rouge">while</code> se ejecuta hasta que la condicion sea falsa
+con <code class="highlighter-rouge">until</code> lo hace hasta que sea verdadera
+<code class="highlighter-rouge">IRB</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span><span class="o">=</span><span class="mi">1</span>
+<span class="k">until</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="k">do</span>
+  <span class="nb">print</span> <span class="s2">"</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">, "</span>
+  <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+<span class="k">end</span>
+
+<span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="o">=&gt;</span> <span class="kp">nil</span> 
+
+</code></pre></div></div>
+
+<h3 id="arrays">ARRAYS</h3>
+
+<p>Las matrices nos permite organizar cualquier tipo de dato
+para luego clasificarlo
+y modificarlo de acuerdo al problema que tengamos que solucionar</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">##array vacio</span>
+<span class="n">un_array</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">un_array</span> <span class="o">&lt;&lt;</span> <span class="s2">"Elemento"</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">un_array</span> <span class="o">&lt;&lt;</span> <span class="mi">234234</span>
+<span class="n">un_array</span> <span class="o">&lt;&lt;</span> <span class="no">Time</span><span class="p">.</span><span class="nf">now</span>
+</code></pre></div></div>
+<p>para recorrerlos se usa:</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">un_array</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">elemento</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="n">elemento</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+
+<p>Se puede recorrer con un for</p>
+
+<p><code class="highlighter-rouge">IRB</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1"># Array.new crea un array vacio</span>
+<span class="n">un_array</span> <span class="o">=</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">un_array</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="s2">"Message"</span><span class="p">)</span>
+<span class="n">un_array</span><span class="p">.</span><span class="nf">push</span> <span class="mi">123</span>
+<span class="n">un_array</span> <span class="o">&lt;&lt;</span> <span class="no">Time</span><span class="p">.</span><span class="nf">now</span>
+
+<span class="k">for</span> <span class="n">elemento</span> <span class="k">in</span> <span class="n">un_array</span>
+  <span class="nb">puts</span> <span class="n">elemento</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+
+<p>Funciones ejecutads al array</p>
+
+<p><code class="highlighter-rouge">irb</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">array</span><span class="p">.</span><span class="nf">length</span>
+<span class="o">=&gt;</span> <span class="mi">3</span>
+<span class="n">array</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="s2">"Message, 123, Mon Aug 31 20:30:41 +0530 2010"</span>
+<span class="n">array</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"Message"</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="no">Mon</span> <span class="no">Aug</span> <span class="mi">31</span> <span class="mi">20</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">41</span> <span class="o">+</span><span class="mo">0530</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">array</span><span class="p">.</span><span class="nf">pop</span>
+<span class="o">=&gt;</span> <span class="mi">5</span>
+<span class="n">array</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"Message"</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="no">Mon</span> <span class="no">Aug</span> <span class="mi">31</span> <span class="mi">20</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">41</span> <span class="o">+</span><span class="mo">0530</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Consultemos un array anidado</p>
+
+<p><code class="highlighter-rouge">irb</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Ruby on rails"</span><span class="p">],</span> <span class="s2">"Sigma"</span><span class="p">]]</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Ruby on rails"</span><span class="p">],</span> <span class="s2">"Sigma"</span><span class="p">]]</span>
+<span class="n">array</span><span class="p">.</span><span class="nf">dig</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="s2">"Ruby on rails"</span>
+</code></pre></div></div>
+
+<p>Usemos intersecciones,uniones, saque sus conclusiones
+al revisar este script</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="no">Real_madrid</span><span class="o">=</span><span class="p">[</span><span class="s2">"Eden hazard"</span><span class="p">,</span> <span class="s2">"James rodriguez"</span><span class="p">,</span> <span class="s2">"Keilor navas"</span><span class="p">,</span> <span class="s2">"Mariano"</span><span class="p">,</span> <span class="s2">"Marcelo"</span><span class="p">]</span>
+
+<span class="no">Jugadores</span><span class="o">=</span><span class="p">[</span><span class="s2">"Messi"</span><span class="p">,</span><span class="s2">"Pele"</span><span class="p">,</span><span class="s2">"James rodriguez"</span><span class="p">,</span><span class="s2">"Keilor navas"</span><span class="p">,</span><span class="s2">"Ronaldinho"</span><span class="p">]</span>
+
+
+<span class="no">Real_madrid</span> <span class="o">&amp;</span> <span class="no">Jugadores</span>
+
+<span class="no">Real_madrid</span> <span class="o">|</span> <span class="no">Jugadores</span>
+
+<span class="no">Real_madrid</span> <span class="o">+</span> <span class="no">Jugadores</span>
+
+<span class="no">Real_madrid</span> <span class="o">-</span> <span class="no">Jugadores</span>
+
+</code></pre></div></div>
+
+<p>Link de toda las informacion de arrays</p>
+
+<p><a href="https://ruby-doc.org/core-2.5.1/Array.html" title="Arrays">Documentacion Arrays</a></p>
+
+<h3 id="hashes-y-simbolos">Hashes y simbolos</h3>
+
+<p>Los hashes son matrices con índice definido por el programa o  un usuario. no por el intérprete de Ruby.
+Un array asociativo contiene elementos que se pueden acceder, no a través de índices numéricos secuenciales, sino a través de claves que pueden tener cualquier tipo de valor. Estos arrays se conocen a veces como hash o diccionario.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mark</span> <span class="o">=</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">mark</span><span class="p">[</span><span class="s1">'English'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">mark</span><span class="p">[</span><span class="s1">'Math'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">70</span>
+<span class="n">mark</span><span class="p">[</span><span class="s1">'Science'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">75</span>
+<span class="nb">print</span> <span class="s2">"Nombre de la materia:"</span>
+<span class="nb">sub</span> <span class="o">=</span> <span class="nb">gets</span><span class="p">.</span><span class="nf">chop</span>
+<span class="nb">puts</span> <span class="s2">"Mark en </span><span class="si">#{</span><span class="nb">sub</span><span class="si">}</span><span class="s2"> es </span><span class="si">#{</span><span class="n">mark</span><span class="p">[</span><span class="nb">sub</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+
+</code></pre></div></div>
+
+<p>A diferencia de una matriz, el hash puede tener un objeto como índice.</p>
+
+<p>¿Qué pasa si el índice no tiene un valor definido?</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">mark</span> <span class="o">=</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span> <span class="mi">0</span> <span class="c1"># Asignamos el valor de mark es cero</span>
+<span class="n">mark</span><span class="p">[</span><span class="s1">'English'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">mark</span><span class="p">[</span><span class="s1">'Math'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">70</span>
+<span class="n">mark</span><span class="p">[</span><span class="s1">'Science'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">75</span>
+<span class="nb">print</span> <span class="s2">"Nombre de la materia:"</span>
+<span class="nb">sub</span> <span class="o">=</span> <span class="nb">gets</span><span class="p">.</span><span class="nf">chop</span>
+<span class="nb">puts</span> <span class="s2">"Mark en </span><span class="si">#{</span><span class="nb">sub</span><span class="si">}</span><span class="s2"> es </span><span class="si">#{</span><span class="n">mark</span><span class="p">[</span><span class="nb">sub</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="o">=&gt;</span> <span class="no">Mark</span> <span class="n">en</span> <span class="no">Science</span> <span class="n">es</span> <span class="mi">0</span><span class="p">:</span>
+</code></pre></div></div>
+<p>Mire la salida, no hemos definido un valor para la marca [‘Química’], sin embargo, cuando el nombre del sujeto se especifica como Química, obtenemos 0 como resultado.</p>
+
+<p>Esto es así porque hemos establecido cero como valor predeterminado. Por lo tanto, al establecer el valor predeterminado, tendremos un valor para aquellos índices que aún no hemos definido.</p>
+
+<h3 id="recorramos-hashes">Recorramos hashes</h3>
+<p><code class="highlighter-rouge">ìrb</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mark</span> <span class="o">=</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span> <span class="mi">0</span> <span class="c1"># Asignamos el valor de mark es cero</span>
+<span class="n">mark</span><span class="p">[</span><span class="s1">'English'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">mark</span><span class="p">[</span><span class="s1">'Math'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">70</span>
+<span class="n">mark</span><span class="p">[</span><span class="s1">'Science'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">75</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">mark</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="o">|</span>
+  <span class="n">total</span> <span class="o">+=</span> <span class="n">value</span>
+<span class="p">}</span>
+<span class="nb">puts</span> <span class="s2">"Total marks = "</span><span class="o">+</span><span class="n">total</span><span class="p">.</span><span class="nf">to_s</span>
+
+<span class="o">=&gt;</span> <span class="no">Total</span> <span class="n">marks</span> <span class="o">=</span> <span class="mi">195</span>
+</code></pre></div></div>
+
+<table>
+  <tbody>
+    <tr>
+      <td>En el programa anterior, hemos calculado el total de todas las marcas almacenadas en la marca Hash. Tenga en cuenta cómo usamos cada bucle. Tenga en cuenta que obtenemos el par clave-valor usando</td>
+      <td>clave, valor</td>
+      <td>en el cuerpo del bucle.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>La clave contiene el índice del hash y el valor contiene el valor almacenado en ese índice particular [25]. Cada vez que se ejecuta el bucle, agregamos valor al total, por lo que al final el total de la variable tiene el total de los valores almacenados en el hash. Por fin imprimimos el total.</p>
+
+<p><code class="highlighter-rouge">ìrb</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mark</span> <span class="o">=</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span> <span class="mi">0</span> <span class="c1"># signamos el valor de mark es cero</span>
+<span class="n">mark</span><span class="p">[</span><span class="s1">'English'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">mark</span><span class="p">[</span><span class="s1">'Math'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">70</span>
+<span class="n">mark</span><span class="p">[</span><span class="s1">'Science'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">75</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">puts</span> <span class="s2">"Key =&gt; Value"</span>
+<span class="n">mark</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">a</span><span class="si">}</span><span class="s2"> =&gt; </span><span class="si">#{</span><span class="n">b</span><span class="si">}</span><span class="s2">"</span>
+
+</code></pre></div></div>
+
+<h3 id="simbolos">SIMBOLOS</h3>
+
+<p>los simbolos es una instancia única de la clase Symbol que generalmente se usa para identificar un recurso específico. Un recurso puede ser:</p>
+
+<ul>
+  <li>Un metodo</li>
+  <li>una variable</li>
+  <li>un hash key</li>
+  <li>un stado</li>
+  <li>etc..</li>
+</ul>
+
+<p>Un símbolo es uniq porque solo se puede crear una instancia de la clase Symbol para un símbolo específico en un programa en ejecución</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="ss">:pending</span><span class="p">.</span><span class="nf">object_id</span> <span class="c1"># =&gt; 1277788</span>
+<span class="ss">:pending</span><span class="p">.</span><span class="nf">object_id</span> <span class="c1"># =&gt; 1277788</span>
+
+</code></pre></div></div>
+
+<p>Aquí, podemos ver que el símbolo: :pending solo se crea una vez ya que las dos llamadas a: pending.objeto_id devuelven el mismo identificador de objeto.</p>
+
+<p>Los símbolos a menudo se comparan con las cadenas. Pero la principal diferencia entre ellos radica en el hecho de que se crea un nuevo objeto String para cada cadena llamada, incluso si son idénticos</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'pending'</span><span class="p">.</span><span class="nf">object_id</span> <span class="c1"># =&gt; 70324176174080</span>
+<span class="s1">'pending'</span><span class="p">.</span><span class="nf">object_id</span> <span class="c1"># =&gt; 70324176168090</span>
+
+</code></pre></div></div>
+<p>Ahora que estamos más familiarizados con los símbolos, veamos la clase Symbol y la API que proporciona.</p>
+
+<h4 id="el-symbol-de-la-clase">EL SYMBOL DE LA CLASE</h4>
+
+<p>Esta clase es parte de la Biblioteca principal de Ruby (también conocida como core-lib).</p>
+
+<p>Esta clase no es públicamente instanciable</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">irb</span><span class="o">&gt;</span> <span class="no">Symbol</span><span class="p">.</span><span class="nf">new</span>
+<span class="no">NoMethodError</span> <span class="p">(</span><span class="n">undefined</span> <span class="nb">method</span> <span class="sb">`new' for Symbol:Class)
+
+
+</span></code></pre></div></div>
+<p>De lo contrario, un objeto Symbol se instancia implícitamente cuando se declara un nuevo símbolo</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">irb</span><span class="o">&gt;</span> <span class="ss">:dummy_symbol</span><span class="p">.</span><span class="nf">class</span>
+ <span class="o">=&gt;</span> <span class="no">Symbol</span>
+</code></pre></div></div>
+
+<p>Echemos un vistazo a su cadena de antepasados</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">irb</span><span class="o">&gt;</span> <span class="no">Symbol</span><span class="p">.</span><span class="nf">ancestors</span>
+ <span class="o">=&gt;</span> <span class="p">[</span><span class="no">Symbol</span><span class="p">,</span> <span class="no">Comparable</span><span class="p">,</span> <span class="no">Object</span><span class="p">,</span> <span class="no">Kernel</span><span class="p">,</span> <span class="no">BasicObject</span><span class="p">]</span>
+</code></pre></div></div>
+<p>La clase Symbol hereda de la clase padre predeterminada Object.</p>
+
+<p>Tenga en cuenta que incluye el módulo Comparable.</p>
+
+<p>Esta clase comparte exactamente la misma cadena de antepasados ​​que las clases String y Numeric.</p>
+
+<p>Esta clase también proporciona un montón de métodos de instancia interesantes para comparar, modificar y unir símbolos.</p>
+
+<p>La mayoría de los métodos para modificar y unir símbolos utilizan el método Symbol # to_s para trabajar con la representación de cadena del símbolo.</p>
+
+<p>Como los símbolos son, para cada uno de ellos, una instancia única de la clase Symbol, entonces Ruby tiene que hacer un seguimiento de cada uno de ellos para poder garantizar su singularidad.</p>
+
+<p>Para hacerlo, Ruby proporciona una tabla interna llamada global_symbols que se encarga de realizar un seguimiento de todos los símbolos de su programa en ejecución.</p>
+
+<blockquote>
+  <p>Tenga en cuenta que los símbolos solo se guardan en la memoria una vez. Esto los hace muy eficientes de usar. Pero permanecen en la memoria hasta que sale el programa. Esto es cierto para todas las versiones de Ruby &lt;2.2.0. De lo contrario, los símbolos usan el garbage collector.</p>
+</blockquote>
+
+<p>El método Symbol.all_symbols devuelve una matriz que representa el contenido de la tabla global_symbols en el momento de la llamada al método</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Symbol</span><span class="p">.</span><span class="nf">all_symbols</span><span class="p">.</span><span class="nf">length</span>                      <span class="c1"># =&gt; 3893</span>
+<span class="no">Symbol</span><span class="p">.</span><span class="nf">all_symbols</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">/Struct/</span><span class="p">)</span>              <span class="c1"># =&gt; [:Struct]</span>
+
+<span class="ss">:dummy_symbol</span>
+<span class="no">Symbol</span><span class="p">.</span><span class="nf">all_symbols</span><span class="p">.</span><span class="nf">length</span>                      <span class="c1"># =&gt; 3894</span>
+<span class="no">Symbol</span><span class="p">.</span><span class="nf">all_symbols</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">/dummy_symbol/</span><span class="p">)</span>        <span class="c1"># =&gt; [:dummy_symbol]</span>
+
+<span class="n">dummy_variable</span> <span class="o">=</span> <span class="kp">nil</span>
+<span class="no">Symbol</span><span class="p">.</span><span class="nf">all_symbols</span><span class="p">.</span><span class="nf">length</span>                      <span class="c1"># =&gt; 3895</span>
+<span class="no">Symbol</span><span class="p">.</span><span class="nf">all_symbols</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">/dummy_variable/</span><span class="p">)</span>      <span class="c1"># =&gt; [:dummy_variable]</span>
+
+<span class="k">def</span> <span class="nf">dummy_method</span><span class="p">;</span> <span class="k">end</span>
+<span class="no">Symbol</span><span class="p">.</span><span class="nf">all_symbols</span><span class="p">.</span><span class="nf">length</span>                      <span class="c1"># =&gt; 3896</span>
+<span class="no">Symbol</span><span class="p">.</span><span class="nf">all_symbols</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">/dummy_method/</span><span class="p">)</span>        <span class="c1"># =&gt; [:dummy_method]</span>
+
+<span class="k">class</span> <span class="nc">DummyClass</span><span class="p">;</span> <span class="k">end</span>
+<span class="no">Symbol</span><span class="p">.</span><span class="nf">all_symbols</span><span class="p">.</span><span class="nf">length</span>                      <span class="c1"># =&gt; 3897</span>
+<span class="no">Symbol</span><span class="p">.</span><span class="nf">all_symbols</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">/DummyClass/</span><span class="p">)</span>          <span class="c1"># =&gt; [:DummyClass]</span>
+
+<span class="no">Symbol</span><span class="p">.</span><span class="nf">all_symbols</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">/Hash/</span><span class="p">)</span>                <span class="c1"># =&gt; [:Hash]</span>
+<span class="k">class</span> <span class="nc">Hash</span><span class="p">;</span> <span class="k">end</span>
+<span class="no">Symbol</span><span class="p">.</span><span class="nf">all_symbols</span><span class="p">.</span><span class="nf">length</span>                      <span class="c1"># =&gt; 3897</span>
+
+</code></pre></div></div>
+
+<p>Primero, podemos ver que la tabla global_symbols no está vacía.</p>
+
+<p>En efecto, en la configuración del programa, esta tabla se completa con todos los métodos, variables y clases incluidos en la Biblioteca principal de Ruby. Estos recursos se insertan en la tabla como símbolo.</p>
+
+<blockquote>
+  <p>Por ejemplo, la clase Struct es parte de la Biblioteca principal de Ruby.</p>
+</blockquote>
+
+<p>Luego, podemos ver que un símbolo que representa un recurso se agrega a la tabla global_symbols cuando definimos:</p>
+
+<p>un nuevo símbolo
+una nueva variable
+un nuevo método
+una nueva clase / módulo</p>
+
+<p>Luego, podemos ver que no se agrega ningún símbolo nuevo a la tabla cuando volvemos a abrir la clase Hash. Esto se debe a que el símbolo: Hash ya está incluido en la tabla global_symbols. Este mecanismo es el mismo para símbolos, variables y métodos.</p>
+
+<blockquote>
+  <p>Tenga en cuenta que esta tabla se usa cada vez que tiene que lidiar con símbolos</p>
+</blockquote>
+
+<blockquote>
+  <p>Tenga en cuenta que los operadores == y === están utilizando una comparación a nivel de objeto.</p>
+</blockquote>
+
+<blockquote>
+  <p>Pero para todos los demás métodos de comparación, utiliza la representación de cadena del símbolo para la comparación.</p>
+</blockquote>
+
+<blockquote>
+  <p>HASHES articulo de referencia : https://medium.com/rubycademy/symbol-in-ruby-daca5abd4ab2</p>
+</blockquote>
+
+<h1 id="ranges">Ranges</h1>
+
+<p>Algunas veces necesitamos tener un rango de valores, por ejemplo en un sistema de calificación. Si un estudiante obtiene una calificación de 60 a 100 puntos, su calificación es A, de 50 a 59 su calificación es B y así sucesivamente. Cuando necesitemos lidiar con un rango de valores</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">5</span><span class="p">).</span><span class="nf">each</span> <span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="nb">print</span> <span class="s2">"</span><span class="si">#{</span><span class="n">a</span><span class="si">}</span><span class="s2">, "</span> <span class="p">}</span>
+
+<span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>  <span class="o">=&gt;</span> <span class="mi">1</span><span class="o">..</span><span class="mi">5</span> 
+
+</code></pre></div></div>
+
+<p>OK, ¿qué es eso (1..5) en la declaración anterior, esto se llama Rango. El rango es un objeto que tiene un valor superior y un valor inferior y todos los valores intermedios. Tenga en cuenta que, al igual que la matriz, todos y cada uno de los valores de un rango se pueden obtener utilizando cada método como se muestra arriba.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ <span class="p">(</span><span class="s2">"bad"</span><span class="o">..</span><span class="s2">"bag"</span><span class="p">).</span><span class="nf">each</span> <span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="nb">print</span> <span class="s2">"</span><span class="si">#{</span><span class="n">a</span><span class="si">}</span><span class="s2">, "</span> <span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="n">bad</span><span class="p">,</span> <span class="n">bae</span><span class="p">,</span> <span class="n">baf</span><span class="p">,</span> <span class="n">bag</span><span class="p">,</span> <span class="o">=&gt;</span> <span class="s2">"bad"</span><span class="o">..</span><span class="s2">"bag"</span>
+</code></pre></div></div>
+
+<p>Otro Ejemplo</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span><span class="o">..</span><span class="mi">10</span>
+<span class="o">=&gt;</span> <span class="o">-</span><span class="mi">4</span><span class="o">..</span><span class="mi">10</span>
+</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="p">.</span><span class="nf">class</span>
+<span class="o">=&gt;</span> <span class="no">Range</span>
+</code></pre></div></div>
+
+<p>Como podemos ver, pertenece a la clase Range</p>
+
+<p>Para obtener el valor máximo en un rango, use el método max como se muestra</p>
+
+<pre><code class="language-range">&gt;&gt; a.max
+</code></pre>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>=&gt; 10
+</code></pre></div></div>
+
+<p>Para obtener el mínimo en un rango, use el método min como se muestra</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">.</span><span class="nf">min</span>
+
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>=&gt; -4
+</code></pre></div></div>
+
+<p>Es posible convertir el rango a una matriz usando el método to_a como se muestra</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="p">.</span><span class="nf">to_a</span>
+</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">=&gt;</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+</code></pre></div></div>
+
+<p>Comprobemos intervalos</p>
+
+<p>Otro uso de Rangos es verificar si algo está ubicado en un intervalo particular.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">print</span> <span class="s2">"Ingrese una letra "</span>
+<span class="n">letra</span> <span class="o">=</span> <span class="nb">gets</span><span class="p">.</span><span class="nf">chop</span>
+
+<span class="nb">puts</span> <span class="s2">"Digito una minuscula"</span> <span class="k">if</span>  <span class="p">(</span><span class="s1">'a'</span><span class="o">..</span><span class="s1">'z'</span><span class="p">)</span> <span class="o">===</span> <span class="n">letra</span>
+<span class="nb">puts</span> <span class="s2">"Digito una mayuscula"</span> <span class="k">if</span>  <span class="p">(</span><span class="s1">'A'</span><span class="o">..</span><span class="s1">'Z'</span><span class="p">)</span> <span class="o">===</span> <span class="n">letra</span>
+</code></pre></div></div>
+
+<p>Salida</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Ingrese</span> <span class="n">una</span> <span class="n">letra</span> <span class="p">:</span> <span class="no">R</span>
+<span class="no">Digito</span> <span class="n">una</span> <span class="n">mayuscula</span>
+</code></pre></div></div>
+
+<p>Usando 3 puntos</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">5</span><span class="p">).</span><span class="nf">to_a</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="mi">5</span><span class="p">).</span><span class="nf">to_a</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Consulte el fragmento de código anterior cuando escribo (1..5) .to_a obtenemos una salida de matriz como [1, 2, 3, 4, 5], pero para (1 … 5) .to_a obtenemos una salida como [1 , 2, 3, 4]. Los puntos triples ignoran el último valor en el rango.</p>
+
+<h1 id="funciones">Funciones</h1>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">|</span> <span class="k">def</span> <span class="nf">print_line</span>
+  <span class="nb">puts</span> <span class="s1">'_'</span><span class="o">*</span><span class="mi">20</span>
+<span class="k">end</span>
+
+<span class="n">print_line</span>
+<span class="nb">puts</span> <span class="s2">"TITULO"</span>
+<span class="n">print_line</span>
+
+</code></pre></div></div>
+
+<p>###Paso de argumento en las funciones</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_line</span> <span class="n">length</span>
+  <span class="nb">puts</span> <span class="s1">'_'</span><span class="o">*</span><span class="n">length</span>
+<span class="k">end</span>
+
+<span class="mi">10</span><span class="p">.</span><span class="nf">step</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+  <span class="n">print_line</span> <span class="n">x</span>
+<span class="k">end</span>
+
+<span class="mi">40</span><span class="p">.</span><span class="nf">step</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+   <span class="n">print_line</span> <span class="n">x</span>
+ <span class="k">end</span>
+
+</code></pre></div></div>
+
+<h3 id="argumentos-predeterminados-en-las-funciones">Argumentos predeterminados en las funciones</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">print_line</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">20</span>
+  <span class="nb">puts</span> <span class="s1">'_'</span><span class="o">*</span><span class="n">length</span>
+<span class="k">end</span>
+
+<span class="n">print_line</span>
+<span class="n">print_line</span> <span class="mi">40</span>
+
+</code></pre></div></div>
+
+<p>Puede ver en el programa, en la función print_line al dar length = 20, hemos indicado que si no se pasa ningún argumento, la función debe asumir que el valor de length es 20. Si se pasa, este valor se anulará con el valor que pase. Como puede ver en la primera llamada a la función, simplemente llamamos a la función simplemente por su nombre print_line, no nos molestamos en pasarle el valor de la longitud, pero vemos que se imprime una línea de 20 unidades de longitud en la salida.</p>
+
+<h1 id="pasando-arrays-a-las-funciones">Pasando arrays a las funciones</h1>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">array_changer</span> <span class="n">array</span>
+  <span class="n">array</span> <span class="o">&lt;&lt;</span> <span class="mi">6</span>
+<span class="k">end</span>
+
+<span class="n">some_array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">p</span> <span class="n">some_array</span>
+<span class="n">array_changer</span> <span class="n">some_array</span>
+<span class="nb">p</span> <span class="n">some_array</span>
+
+
+</code></pre></div></div>
+<p>salida</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5, 6]
+
+</code></pre></div></div>
+<p>Si es un recién llegado a la programación, esto puede no ser sorprendente, pero cuando una variable se pasa a una función, no se supone que cambie su valor. Pero en el caso de la matriz, dentro de la función array_changer, le estamos agregando un elemento y cambia. Bueno, este es un comportamiento peculiar de una matriz que se pasa a una función.</p>
+
+<p>Para evitar tal comportamiento, pruebe el siguiente programa</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">array_changer</span> <span class="n">array</span>
+  <span class="n">array</span> <span class="o">&lt;&lt;</span> <span class="mi">6</span>
+<span class="k">end</span>
+
+<span class="n">some_array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">p</span> <span class="n">some_array</span>
+<span class="n">array_changer</span> <span class="no">Marshal</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="no">Marshal</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="n">some_array</span><span class="p">))</span>
+<span class="nb">p</span> <span class="n">some_array</span>
+
+</code></pre></div></div>
+<p>Salida</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
+</code></pre></div></div>
+
+<p>Aquí la matriz no se cambia, mira la línea array_changer Marshal.load (Marshal.dump (some_array)), este código copia some_array al argumento de la función para que incluso cuando se cambia dentro de la función, no se cambie fuera de la función.</p>
+
+<p>#Retornar valores</p>
+
+<p>Hasta ahora hemos visto que la función toma argumentos, ahora veremos que la función puede devolver valores que pueden usarse para algún propósito. Ahora veamos el programa function_return.rb, estudiemos el código, lo escribimos y lo ejecutamos.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">addition</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+  <span class="n">sum</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+  <span class="k">return</span> <span class="n">sum</span>
+<span class="k">end</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span>
+
+<span class="nb">puts</span> <span class="n">addition</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span>
+</code></pre></div></div>
+<p>salida</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8
+</code></pre></div></div>
+
+<p>El resultado que sale después de ejecutar es 8. Tenga en cuenta el método denominado adición en el programa anterior. Acepta dos argumentos <strong>x</strong> e <strong>y</strong>, dentro del método declaramos una variable llamada suma que se asigna a la suma de <strong>x</strong> con <strong>y</strong>. La siguiente declaración es el héroe aquí, vea que hemos usado una palabra clave return, esto devuelve el valor de la función. En el programa anterior, devolvemos la suma y, por lo tanto, cuando obtenemos la respuesta.</p>
+
+<p>No es que debamos usar la declaración return para devolver un valor. La última instrucción que se ejecuta en una función Ruby se devuelve por defecto.</p>
+
+<p>Considere el programa <strong>function_last_gets_returned.rb</strong> que se muestra a continuación. En él tenemos un método llamado <strong>square_it</strong> que acepta un solo argumento llamado <strong>x</strong>. Tiene una sola declaración <strong>x ** 2</strong>, que también es la última declaración.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">square_it</span> <span class="n">x</span>
+  <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">square_it</span> <span class="mi">5</span>
+</code></pre></div></div>
+<p>Salida</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>25
+</code></pre></div></div>
+
+<p>Como puede ver, hemos llamado square_it 5 y obtenemos 25 como resultado. Es posible porque en Ruby el resultado de la última declaración ejecutada se devuelve por defecto.</p>
+
+<h1 id="argumentos-clasvekeyword-arguments">Argumentos clasve[Keyword arguments]</h1>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">say_hello</span> <span class="ss">name: </span><span class="s2">"Martin"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">33</span>
+  <span class="nb">puts</span> <span class="s2">"Hello </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2"> your age is </span><span class="si">#{</span><span class="n">age</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+
+<span class="n">say_hello</span> <span class="ss">name: </span><span class="s2">"Joseph"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">7</span>
+<span class="n">say_hello</span> <span class="ss">age: </span><span class="mi">21</span><span class="p">,</span> <span class="ss">name: </span><span class="s2">"Vignesh"</span>
+<span class="n">say_hello</span>
+</code></pre></div></div>
+
+<p>Salida</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello Joseph your age is 7
+Hello Vignesh your age is 21
+Hello Martin your age is 33
+</code></pre></div></div>
+
+<p>Entonces, para ver cómo funciona esta característica, analicemos el código. Mire la definición de la función de say_hello, es como se muestra a continuación</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">say_hello</span> <span class="ss">name: </span><span class="s2">"Martin"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">33</span>
+  <span class="nb">puts</span> <span class="s2">"Hello </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2"> your age is </span><span class="si">#{</span><span class="n">age</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Mire la parte resaltada def say_hello name: “Martin”, edad: 33. Aquí no especificamos argumentos como def say_hello name = “Martin”, age = 33, sino que usamos un nombre especial: “Martin”, hemos eliminado el signo igual y reemplazado con dos puntos. Entonces, ¿de qué sirve? Ahora observe la parte donde se llama la función</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">say_hello</span> <span class="ss">name: </span><span class="s2">"Joseph"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">7</span>
+<span class="n">say_hello</span> <span class="ss">age: </span><span class="mi">21</span><span class="p">,</span> <span class="ss">name: </span><span class="s2">"Vignesh"</span>
+<span class="n">say_hello</span>
+</code></pre></div></div>
+
+<p>La primera línea es directa say_hello name: “Joseph”, edad: 7, aquí el primer argumento es name y el segundo argumento es age. Pero mire el código say_hello age: 21, nombre: “Vignesh”, aquí el primer argumento es age y el segundo es name. Pero como la palabra clave insinúa el argumento, su posición es irrelevante y el método imprime una cadena como esperamos.</p>
+
+<p>La tercera línea say_hello es solo para mostrar lo que sucede si se pierden los argumentos, ya que hemos especificado valores predeterminados, toma los predeterminados. ¿Es posible utilizar argumentos de palabras clave con valores predeterminados? Absolutamente sí.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">say_hello</span> <span class="nb">name</span><span class="p">:,</span> <span class="ss">age:
+    </span><span class="nb">puts</span> <span class="s2">"Hello </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2"> your age is </span><span class="si">#{</span><span class="n">age</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+
+  <span class="n">say_hello</span> <span class="ss">name: </span><span class="s2">"Joseph"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">7</span>
+  <span class="n">say_hello</span> <span class="ss">age: </span><span class="mi">21</span><span class="p">,</span> <span class="ss">name: </span><span class="s2">"Vignesh"</span>
+  <span class="c1"># say_hello # uncomment it and try it out</span>
+  <span class="c1"># say_hello "Karthik", 32 # uncomment it and try it out</span>
+</code></pre></div></div>
+
+<h1 id="funciones-recursivas">Funciones Recursivas</h1>
+
+<p>Todas las computadoras usan una cosa llamada álgebra booleana para hacer todas las tareas. No diría que debes ser matemático para ser programador, pero saber matemáticas ayuda.</p>
+
+<p>OK, ¿qué es un factorial? Tome un número, tomemos <strong>3</strong>, ahora lo que será <strong>3 X 2 X 1</strong>, ¡serán seis! ¿No es simple? <strong>6</strong> es factorial de <strong>3</strong>. Bueno, tomaremos <strong>4</strong> ahora, por lo que <strong>4 X 3 X 2 X 1</strong> será <strong>24</strong>, de manera similar el factorial de <strong>2</strong> será <strong>2 X 1</strong>, que es <strong>2</strong>. Habiendo equipado con este conocimiento, ahora construiremos un programa que nos dará factorial de un número.</p>
+
+<pre><code class="language-Ruby">
+# factorial
+
+def factorial num
+  fact = 1
+  1.upto(num) { |a|
+    fact = fact * a
+  }
+  fact
+end
+
+number = 17
+puts "Factorial of #{number} = #{factorial number}"
+</code></pre>
+<p>Salida</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Factorial of 17 = 355687428096000
+
+</code></pre></div></div>
+
+<p>En el ejemplo anterior (en la función factorial) hemos tomado todos los números del uno al número particular, lo hemos multiplicado y tenemos factorial.</p>
+
+<p>Veamos este codigo:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">factorial</span> <span class="n">num</span>
+  <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">num</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">number</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="nb">puts</span> <span class="s2">"Factorial of </span><span class="si">#{</span><span class="n">number</span><span class="si">}</span><span class="s2"> = </span><span class="si">#{</span><span class="n">factorial</span> <span class="n">number</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<p>Salida</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Factorial</span> <span class="n">of</span> <span class="mi">17</span> <span class="o">=</span> <span class="mi">355687428096000</span>
+</code></pre></div></div>
+
+<p>La salida es la misma que la del programa anterior factorial.rb. Observe muy de cerca la función denominada factorial en el programa anterior. Déjame enumerarlo para que lo veas</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">factorial</span> <span class="n">num</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">num</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Tome el número 1. El factorial es 1. Entonces, si se encuentra 1, se devuelve 1 como se muestra en el código</p>
+
+<p>Ahora tome el número 2. Factorial de 2 X 1, que es 2 factorial multiplicado de 1. En otras palabras, podemos escribirlo como 2 multiplicado por factorial de 2-1. Entonces, si se encuentra el número dos en la función factorial, omite la primera instrucción if y la segunda instrucción return num * factorial (num-1) a continuación se ejecuta</p>
+
+<p>En esto sucede algo interesante. Aquí se llama factorial (2-1), es decir, la función factorial se llama a sí misma. Entonces, cuando se llama factorial de 2-1, es decir, factorial de 1, devuelve 1, este 1 se multiplica por 2 y se devuelve, por lo que en este caso 2 se devuelve finalmente.</p>
+
+<p>Ahora tome el número 3. Su factorial es 3 X 2 X 1. Esto se puede escribir como 3 multiplicado por el factorial 2. El factorial 2 se traduce como 2 multiplicado por el factorial 1. Por lo tanto, el resultado se obtiene finalmente. Para cualquier número mayor que 1, la función factorial se llama a sí misma repetidamente. El proceso de la función que se llama a sí mismo se llama <strong>recursividad</strong>.</p>
+
+<h1 id="numero-de-argumentos-variables">Numero de argumentos Variables</h1>
+
+<p>Digamos que no sabe cuántos argumentos se pasan a una función, digamos que está escribiendo una función para agregar N números, el valor de N no se conoce, entonces, ¿cómo podría obtener un número variable de argumentos? Bueno, escriba el programa function_variable_arguments.rb que se proporciona a continuación y ejecútelo.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">some_function</span> <span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span>
+  <span class="nb">puts</span> <span class="n">a</span>
+  <span class="nb">puts</span> <span class="s2">"Others are:"</span>
+  <span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="n">others</span>
+    <span class="nb">puts</span> <span class="n">x</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">some_function</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span>
+
+</code></pre></div></div>
+
+<p>Salida</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+Others are:
+2
+3
+4
+5
+</code></pre></div></div>
+
+<p>Entonces la salida del programa se muestra arriba. Como ve, pasamos 1,2,3,4,5 como argumentos, entonces a es solo una variable y, por lo tanto, toma el valor 1, las otras variables son absorbidas por la variable otras (tenga en cuenta la estrella antes del nombre de la variable) que es un tipo especial de argumento, toma el resto de los argumentos que no son absorbidos por las variables de argumento anteriores y lo almacena en el nombre de la variable otros (como una matriz).</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="n">others</span>
+        <span class="nb">puts</span> <span class="n">x</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>Bueno, eso es todo. Ahora intente escribir una función para encontrar el máximo de n números y escriba otra función para encontrar el mínimo de n números y escriba un programa para encontrar el máximo y mínimo de un grupo de números.</p>
+
+<h1 id="hashes-como-argumentos-en-las-funciones">Hashes como argumentos en las funciones</h1>
+
+<p>Otra forma de colarse en múltiples argumentos en una función es pasarlos como hashes. Mire el programa a continuación, tenemos una función llamada some_function que obtiene dos argumentos, el primero llamado first_arg y el segundo llamado others_as_hash, llamamos a esta función en la siguiente línea some_function “Yoda”, {jedi: 100, espada: 100 , coming_future: 100}, ejecútelo y observe la salida</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">some_function</span> <span class="n">first_arg</span><span class="p">,</span> <span class="n">others_as_hash</span>
+  <span class="nb">puts</span> <span class="s2">"Your first argument is: </span><span class="si">#{</span><span class="n">first_arg</span><span class="si">}</span><span class="s2">"</span>
+  <span class="nb">puts</span> <span class="s2">"Other arguments are:"</span>
+  <span class="nb">p</span> <span class="n">others_as_hash</span>
+<span class="k">end</span>
+
+<span class="n">some_function</span> <span class="s2">"Yoda"</span><span class="p">,</span> <span class="p">{</span><span class="ss">jedi: </span><span class="mi">100</span><span class="p">,</span> <span class="ss">sword: </span><span class="mi">100</span><span class="p">,</span> <span class="ss">seeing_future: </span><span class="mi">100</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>Salida</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Your first argument is: Yoda
+Other arguments are:
+{:jedi=&gt;100, :sword=&gt;100, :seeing_future=&gt;100}
+</code></pre></div></div>
+
+<p>Como esperábamos, el programa imprime el primer argumento y el hash pasó a otros_como_hash, bueno, este no es una sorpresa, pero eche un vistazo al programa hashes_to_function_1.rb a continuación, ejecútelo, su salida será la misma que el programa anterior</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">some_function</span> <span class="n">first_arg</span><span class="p">,</span> <span class="n">others_as_hash</span>
+  <span class="nb">puts</span> <span class="s2">"Your first argument is: </span><span class="si">#{</span><span class="n">first_arg</span><span class="si">}</span><span class="s2">"</span>
+  <span class="nb">puts</span> <span class="s2">"Other arguments are:"</span>
+  <span class="nb">p</span> <span class="n">others_as_hash</span>
+<span class="k">end</span>
+
+<span class="n">some_function</span> <span class="s2">"Yoda"</span><span class="p">,</span> <span class="ss">jedi: </span><span class="mi">100</span><span class="p">,</span> <span class="ss">sword: </span><span class="mi">100</span><span class="p">,</span> <span class="ss">seeing_future: </span><span class="mi">100</span>
+</code></pre></div></div>
+
+<p>Pero solo tenga en cuenta esta parte, hemos llamado a alguna_función como se muestra</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>some_function "Yoda", jedi: 100, sword: 100, seeing_future: 100
+</code></pre></div></div>
+
+<p>En la función pasamos el segundo argumento como un hash pero se da como se muestra arriba, tenga en cuenta que hemos evitado convenientemente las llaves y todavía funciona. Ese es el punto</p>
+:ET

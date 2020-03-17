@@ -1,0 +1,240 @@
+I"�L<p><img src="https://media.giphy.com/media/40DRc0W00UbgQ/giphy.gif" alt="OOP" /></p>
+
+<p>Programacion orientada a objetos] Los programas son considerados como una coleccion de objetos.
+Donde el <strong>objeto</strong> no es mas que una instancia de una clase.</p>
+
+<h3 id="listado-de-conceptos-basicos-de-oop">Listado de conceptos basicos de OOP</h3>
+
+<ul>
+  <li>Abstraccion</li>
+  <li>Encapsulacion</li>
+  <li>Herencia</li>
+  <li>Polimorfismo</li>
+</ul>
+
+<p>Veamos un poco estos conceptos aplicados al lenguaje Ruby</p>
+
+<h4 id="casi-todo-es-objeto">Casi todo es objeto</h4>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># a es un objeto </span>
+  <span class="c1"># a.object_id da el identificador</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+
+  <span class="c1"># igualmente b es también objeto</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="s2">"Hoola !"</span>
+
+</code></pre></div></div>
+
+<p>Las matrices son objeto, la clase es objeto, los módulos son objeto, el rango también es objeto, los bloques de código pueden ser objeto, nada es también objeto que representa la nada y casi todo es objeto en rubí.</p>
+
+<h3 id="clases">Clases</h3>
+
+<p>La sintaxis para escribir la clase en ruby ​​es sencilla, solo debe escribir la palabra clave <strong>class</strong> y <strong>class name</strong>. El método dentro de la clase es pequeño y la sintaxis de mayúsculas y minúsculas es más preferida. La variable de instancia de clase en ruby ​​se puede iniciar con el <strong>símbolo @</strong>.</p>
+
+<p>E <strong>initialize</strong> es la función especial de la clase que se llama automáticamente cuando se crea el objeto. Para crear el Objeto de la clase podemos usar la sintaxis <strong>ClassName.new.</strong> Uno de los ejemplos simples es el siguiente.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'date'</span>
+
+<span class="k">class</span> <span class="nc">User</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">date_of_birth</span><span class="p">)</span>
+    <span class="n">days_since_birth</span> <span class="o">=</span> <span class="no">Date</span><span class="p">.</span><span class="nf">today</span> <span class="o">-</span> <span class="no">Date</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">date_of_birth</span><span class="p">)</span>
+    <span class="vi">@age</span> <span class="o">=</span> <span class="n">days_since_birth</span> <span class="o">/</span> <span class="mi">365</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">is_kid?</span>
+    <span class="vi">@age</span> <span class="o">&lt;=</span> <span class="mi">18</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">john</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"2006-02-12"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">john</span><span class="p">.</span><span class="nf">is_kid?</span> <span class="c1"># Returns False</span>
+</code></pre></div></div>
+
+<p>El método de inicialización se llama automáticamente cuando se crea el objeto, y el fragmento de código anterior se trata de la creación del objeto de la clase Usuario. La edad es la variable de clase.</p>
+
+<h3 id="metodos">Metodos</h3>
+
+<p>Los métodos son bastante fundamentales para Ruby, el método solo comienza por el símbolo def, el nombre del método sin ninguno o más parámetros</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">another_method</span><span class="p">(</span><span class="n">first_arg</span><span class="p">,</span> <span class="n">last_arg</span><span class="p">)</span>
+        <span class="s2">"You passed in </span><span class="si">#{</span><span class="n">first_arg</span><span class="si">}</span><span class="s2"> and </span><span class="si">#{</span><span class="n">second_arg</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">end</span>
+</code></pre></div></div>
+
+<p>Es posible crear el nombre del método con mayúscula, pero no lo haga. Por lo tanto, escriba siempre el método en minúscula, este último conectado por el guión bajo.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">ThisIsPossible</span>
+        <span class="c1"># Please do not do this</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+
+<p>Los métodos que devuelven verdadero o falso (valor booleano) siempre terminan con un signo de interrogación.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">is_not_boy?</span>
+      <span class="vi">@gender</span> <span class="o">!=</span> <span class="s1">'boy'</span>
+    <span class="k">end</span>
+</code></pre></div></div>
+<p>Signo de exclamación ! al final del método en ruby ​​significa lookout, eso significa que el valor de referencia original de la propiedad también se cambia, así que tenga en cuenta. por ejemplo</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">message</span> <span class="o">=</span> <span class="s2">"Hello World"</span>
+    <span class="n">message</span><span class="p">.</span><span class="nf">downcase!</span> <span class="c1"># This change message value to 'hello world'</span>
+</code></pre></div></div>
+
+<p>También podemos definir el argumento opcional en ruby, el argumento opcional siempre debe ser el último argumento en el método.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">informal</span> <span class="o">=</span> <span class="kp">false</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">informal</span>
+        <span class="s2">"hi </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+      <span class="k">end</span>
+      <span class="k">else</span>
+        <span class="s2">"Hello </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+      <span class="k">end</span>      
+    <span class="k">end</span>
+</code></pre></div></div>
+<p>Digamos que hay tres argumentos y dos de los argumentos son opcionales. no necesitamos enviar el valor predeterminado, pero si el tercer argumento es diferente del valor predeterminado del argumento, entonces deberíamos pasar los tres argumentos durante la llamada al método, ¿verdad? dejemos claro del ejemplo</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">informal</span> <span class="o">=</span> <span class="kp">false</span><span class="p">,</span> <span class="n">shout</span> <span class="o">=</span> <span class="kp">false</span><span class="p">)</span>
+      <span class="n">greeting</span> <span class="o">=</span> <span class="k">if</span> <span class="n">informal</span> <span class="k">then</span> <span class="s2">"hi"</span> <span class="k">else</span> <span class="s2">"hello"</span> <span class="k">end</span>
+      <span class="n">message</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">greeting</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+      <span class="k">if</span> <span class="n">shout</span>
+        <span class="n">message</span><span class="p">.</span><span class="nf">upcase</span>
+      <span class="k">else</span>
+        <span class="n">message</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="n">greet</span><span class="p">(</span><span class="s2">"John"</span><span class="p">,</span> <span class="kp">false</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>¡Para solucionar esto, podemos hacerlo así! Esta es una forma mucho más clara de pasar los argumentos en métodos ruby.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="ss">informal: </span><span class="kp">false</span><span class="p">,</span> <span class="ss">shout: </span><span class="kp">false</span><span class="p">)</span>
+      <span class="n">greeting</span> <span class="o">=</span> <span class="k">if</span> <span class="n">informal</span> <span class="k">then</span> <span class="s2">"hi"</span> <span class="k">else</span> <span class="s2">"hello"</span> <span class="k">end</span>
+      <span class="n">message</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">greeting</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+      <span class="k">if</span> <span class="n">shout</span>
+        <span class="n">message</span><span class="p">.</span><span class="nf">upcase</span>
+      <span class="k">else</span>
+        <span class="n">message</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="n">greet</span><span class="p">(</span><span class="s2">"John"</span><span class="p">,</span> <span class="ss">shout: </span><span class="kp">true</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Normalmente no necesitamos devolver el valor en los métodos, el último valor del método es devuelto automáticamente por el método. Pero en algún momento deberíamos devolver si hay alguna condición, entonces podemos devolver el valor utilizando la palabra clave return como esta.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyClass</span>
+      <span class="k">def</span> <span class="nf">odd_or_even</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+        <span class="k">return</span> <span class="k">unless</span> <span class="n">num</span><span class="p">.</span><span class="nf">respond_to?</span><span class="p">(</span><span class="ss">:odd?</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">num</span><span class="p">.</span><span class="nf">odd?</span> <span class="k">then</span>  <span class="s2">"odd"</span> <span class="k">else</span> <span class="s2">"even"</span> <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="no">MyClass</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">odd_or_even</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="herencia">Herencia</h3>
+
+<p>Ruby solo admite herencia única, lo que significa que cada clase en ruby ​​tiene exactamente una superclase. Podemos especificar una superclase escribiendo el signo ‘&lt;’ seguido del nombre de la superclase. La clase hereda los métodos de la superclase.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span>
+      <span class="n">attr_reder</span> <span class="ss">:name</span>
+      <span class="k">def</span> <span class="nf">initilize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+        <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+      <span class="k">end</span>    
+    <span class="k">end</span>
+
+    <span class="c1"># child class of User class</span>
+    <span class="k">class</span> <span class="nc">Admin</span> <span class="o">&lt;</span> <span class="no">User</span>
+      <span class="k">def</span> <span class="nf">is_admin</span>
+        <span class="kp">true</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="n">user</span> <span class="o">=</span> <span class="no">Admin</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Madhu Sudhan"</span><span class="p">)</span>
+    <span class="n">user</span><span class="p">.</span><span class="nf">name</span> <span class="c1"># will results 'Madhu Sudhan'</span>
+    <span class="n">user</span><span class="p">.</span><span class="nf">is_admin?</span> <span class="c1"># will return true</span>
+</code></pre></div></div>
+
+<p>Aquí está el ejemplo de cómo una clase contiene exactamente una superclase. Vea el siguiente ejemplo</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Admin</span><span class="p">.</span><span class="nf">superclass</span>
+    <span class="o">=&gt;</span> <span class="no">User</span>
+    <span class="no">User</span><span class="p">.</span><span class="nf">superclass</span>
+    <span class="o">=&gt;</span> <span class="no">Object</span>
+    <span class="no">Object</span><span class="p">.</span><span class="nf">superclass</span>
+    <span class="o">=&gt;</span> <span class="no">BasicObject</span>
+    <span class="no">BasicObject</span><span class="p">.</span><span class="nf">superclass</span>
+    <span class="o">=&gt;</span> <span class="kp">nil</span>
+</code></pre></div></div>
+
+<h3 id="modulos">Modulos</h3>
+
+<p>Los módulos en ruby ​​son realmente solo una colección de métodos y la clase también es un tipo especial de módulo. Podemos definir módulos de la misma manera que una clase.</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'date'</span>
+
+<span class="k">module</span> <span class="nn">Employee</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:start_date</span>
+
+  <span class="k">def</span> <span class="nf">employment_length</span>
+    <span class="n">days</span> <span class="o">=</span> <span class="no">Date</span><span class="p">.</span><span class="nf">today</span> <span class="o">-</span> <span class="n">start_date</span><span class="p">.</span><span class="nf">to_date</span>
+    <span class="s2">"</span><span class="si">#{</span><span class="n">days</span><span class="p">.</span><span class="nf">to_i</span><span class="si">}</span><span class="s2"> days"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">User</span>
+  <span class="kp">include</span> <span class="no">Employee</span>
+<span class="k">end</span>
+
+<span class="n">u</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">u</span><span class="p">.</span><span class="nf">start_date</span> <span class="o">=</span> <span class="no">Date</span><span class="p">.</span><span class="nf">today</span> <span class="o">-</span> <span class="mi">365</span>
+<span class="nb">puts</span> <span class="n">u</span><span class="p">.</span><span class="nf">employment_length</span>
+
+</code></pre></div></div>
+
+<p>Extender es otra forma de usar el módulo y es mucho más interesante, antes de usar la palabra clave include que el módulo define en la clase, pero también podemos usar la palabra clave extender para decirle al método una sola instancia de clase,</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'date'</span>
+
+<span class="k">module</span> <span class="nn">Employee</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:start_date</span>
+
+  <span class="k">def</span> <span class="nf">employment_length</span>
+    <span class="n">days</span> <span class="o">=</span> <span class="no">Date</span><span class="p">.</span><span class="nf">today</span> <span class="o">-</span> <span class="n">start_date</span><span class="p">.</span><span class="nf">to_date</span>
+    <span class="s2">"</span><span class="si">#{</span><span class="n">days</span><span class="p">.</span><span class="nf">to_i</span><span class="si">}</span><span class="s2"> days"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">User</span>
+<span class="k">end</span>
+
+<span class="n">u</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">u</span><span class="p">.</span><span class="nf">extend</span><span class="p">(</span><span class="no">Employee</span><span class="p">)</span>
+<span class="n">u</span><span class="p">.</span><span class="nf">start_date</span> <span class="o">=</span> <span class="no">Date</span><span class="p">.</span><span class="nf">today</span> <span class="o">-</span> <span class="mi">365</span>
+<span class="nb">puts</span> <span class="n">u</span><span class="p">.</span><span class="nf">employment_length</span>
+</code></pre></div></div>
+
+<h3 id="constantes">Constantes</h3>
+
+<p>Las constantes en rubí son muy similares a las constantes en cualquier otro idioma, violan la mutación del valor. Parece variable pero comienza con mayúscula. Es una convención que toda la letra de la constante debe estar en mayúscula.</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="no">PI</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="c1"># is good</span>
+
+    <span class="no">Pi</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="c1"># is possible but not do it</span>
+</code></pre></div></div>
+
+<p>Usando las constantes en clase y Módulos se puede acceder de esta manera</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Geometry</span>
+      <span class="no">PI</span> <span class="o">=</span> <span class="mf">3.14</span>
+    <span class="k">end</span>
+
+    <span class="k">class</span> <span class="nc">Circle</span>
+      <span class="no">PI</span> <span class="o">=</span> <span class="mf">3.142</span>
+    <span class="k">end</span>
+
+    <span class="nb">puts</span> <span class="no">Geometry</span><span class="o">::</span><span class="no">PI</span> <span class="o">==</span> <span class="no">Circle</span><span class="o">::</span><span class="no">PI</span> <span class="c1"># false</span>
+</code></pre></div></div>
+
+<p>Es realmente interesante aprender el lenguaje de programación ruby ​​y también es fácil.</p>
+:ET

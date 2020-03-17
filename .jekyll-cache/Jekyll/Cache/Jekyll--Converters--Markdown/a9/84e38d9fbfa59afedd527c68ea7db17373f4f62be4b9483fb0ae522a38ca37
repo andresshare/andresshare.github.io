@@ -1,0 +1,912 @@
+I"��<p><img src="https://media.giphy.com/media/J4rXAANmGN0cxvDV4I/giphy.gif" alt="Ruby" /></p>
+
+<h1 id="-ruby-">💎 RUBY 💎</h1>
+
+<p><strong>Message</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hello</span><span class="p">()</span>
+	<span class="s2">"hello"</span> 
+<span class="k">end</span>
+</code></pre></div></div>
+<p><strong>Return the Sum of Two Numbers</strong></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">addition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+	<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Return the Next Number from the Integer Passed</strong></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">addition</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+	<span class="n">num</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><strong>Concatenate First and Last Name into One String</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">concat_name</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">)</span>
+	<span class="n">last_name</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="n">first_name</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><strong>Is the Number Less than or Equal to Zero?</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">less_than_or_equal_to_zero</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+	<span class="o">!</span><span class="p">(</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="c1">#or</span>
+<span class="k">def</span> <span class="nf">less_than_or_equal_to_zero</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+	<span class="n">num</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><strong>Return the First Element in an Array</strong></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_first_value</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+	<span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Return the Last Element in an Array</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_last_item</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+	<span class="n">arr</span><span class="p">.</span><span class="nf">pop</span><span class="p">()</span>
+<span class="k">end</span>
+<span class="c1">#or</span>
+<span class="k">def</span> <span class="nf">get_last_item</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+	<span class="n">arr</span><span class="p">.</span><span class="nf">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Re-Form The Word</strong></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_word</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+	<span class="n">left</span><span class="p">.</span><span class="nf">capitalize</span> <span class="o">+</span> <span class="n">right</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Multiple of 100</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">divisible</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+	<span class="n">num</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><strong>Reverse an Array</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+	<span class="n">arr</span><span class="p">.</span><span class="nf">reverse</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><strong>Area of a Triangle</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">tri_area</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+	<span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">height</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Compare Strings by Count of Characters</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">tri_area</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+	<span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">height</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Compare Strings by Count of Characters</strong></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">comp</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">)</span>
+	<span class="n">str1</span><span class="p">.</span><span class="nf">length</span> <span class="o">===</span> <span class="n">str2</span><span class="p">.</span><span class="nf">length</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Profitable Gamble</strong></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">profitable_gamble</span><span class="p">(</span><span class="n">prob</span><span class="p">,</span> <span class="n">prize</span><span class="p">,</span> <span class="n">pay</span><span class="p">)</span>
+	<span class="n">prob</span><span class="o">*</span><span class="n">prize</span><span class="o">-</span><span class="n">pay</span><span class="o">&gt;</span><span class="mi">0</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><strong>Find the Smallest Number in an Array</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">find_smallest_num</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+	<span class="n">arr</span><span class="p">.</span><span class="nf">min</span>
+  <span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Difference of Max and Min Numbers in Array</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">difference_max_min</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+	<span class="n">arr</span><span class="p">.</span><span class="nf">max</span> <span class="o">-</span> <span class="n">arr</span><span class="p">.</span><span class="nf">min</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Find the Largest Number in an Array</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">find_largest_num</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+	<span class="n">nums</span><span class="p">.</span><span class="nf">max</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Check if an Integer is Divisible By Five</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">divisible_by_five</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+	<span class="n">n</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">===</span> <span class="mi">0</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Remove Duplicates from an Array</strong></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">remove_dups</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+	<span class="n">arr</span><span class="p">.</span><span class="nf">uniq</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Check String for Spaces</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">has_spaces</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+	<span class="o">!!</span><span class="p">(</span><span class="n">str</span> <span class="o">=~</span> <span class="sr">/ /</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="c1">#or</span>
+<span class="k">def</span> <span class="nf">has_spaces</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+<p><strong>Check if an Array Contains a Given Number</strong></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">el</span><span class="p">)</span>
+	<span class="n">arr</span><span class="p">.</span><span class="nf">include?</span> <span class="n">el</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Maximum Difference</strong></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">difference</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+	<span class="n">nums</span><span class="p">.</span><span class="nf">max</span> <span class="o">-</span> <span class="n">nums</span><span class="p">.</span><span class="nf">min</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>To the Power of _____</strong></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">calculate_exponent</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">exp</span><span class="p">)</span>
+	<span class="n">num</span><span class="o">**</span><span class="n">exp</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p><strong>Transform into an Array with No Duplicates</strong></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+	<span class="n">arr</span><span class="p">.</span><span class="nf">uniq</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+
+<p><strong>Maximum Edge of a Triangle</strong></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">next_edge</span><span class="p">(</span><span class="n">side1</span><span class="p">,</span> <span class="n">side2</span><span class="p">)</span>
+	<span class="p">(</span><span class="n">side1</span><span class="o">+</span><span class="n">side2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>String to Integer and Vice Versa</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">to_int</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+	<span class="n">str</span><span class="p">.</span><span class="nf">to_i</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">to_str</span><span class="p">(</span><span class="n">int</span><span class="p">)</span>
+	<span class="n">int</span><span class="p">.</span><span class="nf">to_s</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Purge and Organize</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">unique_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+	<span class="n">arr</span><span class="p">.</span><span class="nf">sort</span><span class="p">.</span><span class="nf">uniq</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Sort Numbers in Ascending Order</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def sort_nums_ascending(a)
+	a.sort
+end
+</code></pre></div></div>
+
+<p><strong>Is the Word Singular or Plural?</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def is_plural(word)
+	word[-1] == 's'
+end
+</code></pre></div></div>
+
+<p><strong>Concatenating Two Integer Arrays</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def concat(arr1, arr2)
+	arr1 + arr2
+end
+</code></pre></div></div>
+
+<p><strong>Char-to-ASCII</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def ctoa(char)
+	char.ord
+end
+</code></pre></div></div>
+
+<p><strong>Is the Number Even or Odd?</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def is_even_or_odd(n)
+	n % 2 == 0 ? "even" : "odd"
+end
+</code></pre></div></div>
+
+<p><strong>Return the First and Last Elements in an Array</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def first_last(a)
+	[a.first,a.last]
+end **Reverse the Order of a String**
+
+def reverse(s)
+	s.reverse
+end
+</code></pre></div></div>
+
+<p><strong>Palindrome?</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def is_palindrome(str)
+	str.reverse == str
+end
+</code></pre></div></div>
+
+<p><strong>Find the Total Number of Digits the Given Number Has</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def find_digit_amount(num)
+	num.to_s.size
+end
+</code></pre></div></div>
+
+<p><strong>Get Word Count</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def count_words(str)
+	str.split.size
+end
+</code></pre></div></div>
+
+<p><strong>Remove Nil from an Array</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def remove_nil(a)
+	a.compact
+end
+</code></pre></div></div>
+
+<p><strong>Find Unique Positive Numbers from Array</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def unique_arr(a)
+	a.select{|x| x &gt; 0}.uniq
+end
+</code></pre></div></div>
+
+<p><strong>Find the Smallest and Biggest Numbers</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def min_max(n)
+	[n.min, n.max]
+end
+</code></pre></div></div>
+
+<p><strong>Limit a Number’s Value</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def limit_number(*nums)
+	nums.sort[1]
+end
+</code></pre></div></div>
+
+<p><strong>Between Words</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def is_between(first, last, word)
+	word.between? first, last
+end
+</code></pre></div></div>
+
+<p><strong>String or Integer?</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def int_or_string(p)
+	p.to_i == p ? "int" : "str"
+end
+#or
+def int_or_string(param)
+param.is_a?(Integer) ? 'int' : 'str'
+end
+</code></pre></div></div>
+
+<p><strong>Extract City Facts</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>city_facts({
+  name: "Paris",
+  population: "2,140,526",
+  continent: "Europe"
+}) ➞ "Paris has a population of 2,140,526 and is situated in Europe"
+
+city_facts({
+  name: "Tokyo",
+  population: "13,929,286",
+  continent: "Asia"
+}) ➞ "Tokyo has a population of 13,929,286 and is situated in Asia"
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def city_facts(city)
+	"#{city[:name]} has a population of #{city[:population]} and is situated in #{city[:continent]}"
+end
+</code></pre></div></div>
+
+<p><strong>Nth Smallest Element</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def nth_smallest(a, n)
+  a.sort[n - 1]
+end **Testing K^K == N?**
+
+def k_to_k(n, k)
+	k**k == n
+end
+</code></pre></div></div>
+
+<p><strong>Vowel Replacer</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def replace_vowels(str, ch) 
+	str.tr 'aeiou', ch
+end
+</code></pre></div></div>
+
+<p><strong>Word Endings</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def add_ending(a, e)
+	a.map{|x| x+e}
+end
+#or
+def add_ending(arr, str)
+  arr.map { |ele| ele &lt;&lt; str }
+end
+</code></pre></div></div>
+
+<p><strong>Return the Remainder from Two Numbers</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def remainder(x, y)
+	x &lt; 0 ? x : x % y
+end **Calculate Determinant of a 2x2 Matrix**
+
+def calc_determinant(matrix)
+  (a, b), (c, d) = matrix
+  a * d - b * c
+end **Shuffle the Name**
+
+def name_shuffle(s)
+	s.split.reverse.join(' ')
+end **Basic Statistics: Mean**
+
+def mean(n)
+	(n.reduce(:+) / n.size.to_f).round(1)
+end
+#or
+   def mean(n)
+	(n.reduce(:+).to_f / n.size).round(1)
+end
+</code></pre></div></div>
+
+<p><strong>Find the Index</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def find_index(a, s) 
+	a.index(s)
+end
+</code></pre></div></div>
+
+<p><strong>Case Insensitive Comparison</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def match(s1, s2)
+	s1.casecmp(s2)==0
+end
+</code></pre></div></div>
+
+<p><strong>Total Number of Unique Characters</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def count_unique(s1, s2)
+  (s1 + s2).chars.uniq.size
+end
+</code></pre></div></div>
+
+<p><strong>The 3 Programmers Problem</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def programmers(*ns)
+	ns.max - ns.min
+end - **Generate N-Size Combinations from an Array**
+
+  
+
+  def combo(arr, n)
+      arr.combination(n).to_a
+    end
+</code></pre></div></div>
+
+<p><strong>Is the String Empty?</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def is_empty(s)
+	s == ""
+end
+</code></pre></div></div>
+
+<p><strong>Alphabet Soup</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def alphabet_soup(s)
+	s.chars.sort.join
+end **Check if a Number is a Palindrome**
+
+def is_palindrome(n)
+	n.to_s == n.to_s.reverse
+end
+</code></pre></div></div>
+
+<p><strong>Add, Subtract, Multiply or Divide?</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def operation(n1, n2)
+	n1+n2 == 24 ? "added" : n1-n2 == 24 ? "subtracted"
+	: n1*n2 == 24 ? "multiplied" : n1/n2 == 24 ? "divided" : nil
+end
+</code></pre></div></div>
+
+<p><strong>Is the Number Symmetrical?</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def is_symetrical?(i)
+	i == i.to_s.reverse.to_i
+end **Array from Comma-Delimited String**
+
+def to_array(s)
+	s.split(', ')
+end **Next Element in Arithmetic Sequence**
+
+  def next_element(arr)
+	arr.last + (arr[1] - arr[0])
+end
+</code></pre></div></div>
+
+<p><strong>Typing Game</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def correct_stream(user, correct)
+	user.zip(correct).map{|x, y| x==y}.map{|x| x==true ? 1 : -1}
+end
+#or
+def correct_stream(user, correct)
+  user.zip(correct).map { |a, b| a == b ? 1 : 	-1 }
+end
+</code></pre></div></div>
+
+<p><strong>Even Odd Partition</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def even_odd_partition(a)
+  a = a.group_by(&amp;:even?)
+  [a[true] || [], a[false] || []]
+end
+#or
+
+def even_odd_partition(arr)
+arr.partition(&amp;:even?)
+end
+
+#or
+def even_odd_partition(arr)
+arr.partition{|x| x.even?}
+end
+</code></pre></div></div>
+
+<p><strong>Hashes and Pluses</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def hash_plus_count(str)
+	[str.count("#"),str.count("+")]
+end
+
+#or
+def hash_plus_count(s)
+      g = {'#' =&gt; [], '+' =&gt; []}.merge(s.chars.group_by(&amp;:to_s))
+      [g['#'].size, g['+'].size]
+end
+def hash_plus_count(str)
+	[str.scan("#").size, str.scan("+").size]
+end
+</code></pre></div></div>
+
+<p><strong>Eliminate Odd Numbers within an Array</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def no_odds(arr)
+	arr.select(&amp;:even?)
+end **Sort an Array by String Length**
+
+def sort_by_length(arr)
+	arr.sort_by(&amp;:length)
+end
+</code></pre></div></div>
+
+<p><strong>Return the Four Letter Strings</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def is_four_letters(arr)
+	arr.select { |str| str.length == 4 }
+end
+  
+#or
+   def is_four_letters(arr)
+	arr.select {|str| str.length == 4}
+    end    
+</code></pre></div></div>
+
+<p><strong>Check if String Ending Matches Second String</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def check_ending(str1, str2)
+	str1[-str2.length..-1] == str2
+end
+</code></pre></div></div>
+
+<p><strong>Product Divisible by Sum?</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def divisible(arr)
+  0 == arr.reduce(:*) % arr.reduce(:+)
+end
+
+#or
+def divisible(arr)
+	(arr.inject(:*) % arr.inject(:+)).zero?
+end
+</code></pre></div></div>
+
+<p><strong>Fix the Spacing</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def correct_spacing(s)
+	s.split.join(' ')
+end
+
+#or
+def correct_spacing(sentence)
+sentence.strip.split.join(' ')
+end
+</code></pre></div></div>
+
+<p><strong>Get the File Extension</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def get_extension(arr)
+	arr.collect do |file|
+		file.split('.').pop
+	end
+end
+
+def get_extension(a)
+  a.map { |f| File.extname(f)[1..-1] }
+end
+# or
+
+def get_extension(arr)
+arr.map { |el| el.split('.')[-1] }
+end
+</code></pre></div></div>
+
+<p><strong>Return the Factorial</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def factorial(int)
+	return 1 if int == 0
+	int * factorial(int-1)
+end
+#or
+
+def factorial(int)
+(1..int).inject(:*)
+end
+</code></pre></div></div>
+
+<p><strong>Slice of Pie</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def equal_slices(total, people, each)
+	people * each &lt;= total
+end
+</code></pre></div></div>
+
+<p><strong>Odd Up, Even Down</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def transform(a)
+	a.map{|x|x % 2 == 0 ? x-1 : x+1}
+end
+
+def transform(a)
+  a.map { |a| (a &amp; 1) - (~a &amp; 1) + a }
+end
+</code></pre></div></div>
+
+<p><strong>Capitalize by ASCII</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def ascii_capitalize(s) 
+	s.split('').map{|x| x.ord % 2 === 0 ? x.upcase : x.downcase }.join('')
+end
+
+#or
+def ascii_capitalize(s)
+  s.map { |c| c.ord &amp; 1 == 1 ? c.downcase : 	c.upcase }
+end
+
+class String
+  def map
+    self.each_char.reduce('') { |s, c| s &lt;&lt; yield(c) }
+  end
+end
+</code></pre></div></div>
+
+<p><strong>Check if Number is within a Given Range</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def is_in_range(num, range)
+  (range[:min]..range[:max]).include?(num)
+end
+
+#or
+def is_in_range(num, range)
+return num &gt;= range[:min] &amp;&amp; num &lt;= range[:max]
+end **Stretched Words**
+
+def unstretch(w)
+	w.squeeze
+end
+#or
+def unstretch(word)
+	word.chars.chunk_while { |c1, c2| c1 == c2 }.to_a.map(&amp;:uniq).join
+end
+</code></pre></div></div>
+
+<p><strong>Multiply by Length</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def multiply_by_length(arr)
+	arr.map do |n|
+		n * arr.length
+	end
+end
+#or
+def multiply_by_length(arr)
+arr.map{|x| x * arr.length}
+end
+</code></pre></div></div>
+
+<p><strong>Find ASCII Charcode of Inverse Case Character</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def counterpart_char_code(char)
+	char.swapcase.ord
+end
+
+def counterpart_char_code(c)
+	c == c.upcase ? c.downcase.ord : c.upcase.ord
+end
+</code></pre></div></div>
+
+<p><strong>Recursion: Sum</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def sum(n)
+	(0..n).reduce{|x,a|x+a}
+end
+#or
+def sum(n)
+n == 1 ? n : n + sum(n-1);
+end **Amplify the Multiples of 4**
+
+def amplify(n)
+	(1..n).map{|x| x % 4 == 0 ? x * 10 : x}
+end
+#or
+def amplify(num)
+  (1..num).map { |n| n % 4 == 0 ? n * 10 : n}
+end **Missing Third Angle**
+
+def missing_angle(angle1, angle2)
+	180 - angle1 - angle2 &lt; 90 ? "acute" : 180 - angle1 - angle2 &gt; 90 ? "obtuse" : "right"
+end **Fix the Error: Vowel Edition** ```
+
+def removeVowels(str)
+  return str.sub(/[aeiou]/i, '')
+end
+</code></pre></div></div>
+
+<p>```</p>
+
+<p><strong>Repeating Letters N Times</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def repeat(s, n)
+  s.chars.map { |c| c * n }.join
+end
+</code></pre></div></div>
+
+<p><strong>Fix the Error: Vowel Edition</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def removeVowels(s)
+	s.gsub(/[aeiou]/i, '')
+end
+</code></pre></div></div>
+
+<p><strong>Remove Every Vowel from a String</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def remove_vowels(str)
+	str.delete("aeiouAEIOU")
+end
+</code></pre></div></div>
+
+<p><strong>Check if the Same Case</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def same_case(s)
+	s == s.downcase || s == s.upcase
+end
+</code></pre></div></div>
+
+<p><strong>Convert Number to Corresponding Month Name</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def month_name(num)
+	Date::MONTHNAMES[num]
+end
+
+def month_name(num)
+	hash = {
+		1 =&gt; 'January',
+		2 =&gt; 'February',
+		3 =&gt; 'March',
+		4 =&gt; 'April',
+		5 =&gt; 'May',
+		6 =&gt; 'June',
+		7 =&gt; 'July',
+		8 =&gt; 'August',
+		9 =&gt; 'September',
+		10 =&gt; 'October',
+		11 =&gt; 'November',
+		12 =&gt; 'December'
+		}
+	hash[num]
+end
+</code></pre></div></div>
+
+<p><strong>GCD and LCM ( Part 1)</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def gcd(a, b)
+	a.gcd(b)
+end
+#or
+def gcd(a, b)
+	(1..[a, b].sort.first).to_a.reverse.each { |f| return f if a % f == 0 &amp;&amp; b % f == 0 }
+end **Is it Time for Milk and Cookies?**
+
+def timeForMilkAndCookies(d)
+  d.month == 12 &amp;&amp; d.day == 24
+end
+</code></pre></div></div>
+
+<p><strong>Even Number Generator</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def find_even_nums(num)
+	(2..num).step(2).to_a
+end **Convert to Decimal Notation**
+
+def convert_to_decimal(p)
+	p.map{|x| x.to_f/100 }
+end
+</code></pre></div></div>
+
+<p><strong>Generate a Countdown of Numbers in an Array</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def countdown(s)
+	[*0..s].reverse
+end
+</code></pre></div></div>
+
+<p><strong>Numbers to Arrays and Vice Versa</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def to_array(num)
+	num.to_s.chars.map(&amp;:to_i)
+end
+
+def to_number(arr)
+  arr.join.to_i	
+end **Mirror Array**
+
+def mirror(a)
+	a + a.reverse[1..5]
+end **GCD and LCM (Part 2)**
+
+def lcm(a, b)
+	a.lcm(b)
+end
+
+def lcm(a, b)
+	([a,b].sort.last..a * b).to_a.each { |m| return m if m % a == 0 &amp;&amp; m % b == 0 }
+end
+</code></pre></div></div>
+
+<p><strong>Is the Average of All Elements a Whole Number?</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def is_avg_whole?(arr)
+	arr.inject(:+) % arr.size == 0
+end
+</code></pre></div></div>
+
+<p><strong>Add up the Numbers from a Single Number</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def add_up(n)
+	(n*(n+1))/2
+end
+</code></pre></div></div>
+
+<p><strong>Say Hello to Guests</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def greet_people(names)
+	names.map{|x| "Hello " + x}.join(', ')
+end
+</code></pre></div></div>
+
+<p><strong>H4ck3r Sp34k</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def hacker_speak(str)
+	str.tr 'aeios', '43105'
+end
+
+def hacker_speak(s)
+	s.gsub(/[aeios]/, 'a' =&gt; 4, 'e' =&gt; 3, 'i'=&gt; 1, 'o' =&gt; 0, 's' =&gt; 5)
+end
+</code></pre></div></div>
+
+<p><strong>Pi to N Decimal Places</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def my_pi(n)
+	Math::PI.round n
+end
+</code></pre></div></div>
+
+<p><strong>Capitalize the Names</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def cap_me(arr)
+	arr.map &amp;:capitalize
+end
+</code></pre></div></div>
+
+<p><strong>Count Instances of a Character in a String</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def char_count(str1, str2)
+	str2.count str1
+end
+</code></pre></div></div>
+
+<p><strong>Semantic Versioning</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def retrieve_major(s)
+	s.split('.')[0]
+end
+
+def retrieve_minor(s)
+	s.split('.')[1]
+end
+
+def retrieve_patch(s)
+	s.split('.')[2]
+end
+</code></pre></div></div>
+
+<p><strong>Flip the Boolean</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def reverse(bool)
+	!!bool == bool ? !bool : "boolean expected"
+end
+</code></pre></div></div>
+
+<p><strong>Is the Object Empty?</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def is_empty(o)
+	o.empty?
+end **Filter out Strings from an Array**
+
+def filter_list(a)
+	a.select{|b| b.is_a? Integer}
+end
+
+def filter_list(arr)
+	arr.select{|x| x != x.to_s }
+end **Calculate the Mean**
+
+def mean(arr)
+	(arr.reduce(:+).to_f / arr.size).round 2
+end
+</code></pre></div></div>
+
+<p><strong>How Many Vowels?</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def count_vowels(s)
+	s.count("aeiou")
+end
+</code></pre></div></div>
+
+<p><strong>Mean of All Digits</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def mean(num)
+	nums = num.abs.to_s.chars.map(&amp;:to_i)
+	nums.reduce(:+)/nums.length
+end
+</code></pre></div></div>
+
+:ET

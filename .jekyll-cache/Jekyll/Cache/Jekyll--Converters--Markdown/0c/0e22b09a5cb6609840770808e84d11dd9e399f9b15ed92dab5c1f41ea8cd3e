@@ -1,0 +1,152 @@
+I"�?<p><img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" alt="OOP" /></p>
+
+<p>Al hablar de programación funcional pondré sobre la mesa dos conceptos importantes el primero es resolver problemas por medio de este paradigma, el segundo permite que el valor de salida de una función dependa de los argumentos que son la entrada a la función, así eliminando efectos secundarios como los cambios de estado. Para empezar mira este excelente POST:</p>
+
+<blockquote>
+  <p>http://juanmirod.github.io/2017/06/16/introduccion-programacion-funcional-javascript.html</p>
+</blockquote>
+
+<p><strong>Funciones de Primera Clase</strong> Cuando decimos Funciones de Primera Clase no hablamos de una Clase como tal, nos referimos al tipo de dato, por ejemplo: un número o una cadena de caracteres puede ser una Función de Primera Clase. Esto significa que podemos tratar Funciones como cualquier tipo de dato (en vez de tomar un número o cadena), no existe ningún método, palabra clave o algo especial para definirlas, en este caso decimos que las funciones se pueden asignar en una variable, objecto o incluso un vector. Veamos unos simples ejemplos en código. un número se puede asignar a una variable y así asignamos una función retornando un número:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">var</span> <span class="nx">number</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">2120</span> <span class="p">};</span>
+</code></pre></div></div>
+<ul>
+  <li>Un número se puede asignar a un espacio en un vector y así una función:</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">var</span> <span class="nx">arrayNumbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">24</span> <span class="p">}];</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Un número puede ser asignado a un campo de un objeto y así una función:</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">var</span> <span class="nx">objectNumbers</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="na">number</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> 
+   <span class="na">fun</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">24</span> <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Un número puede ser creado como sea necesario y también una función:</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="mi">20</span> <span class="o">+</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">24</span> <span class="p">})();</span> <span class="c1">// =&gt; 44</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Un número puede ser pasado a una función y así puede hacerlo una función: un número puede ser retornado desde una función y así puede hacerlo una función:</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nx">sumFunc</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">f</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">n</span> <span class="o">+</span> <span class="nx">f</span><span class="p">()</span> <span class="p">}</span>
+    <span class="nx">sumFunc</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">24</span> <span class="p">});</span> <span class="c1">// =&gt; 44</span>
+</code></pre></div></div>
+<ul>
+  <li>un número puede ser retornado desde una función y así puede hacerlo una función:</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="mi">42</span><span class="p">;</span>
+<span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">42</span> <span class="p">};</span>
+</code></pre></div></div>
+
+<p>Como se ve en los ejemplos las Funciones de Primera Clase no tienen nada de especial, solo las tomamos como cualquier otro tipo de dato pero en este caso es una función retornando un valor. Los últimos dos ejemplos le llamamos Funciones de Orden Superior que es el siguiente tema a tratar.</p>
+
+<p><strong>Funciones de Orden Superior</strong> En esta capítulo del Post vamos a extender nuestra idea de Funciones de Primera Clase, aqui voy a describir que las funciones no solo puede ser asignadas a una variable, objeto, vector o pasadas como cualquier tipo de dato, ellas también pueden ser retornadas desde otras funciones. Las Funciones de Orden Superior toman dos acciones claves: toman una función como un argumento y retorna una función como un resultado, fundamental para el paradigma de Programación Funcional, ahora ya estas listo para ver la explicación en código! Vamos a desglosar este tópico en un programa muy sencillo para su buen entendimiento del mismo, vamos allá!</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">add</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="nx">sum</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// =&gt; 4</span>
+</code></pre></div></div>
+
+<p>Bien, ahora vamos a dividir esta explicación en partes:</p>
+
+<p>Primero he asignado una función a una variable llamada <strong>add</strong> como si fuese un tipo de dato (Funciones de Primera Clase que vimos anteriormente), este tipo de funciones son también conocidas como Funciones Anónimas o algunos lenguajes de programación se les conoce como <strong>Lambda</strong>, esta función anónima toma un argumento. Luego dentro del ámbito (Es decir, es un <em>closure</em>) de add retornamos otra función anónima con su argumento y así tomando el argumento del closure y la de esta para retornar una suma de los dos argumentos.</p>
+
+<p>Para llamar la función debemos asignarla a una variable con su respectivo parámetro a la primera función (la asignamos a una variable porque no queremos que se ejecute, si solo ejecutamos la primera función no va a devolver el resultado), luego ejecutamos la segunda función asignandole su respectivo parámetro y listo nos devuelve el resultado.</p>
+
+<p>Es algo tedioso llamar las Funciones de Orden Superior (te puedes imaginar si tienes muchas más funciones que este simple ejemplo? xD), para esto usamos una técnica llamada <strong>Currying</strong> muy usada en el paradigma de Programación Funcional. Pero que diablos es Currying?</p>
+
+<h2 id="currying">Currying</h2>
+
+<p><strong>Currying</strong> es una forma de construir funciones por partes mientras que permita la aplicación parcial de los argumentos de una función. Es decir podriamos pasar todo los argumentos de una función en partes y ejecutarla de una vez, muy simple y así reduce la complejidad en el código, vamos a ejecutar el ejemplo de arriba usando Currying, veamos!</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="nx">add</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// =&gt; 4</span>
+
+</code></pre></div></div>
+
+<p>Muy simple! así solo tenemos que llamar la función una sola vez pasandole los argumentos o resto de elementos a las funciones en parcial.</p>
+
+<p>En lenguajes como Haskell, Scala, ya vienen por default con esta feature ya que son lenguajes funcionales totalmente, en cambio en JavaScript no viene por default, la técnica de Currying se aplica como un tipo de truco o hack para hacerlo trabajar como Currying. Sin embargo podemos usar alguna librería Open Source que nos facilite mucho la vida para estos procesos funcionales, voy a tomar el mismo ejemplo pero usando Lodash, vamos alla!</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">curry</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">})</span>
+
+<span class="nx">add</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// =&gt; 4</span>
+
+</code></pre></div></div>
+
+<p>El método curry de Lodash toma una función como argumento (un callback) transformando los argumentos de este callback en una función Currying. Map, Reduce y Filter Pues si, JavaScript tiene funciones pre-construidas (a partir de ES5) que toman una función como argumento y retornan un valor y esas funciones son <strong>map(), reduce() y filter()</strong> para vectores, veamos un ejemplo de cada una tomando esta simple estructuras de datos:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">students</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Anna</span><span class="dl">'</span><span class="p">,</span> <span class="na">grade</span><span class="p">:</span> <span class="mi">6</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">,</span> <span class="na">grade</span><span class="p">:</span> <span class="mi">4</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Maria</span><span class="dl">'</span><span class="p">,</span> <span class="na">grade</span><span class="p">:</span> <span class="mi">9</span> <span class="p">}</span>
+<span class="p">];</span> 
+
+</code></pre></div></div>
+
+<h3 id="filter">filter()</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">students</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">student</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">student</span><span class="p">.</span><span class="nx">grade</span> <span class="o">&gt;=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>// [ { name: ‘Anna’, grade: 6 }, { name: ‘Maria’, grade: 9 } ]</p>
+<h3 id="con-map">con map()</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">students</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="p">});</span> 
+
+<span class="c1">// [ 'Anna', 'John', 'Maria' ]</span>
+</code></pre></div></div>
+<h3 id="reduce">reduce()</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">students</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">sum</span><span class="p">,</span> <span class="nx">student</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="k">return</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">student</span><span class="p">.</span><span class="nx">grade</span><span class="p">;</span>
+<span class="p">},</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1">// 19</span>
+</code></pre></div></div>
+
+<p>Encadenando métodos Como vemos <strong>map(), reduce() y filter()</strong> son Funciones de Orden Superior que vienen en el core de JavaScript, estas funciones toman datos de un vector pasandolo al callback y retornan un valor transformado sin mutar el vector original, luego veremos en profundida la parte de las Funciones Puras e Immutabilidad, la próxima parada es para la Composición de Funciones.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">students</span>
+  <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">student</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="k">return</span> <span class="nx">student</span><span class="p">.</span><span class="nx">grade</span> <span class="o">&gt;=</span> <span class="mi">6</span> 
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+  <span class="p">})</span>
+
+<span class="c1">// ['Anna', 'Maria']</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<blockquote>
+  <p>mas info y autor de este post: https://medium.com/elblogdejavascript/programaci%C3%B3n-funcional-5da872a080fe</p>
+</blockquote>
+
+:ET

@@ -1,0 +1,14 @@
+I"!<p><img src="https://media.giphy.com/media/2RiU1RUjyh4C4/giphy.gif" alt="factorial" /></p>
+
+<p>En este simple código usando tres funciones de javascript, se puede invertir una cadena de caracteres</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">function</span> <span class="nx">invertirCadena</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">invertirCadena</span><span class="p">(</span><span class="dl">"</span><span class="s2">javascript</span><span class="dl">"</span><span class="p">);</span>
+
+  
+</code></pre></div></div>
+
+:ET

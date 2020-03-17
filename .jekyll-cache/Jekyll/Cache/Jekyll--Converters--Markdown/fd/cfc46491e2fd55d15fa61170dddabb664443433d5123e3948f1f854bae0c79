@@ -1,0 +1,432 @@
+I"l�<p><img src="https://media.giphy.com/media/KzyMcEfDh4Jiw/giphy.gif" alt="OOP" /></p>
+
+<p><strong>REDUX</strong>  Es una herramienta de administración de estado se convierte en una necesidad en las aplicaciones React a medida que su estado aumenta en complejidad, una de esas soluciones es Redux.</p>
+
+<p>Redux permite administrar todo el estado de su aplicación en un objeto, llamado Store.</p>
+
+<p>Las actualizaciones de Store activarán la repetición de los componentes que están conectados a la parte de store que se actualizó. Cuando queremos actualizar algo, llamamos a una acción. También creamos funciones para manejar estas acciones y devolver la Tienda actualizada. Estas funciones se denominan Reducers.</p>
+
+<h1 id="️-instalacion-de-redux">♠️ Instalacion de redux</h1>
+
+<p>Usamos npm</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save redux 
+npm install --save react-redux
+
+</code></pre></div></div>
+
+<p>La inicialización de su Store se puede hacer dentro de  index.js, o donde llame a <strong>ReactDOM.render()</strong> a su ID de raíz. Para comenzar a utilizar Redux, debemos inicializar Store y usar el componente <Proveedor></Proveedor> de Redux para que la Store esté disponible para el resto de la aplicación. Se parece a esto:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//...</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Provider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-redux</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">createStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">redux</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">rootReducer</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./reducers</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">initialStore</span> <span class="o">=</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">createStore</span><span class="p">(</span><span class="nx">rootReducer</span><span class="p">,</span> <span class="nx">initialStore</span><span class="p">);</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">Provider</span> <span class="nx">store</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">App</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/Provider&gt;,</span><span class="err"> 
+</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">));</span>
+
+<span class="c1">//...</span>
+</code></pre></div></div>
+
+<h2 id="️-acciones--reductores">♠️ Acciones &amp; Reductores</h2>
+
+<p>Al leer la pagina oficial de Redux, es complejo enteneder sin embargo se encuentra estos conceptos a lo largo de la documentacion que son <em>actions</em> y <em>reducers</em></p>
+
+<blockquote>
+  <p>Acciones: funciones que devuelven un objeto similar a un objeto JSON que describe algo que sucederá. Hay una clave obligatoria, tipo de nombre. Debemos dar un tipo a cada acción. Se pueden pasar otros argumentos a una acción que se puede usar para actualizar su Tienda (estado).</p>
+</blockquote>
+
+<blockquote>
+  <p>Reductores - funciones que manejan acciones y actualizan la tienda. Hacemos esto devolviendo el nuevo estado. Los reductores deben ser funciones puras.</p>
+</blockquote>
+
+<p>vamos al codigo</p>
+
+<h2 id="️--acciones">♠️  Acciones</h2>
+
+<p>Usaremmos el tipico evento onClick o onSubmit en los que ha enviado un formulario válido.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// login exitoso</span>
+
+<span class="p">{</span>
+   <span class="nl">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SIGN_IN</span><span class="dl">'</span><span class="p">,</span>  <span class="c1">//obligario</span>
+   <span class="nx">user</span><span class="p">:</span> <span class="nx">username</span><span class="p">,</span>
+   <span class="nx">authToken</span><span class="p">:</span> <span class="nx">authToken</span>
+<span class="p">});</span>
+
+<span class="c1">//username y authToken se pasan a esta acción definition export const setSignIn = (username, authToken) =&gt; (</span>
+</code></pre></div></div>
+
+<p>Después de que un usuario se haya autenticado, se puede llamar a una acción <strong>SIGN_IN</strong>, donde el authToken y el nombre de usuario se enviarán al reductor y Store en el estado</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// cerrar sesion</span>
+<span class="c1">// no se pasa nada solo se necesita el reductor</span>
+<span class="c1">// mi autenticacion de usuario</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">setSignOut</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">(</span>
+<span class="p">{</span>
+ <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SIGN_OUT</span><span class="dl">'</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Lo anterior es un  ejemplo de salir de la aplicación. Esta acción activará mi <strong>reducer</strong> para eliminar algunas credenciales que se encuentran actualmente en estado. Recuerde, su store es de solo lectura, la única forma de actualizarla es a través de <strong>Acciones</strong> y <strong>reductores</strong>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// cambiar la barra de progreso</span>
+<span class="c1">// el  estado aquí puede ser OCULTAR o MOSTRAR</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">setProgressBar</span> <span class="o">=</span> <span class="p">(</span><span class="nx">status</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+<span class="p">{</span>
+ <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SET_PROGRESS_BAR</span><span class="dl">'</span><span class="p">,</span>
+ <span class="na">status</span><span class="p">:</span> <span class="nx">status</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>En las siguiente plantilla eguir, daré una estructura de proyecto de Redux y cómo integrar acciones a su proyecto.</p>
+
+<h2 id="️-reducer">♠️ Reducer</h2>
+
+<p>Los reductores reaccionan a las llamadas de acción <em>(o dispatches)</em> y las manejan en consecuencia. Los documentos de Redux lo alientan a usar instrucciones de cambio para manejar cada acción dentro de su reductor. También puede definir varios reductores en archivos separados para mantener su código organizado. Los reductores devuelven el nuevo estado actualizado.</p>
+
+<p>se organizan de la siguiente manera</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">src</span><span class="o">/</span>
+   <span class="nx">reducers</span><span class="o">/</span>
+      <span class="nx">index</span><span class="p">.</span><span class="nx">js</span>
+      <span class="nx">ui</span><span class="p">.</span><span class="nx">js</span>
+      <span class="nx">auth</span><span class="p">.</span><span class="nx">js</span>
+      <span class="p">...</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>En esta configuración, <strong>ui.js</strong> y <strong>auth.js</strong> manejarán acciones relacionadas con los cambios y la autenticación de la interfaz de usuario. La IU es bastante vaga, pero incluiría cosas como manejar la barra de progreso de tu aplicación. <strong>auth.js</strong> manejaría un tipo de acción <strong>SIGN_IN o un tipo de acción **SIGN_OUT</strong>, y no olvidemos la verificación de tokens de autenticación válidos en una actualización de página o una nueva visita, una acción para la que podría llamarse <strong>AUTHENTICATE_TOKEN</strong>.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>index.js</strong> no define más reductores, y en su lugar combina <strong>ui.js</strong> y <strong>auth.js</strong> usando la función <strong>combineReducers()</strong> de Redux</p>
+</blockquote>
+
+<p>Para demostrar un reductor, reducers / ui.js puede manejar nuestra acción de la barra de progreso, de esta manera:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// un reductor es solo una declaración de cambio que maneja cada acción que definimos.</span>
+<span class="c1">// un reductor devuelve el nuevo estado, que a su vez actualiza Store.</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">ui</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{},</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+      
+      <span class="k">case</span> <span class="dl">'</span><span class="s1">SET_PROGRESS_BAR</span><span class="dl">'</span><span class="p">:</span>
+         <span class="k">return</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">state</span><span class="p">,</span> <span class="p">{</span> <span class="na">progressBarStatus</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">status</span> <span class="p">});</span>
+  
+  
+      <span class="nl">default</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">};</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">ui</span>
+
+<span class="c1">//</span>
+
+
+
+<span class="nx">Este</span> <span class="nx">reductor</span> <span class="nx">devuelve</span> <span class="nx">un</span> <span class="nx">nuevo</span> <span class="nx">estado</span> <span class="nx">con</span> <span class="nx">un</span> <span class="na">cambio</span><span class="p">:</span> <span class="nx">el</span> <span class="nx">progressBarStatus</span> <span class="nx">se</span> <span class="nx">actualiza</span> <span class="nx">a</span> <span class="nx">nuestro</span> <span class="nx">valor</span> <span class="nx">action</span><span class="p">.</span><span class="nx">status</span><span class="p">.</span>
+<span class="na">Nota</span><span class="p">:</span> <span class="nx">Si</span> <span class="nx">nuestro</span> <span class="nx">estado</span> <span class="nx">est</span><span class="err">á</span> <span class="nx">vac</span><span class="err">í</span><span class="nx">o</span><span class="p">,</span> <span class="nx">le</span> <span class="nx">damos</span> <span class="nx">un</span> <span class="nx">valor</span> <span class="nx">inicial</span> <span class="nx">de</span> <span class="nx">un</span> <span class="nx">objeto</span> <span class="nx">vac</span><span class="err">í</span><span class="nx">o</span><span class="p">,</span> <span class="p">{}.</span>
+<span class="nx">Para</span> <span class="nx">incluir</span> <span class="nx">este</span> <span class="nx">reductor</span> <span class="nx">en</span> <span class="nx">nuestro</span> <span class="nx">archivo</span> <span class="nx">de</span> <span class="err">í</span><span class="nx">ndice</span> <span class="p">(</span><span class="nx">o</span> <span class="nx">ra</span><span class="err">í</span><span class="nx">z</span><span class="p">),</span> <span class="nx">hacemos</span> <span class="nx">lo</span> <span class="na">siguiente</span><span class="p">:</span>
+
+
+
+<span class="o">**</span><span class="nx">reducers</span><span class="o">/</span><span class="nx">index</span><span class="p">.</span><span class="na">js</span><span class="p">:</span><span class="o">**</span>
+
+<span class="s2">```javascript
+import { combineReducers } from 'redux';
+import ui from './ui';
+import auth from './auth';
+export default combineReducers({
+   ui,
+   auth,
+});
+
+</span></code></pre></div></div>
+
+<p>Aquí solo tenemos 2 reductores, pero a medida que su aplicación crezca, puede agregar fácilmente más dentro de <strong>combineReducers()</strong>.
+Probablemente pueda ver lo que está sucediendo aquí: en cada llamada de acción (o envío), el tipo de acción pasa a través de todos nuestros archivos reductores. Si el tipo de acción no coincide con cada instrucción de cambio, el caso predeterminado simplemente devuelve el estado actual.</p>
+
+<p>Dispatch la forma de llamar a las acciones</p>
+
+<p>Es otra función de Redux que usamos para llamar acciones. Podemos definir un despacho de acción así:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">const</span> <span class="nx">dispatchSetSignedIn</span> <span class="o">=</span> <span class="nx">dispatch</span><span class="p">(</span><span class="nx">setSignedIn</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span> <span class="nx">authToken</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>Ahora podemos usar <strong>dispatchSetSignedIn</strong>* en un evento <strong>onClick</strong>, por ejemplo, que a su vez pasaría por el canal de Redux:</p>
+
+<p><strong>setSignedIn</strong> devuelve nuestra definición de acción en formato JSON
+<strong>dispatchSetSignedIn</strong> enviará nuestra acción a nuestros Reductores
+<strong>action.type</strong> se prueba para cada instrucción de cambio de los archivos de <strong>Reducer</strong>. Cuando se encuentra el correcto, devuelve un estado actualizado
+Nuestros componentes conectados al estado actualizado se volverán a representar. Veamos cómo hacerlo en la última pieza del rompecabezas Redux.</p>
+
+<h2 id="conectando-componentes-a-store">Conectando componentes a STORE</h2>
+
+<p>Conectar componentes al Store es bastante sencillo. Para explicar la manera estándar de codificar esto, vamos a referirnos a una ideología de tipo componente: Contenedor y Presentación.</p>
+
+<p>Concretamente, se crea un componente separado para que actúe como el contenedor del componente al que deseamos conectar nuestra Store. El componente al que deseamos conectar el estado se convierte en nuestro componente de presentación.</p>
+
+<ul>
+  <li><strong>Componente contenedor:</strong> maneja la lógica: el componente al que enviamos las URL. Aquí no se representa nada.</li>
+  <li><strong>Componente de presentación:</strong> UI al contenedor. El componente Contenedor conecta este componente con él, por lo tanto, procesa este componente.</li>
+</ul>
+
+<p>La forma en que se pasa el estado a su componente de presentación es a través de accesorios. Por lo tanto, nos referimos a <strong>this.props</strong>, y no this.state al obtener nuestros datos de estado conectados en la presentación.</p>
+
+<h1 id="cómo-se-conecta-un-componente-de-presentación-a-un-componente-contenedor">Cómo se conecta un componente de presentación a un componente contenedor</h1>
+
+<p>Redux proporciona 2 funciones de utilidad que podemos utilizar para pasar props y acciones en nuestro componente de presentación:</p>
+
+<ul>
+  <li>mapStateToProps: conecta el estado como accesorios al componente (de nuevo, el estado de tu tienda está conectado a través de los props )</li>
+  <li>mapDispatchToProps: envío de acciones como accesorios, lo que nos permite llamar a acciones dentro del componente.</li>
+</ul>
+
+<p>Estas dos funciones de utilidad se definen por separado, seguidas de su componente contenedor. Veamos brevemente una plantilla antes de un ejemplo completo:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-redux</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">//Presentational component</span>
+<span class="kd">class</span> <span class="nx">MyComponent</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+   
+   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+      <span class="p">...</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//estado:  nuestro estado se pasa como el primer argumento aquí</span>
+<span class="kd">const</span> <span class="nx">mapStateToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">ownProps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="p">}</span>
+<span class="c1">//Actions: La función de despacho de Redux se pasa como el primer argumento aquí</span>
+<span class="kd">const</span> <span class="nx">mapDispatchToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">dispatch</span><span class="p">,</span> <span class="nx">ownProps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="p">}</span>
+<span class="c1">//definiendo el componente Contenedor, pasando las 2 funciones anteriores a connect () de Redux.</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">MyComponentContainer</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">(</span>
+ <span class="nx">mapStateToProps</span><span class="p">,</span>
+ <span class="nx">mapDispatchToProps</span>
+<span class="p">)(</span><span class="nx">MyComponent</span><span class="p">);</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MyComponentContainer</span>
+
+</code></pre></div></div>
+
+<p>Por lo tanto, todo se pasa del componente contenedor al componente de presentación.
+Una implementación completa de un componente de Presentación y Contenedor se define así:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-redux</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">//Presentational component</span>
+<span class="kd">class</span> <span class="nx">MyComponent</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+   
+	<span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+		<span class="c1">//...</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+  
+<span class="c1">//state a props </span>
+<span class="kd">const</span> <span class="nx">mapStateToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">ownProps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="k">return</span><span class="p">({</span>
+		<span class="na">itemState</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">someValue</span><span class="p">,</span>
+	<span class="p">});</span>
+<span class="p">};</span>
+
+<span class="c1">//dispatch actions a props</span>
+<span class="kd">const</span> <span class="nx">mapDispatchToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">dispatch</span><span class="p">,</span> <span class="nx">ownProps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="k">return</span><span class="p">({</span>
+		<span class="na">handleAction</span><span class="p">:</span> <span class="nx">arg</span> <span class="o">=&gt;</span> <span class="nx">dispatch</span><span class="p">(</span><span class="nx">setMyAction</span><span class="p">(</span><span class="nx">arg</span><span class="p">)),</span>
+	<span class="p">});</span>
+<span class="p">};</span>
+
+<span class="c1">//Container component</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">MyComponentContainer</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">(</span>
+	<span class="nx">mapStateToProps</span><span class="p">,</span>
+	<span class="nx">mapDispatchToProps</span>
+<span class="p">)(</span><span class="nx">MyComponent</span><span class="p">);</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MyComponentContainer</span>
+
+</code></pre></div></div>
+
+<p>Echa un vistazo a los siguientes puntos sobre este fragmento de código</p>
+
+<blockquote>
+  <p><strong>ownProps</strong> se pasa a través de <strong>mapStateToProps</strong> y <strong>mapDispatchToProps</strong>, y se usa para acceder a las propiedades definidas por el componente principal de <strong>MyComponentContainer</strong></p>
+</blockquote>
+
+<blockquote>
+  <p>Dentro de <strong>mapDispatchToProps</strong>, se están definiendo los accesorios que llaman a las acciones. Usamos <strong>dispatch()</strong> alrededor de la acción para llamarla, en este caso, cuando se llama <strong>handleAction</strong> en la presentación.
+No está obligado a definir <strong>mapStateToProps</strong> o <strong>mapDispatchToProps</strong>. En el caso de que no necesite uno o ambos, reemplácelos con null en su <strong>connect()</strong>. No mezcle el orden: si solo desea definir <strong>mapDispatchToProps</strong>, coloque un nulo antes de mantener su segunda ubicación de argumento</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>MyComponent</strong> y <strong>MyContainerComponent</strong> pueden ser nombrados como desees. El uso del controlador después del nombre del componente de presentación es común, por ejemplo, Iniciar sesión y iniciar <strong>sesiónHandler</strong>, <strong>Home</strong> y <strong>HomeHandler</strong>. Otra sugerencia es usar <strong>Handle</strong> antes del nombre del componente, por ejemplo, <strong>HandleLogin y Login</strong></p>
+</blockquote>
+
+<h2 id="️-uniendo-todo">♠️ Uniendo Todo</h2>
+
+<p>Para poner todo junto, el resto de este artículo le proporciona algunas plantillas para inyectar directamente en su proyecto para comenzar con Redux.
+Puede copiar y pegar estos fragmentos de código en su proyecto como punto de partida para obtener una estructura Redux que funcione.
+Cree la siguiente estructura de proyecto para nuestra configuración de Redux:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">src</span><span class="o">/</span>
+   <span class="nx">actions</span><span class="o">/</span>
+      <span class="nx">index</span><span class="p">.</span><span class="nx">js</span>
+   
+   <span class="nx">components</span><span class="o">/</span>
+      <span class="nx">MyComponent</span><span class="p">.</span><span class="nx">js</span>
+   
+   <span class="nx">reducers</span><span class="o">/</span>
+      <span class="nx">index</span><span class="p">.</span><span class="nx">js</span>
+      <span class="nx">ui</span><span class="p">.</span><span class="nx">js</span>
+</code></pre></div></div>
+
+<p>La siguiente información contiene nuestra configuración inicial de Redux:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cm">/*
+ * src/actions/index.js
+ */</span>
+
+<span class="c1">// no limitado a un solo argumento</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">setActionTemplate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">itemId</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+<span class="p">{</span>
+ <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SET_ACTION_TYPE</span><span class="dl">'</span><span class="p">,</span>
+ <span class="na">itemId</span><span class="p">:</span> <span class="nx">itemId</span>
+<span class="p">});</span>
+
+
+<span class="c1">// Redux también sugiere definir constantes para sus tipos de acción.</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">setActionTypes</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="na">SET_ACTION_TYPE</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SET_ACTION_TYPE</span><span class="dl">'</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+ * src/components/MyComponent.js
+ */</span>
+
+<span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-redux</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">setActionTemplate</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../actions</span><span class="dl">'</span><span class="p">;</span>
+<span class="c1">//component</span>
+<span class="kd">class</span> <span class="nx">MyComponent</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+
+<span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+
+ <span class="kd">const</span> <span class="nx">handleOnClick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">handleOnClick</span><span class="p">(</span><span class="dl">'</span><span class="s1">your-item-id</span><span class="dl">'</span><span class="p">);</span>
+ <span class="p">};</span>
+
+ <span class="k">return</span><span class="p">(</span>
+   <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">Component</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;&lt;</span><span class="nx">a</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleOnClick</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Dispatch</span> <span class="nx">Action</span><span class="o">&lt;</span><span class="sr">/a&gt;&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Current</span> <span class="nx">item</span> <span class="na">ID</span><span class="p">:</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">itemId</span> <span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>   <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//redux configuration:</span>
+<span class="kd">const</span> <span class="nx">mapStateToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">ownProps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="k">return</span><span class="p">({</span>
+   <span class="na">itemId</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">itemId</span>
+ <span class="p">});</span>
+<span class="p">};</span>
+<span class="kd">const</span> <span class="nx">mapDispatchToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">dispatch</span><span class="p">,</span> <span class="nx">ownProps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="k">return</span><span class="p">({</span>
+   <span class="na">handleOnClick</span><span class="p">:</span> <span class="nx">itemState</span> <span class="o">=&gt;</span> <span class="nx">dispatch</span><span class="p">(</span><span class="nx">setActionTemplate</span><span class="p">(</span><span class="nx">ownProps</span><span class="p">.</span><span class="nx">prop</span><span class="p">))</span>
+ <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">MyComponentContainer</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">(</span>
+ <span class="nx">mapStateToProps</span><span class="p">,</span>
+ <span class="nx">mapDispatchToProps</span>
+<span class="p">)(</span><span class="nx">MyComponent</span><span class="p">);</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MyComponentContainer</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cm">/*
+ * index.js (your root DOM render)
+ * Agregue el código de Redux aquí en lugar de reemplazar su archivo completo.
+ */</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Provider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-redux</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">createStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">redux</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">rootReducer</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./reducers</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">initialStore</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="na">itemId</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">createStore</span><span class="p">(</span><span class="nx">rootReducer</span><span class="p">,</span> <span class="nx">initialStore</span><span class="p">);</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+   <span class="o">&lt;</span><span class="nx">Provider</span> <span class="nx">store</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">App</span> <span class="o">/&gt;</span>
+   <span class="o">&lt;</span><span class="sr">/Provider&gt;</span><span class="err">,
+</span> 
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">));</span>
+</code></pre></div></div>
+
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cm">/*
+ * src/reducers/childReducer.js
+ */</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">childReducer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{},</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="kd">let</span> <span class="nx">newState</span><span class="p">;</span>
+
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">case</span> <span class="dl">'</span><span class="s1">SET_ACTION_TYPE</span><span class="dl">'</span><span class="p">:</span>
+      
+     <span class="nx">newState</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="p">{</span> <span class="na">someValue</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">itemId</span><span class="p">);</span>
+     <span class="k">return</span> <span class="nx">newState</span><span class="p">;</span>
+   
+   <span class="c1">//define more cases as your project builds.</span>
+   <span class="nl">default</span><span class="p">:</span>
+     <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+ <span class="p">}</span>
+<span class="p">};</span>
+                            
+<span class="k">export</span> <span class="k">default</span> <span class="nx">childReducer</span>
+</code></pre></div></div>
+<hr />
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cm">/*
+ * src/reducers/index.js
+ */</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">combineReducers</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">redux</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">childReducer</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./childReducer</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">//import and add more child reducers as your project builds.</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">combineReducers</span><span class="p">({</span>
+ <span class="nx">childReducer</span><span class="p">,</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<p>Listo, hasta aqui llega mi post,hasta la proxima!!</p>
+
+:ET

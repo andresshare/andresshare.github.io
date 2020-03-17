@@ -1,0 +1,1376 @@
+I"2E<p><img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" alt="OOP" /></p>
+
+<p><strong>REACTJS</strong>  Es una libreria de codigo abierto creada y soportada por facebook,
+El primer paso para entender reactjs es que usamos codigo javascript con una extension <em>JSX</em>  que permite escribir <em>HTML</em> directamente sobre javascript al crear proyectos  SPA’s (Single Page Application), nos permitira tener un codigo mas legible y facil de mantener</p>
+
+<p>Sin embargo <strong>JSX</strong> no es un apropiado javascript. <strong>JSX</strong> debe se compilado dentro de javascript.
+sera <a href="https://babeljs.io/">BABEL</a> la herramienta creada para este proceso
+Como pasa en algunas ocasiones esta herramienta alertara en caso de error</p>
+
+<h1 id="️-instalando-reactjs">♠️ INSTALANDO REACTJS</h1>
+
+<p>Contamos con multiples maneras de hacerlo,La opcion mas rapida es la siguiente tener instalado :</p>
+
+<p><a href="https://www.npmjs.com">npm</a> ó <a href="https://yarnpkg.com/en/">yarn</a>  son gestores de paquetes muy utiles</p>
+
+<ul>
+  <li>Tener NodeJs &gt;= 4.</li>
+  <li>Abrimos la terminal y usamos los siguientes comandos</li>
+</ul>
+
+<p>Instalaremos  el paquete global de  Create React App:</p>
+
+<blockquote>
+  <p>npm install -g create-react-app</p>
+</blockquote>
+
+<p>Ingresar a la carpeta en donde pondrás tus proyectos y ejecutar:</p>
+
+<blockquote>
+  <p>create-react-app nombreProyecto</p>
+</blockquote>
+
+<p>Y por último, iniciar la aplicación:</p>
+
+<blockquote>
+  <p>npm start</p>
+</blockquote>
+
+<p>Si todo funciona correra en el puerto 3000. Se abrira  el navegador,
+de lo contrario , sólo usamos la siguiente  direccion:  <strong>http://localhost:3000</strong> y  de React estara listo!!!</p>
+
+<h2 id="️-ejecutando-las-primeras-lineas">♠️ Ejecutando las primeras lineas</h2>
+
+<p>Si todo ha salido bien <strong>REACT</strong> crea un componente llamado <strong>App</strong> representado por el archivo <strong>App.js</strong>, este componente es utilizado en el archivo <strong>index.js</strong> donde podemos empezar.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Primera</span> <span class="nx">aplicacion</span> <span class="nx">ReactJS</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span> <span class="nx">Create</span> <span class="nx">React</span> <span class="nx">App</span> <span class="o">--</span><span class="nx">Aqui</span> <span class="nx">comienza</span> <span class="nx">todo</span> <span class="o">--</span> <span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<h2 id="️-como-añadir-comentarios">♠️ Como añadir comentarios</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">JSX</span> <span class="o">=</span> <span class="p">(</span>
+<span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Esto</span> <span class="nx">es</span> <span class="nx">un</span> <span class="nx">bloque</span> <span class="nx">JSX</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>  <span class="p">{</span> <span class="cm">/* Esto es un comentario */</span> <span class="p">}</span>
+  <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">mensaje</span> <span class="nx">creado</span> <span class="nx">de</span> <span class="nx">forma</span> <span class="nx">aleatoria</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="se">)</span><span class="err">;
+</span>
+</code></pre></div></div>
+<h2 id="️-renderizando-el-dom">♠️ Renderizando el DOM</h2>
+
+<p>Para este SCRIPT tenemos un <strong>div</strong> con un <strong><em>id</em></strong>   llamado <strong>‘reactMensaje’</strong> listo para ejecutarse</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">JSX</span> <span class="o">=</span> <span class="p">(</span>
+<span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">MENSAJE</span> <span class="nx">DESDE</span> <span class="nx">REACT</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">RENDERIZANDO</span> <span class="nx">EL</span> <span class="nx">DOM</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">);</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">JSX</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">reactMensaje</span><span class="dl">'</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>El primer elemento de REACT es renderizado y el segundo es el DOM
+donde queremos renderizar el componente tambien
+<strong>ReactDOM.render()</strong> es llamado despues de las declaraciones de elemento de  <strong>JSX</strong>, es conveniente declarar
+las variables antes de usarlas</p>
+
+<h2 id="️-entendiendo-jsx">♠️ Entendiendo jsx</h2>
+
+<p>Una de las diferencias de escribir en <strong>REACTJS</strong> con <strong>JSX</strong>  es que no se pueden nombrar las clases como lo hacemos con HTML o creara un mensaje de error en consola, el motivo es que en  <strong>JAVASCRIPT</strong>  la palabra <strong>class</strong> esta reservada. La forma correcta es escribirlo es asi <strong>className</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">JSX</span> <span class="o">=</span> <span class="p">(</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">myBloque</span><span class="dl">'</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">a</span><span class="err">ñ</span><span class="nx">adiendo</span> <span class="kd">class</span> <span class="nx">en</span> <span class="nx">este</span> <span class="nx">bloque</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="se">)</span><span class="err">;
+</span>
+</code></pre></div></div>
+
+<h2 id="️-cerrado-de-etiquetas">♠️ Cerrado de etiquetas</h2>
+
+<p>Otra diferencia que nos encontraremos es prestar atencion al cerrado de etiquetas lo normal es &lt;div&gt;&lt;/div&gt;
+sin embargo  escribi esto <code class="highlighter-rouge">&lt;br&gt;&lt;/br&gt;</code> dara un error,lo apropiado es <code class="highlighter-rouge">&lt;br/&gt;</code></p>
+
+<p>Cualquier elemento JSX puede escribirse con una etiqueta de cierre automático, y cada elemento debe estar cerrado. La etiqueta de salto de línea, por ejemplo, siempre debe escribirse como <br /> para que JSX sea válida y pueda ser transpilada. Un &lt;div&gt;, por otro lado, puede escribirse como &lt;div /&gt; o &lt;div&gt; &lt;/div&gt;. La diferencia es que en la primera versión de sintaxis no hay forma de incluir nada en &lt;div /&gt;.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">JSX</span> <span class="o">=</span> <span class="p">(</span>
+<span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+  <span class="p">{}</span>
+  <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">HELLO</span>  <span class="nx">React</span><span class="o">!&lt;</span><span class="sr">/h2&gt; &lt;br /</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Revisar</span> <span class="nx">que</span> <span class="nx">las</span> <span class="nx">etiquetas</span> <span class="nx">esten</span> <span class="nx">cerradas</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">hr</span> <span class="o">/&gt;</span>
+  <span class="p">{}</span>
+<span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="️--crear-un-stateless-functional-component">♠️  Crear un stateless-functional-Component</h2>
+
+<p>Los componentes son el núcleo de <strong>React</strong>.</p>
+
+<blockquote>
+  <p>Todo en React es un componente</p>
+</blockquote>
+
+<p>y Hay dos formas de crear un componente React.</p>
+
+<p>La primera forma es usar una función de JavaScript,La definición de un componente de esta manera crea un componente funcional sin estado.</p>
+
+<p>El concepto de estado lo escribire mas adelante. ahora, piense en un componente sin estado como uno que puede recibir datos y procesarlos, pero no administra ni rastrea cambios en esos datos.</p>
+
+<p>Para crear un componente con una función,  es simple escriba una función de JavaScript que devuelva <strong>JSX</strong> o nulo. Una cosa importante a tener en cuenta es que <strong>React</strong> requiere que el nombre de su función comience con una letra mayúscula. Aquí hay un ejemplo de un componente funcional sin estado que asigna una clase <strong>HTML</strong> en <strong>JSX:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MiComponente</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="nx">MENSAJE</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="️--crear-un-react-component">♠️  Crear un React Component</h2>
+
+<p>En React.Component. El constructor es un método especial utilizado durante la inicialización de objetos que se crean con la palabra clave de clase. Es una buena práctica llamar al constructor de un componente con super, y pasarle props a ambos. Esto asegura que el componente se inicialice correctamente.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+<span class="nx">Class</span> <span class="nx">Gato</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">saludos</span><span class="o">!!&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="️-crear-un-component-con-composition">♠️ Crear un Component con Composition</h2>
+
+<p>Ahora veremos cómo podemos componer varios componentes de React piensa que estás creando una aplicación y has creado tres componentes, una barra de navegación, un tablero de instrumentos y un pie de página. Para componer estos componentes juntos, puede crear un componente primario de la aplicación que represente cada uno de estos tres componentes como secundarios. Para representar un componente como un elemento secundario en un componente React, incluya el nombre del componente escrito como una etiqueta HTML personalizada en el JSX.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">componenteHijo</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Soy</span> <span class="nx">el</span> <span class="nx">hijo</span> <span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">class</span> <span class="nx">ComponentePadre</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">soy</span> <span class="nx">el</span> <span class="nx">padre</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>
+        <span class="o">&lt;</span><span class="nx">componenteHijo</span> <span class="o">/&gt;</span>
+
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h2 id="️--usar-react-render-para-anidar-components">♠️  Usar React Render para anidar Components</h2>
+
+<p>Hay muchas formas diferentes de componer componentes con React. La composición de componentes es una de las características poderosas de React. Cuando trabaje con React, es importante comenzar a pensar en su interfaz de usuario en términos de componentes  Usted divide su interfaz de usuario en sus bloques de construcción básicos, y esas piezas se convierten en componentes. Esto ayuda a separar el código responsable de la IU del código responsable de manejar la lógica de la aplicación. Puede simplificar enormemente el desarrollo y mantenimiento de proyectos complejos.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">TiposDeFrutas</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="na">Frutas</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="nx">Manzanas</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="nx">Moras</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="nx">Frambuesas</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="nx">Bananas</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">Frutas</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+
+        <span class="o">&lt;</span><span class="nx">TiposDeFrutas</span> <span class="o">/&gt;</span>
+
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">class</span> <span class="nx">TiposDeComida</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Tipos</span> <span class="nx">de</span> <span class="na">comida</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>
+        <span class="o">&lt;</span><span class="nx">Frutas</span> <span class="o">/&gt;</span>
+
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h2 id="️-componer-react-componentes">♠️ Componer React Componentes</h2>
+
+<p>La representación de los componentes de la clase de estilo ES6 dentro de otros componentes no es diferente de la representación de los componentes simples.Puede representar elementos JSX, componentes funcionales sin estado y componentes de clase ES6 dentro de otros componentes.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Frutas</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Frutas</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>
+        <span class="o">&lt;</span><span class="nx">NonCitrus</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Citricos</span> <span class="o">/&gt;</span>
+
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">TiposDeComida</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Tipos</span> <span class="nx">de</span> <span class="nx">Comida</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>
+          <span class="o">&lt;</span><span class="nx">Frutas</span> <span class="o">/&gt;</span>
+
+          <span class="o">&lt;</span><span class="nx">Vegetales</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="️--renderizar-una-class-component-hacia-el-dom">♠️  Renderizar una Class Component Hacia el DOM</h2>
+
+<p>Puede recordar que usó la <strong>API ReactDOM</strong>  anteriormente para representar elementos JSX al DOM. El proceso para renderizar componentes React se verá muy similar. Los anteriiores scripts se enfocaron en los componentes y la composición, por lo que el renderizado se realizó para usted entre bastidores. Sin embargo, ninguno de los códigos React que escriba se procesarán en el DOM sin hacer una llamada a la API ReactDOM. Aquí hay una actualización de la sintaxis: <strong>ReactDOM.render (componentToRender, targetNode).</strong></p>
+
+<p>El primer argumento es el componente <strong>React</strong> que desea procesar. El segundo argumento es el nodo <strong>DOM</strong> en el que desea procesar ese componente. Los componentes de React se pasan a <strong>ReactDOM.render ()</strong> un poco diferente a los elementos de JSX. Para los elementos JSX, pasa el nombre del elemento que desea representar. Sin embargo, para los componentes React, debe usar la misma sintaxis como si estuviera representando un componente anidado, por ejemplo, <strong>ReactDOM.render (<ComponentToRender></ComponentToRender>, targetNode).</strong> Utilice esta sintaxis para los componentes de clase ES6 y los componentes funcionales.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Class</span> <span class="nx">TiposDeComida</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Tipos</span> <span class="nx">de</span> <span class="nx">comida</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>
+          <span class="o">&lt;</span><span class="nx">Frutas</span> <span class="o">/&gt;</span>
+           <span class="o">&lt;</span><span class="nx">Vegetales</span> <span class="o">/&gt;</span>
+
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">TiposDeComida</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">nodo</span><span class="dl">'</span><span class="p">));</span>
+
+</code></pre></div></div>
+
+<h1 id="️-escribir-un-react-component-desde-0">♠️ Escribir un React Component desde 0</h1>
+
+<p>Ahora que ha aprendido los conceptos básicos de los componentes JSX y React, le propongo escribir un componente por su cuenta. Los componentes de React son los componentes básicos de las aplicaciones de React, por lo que es importante familiarizarse con su escritura. Recuerde, un componente típico de React es una clase ES6 que extiende React.Component. Tiene un método de procesamiento que devuelve HTML (desde JSX) o nulo. Esta es la forma básica de un componente React. Una vez que entienda esto bien, estará preparado para comenzar a construir proyectos React más complejos.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">class</span> <span class="nx">MyComponent</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">He</span> <span class="nx">creado</span> <span class="nx">mi</span> <span class="nx">primer</span> <span class="nx">componente</span><span class="o">!&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">MyComponent</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">nodo</span><span class="dl">'</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h2 id="️-pasar-props-a-stateless-functional-component">♠️ Pasar Props a Stateless Functional Component</h2>
+
+<p>los scripts anteriores cubrieron la creación y composición de elementos <strong>JSX</strong>, componentes funcionales y componentes de clase de estilo ES6 en <strong>React.</strong> Con esta base, es hora de ver otra característica muy común en React: <strong>props.</strong> En React, puede pasar propiedades a componentes secundarios. Supongamos que tiene un componente de la aplicación que muestra un componente secundario llamado Bienvenido, que es un componente funcional sin estado. Puede pasar la propiedad de bienvenida de un usuario escribiendo:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="nx">App</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">Welcome</span> <span class="nx">user</span><span class="o">=</span><span class="dl">'</span><span class="s1">Andresshare</span><span class="dl">'</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="sr">/App</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>Usted usa atributos HTML personalizados creados por usted y respaldados por React para pasarlos al componente. En este caso, el usuario de la propiedad creada se pasa al componente Bienvenido. Como Welcome es un componente funcional sin estado, tiene acceso a este valor así:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="kd">const</span> <span class="nx">Welcome</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">user</span><span class="p">}</span><span class="o">!&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>Es estándar llamar a este valor <strong>props</strong> y cuando se trata de componentes funcionales sin estado, básicamente lo considera como un argumento de una función que devuelve JSX. Puede acceder al valor del argumento en el cuerpo de la función. Con los componentes de clase.revisemos el siguiente script</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fechaActual</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+
+      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="na">fecha</span><span class="p">:</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">date</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">class</span> <span class="nx">Calendario</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Que</span> <span class="nx">dia</span> <span class="nx">es</span><span class="p">?</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>
+        <span class="o">&lt;</span><span class="nx">fechaActual</span> <span class="nx">date</span><span class="o">=</span><span class="p">{</span><span class="nb">Date</span><span class="p">()}</span> <span class="sr">/</span><span class="err">&gt;
+</span>
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h2 id="️-pasar-un-array-como-props">♠️ Pasar un Array como Props</h2>
+<p>En el script anterior se paso información de un componente principal a un componente secundario como propiedades o propiedades. ahora pasaremos las matrices como props. Para pasar una matriz a un elemento JSX, se debe tratar como JavaScript y se debe incluir entre llaves.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="nx">ParentComponent</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">ChildComponent</span> <span class="nx">colors</span><span class="o">=</span><span class="p">{[</span><span class="dl">"</span><span class="s2">verde</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">rojo</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">azul</span><span class="dl">"</span><span class="p">]}</span> <span class="sr">/</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/ParentComponent</span><span class="err">&gt;
+</span>
+</code></pre></div></div>
+
+<p>El componente hijo tiene acceso a los colores de la propiedad de la matriz. Se pueden usar métodos de matriz como <code class="highlighter-rouge">join()</code> al acceder a la propiedad. <code class="highlighter-rouge">const ChildComponent = (props) =&gt; &lt;p &amp; gt {props.colors.join (',')} &lt;/ p &amp; gt</code> Esto unirá todos los elementos de la matriz de colores en una cadena separada por comas y producirá: <code class="highlighter-rouge">&lt;p&gt; verde, azul, rojo &lt;/p&gt;</code> Más adelante, escribire sobre otros métodos comunes para procesar matrices de datos en React.</p>
+
+<p>Revisemos el script siguiente de cosas por hacer</p>
+
+<p>Al representar cada Lista desde el componente de Tareas pendientes, se pasa una propiedad de tareas asignadas a una serie de tareas a realizar, por ejemplo [“pasear perro”, “entrenamiento”]. Luego se accede a esta matriz de tareas en el componente Lista, mostrando su valor dentro del elemento p. Usando <code class="highlighter-rouge">join (",")</code> para mostrar <code class="highlighter-rouge">props.tasksarray</code> en el elemento <strong>p</strong> como una lista separada por comas. La lista tiene  2 tareas y la de mañana tiene 3 tareas.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">List</span><span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1">, </span><span class="dl">'</span><span class="p">)}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span><span class="p">};</span>
+
+<span class="kd">class</span> <span class="nx">ToDo</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Listado</span> <span class="nx">de</span> <span class="nx">pendientes</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Hoy</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">List</span> <span class="nx">tasks</span><span class="o">=</span><span class="p">{[</span><span class="dl">'</span><span class="s1">estudiar</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ejercicio</span><span class="dl">'</span><span class="p">]}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">ma</span><span class="err">ñ</span><span class="nx">ana</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">List</span> <span class="nx">tasks</span><span class="o">=</span><span class="p">{[</span><span class="dl">'</span><span class="s1">comprar manzanas</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ordenar boletas</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">comprar agua </span><span class="dl">'</span><span class="p">]}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="️-usar-props-por-defecto">♠️ Usar Props por defecto</h2>
+
+<p>React también tiene una opción para establecer props predeterminados. Puede asignar props predeterminados a un componente como una propiedad en el propio componente y React asigna el apoyo predeterminado si es necesario. Esto le permite especificar lo que debe ser un valor de propiedad si no se proporciona ningún valor explícitamente. Por ejemplo, si declara <code class="highlighter-rouge">MyComponent.defaultProps = {location: 'Miami'},</code> ha definido un prop de ubicación que se establece en la cadena Miami, a menos que especifique lo contrario. React asigna propiedades predeterminadas si las propiedades no están definidas, pero si pasa nulo como el valor de una propiedad, permanecerá nulo.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">carroDecompra</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Componente</span> <span class="nx">de</span> <span class="nx">carro</span> <span class="nx">de</span> <span class="nx">compra</span> <span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">};</span>
+
+<span class="nx">carroDecompra</span><span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">items</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="️-sobrescribir-default-props">♠️ sobrescribir Default Props</h2>
+
+<p>La capacidad de establecer props predeterminados es una característica útil en React. La forma de sobreescribir los props predeterminados es establecer explícitamente los valores de prop para un componente</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Articulos</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Cantidad</span> <span class="nx">de</span> <span class="na">articulos</span><span class="p">:</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">cantidad</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span><span class="p">}</span>
+
+<span class="nx">Articulos</span><span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">quantity</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">CarroDeCompras</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Articulos</span> <span class="nx">cantidad</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h2 id="️-usar-proptypes-para-definir-las-props-esperadas">♠️ Usar PropTypes para Definir las Props esperadas</h2>
+
+<p>React proporciona funciones útiles de verificación de tipos para verificar que los componentes reciban props del tipo correcto. Por ejemplo, su aplicación hace una llamada a la API para recuperar datos que espera estar en una matriz, que luego se pasa a un componente como prop. Puede establecer <strong>propTypes</strong> en su componente para requerir que los datos sean de tipo array. Esto arrojará una advertencia útil cuando los datos sean de cualquier otro tipo.</p>
+
+<p>Se considera una buena práctica establecer los tipos de propiedades cuando conoce el tipo de propiedad con anticipación. Puede definir una propiedad <strong>propTypes</strong> para un componente de la misma manera que definió los Predeterminados predeterminados. Al hacer esto se verificará que los accesorios de una clave dada estén presentes con un tipo dado. Aquí hay un ejemplo para requerir la función de tipo para un prop llamado <code class="highlighter-rouge">handleClick: MyComponent.propTypes = {handleClick: PropTypes.func.isRequired}</code> En el script anterior, la parte <code class="highlighter-rouge">PropTypes.func</code> verifica que <code class="highlighter-rouge">handleClick</code> es una función. Agregar <code class="highlighter-rouge">isRequired</code> le dice a React que <code class="highlighter-rouge">handleClick</code> es una propiedad requerida para ese componente. Verá una advertencia si no se proporciona.</p>
+
+<p>También note que <code class="highlighter-rouge">func</code> representa la función. Entre los siete tipos primitivos de JavaScript, la función y el booleano (escrito como bool) son los únicos dos que utilizan una ortografía inusual.</p>
+
+<p>Además de los tipos primitivos, hay otros tipos disponibles.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">Articulos</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Cantidad</span> <span class="nx">de</span> <span class="na">articulos</span><span class="p">:</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">cantidad</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span><span class="p">};</span>
+
+<span class="nx">Articulos</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">cantidad</span><span class="p">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span><span class="p">.</span><span class="nx">isRequired</span>
+<span class="p">};</span>
+
+
+<span class="nx">Articulos</span><span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">cantidad</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">};</span>
+
+<span class="kd">class</span> <span class="nx">CarroDeCompras</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Articulos</span> <span class="o">/&gt;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="️-acceder-a-props-usando-thisprops">♠️ Acceder a Props usando this.props</h2>
+
+<p>En el  script anterior  pase  las <em>props</em> a los componentes secundarios. Pero, ¿qué sucede si el componente secundario al que le está pasando un props es un componente de clase ES6, en lugar de un componente funcional sin estado? El componente de clase ES6 utiliza una convención ligeramente diferente para acceder a accesorios. Cada vez que refiera a un componente de clase dentro de sí mismo, use esta palabra clave.</p>
+
+<p>Para acceder a los accesorios dentro de un componente de clase, debe comenzar con el código que usa para acceder a él. Por ejemplo, si un componente de clase ES6 tiene una propiedad llamada datos, escribe <code class="highlighter-rouge">{this.props.data}</code> en JSX.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">devuelveClaveTemporal</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">su</span> <span class="nx">clave</span> <span class="nx">temporal</span> <span class="nx">es</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">strong</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">tempClave</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/strong&gt;&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">class</span> <span class="nx">ReinicioClave</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Reiniciar</span> <span class="nx">clave</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">nuevo</span> <span class="nx">clave</span> <span class="nx">temporal</span> <span class="nx">para</span> <span class="nx">ud</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">reinicie</span> <span class="nx">el</span> <span class="nx">password</span> <span class="nx">de</span> <span class="nx">su</span> <span class="nx">cuenta</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">ReturnTempPassword</span> <span class="nx">tempPassword</span><span class="o">=</span><span class="dl">"</span><span class="s2">BerACDFPbq34n55z1</span><span class="dl">"</span> <span class="o">/&gt;</span>
+          <span class="kd">class</span> <span class="nx">ReturnTempPassword</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Su</span> <span class="nx">clave</span> <span class="nx">temporal</span> <span class="nx">es</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">strong</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">tempClave</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/strong&gt;&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">class</span> <span class="nx">ResetPassword</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Reiniciar</span> <span class="nx">Clave</span> <span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">clave</span> <span class="nx">temporal</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">configure</span> <span class="nx">el</span> <span class="nx">reser</span> <span class="nx">de</span> <span class="nx">su</span> <span class="nx">cuenta</span> <span class="nx">de</span> <span class="nx">usuario</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>
+          <span class="o">&lt;</span><span class="nx">devuelveClaveTemporal</span> <span class="nx">tempClave</span><span class="o">=</span><span class="dl">"</span><span class="s2">BerACDFPbq34n55z1</span><span class="dl">"</span> <span class="o">/&gt;</span>
+
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+
+</code></pre></div></div>
+
+<h2 id="️-usando-props-con-stateless-functional-components">♠️ Usando Props con Stateless Functional Components</h2>
+<p>Un componente funcional sin estado es cualquier función que usted escribe que acepta props y devuelve JSX. Un componente sin estado, por otro lado, es una clase que extiende <strong>React.Component</strong>, pero no usa un estado interno. Finalmente, un componente con estado es un componente de clase que mantiene su propio estado interno. Es posible que vea los componentes con estado referidos simplemente como componentes o componentes React.</p>
+
+<p>Un patrón común es tratar de minimizar la falta de estado y crear componentes funcionales sin estado siempre que sea posible. Esto ayuda a incluir la administración de su estado en un área específica de su aplicación. A su vez, esto mejora el desarrollo y el mantenimiento de su aplicación al hacer que sea más fácil seguir cómo los cambios de estado afectan su comportamiento.</p>
+
+<h3 id="react-crear-un-stateful-component">React: Crear un Stateful Component</h3>
+
+<p>los componentes anteriores Aceptan <strong>props</strong> como entrada y devuelven la misma vista cada vez que se pasan los mismos <strong>props</strong>. Puede que se pregunte qué es el estado, Antes de eso, aquí hay una revisión de la terminología de los componentes. Un componente funcional sin estado es cualquier función que usted escribe que acepta <strong>props</strong> y devuelve <strong>JSX</strong>.</p>
+
+<p>Un componente sin estado, por otro lado, es una clase que extiende <code class="highlighter-rouge">React.Component</code>, Finalmente, un componente con estado es un componente de clase que mantiene su propio estado interno. Es posible que vea los componentes con estado referidos simplemente como componentes o componentes React. Un patrón común es tratar de minimizar la falta de estado y crear componentes funcionales sin estado siempre que sea posible. Esto ayuda a incluir la administración de su estado en un área específica de su aplicación. A su vez, esto mejora el desarrollo y el mantenimiento de su aplicación al hacer que sea más fácil seguir cómo los cambios de estado afectan su comportamiento.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">class</span> <span class="nx">SportSite</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Athlete</span><span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+
+<span class="kd">const</span> <span class="nx">Athlete</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="p">(</span>
+     <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+       <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">nombre</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>     <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>   <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">Athlete</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">nombre</span><span class="p">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">isRequired</span>
+<span class="p">};</span>
+
+<span class="nx">Athlete</span><span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">nombre</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Usain Bolt</span><span class="dl">'</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="️-renderizar-un-estado-en-la--interfaz-de-usuario">♠️ Renderizar un Estado en la  Interfaz de usuario</h2>
+
+<p>Hay otra forma de acceder al estado en un componente. En el método <code class="highlighter-rouge">render()</code>, antes de la declaración de retorno, puede escribir JavaScript directamente. Por ejemplo, podría declarar funciones, acceder a datos de estado o <strong>props</strong>, realizar cálculos en estos datos, etc. Luego, puede asignar cualquier dato a las variables, a las que tiene acceso en la declaración de retorno.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">class</span> <span class="nx">MiComponente</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">nombre</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Guia rapida Reactjs</span><span class="dl">'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">const</span> <span class="nx">nombre</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">nombre</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">nombre</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h2 id="️-crear-un-thissetstate">♠️ crear un this.setState</h2>
+
+<p>Hay una manera de cambiar el estado del componente. React proporciona un método para actualizar el estado del componente llamado <code class="highlighter-rouge">setState</code>. Llama al método <code class="highlighter-rouge">setState</code> dentro de su clase de componente de esta forma: <code class="highlighter-rouge">this.setState()</code>, pasando un objeto con pares clave-valor. Las claves son las propiedades de su estado y los valores son los datos de estado actualizados. Por ejemplo, si estuviéramos almacenando un nombre de usuario en estado y quisiéramos actualizarlo, se vería así:</p>
+
+<pre><code class="language-javacript">this.setState({
+  usuario: 'Linux Torvalds'
+});
+</code></pre>
+
+<h2 id="️-de-bind-this-a-class-method">♠️ De Bind ‘this’ a Class Method</h2>
+
+<p>Además de establecer y actualizar el estado, también puede definir métodos para su clase de componente. Normalmente, un método de clase necesita usar esta palabra clave <code class="highlighter-rouge">this</code> para poder acceder a las propiedades de la clase (como el estado y los props) dentro del alcance del método. Hay algunas maneras de permitir que sus métodos de clase accedan a esto.</p>
+
+<p>Una forma común es vincular explícitamente esto en el constructor para que se convierta en un enlace a los métodos de clase cuando se inicializa el componente. Puede que hayas notado que el último desafío usó <code class="highlighter-rouge">this.handleClick = this.handleClick.bind (this)</code> para su método <code class="highlighter-rouge">handleClick</code> en el constructor. Luego, cuando llama a una función como <code class="highlighter-rouge">this.setState()</code> dentro de su método de clase <code class="highlighter-rouge">this</code>, esto se refiere a la clase y no quedará un <code class="highlighter-rouge">undefined</code></p>
+
+<h2 id="️-usar-state-to-toggle-en-un-elemento">♠️ Usar State to Toggle en un Elemento</h2>
+
+<p>MyComponent tiene una propiedad de visibilidad que se inicializa en falso. El método de renderización devuelve una vista si el valor de visibilidad es verdadero, y una vista diferente si es falso.</p>
+
+<p>Actualmente, no hay forma de actualizar la propiedad de visibilidad en el estado del componente. El valor debe alternar entre verdadero y falso. Hay un controlador de clic en el botón que activa un método de clase llamado toggleVisibility (). Defina este método para que el estado de visibilidad cambie al valor opuesto cuando se llama al método. Si la visibilidad es falsa, el método lo establece en verdadero y viceversa.</p>
+
+<p>Finalmente, haga clic en el botón para ver la representación condicional del componente en función de su estado.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">class</span> <span class="nx">MyComponent</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">visibility</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">};</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">toggleVisibility</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">toggleVisibility</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+   <span class="p">}</span>
+  <span class="nx">toggleVisibility</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="na">visibility</span><span class="p">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">visibility</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">visibility</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span> <span class="o">=</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">toggleVisibility</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Presioname</span><span class="o">!&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Ahora</span> <span class="nx">puedes</span> <span class="nx">verme</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span> <span class="o">=</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">toggleVisibility</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Presioname</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="️-crear-un-input">♠️ Crear un INPUT</h2>
+
+<p>Los elementos de control de formulario para la entrada de texto, como input y textarea, mantienen su propio estado en el DOM según el tipo de usuario. Con React, puede mover este estado mutable al estado de un componente React. La entrada del usuario se convierte en parte del estado de la aplicación, por lo que React controla el valor de ese campo de entrada. Normalmente, si tiene componentes React con campos de entrada en los que el usuario puede escribir, será un formulario de entrada controlado.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">class</span> <span class="nx">ControlledInput</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">input</span><span class="p">:</span> <span class="dl">''</span>
+    <span class="p">};</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">handleChange</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="na">input</span><span class="p">:</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span>
+          <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">input</span><span class="p">}</span>
+          <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">h4</span><span class="o">&gt;</span> <span class="nx">Messsage</span> <span class="nx">Input</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/h4</span><span class="err">&gt;
+</span>
+        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">input</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h2 id="️-crear-un-form">♠️ Crear un Form</h2>
+
+<p>El componente MyForm se configura con un formulario vacío con un controlador de envío. Se llamará al controlador de envío cuando se envíe el formulario.</p>
+
+<p>añadi un botón que envía el formulario. Puede ver que tiene el tipo de conjunto para enviar que indica que es el botón que controla el formulario. Agregue el elemento de entrada en el formulario y establezca su valor y los atributos <code class="highlighter-rouge">onChange()</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">class</span> <span class="nx">MyForm</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">input</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+      <span class="na">Enviar</span><span class="p">:</span> <span class="dl">''</span>
+    <span class="p">};</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleSubmit</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleSubmit</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">handleChange</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="na">input</span><span class="p">:</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">handleSubmit</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="na">Enviar</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">input</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleSubmit</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">input</span>
+            <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">input</span><span class="p">}</span>
+            <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="dl">'</span><span class="s1">Enviar</span><span class="dl">'</span><span class="o">&gt;</span><span class="nx">Enviado</span><span class="o">!&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">Enviar</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h2 id="️-pass-state-como-props-a-child-components">♠️ Pass State como Props a Child Components</h2>
+
+<p>Por ejemplo, tal vez tenga un componente de la aplicación que presente una barra de navegación, entre otros componentes. En su aplicación, tiene un estado que contiene mucha información de usuario, pero la barra de navegación solo necesita acceso al nombre de usuario del usuario para poder mostrarla. Pasas esa pieza de estado al componente Navbar como prop.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">class</span> <span class="nx">MyApp</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">guideReact</span><span class="dl">'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+       <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+         <span class="o">&lt;</span><span class="nx">Navbar</span> <span class="nx">name</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
+</span>       <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="kd">class</span> <span class="nx">Navbar</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="nx">my</span> <span class="nx">name</span> <span class="nx">is</span><span class="p">:</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+
+
+</code></pre></div></div>
+
+<h2 id="️-pass-un-callback-como-props">♠️ Pass un Callback como Props</h2>
+
+<p>Puede pasar el estado como props a componentes secundarios, pero no está limitado a pasar datos. También puede pasar funciones de controlador o cualquier método que esté definido en un componente React a un componente secundario. Así es como permite que los componentes secundarios interactúen con sus componentes principales. Le pasas métodos a un <code class="highlighter-rouge">child</code> como un apoyo regular. Se le asigna un nombre y usted tiene acceso a ese nombre de método en <code class="highlighter-rouge">this.props</code> en el componente secundario.</p>
+
+<p>El componente MyApp es el principal que procesará los componentes secundarios GetInput y RenderInput. Agregue el componente GetInput al método de procesamiento en MyApp, luego pásele una entrada llamada prop asignada a inputValue del estado de MyApp. También cree un prop llamado handleChange y pásele el manejador de entrada handleChange.</p>
+
+<p>A continuación, agregue RenderInput al método de procesamiento en MyApp, luego cree un prop llamado input y pase el inputValue del estado. Una vez que haya terminado, podrá escribir el campo de entrada en el componente GetInput, que luego invoca el método del controlador en su elemento principal a través de prop. Esto actualiza la entrada en el estado del padre, que se pasa como apoyo a ambos hijos. Observe cómo los datos fluyen entre los componentes y cómo la única fuente de verdad sigue siendo el estado del componente principal. Es cierto que este ejemplo es un poco artificial, pero debería servir para ilustrar cómo los datos y las devoluciones de llamada se pueden pasar entre los componentes de React.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MyApp</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">inputValue</span><span class="p">:</span> <span class="dl">''</span>
+    <span class="p">}</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">handleChange</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="na">inputValue</span><span class="p">:</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+       <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+         <span class="o">&lt;</span><span class="nx">GetInput</span>
+           <span class="nx">input</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">inputValue</span><span class="p">}</span>
+           <span class="nx">handleChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
+</span>         <span class="o">&lt;</span><span class="nx">RenderInput</span>
+           <span class="nx">input</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">inputValue</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
+</span>       <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">class</span> <span class="nx">GetInput</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Get</span> <span class="nx">Input</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">input</span>
+          <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">input</span><span class="p">}</span>
+          <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">class</span> <span class="nx">RenderInput</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Input</span> <span class="nx">Render</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">input</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h2 id="️-usar-el-lifecycle-method-componentwillmount">♠️ Usar el Lifecycle Method componentWillMount</h2>
+
+<p>Los componentes de React tienen varios métodos especiales que brindan oportunidades para realizar acciones en puntos específicos del ciclo de vida de un componente. Estos se denominan métodos de ciclo de vida, o ganchos de ciclo de vida, y le permiten capturar componentes en ciertos puntos en el tiempo. Esto puede ser antes de que se procesen, antes de que se actualicen, antes de que reciban accesorios, antes de desmontar, y así sucesivamente. Aquí hay una lista de algunos de los principales métodos de ciclo de vida:</p>
+
+<ul>
+  <li>
+    <p>componentWillMount()</p>
+  </li>
+  <li>
+    <p>componentDidMount()</p>
+  </li>
+  <li>
+    <p>componentWillReceiveProps()</p>
+  </li>
+  <li>
+    <p>shouldComponentUpdate()</p>
+  </li>
+  <li>
+    <p>componentWillUpdate()</p>
+  </li>
+  <li>
+    <p>componentDidUpdate()</p>
+  </li>
+  <li>
+    <p>componentWillUnmount()</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MyComponent</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">componentWillMount</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Component is mounting...</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span> <span class="o">/&gt;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h2 id="️-metodo-componentdidmount">♠️ Metodo componentDidMount</h2>
+
+<p>la mayoría de los desarrolladores web, en algún momento, necesitan llamar a un punto final de API para recuperar datos. Si está trabajando con React, es importante saber dónde realizar esta acción.</p>
+
+<p>La mejor práctica con React es colocar llamadas API o cualquier llamada a su servidor en el método de ciclo de vida <code class="highlighter-rouge">componentDidMount()</code>. Este método se llama después de que un componente se monta en el DOM. Cualquier llamada a <code class="highlighter-rouge">setState()</code><code class="highlighter-rouge"> aquí activará una nueva representación de su componente. Cuando llama a una </code><code class="highlighter-rouge">API</code><code class="highlighter-rouge"> con este método y establece su estado con los datos que la </code><code class="highlighter-rouge">API</code>` devuelve, se activará automáticamente una actualización una vez que reciba los datos.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MyComponent</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">activeUsers</span><span class="p">:</span> <span class="kc">null</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+  <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+        <span class="na">activeUsers</span><span class="p">:</span> <span class="mi">1273</span>
+      <span class="p">});</span>
+    <span class="p">},</span> <span class="mi">2500</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Active</span> <span class="na">Users</span><span class="p">:</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">activeUsers</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h2 id="️-add-event-listeners">♠️ Add Event Listeners</h2>
+
+<p>El método <code class="highlighter-rouge">componentDidMount()</code> también es el mejor lugar para adjuntar cualquier detector de eventos que necesite agregar para una funcionalidad específica. React proporciona un sistema de eventos sintéticos que envuelve el sistema de eventos nativo presente en los navegadores. Esto significa que el sistema de eventos sintéticos se comporta exactamente igual sin importar el navegador del usuario, incluso si los eventos nativos pueden comportarse de manera diferente entre diferentes navegadores.</p>
+
+<p>Ya ha estado utilizando algunos de estos controladores de synthetic event, como <code class="highlighter-rouge">onClick()</code>. El sistema de synthetic event de React es excelente para la mayoría de las interacciones que administrará en los elementos DOM. Sin embargo, si desea adjuntar un controlador de eventos al documento o los objetos de la ventana, debe hacerlo directamente.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MyComponent</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">message</span><span class="p">:</span> <span class="dl">''</span>
+    <span class="p">};</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleKeyPress</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleKeyPress</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleEnter</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleEnter</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>  <span class="p">}</span>
+  <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">keydown</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleKeyPress</span><span class="p">);</span>
+
+  <span class="p">}</span>
+  <span class="nx">componentWillUnmount</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">keydown</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleKeyPress</span><span class="p">);</span>
+
+  <span class="p">}</span>
+  <span class="nx">handleEnter</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="na">message</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">message</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">You pressed the enter key! </span><span class="dl">'</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">handleKeyPress</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">===</span> <span class="mi">13</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">handleEnter</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="️-administrar-updates-con-lifecycle-methods">♠️ Administrar Updates con Lifecycle Methods</h2>
+
+<p>Otro método de ciclo de vida es <strong>componentWillReceiveProps()</strong>, que se llama cuando un componente recibe nuevos props. Este método recibe las nuevas propuestas como un argumento, que generalmente se escribe como <strong>nextProps</strong>. Puede usar este argumento y comparar con <strong>this.props</strong> y realizar acciones antes de que se actualice el componente. Por ejemplo, puede llamar a <strong>setState()</strong> localmente antes de que se procese la actualización.</p>
+
+<p>Otro método es <strong>componentDidUpdate()</strong>, y se llama inmediatamente después de que un componente se vuelve a procesar. Tenga en cuenta que la representación y el montaje se consideran cosas diferentes en el ciclo de vida del componente. Cuando se carga una página por primera vez, todos los componentes se montan y aquí es donde se llaman los métodos, por ejemplo, <strong>componentWillMount()</strong> y <strong>componentDidMount()</strong>. Después de esto, a medida que cambia el estado, los componentes se vuelven a representar.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">class</span> <span class="nx">Dialog</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">componentWillUpdate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Componente actualizado..</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">componentWillReceiveProps</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">,</span> <span class="nx">nextProps</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">componentDidUpdate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Componente renderizado</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">class</span> <span class="nx">Controller</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Primer mensaje</span><span class="dl">'</span>
+    <span class="p">};</span>
+ <span class="k">this</span><span class="p">.</span><span class="nx">changeMessage</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">changeMessage</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">changeMessage</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Segundo Mensaje</span><span class="dl">'</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">changeMessage</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Actulizar</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">Dialog</span> <span class="nx">message</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h2 id="️-optimizar-re-renders-con-shouldcomponentupdate">♠️ Optimizar Re-Renders con shouldComponentUpdate</h2>
+
+<p>Hasta ahora, si algún componente recibe un nuevo estado o nuevos props, se vuelve a representar a sí mismo ya todos sus childs. Esto suele estar bien. Pero React proporciona un método de ciclo de vida al que puede llamar cuando los componentes secundarios reciben un nuevo estado o props, y declaran específicamente si los componentes deberían actualizarse o no. El método es <strong>shouldComponentUpdate()</strong>, y toma <strong>nextProps</strong> y <strong>nextState</strong> como parámetros. Este método es una forma útil de optimizar el rendimiento. Por ejemplo, el comportamiento predeterminado es que su componente se vuelve a procesar cuando recibe nuevos accesorios, incluso si los accesorios no han cambiado. Puedes usar <strong>shouldComponentUpdate()</strong> para evitar esto al comparar los props. El método debe devolver un valor booleano que indique a React si actualizar o no el componente. Puede comparar los props actuales (this.props) con los props siguientes (nextProps) para determinar si necesita actualizar o no, y devolver verdadero o falso en consecuencia.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">class</span> <span class="nx">OnlyEvens</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">shouldComponentUpdate</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">,</span> <span class="nx">nextState</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Deberia actualizar?</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nx">nextProps</span><span class="p">.</span><span class="nx">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="p">}</span>
+  <span class="nx">componentWillReceiveProps</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">recibiendo nuevas Props...</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">componentDidUpdate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">componente Re-renderizado.</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">class</span> <span class="nx">Controller</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">value</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">};</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">addValue</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">addValue</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">addValue</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="na">value</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">addValue</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">a</span><span class="err">ñ</span><span class="nx">adir</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">OnlyEvens</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h2 id="️-concepto-inline-styles">♠️ Concepto Inline Styles</h2>
+
+<p>Hay otros conceptos complejos que agregan capacidades poderosas a su código React. Pero puede que se esté preguntando sobre el problema más simple de cómo diseñar los elementos JSX que crea en React. Probablemente sepa que no será exactamente lo mismo que trabajar con HTML debido a la forma en que aplica las clases a los elementos JSX.</p>
+
+<p>Si importa estilos de una hoja de estilo, no es muy diferente en absoluto. Aplicas una clase a tu elemento JSX usando el atributo className y aplicas estilos a la clase en tu hoja de estilo. Otra opción es aplicar estilos en línea, que son muy comunes en el desarrollo de ReactJS.</p>
+
+<p>Usted aplica estilos en línea a elementos JSX similares a cómo lo hace en HTML, pero con algunas diferencias JSX. Aquí hay un ejemplo de un estilo en línea en HTML:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"color"</span><span class="na">:</span> <span class="err">"</span><span class="na">red</span><span class="err">","</span><span class="na">font-size</span><span class="err">"</span><span class="na">:</span> <span class="err">"</span><span class="na">20px</span><span class="err">"</span><span class="nt">&gt;</span>red redow <span class="nt">&lt;/div&gt;</span>
+
+</code></pre></div></div>
+
+<p>Los elementos JSX usan el atributo de estilo, pero debido a la forma en que JSX se transpila, no puede establecer el valor en una cadena. En su lugar, lo establece igual a un objeto de JavaScript. Aquí hay un ejemplo:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="nx">color</span><span class="p">:</span><span class="o">&gt;</span><span class="nx">red</span> <span class="nx">redow</span> <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">Class</span> <span class="nx">Colorful</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="nx">color</span><span class="o">&gt;</span><span class="nx">Big</span> <span class="nx">Red</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="️-javascript-avanzado-con-react-render-method">♠️ JavaScript Avanzado con React Render Method</h2>
+
+<p>Otra forma en que puede utilizar el código JavaScript en sus componentes React. También puede escribir JavaScript directamente en sus métodos de procesamiento, antes de la declaración de retorno, sin insertarlo dentro de llaves. Esto se debe a que aún no está dentro del código JSX. Cuando desee utilizar una variable más adelante en el código JSX dentro de la declaración de retorno, coloque el nombre de la variable entre llaves.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">inputStyle</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">width</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+  <span class="na">margin</span><span class="p">:</span> <span class="mi">4</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Oraculo</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">userInput</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+      <span class="na">randomIndex</span><span class="p">:</span> <span class="dl">''</span>
+    <span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">ask</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">ask</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">ask</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">userInput</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+        <span class="na">randomIndex</span><span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">20</span><span class="p">),</span>
+        <span class="na">userInput</span><span class="p">:</span> <span class="dl">''</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nx">handleChange</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="na">userInput</span><span class="p">:</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">possibleAnswers</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="dl">"</span><span class="s2">Adivina mi nombre</span><span class="dl">"</span> <span class="p">,</span><span class="dl">"</span><span class="s2">manuel</span><span class="dl">""</span><span class="s2">Intentalo de nuevo</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">jorge</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">Intentalo de nuevo</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">Jordan</span><span class="dl">"</span>
+		<span class="p">,</span><span class="dl">"</span><span class="s2">Intentalo de nuevo</span><span class="dl">"</span>
+    <span class="p">];</span>
+    <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">possibleAnswers</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">randomIndex</span><span class="p">];</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span>
+          <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span>
+          <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">userInput</span><span class="p">}</span>
+          <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">}</span>
+          <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">inputStyle</span><span class="p">}</span> <span class="sr">/&gt;&lt;br /</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">ask</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Pregunta</span> <span class="nx">al</span> <span class="nx">Oraculo</span><span class="o">&lt;</span><span class="sr">/button&gt;&lt;br /</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">respuesta</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="nx">answer</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h2 id="️-renderizar-con--ifelse">♠️ Renderizar con  If/Else</h2>
+<p>Otra aplicación del uso de JavaScript para controlar su vista renderizada es vincular los elementos que se representan a una condición. Cuando la condición es verdadera, una vista se renderiza. Cuando es falso, es una vista diferente. Puede hacer esto con una instrucción if / else estándar en el método render () de un componente React.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MyComponent</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">display</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+ <span class="k">this</span><span class="p">.</span><span class="nx">toggleDisplay</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">toggleDisplay</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+ <span class="p">}</span>
+  <span class="nx">toggleDisplay</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="na">display</span><span class="p">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">display</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">display</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span>
+         <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+           <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">toggleDisplay</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Toggle</span> <span class="nx">Display</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>           <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Displayed</span><span class="o">!&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>         <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+           <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">toggleDisplay</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Toggle</span> <span class="nx">Display</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>         <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="️-renderizar-conditionally-desde-props">♠️ Renderizar Conditionally desde Props</h2>
+<p>Configurar un componente secundario para tomar decisiones de representación.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ <span class="kd">class</span> <span class="nx">Resultados</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span>
+      <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">fiftyFifty</span> <span class="p">?</span>
+        <span class="dl">'</span><span class="s1">Ganaste!</span><span class="dl">'</span> <span class="p">:</span>
+        <span class="dl">'</span><span class="s1">Perdiste!</span><span class="dl">'</span>
+      <span class="p">}</span>
+      <span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">class</span> <span class="nx">GameOfTruenos</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">counter</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleClick</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleClick</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">handleClick</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="na">counter</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">counter</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">expression</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="p">.</span><span class="mi">5</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleClick</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">intentalo</span> <span class="nx">de</span> <span class="nx">nuevo</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">Resultados</span> <span class="nx">fiftyFifty</span><span class="o">=</span><span class="p">{</span><span class="nx">expression</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="dl">'</span><span class="s1">Turn: </span><span class="dl">'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">counter</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<h2 id="️-usar-arraymap--dinamicamente-renderizando-elementos">♠️ Usar Array.map()  Dinamicamente renderizando elementos</h2>
+
+<p>La representación condicional es útil, pero es posible que necesite que sus componentes representen un número desconocido de elementos. A menudo, en programación reactiva, un programador no tiene forma de saber cuál es el estado de una aplicación hasta el tiempo de ejecución, ya que mucho depende de la interacción de un usuario con ese programa. Los programadores deben escribir su código para manejar correctamente ese estado desconocido antes de tiempo. Usar <code class="highlighter-rouge">Array.map()</code> en React ilustra este concepto.</p>
+
+<p>Por ejemplo, creas una aplicación simple de “Lista de tareas pendientes”. Como programador, no tiene forma de saber cuántos elementos puede tener un usuario en su lista. Debe configurar su componente para que muestre dinámicamente el número correcto de elementos de la lista mucho antes de que alguien que usa el programa decida que hoy es el día de la lavandería.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">textAreaStyles</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">width</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+  <span class="na">margin</span><span class="p">:</span> <span class="mi">6</span>
+<span class="p">};</span>
+
+<span class="kd">class</span> <span class="nx">MiListaDeHacer</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">toDoList</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="na">userInput</span><span class="p">:</span> <span class="dl">''</span>
+    <span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleSubmit</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleSubmit</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">handleSubmit</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">itemsArray</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">userInput</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">,</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="na">toDoList</span><span class="p">:</span> <span class="nx">itemsArray</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">handleChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="na">userInput</span><span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">items</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">toDoList</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span> <span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">i</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">item</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>    <span class="p">});</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">textarea</span>
+          <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">}</span>
+          <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">userInput</span><span class="p">}</span>
+          <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">textAreaStyles</span><span class="p">}</span>
+          <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Separar elementos con comas</span><span class="dl">"</span> <span class="o">/&gt;&lt;</span><span class="nx">br</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleSubmit</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Crear</span> <span class="nx">una</span> <span class="nx">lista</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">My</span> <span class="dl">"</span><span class="s2">Hacer</span><span class="dl">"</span> <span class="nx">Lista</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="nx">items</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+<h2 id="️-usar-un-arrayfilter-dinamico-en-una-matriz">♠️ Usar un Array.filter() dinamico en una matriz</h2>
+
+<p>El método de matriz de mapa es una herramienta poderosa que usará a menudo cuando trabaje con React. Otro método relacionado con el mapa es el filtro, que filtra el contenido de una matriz en función de una condición y luego devuelve una nueva matriz. Por ejemplo, si tiene una matriz de usuarios que tienen una propiedad en línea que puede configurarse como verdadera o falsa, puede filtrar solo aquellos usuarios que están en línea escribiendo:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MyComponent</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">users</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="na">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">andresshare</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">online</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="na">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">lorena</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">online</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="na">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">paola</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">online</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="na">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Homero</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">online</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="na">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">lisa</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">online</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="na">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Helen</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">online</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">usersOnline</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">user</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">user</span><span class="p">.</span><span class="nx">online</span><span class="p">;</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="nx">renderOnlineUsers</span> <span class="o">=</span> <span class="nx">usersOnline</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">user</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>      <span class="p">);</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="p">(</span>
+       <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+         <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Usuarios</span> <span class="nx">en</span> <span class="nx">linea</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>         <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="nx">renderOnlineUsers</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span>       <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Espero que les sea de utilidad, por mi parte fue escrito, para mi yo del futuro y tener presente los conceptos, hasta el proximo post!!</p>
+:ET

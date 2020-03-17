@@ -1,0 +1,32 @@
+I"{<p><img src="https://media.giphy.com/media/35Kf7OnQCkPj2Ojtf6/giphy.gif" alt="OOP" /></p>
+
+<p>Que cuando cierta función termina de realizar todo lo que tiene que hacer, ejecutará una función que le fue pasada como argumento.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">primerPaso</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Este es el primer paso</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">callback</span><span class="p">();</span>
+<span class="p">};</span>
+<span class="kd">function</span> <span class="nx">segundoPaso</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Este es el segundo paso</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">primerPaso</span><span class="p">(</span><span class="nx">segundoPaso</span><span class="p">);</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>Todavía hay un montón de diferentes tipos de funciones por ahí. Ya sabe acerca de las arrow function, pero ¿qué pasa con las callback funcions</p>
+
+<p>Se habla mucho de las funciones de callback, pero ¿qué es exactamente un callback? Para abreviar, 
+un <strong>callback</strong> es básicamente una función que se llama cuando sucede algo. Por ejemplo, cuando alguien envía un formulario en su sitio web, debe ejecutar validaciones, lo que significa que hay algunas funciones que deben ejecutarse en segundo plano.</p>
+
+<p>Entonces, cuando el usuario envió el formulario, esa acción activó <strong>callback</strong>  que inició todas las validaciones. Si no estaba utilizando un <strong>callback</strong>, su código quedaría bloqueado en las validaciones y se quedaría allí hasta que alguien enviara un formulario. Definitivamente esa no es la forma en que desea que se comporte su sitio web.</p>
+
+<p>Un <strong>callback</strong> permite ejecutar su código hasta que un evento lo active. Luego se ejecuta la devolución de llamada y luego vuelve a su función original. Aquí hay una ilustración de una función de devolución de llamada en acción:</p>
+
+<p><img src="https://media.giphy.com/media/LR0xmepPAZA09fgbdz/giphy.gif" alt="callback" /></p>
+
+<p>Puede ver que <strong>callback</strong> está esperando hasta que algo suceda antes de que haga algo y, tan pronto como <strong>callback</strong> vuelve,el código vuelve a hacer cosas.</p>
+
+<p>Eso es realmente todo lo que hay para la función de devolución de llamada. Sí,eso es realmente todo lo que es.</p>
+
+:ET

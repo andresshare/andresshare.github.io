@@ -1,0 +1,59 @@
+I"W<p><img src="https://media.giphy.com/media/PLHdpauwfN2MvHcHxL/giphy.gif" alt="OOP" /></p>
+
+<p>Define las características del Objeto.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MyClass</span> <span class="p">{</span>
+<span class="kd">constructor</span><span class="p">(</span><span class="nx">option</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Creating instance using </span><span class="p">${</span><span class="nx">option</span><span class="p">}</span><span class="s2"> option.`</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">option</span> <span class="o">=</span> <span class="nx">option</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">speedy</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>Javascript</strong></p>
+
+<p>Una clase de JavaScript es una función, que se puede definir tal como lo haría con una expresión de función o declaración de función. La sintaxis de la clase tiene dos componentes:</p>
+
+<ul>
+  <li>declaración de clase class Car {}</li>
+  <li>expresión de clase sin nombre let Car = class {}</li>
+  <li>expresión de clase llamada let Car = class Toyota {}</li>
+</ul>
+
+<p>los nombres de clase deben comenzar con una letra mayúscula</p>
+
+<p>Para declarar una clase, utiliza la palabra clave de clase con el nombre de la clase (“Auto”). Las expresiones de clase se pueden nombrar (“Toyota”) o sin nombre (“Auto”). El nombre dado a una expresión de clase es local al cuerpo de la clase.</p>
+
+<p>La función de clase utiliza el constructor y las nuevas palabras clave para crear plantillas para los objetos que se crearán. Usar la función de clase tiene beneficios. Escriba menos código, evite errores tipográficos, mejor legibilidad, evite repetirse (DRY).</p>
+
+<p><strong>Constructor</strong>
+El método constructor, que reside dentro de una clase, se usa para crear e inicializar un objeto creado con una clase. Solo puede tener un método de constructor por clase. El constructor construye su objeto según los criterios predefinidos que establezca. Vea el siguiente ejemplo,</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Car</span><span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">make</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">make</span> <span class="o">=</span> <span class="nx">make</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">model</span> <span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="nx">color</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Cuando llame a esta clase más tarde, los argumentos que le pasaré serán la marca, el modelo y el color de mi objeto Car. El objeto que se creará a partir de esto se verá como el siguiente ejemplo,</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">camry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="dl">'</span><span class="s1">Toyota</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Camry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Blue</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">camry</span><span class="p">);</span>
+<span class="c1">//Car {make:"Toyota", model: "Camry", color: "Blue"}</span>
+</code></pre></div></div>
+
+<p><strong>New</strong>
+ Crea una instancia de un tipo de objeto definido por el usuario o de uno de los tipos de objeto integrados que tiene una función de constructor.</p>
+
+<p><strong>New</strong>  esencialmente dice oye crear una nueva instancia de esta clase que creamos anteriormente. El constructor le dice al nuevo operador que use los argumentos que se pasaron para construir el objeto.</p>
+
+<p><img src="https://media.giphy.com/media/rh0W2vpayXMac/giphy.gif" alt="class-javascript" /></p>
+
+<p>Usar la función de clase ayuda a crear objetos. ¡Qué pasaría si tuviéramos que fabricar 20 autos diferentes, todos con diferentes colores y años! No solo llevaría un tiempo crear, sino que tendríamos demasiadas líneas de código para revisar si quisiéramos actualizar una.</p>
+
+:ET

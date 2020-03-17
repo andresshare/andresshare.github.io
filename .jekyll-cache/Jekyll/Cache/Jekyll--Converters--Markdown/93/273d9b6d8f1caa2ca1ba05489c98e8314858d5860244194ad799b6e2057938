@@ -1,0 +1,108 @@
+I"�	<p><img src="https://media.giphy.com/media/ibfW3AdGe1gAM/giphy.gif" alt="odin" /></p>
+
+<p>La idea con este post es mostrar los fix que tuve al crear projectos con esta web, en ruby</p>
+
+<p><strong>Actualizar node</strong></p>
+
+<p>instalar nvm con zsh</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+export NVM_DIR="$HOME/.nvm" &amp;&amp; (
+  git clone https://github.com/creationix/nvm.git "$NVM_DIR"
+  cd "$NVM_DIR"
+  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+) &amp;&amp; \. "$NVM_DIR/nvm.sh"
+
+</code></pre></div></div>
+<p>.zsh</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; \. "$NVM_DIR/nvm.sh"
+</code></pre></div></div>
+<p>escojer version</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># chose desired node version
+VERSION="8.12.0"
+# install node
+nvm install ${VERSION}
+nvm use ${VERSION}
+</code></pre></div></div>
+<p><strong>conflicto de rails 6.0 con webpack</strong></p>
+
+<p><strong>Available Rails 5.1+</strong></p>
+
+<blockquote>
+  <p>rails new myapp –webpack</p>
+</blockquote>
+
+<blockquote>
+  <p>bundle</p>
+</blockquote>
+
+<blockquote>
+  <p>bundle exec rails webpacker:install</p>
+</blockquote>
+
+<h3 id="heroku">Heroku</h3>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td>curl https://cli-assets.heroku.com/install.sh</td>
+        <td>sh</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<blockquote>
+  <p>heroku login</p>
+</blockquote>
+
+<p>Credentials</p>
+<blockquote>
+  <p>heroku login -i</p>
+</blockquote>
+
+<p>cd ~/myapp
+heroku create</p>
+
+<p><strong>add SSH</strong>
+heroku keys:add</p>
+
+<p>heroku create
+git remote</p>
+
+<p><strong>DELETE Gemfile</strong></p>
+
+<p>gem ‘sqlite3’</p>
+
+<p><strong>add</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>group :development, :test do
+ gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
+</code></pre></div></div>
+
+<p>bundle install –without production</p>
+
+<p>config/routes.rb</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rails.application.routes.draw do
+  root 'cars#index'
+  resources :cars
+end
+</code></pre></div></div>
+
+<p>git status
+git add .
+git commit -m ‘updates for heroku deployment’
+git push origin master
+git push heroku master
+heroku run rails db:migrate</p>
+
+<p><strong>Visit aplication</strong>
+heroku open</p>
+:ET
